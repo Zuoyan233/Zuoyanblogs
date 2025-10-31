@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Zuoyan研究部</title>
+  <subtitle>你的小知识平台</subtitle>
+  <link href="https://zuoyanblogs.pages.dev/" rel="alternate" type="text/html"/>
+  <link href="https://zuoyanblogs.pages.dev/atom.xml" rel="self" type="application/atom+xml"/>
+  <id>https://zuoyanblogs.pages.dev/</id>
+  <updated>2025-10-31T12:23:07.145Z</updated>
+  <language>zh_CN</language>
+  <entry>
+    <title>分享一个电脑维护包</title>
+    <link href="https://zuoyanblogs.pages.dev/posts/maintenance/maintenance/" rel="alternate" type="text/html"/>
+    <id>https://zuoyanblogs.pages.dev/posts/maintenance/maintenance/</id>
+    <published>2025-10-31T00:00:00.000Z</published>
+    <updated>2025-10-31T00:00:00.000Z</updated>
+    <summary>电脑中弹窗病毒怎么办？C盘占用快满很焦虑？垃圾老是清理不干净？试试用我的分享的维护包</summary>
+    <content type="html"><![CDATA[<h1>电脑中弹窗病毒怎么办？C盘占用快满很焦虑？垃圾老是清理不干净？试试用我的分享的维护包</h1>
+<hr />
+<h2>Dism++</h2>
+<ul>
+<li>
+<p><strong>Dism++是由大学时期几个强迫症定制打造，追求最强功能，极致绿色，极小身材，可以说是几乎全能的工具包，Dism++可以说是Dism的GUI版本，但是不依赖Dism，直接基于更底层的CBS，因此比微软自带的Dism++拥有更好的兼容性以及更好轻巧的体积</strong>。</p>
+</li>
+<li>
+<p><strong><code>空间回收</code></strong>
+&lt;img src="/images/Post/Maintenance/dism 1.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong><code>启动项管理</code></strong>
+&lt;img src="/images/Post/Maintenance/dism 2.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong><code>工具箱</code></strong>
+&lt;img src="/images/Post/Maintenance/dism 3.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong><code>系统优化</code></strong>
+&lt;img src="/images/Post/Maintenance/dism 4.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</p>
+</li>
+</ul>
+<h2>Uninstall Tool</h2>
+<ul>
+<li>
+<p><strong>这是一款卸载多功能的软件，卸载完顺便清理电脑的注册表，非常好用，支持强制卸载，强制删除痕迹，启动项管理等等</strong>。</p>
+</li>
+<li>
+<p><strong>第一次<code>鼠标点右键 - 属性</code>打开需要给软件赋予管理员权限才能打开，没赋予窗口会闪一下</strong>。
+&lt;img src="/images/Post/Maintenance/uninstall tool 1.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong><code>软件截图</code></strong>
+&lt;img src="/images/Post/Maintenance/uninstall tool 2.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</p>
+</li>
+</ul>
+<h2>DriverStoreExplorer</h2>
+<ul>
+<li><strong>这是一款清理旧驱动的功能软件，比如更新驱动后残留的旧驱动，这个软件能帮助你清走旧驱动残留，甚至可以添加新驱动</strong>。</li>
+<li><strong><code>软件截图</code></strong>
+&lt;img src="/images/Post/Maintenance/dse.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</li>
+</ul>
+<h2>SoftCnKiller</h2>
+<ul>
+<li>
+<p><strong>Softcnkiller是一款简易实用，功能全面的清理流氓软件的工具，能够帮助用户消灭电脑中的各种流氓软件以及广告弹窗，支持一键快速清理流氓软件，让你的电脑更加干净</strong>。</p>
+</li>
+<li>
+<p><strong>第一次运行请点击<code>使用前更新流氓软件黑名单.bat</code>进行数据库更新，建议使用<code>git更新</code></strong>。
+&lt;img src="/images/Post/Maintenance/sck 1.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong><code>软件截图</code></strong>
+&lt;img src="/images/Post/Maintenance/sck 2.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</p>
+</li>
+</ul>
+<h2>Wisedisk cleaner</h2>
+<ul>
+<li><strong>Wisedisk cleaner是一款简易实用，功能全面的清理电脑垃圾工具，让你的电脑更加干净</strong>。</li>
+<li><strong><code>软件截图</code></strong>
+&lt;img src="/images/Post/Maintenance/wc 1.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;
+&lt;img src="/images/Post/Maintenance/wc 2.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;
+&lt;img src="/images/Post/Maintenance/wc 3.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</li>
+</ul>
+<h2>Wise Registry Cleaner</h2>
+<ul>
+<li><strong>Wise Registry Cleaner是一款简易实用，功能全面的清理注册表工具，让你的电脑更加干净</strong>。
+&lt;img src="/images/Post/Maintenance/wrc.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</li>
+</ul>
+<hr />
+<h1>&lt;a href="https://pan.baidu.com/s/10FEga-vO9sleGkzGH18sgQ?pwd=8g2n" target="_blank"&gt;<code>点击这里下载维护包（百度网盘）</code>&lt;/a&gt;</h1>
+]]></content>
+    <author>
+      <name>Zuoyan</name>
+    </author>
+    <category term="Maintenance"></category>
+  </entry>
+  <entry>
+    <title>教你解锁手机Bootloader</title>
+    <link href="https://zuoyanblogs.pages.dev/posts/unlock-post/unlock/" rel="alternate" type="text/html"/>
+    <id>https://zuoyanblogs.pages.dev/posts/unlock-post/unlock/</id>
+    <published>2025-10-29T00:00:00.000Z</published>
+    <updated>2025-10-29T00:00:00.000Z</updated>
+    <summary>如何解锁手机上的万恶之源Bootloader锁，解开了手机最高权限永远属于你（仅限于小米和一加）</summary>
+    <content type="html"><![CDATA[<h3>帖子之前先下载前置需要的工具&lt;a href="https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn" target="_blank"&gt;<code>Android SDK Platform-Tools（ADB调试器）</code>&lt;/a&gt;，需要解压到任意一个盘中。</h3>
+<hr />
+<h1>一加手机</h1>
+<ul>
+<li><strong>点<code>“关于本机”</code></strong>。</li>
+</ul>
+<p>&lt;img src="/images/Post/Bootloader images/oneplus 1.png" width="300px" high="300px" style="margin:0 auto;"&gt;</p>
+<ul>
+<li>
+<p><strong>点击版本号五次直到显示已开启<code>“开发者模式”</code></strong>。
+&lt;img src="/images/Post/Bootloader images/oneplus 2.png" width="800px" high="800px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong>在<code>“开发者模式”</code>里找到<code>“OEM解锁”</code>和<code>USB调试</code>并打开</strong>。</p>
+</li>
+<li>
+<p><em><strong>确定已打开开发者模式、oem解锁、USB调试，电脑ADB环境正常，终端adb devices正常（文件传输、勾、允许、）</strong></em>。
+&lt;img src="/images/Post/Bootloader images/oneplus 3.png" width="300px" high="300px" style="margin:0 auto;"&gt;</p>
+</li>
+</ul>
+<pre><code>在开机状态下，使用adb验证机器是否连接到电脑：adb devices
+确认连接到电脑后，输入以下adb命令：adb reboot fastboot
+进入fastboot后输入以下命令：fastboot flashing unlock
+</code></pre>
+<ul>
+<li><strong>这时候会弹出一大串英文，用上下音量键摁动中选择“<code>UNLOCK THE BOOTLOADER</code>”，完成解锁操作。之后手机全部清除数据重启。</strong></li>
+</ul>
+<p>&lt;img src="/images/Post/Bootloader images/oneplus 4.png" width="800px" high="800px" style="margin:0 auto;"&gt;</p>
+<hr />
+<h1>小米 MIUI &amp; HyperOS</h1>
+<ul>
+<li>
+<p><strong>如果你是<code>Xiaomi HyperOS</code>系统用户，请在<code>"小米社区"</code>内测模板中的<code>“Bootloader解锁申请”</code>中答题</strong>。
+&lt;img src="/images/Post/Bootloader images/xiaomi 0.jpg" width="300px" high="300px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong>请在<code>“我的设备”</code>里找到<code>“全部参数与信息”</code></strong>。
+&lt;img src="/images/Post/Bootloader images/xiaomi 1.jpg" width="500px" high="500px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong>点击<code>”OS版本“</code>五次直到显示已开启<code>“开发者模式”</code></strong>。
+&lt;img src="/images/Post/Bootloader images/xiaomi 2.jpg" width="300px" high="300px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong>在<code>“开发者模式”</code>里找到<code>“设备解锁状态”</code></strong>。
+&lt;img src="/images/Post/Bootloader images/xiaomi 3.jpg" width="600px" high="600px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong>在<code>“设备解锁状态”</code>中最底下点击<code>“绑定设备和账号”</code></strong>。</p>
+</li>
+<li>
+<p><strong>直到显示“设备已于账号绑定”`等待168个小时完成操作</strong>。
+&lt;img src="/images/Post/Bootloader images/xiaomi 4.jpg" width="300px" high="300px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong>等待168个小时后，需点击这里在官网下载&lt;a href="https://www.miui.com/unlock/download.html" target="_blank"&gt;<code>小米解锁BL工具</code>&lt;/a&gt;，<code>下载的工具必需要解压！</code></strong>。
+&lt;img src="/images/Post/Bootloader images/xiaomi 5.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong>第一次运行打开<code>MiUsbDriver.exe</code>驱动安装程序安装上去，不然识别不了手机</strong>。
+&lt;img src="/images/Post/Bootloader images/xiaomi 6.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong>打开<code>miflash_unlock.exe</code>登录小米账号</strong>
+&lt;img src="/images/Post/Bootloader images/xiaomi 7.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong>手机进入<code>Bootloader</code>模式，手机关机，<code>电源键 + 音量下键，两个键长按</code></strong>。
+&lt;img src="/images/Post/Bootloader images/xiaomi 8.jpg" width="300px" high="300px" style="margin:0 auto;"&gt;</p>
+</li>
+<li>
+<p><strong>手机用数据线插到电脑，点击<code>解锁</code>，解锁会清除手机数据，等待解锁成功</strong>。
+&lt;img src="/images/Post/Bootloader images/xiaomi 9.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;
+&lt;img src="/images/Post/Bootloader images/xiaomi 10.jpg" width="800px" high="800px" style="margin:0 auto;"&gt;</p>
+</li>
+</ul>
+]]></content>
+    <author>
+      <name>Zuoyan</name>
+    </author>
+    <category term="Bootloader"></category>
+  </entry>
+  <entry>
+    <title>Include Video in the Posts</title>
+    <link href="https://zuoyanblogs.pages.dev/posts/video/" rel="alternate" type="text/html"/>
+    <id>https://zuoyanblogs.pages.dev/posts/video/</id>
+    <published>2022-08-01T00:00:00.000Z</published>
+    <updated>2022-08-01T00:00:00.000Z</updated>
+    <summary>This post demonstrates how to include embedded video in a blog post.</summary>
+    <content type="html"><![CDATA[<p>Just copy the embed code from YouTube or other platforms, and paste it in the markdown file.</p>
+<pre><code>---
+title: Include Video in the Post
+published: 2023-10-19
+// ...
+---
+
+&lt;iframe width="100%" height="468" src="https://www.youtube.com/embed/5gIf0_xpFPI?si=N1WTorLKL0uwLsU_" title="YouTube video player" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+</code></pre>
+<h2>YouTube</h2>
+<p>&lt;iframe width="100%" height="468" src="https://www.youtube.com/embed/5gIf0_xpFPI?si=N1WTorLKL0uwLsU_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;</p>
+<h2>Bilibili</h2>
+<p>&lt;iframe width="100%" height="468" src="//player.bilibili.com/player.html?bvid=BV1fK4y1s7Qf&amp;p=1&amp;autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" &amp;autoplay=0&gt; &lt;/iframe&gt;</p>
+]]></content>
+    <author>
+      <name>Zuoyan</name>
+    </author>
+    <category term="Examples"></category>
+  </entry>
+</feed>
