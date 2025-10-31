@@ -31,7 +31,7 @@ export const timelineData: TimelineItem[] = [
 			"就读于计算机技术，专注于 Web 开发和UI设计，现在毕业后的兴趣爱好学习HTML前端开发",
 		type: "education",
 		startDate: "2021-09-01",
-		location: "广州",
+		location: "广东-广州-从化",
 		organization: "广州城建职业学院（毕业）",
 		skills: ["JavaScript", "HTML/CSS", "UI"],
 		achievements: [
@@ -41,6 +41,44 @@ export const timelineData: TimelineItem[] = [
 		],
 		icon: "material-symbols:school",
 		color: "#059669",
+		featured: true,
+	},
+	{
+		id: "work",
+		title: "中国邮政",
+		description:
+			"人生第一份工作，7月底最后一天离职后几个月深造自己",
+		type: "work",
+		startDate: "2024-11-14",
+		location: "广东-佛山-顺德",
+		organization: "开始工作",
+		skills: ["邮件日常", "开验单", "售后"],
+		achievements: [
+			"Current GPA: 3.6/4.0",
+			"Completed data structures and algorithms course project",
+			"Participated in multiple course project developments",
+		],
+		icon: "material-symbols:work",
+		color: "#DC2626",
+		featured: true,
+	},
+	{
+		id: "web-develop",
+		title: "Zuoyan研究部",
+		description:
+			"里程碑：开始基于Misuki开源项目二次开发网站，目前网站成功上线",
+		type: "project",
+		startDate: "2025-10-01",
+		location: "广东-佛山-顺德",
+		organization: "在家开发",
+		skills: ["JavaScript", "HTML/CSS", "UI"],
+		achievements: [
+			"Current GPA: 3.6/4.0",
+			"Completed data structures and algorithms course project",
+			"Participated in multiple course project developments",
+		],
+		icon: "material-symbols:code",
+		color: "#7C3AED",
 		featured: true,
 	},
 ];

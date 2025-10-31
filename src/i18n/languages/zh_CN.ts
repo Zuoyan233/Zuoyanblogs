@@ -122,7 +122,7 @@ export const zh_CN: Translation = {
 	[Key.skillsBackend]: "后端开发",
 	[Key.skillsDatabase]: "数据库",
 	[Key.skillsTools]: "开发工具",
-	[Key.skillsOther]: "其他技能",
+	[Key.skillsOther]: "其它技能",
 	[Key.skillLevel]: "熟练度",
 	[Key.skillLevelBeginner]: "初学者",
 	[Key.skillLevelIntermediate]: "中级",

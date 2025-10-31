@@ -21,7 +21,7 @@ const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 
 export const siteConfig: SiteConfig = {
 	title: "Zuoyan研究部",
-	subtitle: "你的小知识平台",
+	subtitle: "与你的相遇就是奇迹",
 
 	lang: SITE_LANG,
 
@@ -35,7 +35,7 @@ export const siteConfig: SiteConfig = {
 		anime: true, // 番剧页面开关
 		diary: true, // 日记页面开关
 		friends: true, // 友链页面开关
-		projects: false, // 项目页面开关
+		projects: true, // 项目页面开关
 		skills: true, // 技能页面开关
 		timeline: true, // 时间线页面开关
 		albums: true, // 相册页面开关
@@ -76,21 +76,21 @@ export const siteConfig: SiteConfig = {
 		// 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播
 		src: {
 			desktop: [
-				"/assets/desktop-banner/d0.png",
-				"/assets/desktop-banner/d1.webp",
-				"/assets/desktop-banner/d2.png",
-				"/assets/desktop-banner/d3.png",
-				"/assets/desktop-banner/d4.png",
+				"/assets/desktop-banner/d0.jpg",
+				"/assets/desktop-banner/d1.jpg",
+				"/assets/desktop-banner/d2.jpg",
+				"/assets/desktop-banner/d3.jpg",
+				"/assets/desktop-banner/d4.jpg",
+				"/assets/desktop-banner/d5.jpg",
+				"/assets/desktop-banner/d6.jpg",
 			], // 桌面横幅图片png
 			mobile: [
-				"/assets/mobile-banner/m1.webp",
-				"/assets/mobile-banner/m2.webp",
-				"/assets/mobile-banner/m3.webp",
-				"/assets/mobile-banner/m4.webp",
-				"/assets/mobile-banner/m5.webp",
-				"/assets/mobile-banner/m6.webp",
-				"/assets/mobile-banner/m7.webp",
-				"/assets/mobile-banner/m8.webp",
+				"/assets/mobile-banner/m1.jpg",
+				"/assets/mobile-banner/m2.jpg",
+				"/assets/mobile-banner/m3.jpg",
+				"/assets/mobile-banner/m4.jpg",
+				"/assets/mobile-banner/m5.jpg",
+				"/assets/mobile-banner/m6.jpg",
 			], // 移动横幅图片
 		}, // 使用本地横幅图片
 
@@ -99,7 +99,7 @@ export const siteConfig: SiteConfig = {
 		carousel: {
 			enable: true, // 为 true 时：为多张图片启用轮播。为 false 时：从数组中随机显示一张图片
 
-			interval: 3, // 轮播间隔时间（秒）
+			interval: 5, // 轮播间隔时间（秒）
 		},
 
 		waves: {
@@ -122,7 +122,7 @@ export const siteConfig: SiteConfig = {
 			title: "Welcome Home!", // 主页横幅主标题
 
 			subtitle: [
-				"今天是美好的一天呢。",
+				"2333的历史，你知道不？",
 				"原神？ 启动！",
 				"小破站 乾杯 - ( ゜- ゜)つロ",
 			],
@@ -130,8 +130,8 @@ export const siteConfig: SiteConfig = {
 				enable: true, // 启用副标题打字机效果
 
 				speed: 100, // 打字速度（毫秒）
-				deleteSpeed: 50, // 删除速度（毫秒）
-				pauseTime: 2000, // 完全显示后的暂停时间（毫秒）
+				deleteSpeed: 100, // 删除速度（毫秒）
+				pauseTime: 3000, // 完全显示后的暂停时间（毫秒）
 			},
 		},
 
@@ -163,7 +163,7 @@ export const siteConfig: SiteConfig = {
 	// 字体配置
 	font: {
 		zenMaruGothic: {
-			enable: false, // 启用全局圆体适合日语和英语，对中文适配一般
+			enable: true, // 启用全局圆体适合日语和英语，对中文适配一般
 		},
 		hanalei: {
 			enable: false, // 启用 Hanalei 字体作为全局字体，适合中文去使用
@@ -218,6 +218,12 @@ export const navBarConfig: NavBarConfig = {
 					external: true,
 					icon: "fa6-brands:bilibili",
 				},
+				{
+					name: "Github",
+					url: "https://github.com/Zuoyan233",
+					external: true,
+					icon: "fa6-brands:github",
+				},
 			],
 		},
 		{
@@ -267,7 +273,7 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/zuoyan.webp", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
-	name: "Zuoyan",
+	name: "左颜君",
 	bio: "世界这么大，我想去看看",
 	typewriter: {
 		enable: true, // 启用个人简介打字机效果
@@ -279,16 +285,17 @@ export const profileConfig: ProfileConfig = {
 			icon: "fa6-brands:bilibili",
 			url: "https://space.bilibili.com/352580971",
 		},
+		{
+			name: "GitHub",
+			icon: "fa6-brands:github",
+			url: "https://github.com/Zuoyan233",
+		},
 		// {
 		// 	name: "Gitee",
 		// 	icon: "mdi:git",
 		// 	url: "https://gitee.com/matsuzakayuki",
 		// },
-		// {
-		// 	name: "GitHub",
-		// 	icon: "fa6-brands:github",
-		// 	url: "https://github.com/matsuzaka-yuki",
-		// },
+		
 		// {
 		// 	name: "Codeberg",
 		// 	icon: "simple-icons:codeberg",
@@ -433,7 +440,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 		// 基础延迟时间（毫秒）
 		baseDelay: 0,
 		// 递增延迟时间（毫秒），每个组件依次增加的延迟
-		increment: 50,
+		increment: 100,
 	},
 
 	// 响应式布局配置
@@ -502,7 +509,7 @@ export const pioConfig: import("./types/config").PioConfig = {
 		home: "点击这里返回主页!", // 首页提示
 		skin: ["你有看到我的服装了吗?", "这看起来蛮好看~"], // 换装提示
 		close: "QWQ 下次再见了~", // 关闭提示
-		link: "", // 关于链接
+		link: "https://space.bilibili.com/352580971", // 关于链接
 	},
 };
 
