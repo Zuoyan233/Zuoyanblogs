@@ -45,7 +45,7 @@ export const siteConfig: SiteConfig = {
 		// 顶栏标题文本
 		text: "Zuoyan研究部",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.png
-		icon: "assets/home/zuoyan.png",
+		icon: "assets/home/home.png",
 	},
 
 	bangumi: {
@@ -504,7 +504,7 @@ export const pioConfig: import("./types/config").PioConfig = {
 	mode: "draggable", // 默认为可拖拽模式
 	hiddenOnMobile: true, // 默认在移动设备上隐藏
 	dialog: {
-		welcome: "欢迎来到左颜的博客网站!", // 欢迎词
+		welcome: "欢迎来到Zuoyan的博客网站!", // 欢迎词
 		touch: ["你在干什么?", "不要碰我!", "HENTAI!", "你把我给玷污了!"], // 触摸提示
 		home: "点击这里返回主页!", // 首页提示
 		skin: ["你有看到我的服装了吗?", "这看起来蛮好看~"], // 换装提示
