@@ -13,6 +13,7 @@ import type {
 	SiteConfig,
 } from "./types/config";
 import { LinkPreset } from "./types/config";
+import { getTranslateLanguageFromConfig } from "./utils/language-utils";
 
 // 移除i18n导入以避免循环依赖
 
@@ -28,6 +29,16 @@ export const siteConfig: SiteConfig = {
 	themeColor: {
 		hue: 230, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
 		fixed: true, // 对访问者隐藏主题色选择器
+	},
+
+	translate: {
+		enable: true, // 启用翻译功能
+		service: "client.edge", // 使用 Edge 浏览器翻译服务
+		defaultLanguage: getTranslateLanguageFromConfig(SITE_LANG), // 根据站点语言自动设置默认翻译语言
+		showSelectTag: false, // 不显示默认语言选择下拉菜单，使用自定义按钮
+		autoDiscriminate: true, // 自动检测用户语言
+		ignoreClasses: ["ignore", "banner-title", "banner-subtitle"], // 翻译时忽略的 CSS 类名
+		ignoreTags: ["script", "style", "code", "pre"], // 翻译时忽略的 HTML 标签
 	},
 
 	// 特色页面开关配置(关闭不在使用的页面有助于提升SEO,关闭后直接在顶部导航删除对应的页面就行)

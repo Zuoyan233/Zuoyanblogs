@@ -46,6 +46,9 @@ enum I18nKey {
 	// 番剧页面
 	animeTitle = "animeTitle",
 	animeSubtitle = "animeSubtitle",
+	animeTotal = "animeTotal",
+	animeWatching = "animeWatching",
+	animeCompleted="animeCompleted",
 	animeStatusWatching = "animeStatusWatching",
 	animeStatusCompleted = "animeStatusCompleted",
 	animeStatusPlanned = "animeStatusPlanned",
@@ -161,6 +164,14 @@ enum I18nKey {
 	timelineAchievements = "timelineAchievements",
 	timelineStartDate = "timelineStartDate",
 	timelineDuration = "timelineDuration",
+	timelineStatistics = "timelineStatistics",
+	timelineByType = "timelineByType",
+	timelineWorkExperience = "timelineWorkExperience",
+	timelineTotalExperience = "timelineTotalExperience",
+	timelineWorkPositions = "timelineWorkPositions",
+	timelineCurrentRole = "timelineCurrentRole",
+	timelineEmployed = "timelineEmployed",
+	timelineAvailable="timelineAvailable",
 
 	// 密码保护
 	passwordProtected = "passwordProtected",
