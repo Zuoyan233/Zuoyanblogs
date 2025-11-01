@@ -7,23 +7,21 @@ import MainGridLayout from "../layouts/MainGridLayout.astro";
 // 检查日记页面是否启用
 if (!siteConfig.featurePages.diary) {
 	return Astro.redirect("/404/");
-}
-
-// 示例即刻短文数据
+}// 示例即刻短文数据
 const moments = [
 	{
 		id: 1,
-		content:"网站自定义字体已启用",
+		content: "网站自定义字体已启用",
 		date: "2025-10-31T13:00:00Z",
 		images: ["/images/diary/10-31.jpg"],
 	},
-    {
+	{
 		id: 2,
-		content:"成功移植翻译组件",
+		content: "网站翻译组件成功移植",
 		date: "2025-11-01T02:00:00Z",
 		images: ["/images/diary/11-01.jpg"],
 	},
-	
+];
 ];
 
 // 时间格式化函数
