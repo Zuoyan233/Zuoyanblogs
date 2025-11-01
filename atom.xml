@@ -5,7 +5,7 @@
   <link href="https://zuoyanblogs.pages.dev/" rel="alternate" type="text/html"/>
   <link href="https://zuoyanblogs.pages.dev/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://zuoyanblogs.pages.dev/</id>
-  <updated>2025-11-01T03:02:28.852Z</updated>
+  <updated>2025-11-01T03:07:00.903Z</updated>
   <language>zh_CN</language>
   <entry>
     <title>分享一个电脑维护包</title>
@@ -188,31 +188,5 @@
       <name>左颜君</name>
     </author>
     <category term="Bootloader"></category>
-  </entry>
-  <entry>
-    <title>Include Video in the Posts</title>
-    <link href="https://zuoyanblogs.pages.dev/posts/video/" rel="alternate" type="text/html"/>
-    <id>https://zuoyanblogs.pages.dev/posts/video/</id>
-    <published>2022-08-01T00:00:00.000Z</published>
-    <updated>2022-08-01T00:00:00.000Z</updated>
-    <summary>This post demonstrates how to include embedded video in a blog post.</summary>
-    <content type="html"><![CDATA[<p>Just copy the embed code from YouTube or other platforms, and paste it in the markdown file.</p>
-<pre><code>---
-title: Include Video in the Post
-published: 2023-10-19
-// ...
----
-
-&lt;iframe width="100%" height="468" src="https://www.youtube.com/embed/5gIf0_xpFPI?si=N1WTorLKL0uwLsU_" title="YouTube video player" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-</code></pre>
-<h2>YouTube</h2>
-<p>&lt;iframe width="100%" height="468" src="https://www.youtube.com/embed/5gIf0_xpFPI?si=N1WTorLKL0uwLsU_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;</p>
-<h2>Bilibili</h2>
-<p>&lt;iframe width="100%" height="468" src="//player.bilibili.com/player.html?bvid=BV1fK4y1s7Qf&amp;p=1&amp;autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" &amp;autoplay=0&gt; &lt;/iframe&gt;</p>
-]]></content>
-    <author>
-      <name>左颜君</name>
-    </author>
-    <category term="Examples"></category>
   </entry>
 </feed>
