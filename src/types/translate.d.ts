@@ -1,11 +1,13 @@
 declare global {
   interface Window {
     translate?: {
+      reset: any;
       changeLanguage: (language: string) => void;
       service: {
         use: (service: string) => void;
       };
       language: {
+        translateLocal: boolean;
         setLocal: (language: string) => void;
         getCurrent: () => string;
         getLocal: () => string;

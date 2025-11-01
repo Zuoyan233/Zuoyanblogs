@@ -10,20 +10,20 @@ let currentLanguage = "";
 
 // 支持的语言列表
 const languages = [
-	{ code: "chinese_simplified", name: "简体中文", icon: "CN" },
-	{ code: "chinese_traditional", name: "繁體中文", icon: "TW" },
-	{ code: "english", name: "English", icon: "US" },
-	{ code: "japanese", name: "日本語", icon: "JP" },
-	{ code: "korean", name: "한국어", icon: "KR" },
-	{ code: "french", name: "Français", icon: "FR" },
-	{ code: "german", name: "Deutsch", icon: "DE" },
-	{ code: "spanish", name: "Español", icon: "ES" },
-	{ code: "russian", name: "Русский", icon: "RU" },
-	{ code: "arabic", name: "العربية", icon: "SA" },
-	{ code: "vietnamese", name: "Việt Nam", icon: "VI" },
-	{ code: "thai", name: "ภาษาไทย", icon: "TH" },
-	{ code: "turkish", name: "Türkçe", icon: "TR" },
-	{ code: "indonesian", name: "Indonesia", icon: "ID" },
+	{ code: "chinese_simplified", name: "简体中文", icon: "🇨🇳" },
+	{ code: "chinese_traditional", name: "繁體中文", icon: "🇹🇼" },
+	{ code: "english", name: "English", icon: "🇺🇸" },
+	{ code: "japanese", name: "日本語", icon: "🇯🇵" },
+	{ code: "korean", name: "한국어", icon: "🇰🇷" },
+	{ code: "french", name: "Français", icon: "🇫🇷" },
+	{ code: "german", name: "Deutsch", icon: "🇩🇪" },
+	{ code: "spanish", name: "Español", icon: "🇪🇸" },
+	{ code: "russian", name: "Русский", icon: "🇷🇺" },
+	{ code: "arabic", name: "العربية", icon: "🇸🇦" },
+	{ code: "vietnamese", name: "Việt Nam", icon: "🇻🇳" },
+	{ code: "thai", name: "ภาษาไทย", icon: "🇹🇭" },
+	{ code: "turkish", name: "Türkçe", icon: "🇹🇷" },
+	{ code: "indonesian", name: "Indonesia", icon: "🇮🇩" },
 ];
 
 // 根据配置文件的语言设置获取默认翻译语言
