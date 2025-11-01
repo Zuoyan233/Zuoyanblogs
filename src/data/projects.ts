@@ -23,14 +23,14 @@ export const projectsData: Project[] = [
 		id: "zuoyanblog",
 		title: "Zuoyanblogs",
 		description:
-			"基于Misuki博客框架开源二次魔改, 评论系统, 文章搜索，深色模式等保留Misuki框架特性。",
+			"基于Mizuki主题框架开源项目二次魔改, 评论系统, 文章搜索，深色模式等Mizuki的魔改特色功能。",
 		image: "",
 		category: "web",
-		techStack: ["Astro", "TypeScript", "Tailwind CSS", "Svelte"],
+		techStack: ["Astro", "TypeScript", "SCSS", "MongoDB"],
 		status: "completed",
 		liveDemo: "https://blog.example.com",
 		sourceCode: "https://github.com/Zuoyan233", // 更改为GitHub链接
-		visitUrl: "https:/github.com/Zuoyan233/Zuoyanblogs", // 添加前往项目链接
+		visitUrl: "https://github.com/Zuoyan233/Zuoyanblogs", // 添加前往项目链接
 		startDate: "2025-10-01",
 		endDate: "2024-06-01",
 		featured: true,

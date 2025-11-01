@@ -103,12 +103,12 @@ export const siteConfig: SiteConfig = {
 		},
 
 		waves: {
-			enable: false, // 是否启用水波纹效果(这个功能比较吃性能)
-			performanceMode: false, // 性能模式：减少动画复杂度(性能提升40%)
+			enable: true, // 是否启用水波纹效果(这个功能比较吃性能)
+			performanceMode: true, // 性能模式：减少动画复杂度(性能提升40%)
 			mobileDisable: false, // 移动端禁用
 		},
 
-		// PicFlow API支持(智能图片API)
+		// PicFlow API支持(智能图片API)true
 		imageApi: {
 			enable: false, // 启用图片API
 			url: "http://domain.com/api_v2.php?format=text&count=4", // API地址，返回每行一个图片链接的文本
@@ -252,12 +252,12 @@ export const navBarConfig: NavBarConfig = {
 			icon: "material-symbols:more-horiz",
 			children: [
 				{
-					name: "项目",
+					name: "项目展示",
 					url: "/projects/",
 					icon: "material-symbols:work",
 				},
 				{
-					name: "技能",
+					name: "技能展示",
 					url: "/skills/",
 					icon: "material-symbols:psychology",
 				},
