@@ -65,7 +65,7 @@ var translate = {
 		*/
 		documentId:'translate',
 		/* 是否显示 select选择语言的选择框，true显示； false不显示。默认为true */
-		show:true,
+		show:false,
 		/* 
 			支持哪些语言切换
 			v1.x 版本包括：de,hi,lt,hr,lv,ht,hu,zh-CN,hy,uk,mg,id,ur,mk,ml,mn,af,mr,uz,ms,el,mt,is,it,my,es,et,eu,ar,pt-PT,ja,ne,az,fa,ro,nl,en-GB,no,be,fi,ru,bg,fr,bs,sd,se,si,sk,sl,ga,sn,so,gd,ca,sq,sr,kk,st,km,kn,sv,ko,sw,gl,zh-TW,pt-BR,co,ta,gu,ky,cs,pa,te,tg,th,la,cy,pl,da,tr 
