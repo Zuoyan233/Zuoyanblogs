@@ -7,7 +7,7 @@ import MainGridLayout from "../layouts/MainGridLayout.astro";
 // 检查日记页面是否启用
 if (!siteConfig.featurePages.diary) {
 	return Astro.redirect("/404/");
-}// 示例即刻短文数据
+} // 示例即刻短文数据
 const moments = [
 	{
 		id: 1,
@@ -20,6 +20,12 @@ const moments = [
 		content: "网站翻译组件成功移植",
 		date: "2025-11-01T02:00:00Z",
 		images: ["/images/diary/11-01.jpg"],
+	},
+	{
+		id: 3,
+		content: "文章侧边栏组件移至左边，避免自适应放大排版错乱",
+		date: "2025-11-03T15:00:00Z",
+		images: ["/images/diary/11-03.jpg"],
 	},
 ];
 
