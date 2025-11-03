@@ -442,6 +442,17 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 				collapseThreshold: 20,
 			},
 		},
+		{
+			//组件类型:目录
+			type: "toc",
+			//是否启用该组件
+			enable: true,
+			// 组件位置："sticky" 表示粘性定位
+			position: "sticky",
+			// 组件显示顺序
+			order: 400,
+			class: "pb-4 card-base onload-animation",
+		},
 	],
 
 	// 默认动画配置
