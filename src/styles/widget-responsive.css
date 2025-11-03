@@ -509,3 +509,5 @@
   padding: 2px 4px;
   z-index: 1000;
 }
+
+#toc-wrapper.absolute { display: none !important; }
