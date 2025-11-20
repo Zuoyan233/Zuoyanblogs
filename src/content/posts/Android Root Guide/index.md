@@ -13,7 +13,7 @@ draft: false
 
 ---
 # 刷机须知
-1. **请确保你的手机已经解锁Bootloader，才能进行Root刷入，不知道什么是Bootloader或者不知道如何解锁<a href="https://zuoyanblogs.xyz/posts/unlockbootloader/" target="_blank">点这里教你解锁手机Bootloader</a>**。
+1. **请确保你的手机已经解锁Bootloader，才能进行Root刷入，不知道什么是Bootloader或者不知道如何解锁<a href="https://zuoyanblogs.xyz/posts/unlock-bootloader/" target="_blank">点这里教你解锁手机Bootloader</a>**。
 2. **准备一根具有<span style="color:red;">USB传输数据功能的线</span>，建议使用<span style="color:red;">A to C数据线</span>，连接更稳定，准备ADB调试工具，刷入分区会用到，没下载的先下载ADB调试工具<a href="https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn" target="_blank">Android SDK Platform-Tools</a>**。
 3. **在进行任何操作前，请备份好你的数据，刷机后，造成闪存、主板或其他硬件损坏的，售后视情况<span style="color:red;">有权拒绝保修</span>，如果是造成系统、黑屏或其他软件故障的，售后可进行<span style="color:red;">保内恢复处理</span>**。    
 
@@ -32,8 +32,8 @@ draft: false
 ::github{repo="1q23lyc45/KitsuneMagisk"}
 
 >[!NOTE] **这两个Root管理器有什么不一样的吗？**</br>
-**Magisk：提供基本的Root管理功能，包括模块管理等，但在隐藏Root的能力上<span style="color:red;">不如</span>Kitsune Mask强**。</br>
-**Kitsune Mask：在Magisk的基础上，特别<span style="color:red;">强化</span>了隐藏Root的能力，使得某些应用（如银行应用）更难检测到设备已Root。这对于需要绕过Root检测的用户非常重要**。
+**1. `Magisk`：提供基本的Root管理功能，包括模块管理等，但在隐藏Root的能力上<span style="color:red;">不如</span>Kitsune Mask强**。</br>
+**2. `Kitsune Mask`：在Magisk的基础上，特别<span style="color:red;">强化</span>了隐藏Root的能力，使得某些应用（如银行应用）更难检测到设备已Root。这对于需要绕过Root检测的用户非常重要**。
 
 ---
 
@@ -48,15 +48,15 @@ draft: false
 
 ---
 ## 提取Boot并用Magisk修补
-1. **请查看刷机包提取带有<span style="color:red;">boot.img（出厂安卓12以下）</span>，<span style="color:red;">init_boot.img（出厂安卓13以上）</span>启动内核的img镜像。**
-2. **打开Magisk → 点击带有面具logo右边的<span style="color:red;">“安装” → “选择并修补一个文件” → “选择要修补的img的镜像文件”</span> → 等待Magisk修补完成。**
-3. **修补生成的文件 <span style="color:red;">magisk_patched-xxx.img</span> 在 Download 目录里。**
+1. **请查看刷机包提取带有`boot.img`<span style="color:red;">（出厂安卓12以下）</span>，`init_boot.img`<span style="color:red;">（出厂安卓13以上）</span>启动内核的img镜像。**
+2. **打开Magisk → 点击带有面具logo右边的<span style="color:red;">“安装” → “选择并修补一个文件” → “选择并修补一个文件”</span> → 等待Magisk修补完成。**
+3. **修补生成的文件`magisk_patched-xxx.img`在 <span style="color:red;">Download</span>目录里。**
 <figure>
 <img src="/images/Post/Root/1.jpg" width="1200px" high="1200px" style="margin:0 auto;">
 <figcaption style="text-align:center;">修补boot.img</figcaption>
 <figure>
 
-4. **手机插电脑，打开<span style="color:red;">传输文件</span>模式，打开 Download 目录，把<span style="color:red;">magisk_patched-xxx.img</span> 复制到ADB文件夹内**。
+4. **手机插电脑，打开<span style="color:red;">传输文件</span>模式，打开 Download 目录，把`magisk_patched-xxx.img` 复制到ADB文件夹内**。
 
 <figure>
 <img src="/images/Post/Root/2.jpg" width="500px" high="500px" style="margin:0 auto;">
@@ -64,13 +64,13 @@ draft: false
 </figure>
 
 ## 刷入Magisk修补的Boot
-1. **在开机状态下，打开<span style="color:red;">ADB工具</span>输入<span style="color:red;">adb devices</span>手机是否连接到电脑，确认连接到电脑后，再次输入<span style="color:red;">adb reboot fastboot</span>。**
+1. **在开机状态下，打开<span style="color:red;">ADB工具</span>输入`adb devices`手机是否连接到电脑，确认连接到电脑后，再次输入`adb reboot fastboot`。**
 <figure>
 <img src="/images/Post/Root/3.jpg" width="500px" high="500px" style="margin:0 auto;">
 <figcaption style="text-align:center;">进入Fastboot</figcaption>
 </figure>
 
-2. **在<span style="color:red;">adb工具</span>里输入下面的刷入命令，<span style="color:red;">注意别刷错分区</span>magisk.img每次修补生成的名字都不一样，使用的时候请输入生成的名字**。
+2. **在<span style="color:red;">adb工具</span>里输入下面的刷入命令，<span style="color:red;">注意别刷错分区</span>`magisk.img`每次修补生成的名字都不一样，使用的时候请输入生成的名字**。
 
 >[!TIP]
 **`fastboot flash init_boot magisk_patched-xxx.img` 或者 `fastboot flash boot magisk_patched-xxx.img`** </br>
@@ -91,11 +91,11 @@ draft: false
 ---
 
 # 刷入后开机卡住了，该怎么办
-- **刷入 <span style="color:red;">magisk.img</span> 不能开机，可以把前面提取的 <span style="color:red;">boot.img（出厂安卓12以下）</span>，<span style="color:red;">init_boot.img（出厂安卓13以上）</span>通过 fastboot刷回去，恢复<span style="color:red;">原版 boot.img，init_boot</span>一般都能正常开机！<span style="color:red;">init_boot.img和boot.img 保留一份在电脑</span>，避免出问题了可以自救下还原**。  
+- **刷入`magisk.img`不能开机，可以把前面提取的 `boot.img`<span style="color:red;">（出厂安卓12以下）</span>，`init_boot.img`<span style="color:red;">（出厂安卓13以上）</span>通过 fastboot刷回去，恢复<span style="color:red;">原版 </span>`boot.img`，`init_boot`一般都能正常开机！`init_boot.img`和`boot.img` <span style="color:red;">保留</span>一份在电脑，避免出问题了可以自救下还原**。  
 
->[!NOTE]**格式（高亮部分替换）：**</br>
-**fastboot flash boot `boot.img`**</br>
-**fastboot flash init_boot `init_boot.img`**
+>[!NOTE]**格式：**</br>
+**`fastboot flash boot boot.img`**</br>
+**`fastboot flash init_boot init_boot.img`**
 
 ---
 

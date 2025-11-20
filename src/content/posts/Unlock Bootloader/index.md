@@ -27,7 +27,7 @@ draft: false
 ---
 # 一加手机
 ## 前期准备
-1. **在设置上点 “关于本机”**。  
+1. **在设置上点“关于本机”**。  
 <figure>
 <img src="/images/Post/Bootloader images/oneplus 1.png" width="300px" high="300px" style="margin:0 auto;">
 <figcaption style="text-align:center;">点击“关于本机”</figcaption>
@@ -52,10 +52,10 @@ draft: false
 **2. 确认连接到电脑后，输入以下adb命令：</br> `adb reboot fastboot`**</br>
 **3. 进入fastboot后输入以下命令：</br> `fastboot flashing unlock`**
 
->[!WARNING] **这时候会弹出一大串英文，用上下音量键摁动中选择 “UNLOCK THE BOOTLOADER” 按电源键确认，完成解锁操作。之后手机全部清除数据重启。**
+>[!WARNING] **这时候会弹出一大串英文，用上下音量键摁动中选择 `UNLOCK THE BOOTLOADER` 按电源键确认，完成解锁操作。之后手机全部清除数据重启。**
 <figure>
 <img src="/images/Post/Bootloader images/oneplus 4.png" width="800px" high="800px" style="margin:0 auto;">
-<figcaption style="text-align:center;"> 选中UNLOCK THE BOOTLOADER</figcaption>
+<figcaption style="text-align:center;">如图所示</figcaption>
 </figure>
 
 ---
@@ -131,4 +131,4 @@ draft: false
 </figure>
 
 # 顺利完成Bootloader解锁后如何Root?
-<a href="https://zuoyanblogs.xyz/posts/andriodrootguide/" target="_blank">链接：安卓系统如何获得Root权限</a>
+<a href="https://zuoyanblogs.xyz/posts/android-root-guide/" target="_blank">链接：Android系统如何获得Root权限</a>

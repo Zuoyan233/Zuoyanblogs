@@ -1,6 +1,6 @@
 {
 	"title": "打赏支持",
-	"hidden":false,
+	"hidden":true,
 	"description": "这是一个打赏通道，助力打造更优质内容，随便金额都可以。",
 	"date": "2025-10-29",
 	"location": "local",

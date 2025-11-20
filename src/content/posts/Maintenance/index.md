@@ -74,4 +74,4 @@ lang: ''
 
 ---
 # 维护包下载链接
-> [!TIP] <a href="https://pan.baidu.com/s/10FEga-vO9sleGkzGH18sgQ?pwd=8g2n" target="_blank">点击这里下载维护包（百度网盘）</a>
+<a href="https://pan.baidu.com/s/10FEga-vO9sleGkzGH18sgQ?pwd=8g2n" target="_blank">链接：点击下载维护包（百度网盘）</a>

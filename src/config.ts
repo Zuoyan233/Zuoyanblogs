@@ -110,7 +110,7 @@ export const siteConfig: SiteConfig = {
 		carousel: {
 			enable: true, // 为 true 时：为多张图片启用轮播。为 false 时：从数组中随机显示一张图片
 
-			interval: 5, // 轮播间隔时间（秒）
+			interval: 6, // 轮播间隔时间（秒）
 		},
 
 		waves: {
@@ -133,16 +133,21 @@ export const siteConfig: SiteConfig = {
 			title: "Welcome Home!", // 主页横幅主标题
 
 			subtitle: [
-				"2333的历史，你知道不？",
-				"原神？ 启动！",
+				"永远相信美好的事情即将发生",
+				"2333",
+				"曲对币有",
+				"前方是一方通行",
+				"这么可爱一定是男孩子",
+				"注入灵魂",
+				"安全裤是人类史上最差的发明，没有之一",
 				"小破站 乾杯 - ( ゜- ゜)つロ",
 			],
 			typewriter: {
 				enable: true, // 启用副标题打字机效果
 
-				speed: 100, // 打字速度（毫秒）
-				deleteSpeed: 100, // 删除速度（毫秒）
-				pauseTime: 3000, // 完全显示后的暂停时间（毫秒）
+				speed: 90, // 打字速度（毫秒）
+				deleteSpeed: 90, // 删除速度（毫秒）
+				pauseTime: 6000, // 完全显示后的暂停时间（毫秒）
 			},
 		},
 
@@ -186,27 +191,27 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 	enable: true, // 启用全屏壁纸功能,非Banner模式下生效
 	src: {
 		desktop: [
-			"/assets/desktop-banner/d0.png",
-			"/assets/desktop-banner/d1.webp",
-			"/assets/desktop-banner/d2.png",
-			"/assets/desktop-banner/d3.png",
-			"/assets/desktop-banner/d4.png",
+			"/assets/desktop-banner/d0.jpg",
+			"/assets/desktop-banner/d1.jpg",
+			"/assets/desktop-banner/d2.jpg",
+			"/assets/desktop-banner/d3.jpg",
+			"/assets/desktop-banner/d4.jpg",
+			"/assets/desktop-banner/d5.jpg",
+			"/assets/desktop-banner/d6.jpg",
 		], // 桌面横幅图片
 		mobile: [
-			"/assets/mobile-banner/m1.webp",
-			"/assets/mobile-banner/m2.webp",
-			"/assets/mobile-banner/m3.webp",
-			"/assets/mobile-banner/m4.webp",
-			"/assets/mobile-banner/m5.webp",
-			"/assets/mobile-banner/m6.webp",
-			"/assets/mobile-banner/m7.webp",
-			"/assets/mobile-banner/m8.webp",
+			"/assets/mobile-banner/m1.jpg",
+			"/assets/mobile-banner/m2.jpg",
+			"/assets/mobile-banner/m3.jpg",
+			"/assets/mobile-banner/m4.jpg",
+			"/assets/mobile-banner/m5.jpg",
+			"/assets/mobile-banner/m6.jpg",
 		], // 移动横幅图片
 	}, // 使用本地横幅图片
 	position: "center", // 壁纸位置，等同于 object-position
 	carousel: {
 		enable: true, // 启用轮播
-		interval: 3, // 轮播间隔时间（秒）
+		interval: 6, // 轮播间隔时间（秒）
 	},
 	zIndex: -1, // 层级，确保壁纸在背景层
 	opacity: 0.8, // 壁纸透明度
@@ -288,7 +293,7 @@ export const profileConfig: ProfileConfig = {
 	bio: "世界这么大，我想去看看",
 	typewriter: {
 		enable: true, // 启用个人简介打字机效果
-		speed: 100, // 打字速度（毫秒）
+		speed: 90, // 打字速度（毫秒）
 	},
 	links: [
 		{
