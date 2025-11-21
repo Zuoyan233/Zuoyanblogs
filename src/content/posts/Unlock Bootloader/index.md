@@ -131,4 +131,4 @@ draft: false
 </figure>
 
 # 顺利完成Bootloader解锁后如何Root?
-<a href="https://zuoyanblogs.xyz/posts/android-root-guide/" target="_blank">链接：Android系统如何获得Root权限</a>
+<a href="https://zuoyanblogs.pages.dev/posts/android-root-guide/" target="_blank">链接：Android系统如何获得Root权限</a>

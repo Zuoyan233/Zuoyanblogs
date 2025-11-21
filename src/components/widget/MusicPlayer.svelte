@@ -52,9 +52,9 @@ let showError = false;
 
 // 当前歌曲信息
 let currentSong = {
-	title: "示例歌曲",
-	artist: "示例艺术家",
-	cover: "/favicon/favicon-light-192.png",
+	title: "Song",
+	artist: "Artist",
+	cover: "/favicon/Vinyl record.ico",
 	url: "",
 	duration: 0,
 };

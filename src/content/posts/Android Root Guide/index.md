@@ -13,7 +13,7 @@ draft: false
 
 ---
 # 刷机须知
-1. **请确保你的手机已经解锁Bootloader，才能进行Root刷入，不知道什么是Bootloader或者不知道如何解锁<a href="https://zuoyanblogs.xyz/posts/unlock-bootloader/" target="_blank">点这里教你解锁手机Bootloader</a>**。
+1. **请确保你的手机已经解锁Bootloader，才能进行Root刷入，不知道什么是Bootloader或者不知道如何解锁<a href="https://zuoyanblogs.pages.dev/posts/unlock-bootloader/" target="_blank">点这里教你解锁手机Bootloader</a>**。
 2. **准备一根具有<span style="color:red;">USB传输数据功能的线</span>，建议使用<span style="color:red;">A to C数据线</span>，连接更稳定，准备ADB调试工具，刷入分区会用到，没下载的先下载ADB调试工具<a href="https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn" target="_blank">Android SDK Platform-Tools</a>**。
 3. **在进行任何操作前，请备份好你的数据，刷机后，造成闪存、主板或其他硬件损坏的，售后视情况<span style="color:red;">有权拒绝保修</span>，如果是造成系统、黑屏或其他软件故障的，售后可进行<span style="color:red;">保内恢复处理</span>**。    
 

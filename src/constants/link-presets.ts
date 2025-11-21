@@ -13,6 +13,11 @@ export const LinkPresets: { [key in LinkPreset]: NavBarLink } = {
 		url: "/about/",
 		icon: "material-symbols:person",
 	},
+	[LinkPreset.Reward]: {
+		name: i18n(I18nKey.reward),
+		url: "/reward/",
+		icon: "material-symbols:money",
+	},
 	[LinkPreset.Archive]: {
 		name: i18n(I18nKey.archive),
 		url: "/archive/",

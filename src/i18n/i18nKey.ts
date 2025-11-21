@@ -1,6 +1,7 @@
 enum I18nKey {
 	home = "home",
 	about = "about",
+	reward = "reward",
 	archive = "archive",
 	search = "search",
 	other = "other",
@@ -48,7 +49,7 @@ enum I18nKey {
 	animeSubtitle = "animeSubtitle",
 	animeTotal = "animeTotal",
 	animeWatching = "animeWatching",
-	animeCompleted="animeCompleted",
+	animeCompleted = "animeCompleted",
 	animeStatusWatching = "animeStatusWatching",
 	animeStatusCompleted = "animeStatusCompleted",
 	animeStatusPlanned = "animeStatusPlanned",
@@ -171,7 +172,7 @@ enum I18nKey {
 	timelineWorkPositions = "timelineWorkPositions",
 	timelineCurrentRole = "timelineCurrentRole",
 	timelineEmployed = "timelineEmployed",
-	timelineAvailable="timelineAvailable",
+	timelineAvailable = "timelineAvailable",
 
 	// 密码保护
 	passwordProtected = "passwordProtected",

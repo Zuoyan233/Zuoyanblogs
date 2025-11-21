@@ -260,7 +260,7 @@ export const navBarConfig: NavBarConfig = {
 			name: "关于",
 			url: "/content/",
 			icon: "material-symbols:info",
-			children: [LinkPreset.About, LinkPreset.Friends],
+			children: [LinkPreset.About,LinkPreset.Reward,LinkPreset.Friends],
 		},
 		{
 			name: "其它",
@@ -348,7 +348,7 @@ export const commentConfig: CommentConfig = {
 
 export const announcementConfig: AnnouncementConfig = {
 	title: "公告", // 公告标题
-	content: "欢迎来到我的左颜的博客! 网站可能未完善，请谅解。", // 公告内容
+	content: "欢迎来到zuoyan博客! 聚集经验知识的后花园", // 公告内容
 	closable: true, // 允许用户关闭公告
 	link: {
 		enable: true, // 启用链接

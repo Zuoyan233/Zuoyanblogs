@@ -1,10 +1,9 @@
 ## Zuoyan博客项目是基于[Mizuki](https://github.com/matsuzaka-yuki/mizuki) 主题框架开源项目二次魔改
-- **如果网站内容认为有帮助，请为支持zuoyan网站开发，<a href="/albums/Reword/"><span style="color:red;">点这里打赏我们</span></a>&nbsp;助力打造更优质内容。**
 ::github{repo="matsuzaka-yuki/Mizuki"}
 ::github{repo="Zuoyan233/Zuoyanblogs"}
 
----
-## 🌟为什么要开创博客？
+--- 
+## 🌟为什么要开发博客？
 
 - **我想为自己记录生活每个点滴，开创博客记录生活**。
 
