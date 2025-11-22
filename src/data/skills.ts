@@ -22,8 +22,7 @@ export const skillsData: Skill[] = [
 	{
 		id: "javascript",
 		name: "JavaScript",
-		description:
-			"Modern JavaScript development, including ES6+ syntax, asynchronous programming, and modular development.",
+		description: "现代 JavaScript 开发，包括 ES6+ 语法、异步编程和模块化开发。",
 		icon: "logos:javascript",
 		category: "frontend",
 		level: "intermediate",
@@ -35,7 +34,7 @@ export const skillsData: Skill[] = [
 		id: "typescript",
 		name: "TypeScript",
 		description:
-			"A type-safe superset of JavaScript that enhances code quality and development efficiency.",
+			"JavaScript 的一个类型安全的超集，可以提高代码质量和开发效率。",
 		icon: "logos:typescript-icon",
 		category: "frontend",
 		level: "intermediate",
@@ -46,8 +45,7 @@ export const skillsData: Skill[] = [
 	{
 		id: "vue",
 		name: "Vue.js",
-		description:
-			"A progressive JavaScript framework that is easy to learn and use, suitable for rapid development.",
+		description: "一个易于学习和使用的渐进式 JavaScript 框架，适合快速开发。",
 		icon: "logos:vue",
 		category: "frontend",
 		level: "beginner",
@@ -58,8 +56,7 @@ export const skillsData: Skill[] = [
 	{
 		id: "astro",
 		name: "Astro",
-		description:
-			"A modern static site generator supporting multi-framework integration and excellent performance.",
+		description: "一款支持多框架集成且性能卓越的现代化静态网站生成器。",
 		icon: "logos:astro-icon",
 		category: "frontend",
 		level: "intermediate",
@@ -70,8 +67,7 @@ export const skillsData: Skill[] = [
 	{
 		id: "sass",
 		name: "Sass/SCSS",
-		description:
-			"A CSS preprocessor providing advanced features like variables, nesting, and mixins.",
+		description: "一款 CSS 预处理器，提供变量、嵌套和 mixin 等高级功能。",
 		icon: "logos:sass",
 		category: "frontend",
 		level: "intermediate",
@@ -85,7 +81,7 @@ export const skillsData: Skill[] = [
 		id: "nodejs",
 		name: "Node.js",
 		description:
-			"A JavaScript runtime based on Chrome V8 engine, used for server-side development.",
+			"基于 Chrome V8 引擎的 JavaScript 运行时环境，用于服务器端开发。",
 		icon: "logos:nodejs-icon",
 		category: "backend",
 		level: "intermediate",
@@ -96,8 +92,7 @@ export const skillsData: Skill[] = [
 	{
 		id: "csharp",
 		name: "C#",
-		description:
-			"A modern object-oriented programming language developed by Microsoft, suitable for the .NET ecosystem.",
+		description: "由微软开发的现代面向对象编程语言，适用于 .NET 生态系统。",
 		icon: "devicon:csharp",
 		category: "backend",
 		level: "intermediate",
@@ -109,7 +104,7 @@ export const skillsData: Skill[] = [
 		id: "cpp",
 		name: "C++",
 		description:
-			"A high-performance systems programming language widely used in game development, system software, and embedded development.",
+			"一种高性能系统编程语言，广泛应用于游戏开发、系统软件和嵌入式开发。",
 		icon: "logos:c-plusplus",
 		category: "backend",
 		level: "intermediate",
@@ -120,8 +115,7 @@ export const skillsData: Skill[] = [
 	{
 		id: "php",
 		name: "PHP",
-		description:
-			"A widely-used server-side scripting language, particularly suitable for web development.",
+		description: "一种广泛使用的服务器端脚本语言，尤其适用于 Web 开发。",
 		icon: "logos:php",
 		category: "backend",
 		level: "intermediate",
@@ -135,7 +129,7 @@ export const skillsData: Skill[] = [
 		id: "mysql",
 		name: "MySQL",
 		description:
-			"The world's most popular open-source relational database management system, widely used in web applications.",
+			"全球最流行的开源关系数据库管理系统，广泛应用于 Web 应用程序。",
 		icon: "logos:mysql-icon",
 		category: "database",
 		level: "advanced",
@@ -146,8 +140,7 @@ export const skillsData: Skill[] = [
 	{
 		id: "mongodb",
 		name: "MongoDB",
-		description:
-			"A document-oriented NoSQL database with a flexible data model.",
+		description: "一款面向文档的NoSQL数据库，具有灵活的数据模型。",
 		icon: "logos:mongodb-icon",
 		category: "database",
 		level: "intermediate",
@@ -159,8 +152,7 @@ export const skillsData: Skill[] = [
 	{
 		id: "git",
 		name: "Git",
-		description:
-			"A distributed version control system, an essential tool for code management and team collaboration.",
+		description: "分布式版本控制系统，是代码管理和团队协作的重要工具。",
 		icon: "logos:git-icon",
 		category: "tools",
 		level: "intermediate",
@@ -170,8 +162,7 @@ export const skillsData: Skill[] = [
 	{
 		id: "vscode",
 		name: "VS Code",
-		description:
-			"A lightweight but powerful code editor with a rich plugin ecosystem.",
+		description: "一款轻量级但功能强大的代码编辑器，拥有丰富的插件生态系统。",
 		icon: "logos:visual-studio-code",
 		category: "tools",
 		level: "expert",
@@ -182,7 +173,7 @@ export const skillsData: Skill[] = [
 		id: "webstorm",
 		name: "WebStorm",
 		description:
-			"A professional JavaScript and web development IDE developed by JetBrains with intelligent code assistance.",
+			"JetBrains 开发的专业 JavaScript 和 Web 开发 IDE，具有智能代码辅助功能。",
 		icon: "logos:webstorm",
 		category: "tools",
 		level: "beginner",
@@ -193,8 +184,7 @@ export const skillsData: Skill[] = [
 	{
 		id: "apache",
 		name: "Apache HTTP Server",
-		description:
-			"The world's most popular web server software, a stable and reliable HTTP server.",
+		description: "全球最流行的网络服务器软件，稳定可靠的HTTP服务器。",
 		icon: "logos:apache",
 		category: "tools",
 		level: "intermediate",
@@ -206,7 +196,7 @@ export const skillsData: Skill[] = [
 		id: "tomcat",
 		name: "Apache Tomcat",
 		description:
-			"A Java Servlet container and web server, the standard deployment environment for Java web applications.",
+			"Java Servlet 容器和 Web 服务器，是 Java Web 应用程序的标准部署环境。",
 		icon: "logos:tomcat",
 		category: "tools",
 		level: "intermediate",
@@ -217,8 +207,7 @@ export const skillsData: Skill[] = [
 	{
 		id: "linux",
 		name: "Linux",
-		description:
-			"An open-source operating system, the preferred choice for server deployment and development environments.",
+		description: "开源操作系统，是服务器部署和开发环境的首选。",
 		icon: "logos:linux-tux",
 		category: "tools",
 		level: "intermediate",
@@ -229,7 +218,7 @@ export const skillsData: Skill[] = [
 	{
 		id: "photoshop",
 		name: "Photoshop",
-		description: "Professional image editing and design software.",
+		description: "专业图像编辑和设计软件。",
 		icon: "logos:adobe-photoshop",
 		category: "tools",
 		level: "intermediate",
