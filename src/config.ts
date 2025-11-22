@@ -131,13 +131,13 @@ export const siteConfig: SiteConfig = {
 
 		waves: {
 			enable: true, // 是否启用水波纹效果(这个功能比较吃性能)
-			performanceMode: false, // 性能模式：减少动画复杂度(性能提升40%)
+			performanceMode: true, // 性能模式：减少动画复杂度(性能提升40%)
 			mobileDisable: false, // 移动端禁用
 		},
 
 		// PicFlow API支持(智能图片API)
 		imageApi: {
-			enable: false, // 启用图片API
+			enable: false, // 启用图片APItrue
 			url: "http://domain.com/api_v2.php?format=text&count=4", // API地址，返回每行一个图片链接的文本
 		},
 		// 这里需要使用PicFlow API的Text返回类型,所以我们需要format=text参数
@@ -150,13 +150,13 @@ export const siteConfig: SiteConfig = {
 
 			subtitle: [
 				"永远相信美好的事情即将发生",
-				"2333",
-				"曲对币有",
+				"你知道“2333”是什么意思",
 				"前方是一方通行",
+				"前方高能",	
 				"这么可爱一定是男孩子",
 				"注入灵魂",
 				"安全裤是人类史上最差的发明，没有之一",
-				"小破站 乾杯 - ( ゜- ゜)つロ",
+				"Zuoyan博客站 乾杯 - ( ゜- ゜)つロ",
 			],
 			typewriter: {
 				enable: true, // 启用副标题打字机效果
@@ -175,13 +175,13 @@ export const siteConfig: SiteConfig = {
 		},
 
 		navbar: {
-			transparentMode: "full", // 导航栏透明模式："semi" 半透明加圆角，"full" 完全透明，"semifull" 动态透明
+			transparentMode: "semifull", // 导航栏透明模式："semi" 半透明加圆角，"full" 完全透明，"semifull" 动态透明
 		},
 	},
 	toc: {
 		enable: true, // 启用目录功能
-		depth: 3, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
-		useJapaneseBadge: true, // 使用日语假名标记（あいうえお...）代替数字，开启后会将 1、2、3... 改为 あ、い、う...
+		depth: 2, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
+		useJapaneseBadge: false, // 使用日语假名标记（あいうえお...）代替数字，开启后会将 1、2、3... 改为 あ、い、う...
 	},
 	generateOgImages: false, // 启用生成OpenGraph图片功能,注意开启后要渲染很长时间，不建议本地调试的时候开启
 	favicon: [
@@ -362,11 +362,11 @@ export const commentConfig: CommentConfig = {
 };
 
 export const announcementConfig: AnnouncementConfig = {
-	title: "公告", // 公告标题
-	content: "欢迎来到Zuoyan博客! 聚集经验知识的后花园", // 公告内容
+	title: "", // 公告标题
+	content: "欢迎来到Zuoyan研究部博客! 聚集经验知识的后花园", // 公告内容
 	closable: true, // 允许用户关闭公告
 	link: {
-		enable: true, // 启用链接
+		enable: false, // 启用链接
 		text: "查看更多", // 链接文本
 		url: "/about/", // 链接 URL
 		external: false, // 内部链接
@@ -378,7 +378,7 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	mode: "meting", // 音乐播放器模式，可选 "local" 或 "meting"
 	meting_api:
 		"https://www.bilibili.uno/api?server=:server&type=:type&id=:id&auth=:auth&r=:r", // Meting API 地址
-	id: "14164869977", // 歌单ID
+	id: "8887970739", // 歌单ID
 	server: "netease", // 音乐源服务器。有的meting的api源支持更多平台,一般来说,netease=网易云音乐, tencent=QQ音乐, kugou=酷狗音乐, xiami=虾米音乐, baidu=百度音乐
 	type: "playlist", // 播单类型
 };
@@ -561,9 +561,9 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 };
 
 export const sakuraConfig: SakuraConfig = {
-	enable: false, // 默认关闭樱花特效
+	enable:true, // 默认关闭樱花特效
 	sakuraNum: 10, // 樱花数量
-	limitTimes: -1, // 樱花越界限制次数，-1为无限循环
+	limitTimes: -1, // 樱花越界限制true次数，-1为无限循环
 	size: {
 		min: 0.5, // 樱花最小尺寸倍数
 		max: 1.1, // 樱花最大尺寸倍数
@@ -597,12 +597,12 @@ export const pioConfig: import("./types/config").PioConfig = {
 	mode: "draggable", // 默认为可拖拽模式
 	hiddenOnMobile: true, // 默认在移动设备上隐藏
 	dialog: {
-		welcome: "欢迎来到Zuoyan的博客网站!", // 欢迎词
+		welcome: "欢迎来到Zuoyan研究部博客网站!", // 欢迎词
 		touch: ["你在干什么?", "不要碰我!", "HENTAI!", "你不要玷污我了!"], // 触摸提示
 		home: "点击这里返回主页!", // 首页提示
-		skin: ["你有看到我的新服装了吗?", "这看起来蛮好看~"], // 换装提示
+		skin: ["你有看到我的新服装了吗?", "这看起来很好看~"], // 换装提示
 		close: "QWQ 下次再见了~", // 关闭提示
-		link: "https://space.bilibili.com/352580971", // 关于链接
+		link: "", // 关于链接
 	},
 };
 
