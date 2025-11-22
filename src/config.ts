@@ -145,8 +145,8 @@ export const siteConfig: SiteConfig = {
 			typewriter: {
 				enable: true, // 启用副标题打字机效果
 
-				speed: 90, // 打字速度（毫秒）
-				deleteSpeed: 90, // 删除速度（毫秒）
+				speed: 100, // 打字速度（毫秒）
+				deleteSpeed: 80, // 删除速度（毫秒）
 				pauseTime: 6000, // 完全显示后的暂停时间（毫秒）
 			},
 		},
@@ -167,14 +167,14 @@ export const siteConfig: SiteConfig = {
 		depth: 3, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
 	},
 	generateOgImages: false, // 启用生成OpenGraph图片功能,注意开启后要渲染很长时间，不建议本地调试的时候开启
-	favicon: [
-		// 留空以使用默认 favicon
-		{
-			src: "/favicon/favicon.ico", // 图标文件路径
-			//theme: "light", // 可选，指定主题 'light' | 'dark'
-			//sizes: "32x32", // 可选，图标大小
-		},
-	],
+	 favicon: [
+	// 	// 留空以使用默认 favicon
+	// 	{
+	// 		src: "/favicon/favicon.ico", // 图标文件路径
+	// 		theme: "light", // 可选，指定主题 'light' | 'dark'
+	// 		sizes: "64x64", // 可选，图标大小
+	// 	},
+    ],
 
 	// 字体配置
 	font: {
@@ -293,7 +293,7 @@ export const profileConfig: ProfileConfig = {
 	bio: "世界这么大，我想去看看",
 	typewriter: {
 		enable: true, // 启用个人简介打字机效果
-		speed: 90, // 打字速度（毫秒）
+		speed: 100, // 打字速度（毫秒）
 	},
 	links: [
 		{
