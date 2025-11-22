@@ -6,4 +6,9 @@ export const defaultFavicons: Favicon[] = [
 		theme: "light",
 		sizes: "64x64",
 	},
+	{
+		src: "/favicon/favicon.ico",
+		theme: "dark",
+		sizes: "64x64",
+	},
 ];

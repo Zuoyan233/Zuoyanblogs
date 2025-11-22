@@ -15,7 +15,7 @@ declare global {
 				}>;
 			}>;
 		};
-        
+
 		translate?: {
 			service: {
 				use: (service: string) => void;
@@ -39,7 +39,8 @@ declare global {
 			};
 			execute: () => void;
 		};
-		
+
+
 		mobileTOCInit?: () => void;
 	}
 }

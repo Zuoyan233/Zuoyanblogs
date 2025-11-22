@@ -1,9 +1,24 @@
 # 🌸 Mizuki  
 ![Node.js >= 20](https://img.shields.io/badge/node.js-%3E%3D20-brightgreen) 
 ![pnpm >= 9](https://img.shields.io/badge/pnpm-%3E%3D9-blue) 
-![Astro](https://img.shields.io/badge/Astro-5.12.8-orange)
+![Astro](https://img.shields.io/badge/Astro-5.15.3-orange)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+![Mizuki Preview](./README.webp)
+
+<table>
+  <tr>
+    <td><img alt="" src="docs/image/1.webp"></td>
+    <td><img alt="" src="docs/image/2.webp"></td>
+    <td><img alt="" src="docs/image/3.webp"></td>
+  <tr>
+  <tr>
+    <td><img alt="" src="docs/image/4.webp"></td>
+    <td><img alt="" src="docs/image/5.webp"></td>
+    <td><img alt="" src="docs/image/6.webp"></td>
+  <tr>
+</table>
 
 一个现代化、功能丰富的静态博客模板，基于 [Astro](https://astro.build) 构建，具有先进的功能和精美的设计。
 
@@ -11,36 +26,10 @@
 [**📝 用户文档**](https://docs.mizuki.mysqil.com/)
 
 🌏 README 语言
-[**中文**](./详细文档.zh.md)
-
-
-## 🆕 v6.0 版本更新
-- **页面重构**：完全重构了番剧、时间线、项目、技能、相册、友情链接、日记、关于页面，提升性能和用户体验。
-- **页面开关功能**：添加了页面关闭功能和SEO优化模块，可以控制特色页面的显示与隐藏。
-- **新的网格布局**：添加了新的网格文章列表布局，改善内容展示效果。
-- **水波纹管理**：添加了水波纹管理模块，增强视觉交互效果。
-
-## 🆕 v5.0 版本更新
-- **Pio 看板娘集成**：集成了 Pio 看板娘，提供可爱的互动角色，增强用户互动体验。
-- **高度可配置**：支持在 `src/config.ts` 中进行详细配置，包括模型路径、位置、尺寸、对话内容等，满足个性化需求。
-- **无刷新跳转**：看板娘的返回首页功能现在使用主题自带的 Swup 无刷新跳转，提供更流畅、无缝的页面切换体验。
-
-## 🆕 v4.6 版本更新
-- **番剧页面：** 重构了更可爱好看的番剧页面，包括番剧列表、番剧详情和番剧时间轴。
-- **相册页面：** 重构了相册页面,使用分页+文件夹数据索引方案
-- **全新的动画：** 使用了全新的动画组件，使页面更加流畅和美观
-- **图片API的支持** 支持图片API，可以快速获取图片信息,使用(PicFlow API项目)[https://github.com/matsuzaka-yuki/PicFlow-API]
-
-## 🆕 v3.4 版本更新
-- **新增页面：** 添加了项目展示、技能展示和时间线专属页面，用于展示您的工作、专业技能和成长历程。
-- **下拉菜单修复：** 解决了下拉菜单点击时出现边框轮廓的问题，提升了界面一致性。
-- **搜索功能优化：** 增强了搜索功能的性能和准确性。
-- **底部HTML注入：** 引入了新功能，允许在页面底部注入自定义HTML内容，提供更大的灵活性。
-
-
-## 🆕 v3.3 版本更新
-- **Mermaid 语法支持：** 添加了对 Mermaid 图表语法的支持，现在可以在 Markdown 中直接嵌入流程图、序列图、甘特图等。
-- **Umami 访问统计：** 添加了对 Umami 访问统计的支持，可以轻松集成网站访问数据分析。
+[**English**](./README.md) /
+[**中文**](./README.zh.md) /
+[**日本語**](./docs/README.ja.md) /
+[**中文繁体**](./docs/README.tw.md) /
 
 ![Configuration](configuration.svg)
 
@@ -78,12 +67,6 @@
 - [x] 全设备响应式设计
 - [x] 使用 JetBrains Mono 字体的优美排版
 
-### 🌐 国际化支持
-- [x] **多语言支持**，实时翻译功能
-- [x] **自动语言检测**，基于用户偏好
-- [x] **客户端翻译**，由 Edge Translate 驱动
-- [x] 支持 10+ 种语言（中文、英文、日文、韩文、西班牙文等）
-
 ### 🔍 内容与搜索
 - [x] 基于 [Pagefind](https://pagefind.app/) 的高级搜索功能
 - [x] [增强的 Markdown 功能](#-markdown-扩展语法)，支持语法高亮
@@ -100,6 +83,12 @@
 - [x] **日记页面** - 分享生活瞬间，类似社交媒体
 - [x] **归档页面** - 有序的文章时间线视图
 - [x] **关于页面** - 可自定义的个人介绍
+
+### 🌐 国际化支持
+- [x] **多语言支持**，实时翻译功能
+- [x] **自动语言检测**，基于用户偏好
+- [x] **客户端翻译**，由 Edge Translate 驱动
+- [x] 支持 10+ 种语言（中文、英文、日文、韩文、西班牙文等）
 
 ### 🛠 技术特性
 - [x] **增强代码块**，基于 [Expressive Code](https://expressive-code.com/)
@@ -132,6 +121,7 @@
    - 编辑 `src/config.ts` 自定义博客设置
    - 更新站点信息、主题色彩、横幅图片和社交链接
    - 配置特色页面功能
+   - (可选) 配置内容仓库分离 - 见 [内容仓库配置](#-代码内容分离可选)
 
 4. **启动开发服务器：**
    ```bash
@@ -155,9 +145,18 @@
 - **GitHub Pages：** 使用包含的 GitHub Actions 工作流
 - **Cloudflare Pages：** 连接您的仓库
 
-- **环境变量配置：** 如果你需要使用Umami统计，推荐在部署平台设置环境变量 `UMAMI_API_KEY` 为您的 Umami API 密钥，或者直接在配置文件中修改
+- **环境变量配置（可选）：** 在 `.env` 文件或部署平台配置
 
-部署前，请在 `astro.config.mjs` 中更新 `site` URL。
+```bash
+# Umami API 密钥，用于访问 Umami 统计数据
+# 如果在 config.ts 中启用了 Umami，建议在此配置 API 密钥
+UMAMI_API_KEY=your_umami_api_key_here
+# bcrypt 盐值轮数（10-14 推荐，默认 12）
+BCRYPT_SALT_ROUNDS=12
+```
+
+部署前，请在 `src/config.ts` 中更新 `siteURL`。
+**不建议**将 `.env` 文件提交到 Git，`.env` 应该仅在本地调试或构建使用。若要将项目在云平台部署，建议通过平台上的 `环境变量` 配置传入。
 
 ## 📝 文章前言格式
 
@@ -265,10 +264,49 @@ export const siteConfig: SiteConfig = {
 
 ### 📱 特色页面配置
 
-- **追番页面：** 在 `src/pages/anime.astro` 中编辑动画列表
+- **追番页面：** 在 `src/pages/anime.ts` 中编辑动画列表
 - **友链页面：** 在 `src/content/spec/friends.md` 中编辑朋友数据
-- **日记页面：** 在 `src/pages/diary.astro` 中编辑动态
-- **关于页面：** 在 `src/content/spec/about.md` 中编辑内容
+- **日记页面：** 在 `src/data/diary.ts` 中编辑动态
+- **关于页面：** 在 `src/content/spec/about.md` 中编辑内容anime
+
+### 📦 代码内容分离 (可选)
+
+Mizuki 支持将代码和内容分成两个独立的仓库管理,适合团队协作和大型项目。
+
+**快速选择**:
+
+| 使用场景 | 配置方式 | 适合人群 |
+|---------|---------|---------|
+| 🆕 **本地模式** (默认) | 不配置,直接使用 | 新手、个人博客 |
+| 🔧 **分离模式** | 设置 `ENABLE_CONTENT_SYNC=true` | 团队协作、私有内容 |
+
+**一键启用/禁用**:
+
+```bash
+# 方式 1: 本地模式 (推荐新手)
+# 不创建 .env 文件,直接运行
+pnpm dev
+
+# 方式 2: 内容分离模式
+# 1. 复制配置文件
+cp .env.example .env
+
+# 2. 编辑 .env,启用内容分离
+ENABLE_CONTENT_SYNC=true
+CONTENT_REPO_URL=https://github.com/your-username/Mizuki-Content.git
+
+# 3. 同步内容
+pnpm run sync-content
+```
+
+**功能特性**:
+- ✅ 支持公开和私有仓库 🔐
+- ✅ 一键启用/禁用,无需修改代码
+- ✅ 自动同步,开发前自动拉取最新内容
+
+📖 **详细配置**: [内容分离完整指南](docs/CONTENT_SEPARATION.md)  
+🔄 **迁移教程**: [从单仓库迁移到分离模式](docs/MIGRATION_GUIDE.md)  
+📚 **更多文档**: [文档索引](docs/README.md)
 
 ## ✏️ 贡献
 
@@ -282,7 +320,11 @@ export const siteConfig: SiteConfig = {
 
 ## 📄 许可证
 
-本项目基于 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+本项目基于 Apache 许可证 2.0 - 查看 [LICENSE](LICENSE) 文件了解详情。
+
+### 原始项目许可证
+
+本项目基于 [Fuwari](https://github.com/saicaca/fuwari) 开发，该项目使用 MIT 许可证。根据 MIT 许可证要求，原始版权声明和许可声明已包含在 LICENSE.MIT 文件中。
 
 ## 🙏 致谢
 

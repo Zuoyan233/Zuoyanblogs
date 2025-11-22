@@ -239,7 +239,7 @@ export const skillsData: Skill[] = [
 	},
 ];
 
-// 获取技能统计
+// Get skill statistics
 export const getSkillStats = () => {
 	const total = skillsData.length;
 	const byLevel = {
@@ -259,7 +259,7 @@ export const getSkillStats = () => {
 	return { total, byLevel, byCategory };
 };
 
-// 获取技能种类
+// Get skills by category
 export const getSkillsByCategory = (category?: string) => {
 	if (!category || category === "all") {
 		return skillsData;

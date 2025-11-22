@@ -26,7 +26,7 @@ export const projectsData: Project[] = [
 			"基于Mizuki主题框架开源项目二次魔改, 评论系统, 文章搜索，深色模式等Mizuki的魔改特色功能。",
 		image: "",
 		category: "web",
-		techStack: ["Astro", "TypeScript", "SCSS", "MongoDB"],
+		techStack: ["Astro", "TypeScript", "CSS", "MongoDB"],
 		status: "completed",
 		liveDemo: "https://blog.example.com",
 		sourceCode: "https://github.com/Zuoyan233", // 更改为GitHub链接

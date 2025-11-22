@@ -46,8 +46,7 @@ export const timelineData: TimelineItem[] = [
 	{
 		id: "work",
 		title: "中国邮政",
-		description:
-			"人生第一份工作，7月底最后一天离职后几个月深造自己",
+		description: "人生第一份工作，7月底最后一天离职后几个月深造自己",
 		type: "work",
 		startDate: "2024-11-14",
 		location: "广东-佛山-顺德",
@@ -65,8 +64,7 @@ export const timelineData: TimelineItem[] = [
 	{
 		id: "web-develop",
 		title: "Zuoyan研究部",
-		description:
-			"里程碑：开始基于Misuki开源项目二次开发网站，目前网站成功上线",
+		description: "里程碑：开始基于Misuki开源项目二次开发网站，目前网站成功上线",
 		type: "project",
 		startDate: "2025-10-01",
 		location: "广东-佛山-顺德",
