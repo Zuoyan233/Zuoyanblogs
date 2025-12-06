@@ -1,0 +1,33 @@
+<details>
+  <summary><span style="color: red;">🙋‍♂️有建议？点击这里联系我！🤳</span></summary>
+<hr>
+  <figure style="display:flex;flex-wrap: wrap;justify-content: center;row-gap: 20px;column-gap: 20px;">
+    <img src="/images/about/QQ friend.webp" width="250px" high="250px" >
+    <img src="/images/about/Wechat friend.webp" width="250px" high="250px" >
+  </figure>
+    <figcaption style="text-align:center;">QQ & 微信点击 “扫一扫” 加我好友</figcaption>
+<hr>
+</details>
+
+:::note[关于项目]
+Zuoyanblogs博客项目是基于[Mizuki](https://github.com/matsuzaka-yuki/mizuki)主题框架开源项目二次魔改，如果网站内容认为有帮助，可以<a href="/reward/">奖赏</a>我助力打造更优质内容。
+:::
+
+::github{repo="matsuzaka-yuki/Mizuki"}
+::github{repo="Zuoyan233/Zuoyanblogs"}
+
+--- 
+
+## 🌟为什么要开发博客？
+
+- 我想为自己记录生活每个点滴，开创博客记录生活，大家可能已经发现为什么Zuoyanblogs后面要加个“s”的原因，原因是我想把博客真正成为生活记录的一种方式，抽象的人话来说它就是我生活上的一种“东西”，当然未来可能充满变数，往好的方向来说有可能不止在网站写文章还会对未来网站开发功能，往坏的方向来说可能没钱续费网站域名和网站托管服务器而关闭网站，所以最坏的打算希望不会发生吧😂。
+
+## 🎯下一步有什么打算？
+- 除了在博客上分享日常生活，我未来会对博客分享电脑维护与手机玩机等知识与软件，充分发挥优秀大专毕业生在计算机专业的学习经验用处，为电脑小白少走弯路误区。
+- 未来会对网站进行架构升级，同步架构功能。
+- 偶尔会在博客发发牢骚，不固定发布知识类帖子内容，当然后面会有游戏的游后感帖子，期待一下。
+
+## 🎨暂时没了，有灵感再写一条吧 (:3」∠)
+
+---
+

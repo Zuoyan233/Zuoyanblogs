@@ -1,0 +1,12 @@
+/atom.xml
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET
+  Access-Control-Max-Age: 86400
+
+/rss.xml
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET
+  Access-Control-Max-Age: 86400
+
+/cache-control/*
+  Cache-Control: public, max-age=31536000, immutable
