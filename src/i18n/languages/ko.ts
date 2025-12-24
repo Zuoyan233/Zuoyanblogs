@@ -6,7 +6,7 @@ export const ko: Translation = {
 	[Key.about]: "정보",
 	[Key.archive]: "아카이브",
 	[Key.search]: "검색",
-	[Key.reward]: "보상",
+	[Key.sponsors]: "스폰서",
 	[Key.other]: "기타",
 
 	// 탐색 막대 제목

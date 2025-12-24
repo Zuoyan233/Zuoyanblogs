@@ -6,7 +6,7 @@ export const ja: Translation = {
 	[Key.about]: "概要",
 	[Key.archive]: "アーカイブ",
 	[Key.search]: "検索",
-	[Key.reward]: "リワード",
+	[Key.sponsors]: "スポンサー",
 	[Key.other]: "その他",
 
 	// ナビゲーションバーのタイトル

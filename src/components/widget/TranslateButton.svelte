@@ -130,12 +130,12 @@ onDestroy(() => {
     <!-- 翻译按钮 -->
     <button 
         aria-label="Language Translation" 
-        class="btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90" 
+        class="group btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90 transition-all duration-300 hover:shadow-md" 
         id="translate-switch"
         on:click={togglePanel}
     >
-        <Icon icon="material-symbols:translate" class="text-[1.25rem] transition text-black/75 dark:text-white/75 hover:text-[var(--primary)]" />
-    </button>
+        <Icon icon="material-symbols:translate" class="text-[1.25rem] transition-all duration-200 ease-in-out text-black/75 dark:text-white/75 group-hover:text-[var(--primary)]"/>
+</button>
 
     <!-- 翻译面板 -->
     <div 
@@ -165,17 +165,22 @@ onDestroy(() => {
 {/if}
 
 <style>
+#translate-panel {
+    transform-origin: top right;
+}
+
 .float-panel-closed {
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-10px);
-    transition: all 0.2s ease-out;
+    transform: scaleY(0) scaleX(0.5);
+    transition: all 0.1s ease-out;
 }
 
 #translate-panel:not(.float-panel-closed) {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
+    transform: scaleY(1) scaleX(1);
+    transition: all 0.1s ease-out;
 }
 
 /* 滚动条样式 */

@@ -6,7 +6,7 @@ export const es: Translation = {
 	[Key.about]: "Acerca de",
 	[Key.archive]: "Archivo",
 	[Key.search]: "Buscar",
-	[Key.reward]: "Recompensa",
+	[Key.sponsors]: "Patrocinador",
 	[Key.other]: "Otros",
 
 	// Títulos de la barra de navegación

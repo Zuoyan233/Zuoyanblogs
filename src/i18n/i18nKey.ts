@@ -11,7 +11,7 @@ enum I18nKey {
 	navMy = "navMy",
 	navAbout = "navAbout",
 	navOthers = "navOthers",
-	reward = "reward",
+	sponsors = "sponsor",
 
 	tags = "tags",
 	categories = "categories",
