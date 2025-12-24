@@ -22,8 +22,7 @@ export const projectsData: Project[] = [
 	{
 		id: "zuoyanblog",
 		title: "Zuoyanblogs",
-		description:
-			"基于Mizuki主题框架开源项目二次魔改, 评论系统, 文章搜索，深色模式，国际多语言等Mizuki的魔改特色功能。",
+		description: "左颜研究部 - 与你的相遇就是奇迹 （Astro语言驱动的博客框架）",
 		image: "",
 		category: "web",
 		techStack: ["Astro", "TypeScript", "CSS", "MongoDB", "Svelte"],

@@ -155,7 +155,7 @@ export const siteConfig: SiteConfig = {
 				"这么可爱一定是男孩子",
 				"注入灵魂",
 				"安全裤是人类史上最差的发明，没有之一",
-				"Zuoyan博客站 乾杯 - ( ゜- ゜)つロ",
+				"左颜研究部 乾杯 - ( ゜- ゜)つロ",
 			],
 			typewriter: {
 				enable: true, // 启用副标题打字机效果
@@ -169,7 +169,7 @@ export const siteConfig: SiteConfig = {
 		credit: {
 			enable: true, // 显示横幅图片来源文本
 
-			text: "图片来自 - 搜图神器", // 要显示的来源文本
+			text: "图片来自：搜图神器", // 要显示的来源文本
 			url: "https://www.soutushenqi.com/", // （可选）原始艺术品或艺术家页面的 URL 链接
 		},
 
@@ -179,7 +179,7 @@ export const siteConfig: SiteConfig = {
 	},
 	toc: {
 		enable: true, // 启用目录功能
-		depth: 2, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
+		depth: 3, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
 		useJapaneseBadge: false, // 使用日语假名标记（あいうえお...）代替数字，开启后会将 1、2、3... 改为 あ、い、う...
 	},
 	generateOgImages: false, // 启用生成OpenGraph图片功能,注意开启后要渲染很长时间，不建议本地调试的时候开启
@@ -352,7 +352,7 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 };
 
 export const commentConfig: CommentConfig = {
-	enable: false, // 启用评论功能。当设置为 false 时，评论组件将不会显示在文章区域。
+	enable: true, // 启用评论功能。当设置为 false 时，评论组件将不会显示在文章区域。
 	twikoo: {
 		envId: "https://example-twikoo.top/",
 		lang: "zh_CN", // 设置 Twikoo 评论系统语言为英文
@@ -361,7 +361,7 @@ export const commentConfig: CommentConfig = {
 
 export const announcementConfig: AnnouncementConfig = {
 	title: "", // 公告标题
-	content: "欢迎来到左颜研究部博客! 聚集经验知识的后花园", // 公告内容
+	content: "欢迎来到左颜研究部博客! 聚集经验知识的后花园。", // 公告内容
 	closable: true, // 允许用户关闭公告
 	link: {
 		enable: false, // 启用链接
@@ -600,7 +600,7 @@ export const pioConfig: import("./types/config").PioConfig = {
 		home: "点击这里返回主页!", // 首页提示
 		skin: ["你有看到我的新服装了吗?", "这看起来很好看~"], // 换装提示
 		close: "QWQ 下次再见了~", // 关闭提示
-		link: "", // 关于链接
+		link: "https://github.com/Zuoyan233/Zuoyanblogs", // 关于链接
 	},
 };
 
