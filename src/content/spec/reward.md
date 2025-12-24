@@ -5,7 +5,7 @@
 ---
 <figure style="display: flex;flex-wrap: wrap;justify-content: center;row-gap: 20px;column-gap: 20px;">
  <img src="/images/reword/alipay.webp" width="250px" high="250px">
- <img src="/images/reword/Wechat pay.webp" width="250px" high="250px">
+ <img src="/images/reword/wechat pay.webp" width="250px" high="250px">
 </figure>
  <figcaption style="text-align:center;">支付宝 & 微信点击 “扫一扫” 支付二维码</figcaption>
 
