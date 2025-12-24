@@ -6,7 +6,7 @@ export const tr: Translation = {
 	[Key.about]: "Hakkında",
 	[Key.archive]: "Arşiv",
 	[Key.search]: "Ara",
-	[Key.reward]: "Ödül",
+	[Key.sponsors]: "Sponsors",
 	[Key.other]: "Diğer",
 
 	// Gezinme çubuğu başlıkları

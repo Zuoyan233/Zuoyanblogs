@@ -12,7 +12,7 @@ export const zh_CN: Translation = {
 	[Key.navLinks]: "链接",
 	[Key.navMy]: "我的",
 	[Key.navAbout]: "关于",
-	[Key.reward]: "奖赏",
+	[Key.sponsors]: "赞助",
 	[Key.navOthers]: "其他",
 
 	[Key.tags]: "标签",
