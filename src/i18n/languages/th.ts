@@ -6,7 +6,7 @@ export const th: Translation = {
 	[Key.about]: "เกี่ยวกับ",
 	[Key.archive]: "เก็บถาวร",
 	[Key.search]: "ค้นหา",
-	[Key.reward]: "รางวัล",
+	[Key.sponsors]: "ผู้สนับสนุน",
 	[Key.other]: "อื่นๆ",
 
 	// ชื่อแถบนำทาง
