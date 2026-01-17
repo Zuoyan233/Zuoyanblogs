@@ -9,6 +9,9 @@ export const th: Translation = {
 	[Key.sponsors]: "ผู้สนับสนุน",
 	[Key.other]: "อื่นๆ",
 
+	// ชื่อหัวข้อแผงการแปล
+	[Key.translateHeader]: "เลือกภาษา",
+
 	// ชื่อแถบนำทาง
 	[Key.navLinks]: "ลิงก์",
 	[Key.navMy]: "ของฉัน",

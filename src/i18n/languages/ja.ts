@@ -9,6 +9,9 @@ export const ja: Translation = {
 	[Key.sponsors]: "スポンサー",
 	[Key.other]: "その他",
 
+	// 翻訳パネルのタイトル
+	[Key.translateHeader]: "言語を選択",
+
 	// ナビゲーションバーのタイトル
 	[Key.navLinks]: "リンク",
 	[Key.navMy]: "マイ",

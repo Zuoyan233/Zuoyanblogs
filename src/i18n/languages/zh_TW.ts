@@ -16,6 +16,9 @@ export const zh_TW: Translation = {
 	[Key.sponsors]: "贊助",
 	[Key.navOthers]: "其他",
 
+	// 翻譯表格標題
+	[Key.translateHeader]: "選擇語言",
+
 	[Key.tags]: "標籤",
 	[Key.categories]: "分類",
 	[Key.recentPosts]: "最新文章",

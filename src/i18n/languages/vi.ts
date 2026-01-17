@@ -9,6 +9,9 @@ export const vi: Translation = {
 	[Key.sponsors]: "nhà tài trợ",
 	[Key.other]: "Khác",
 
+	// Tiêu đề bảng dịch
+	[Key.translateHeader]: "Chọn ngôn ngữ",
+
 	// Tiêu đề thanh điều hướng
 	[Key.navLinks]: "Liên kết",
 	[Key.navMy]: "Của tôi",

@@ -36,7 +36,7 @@ let currentTime = 0;
 // 歌曲总时长，默认为 0
 let duration = 0;
 // 音量，默认为 0.7
-let volume = 0.7;
+let volume = 1;
 // 是否静音，默认为 false
 let isMuted = false;
 // 是否正在加载，默认为 false
@@ -75,30 +75,14 @@ let progressBar: HTMLElement;
 let volumeBar: HTMLElement;
 
 const localPlaylist = [
-	{
-		id: 1,
-		title: "ひとり上手",
-		artist: "Kaya",
-		cover: "assets/music/cover/hitori.jpg",
-		url: "assets/music/url/hitori.mp3",
-		duration: 240,
-	},
-	{
-		id: 2,
-		title: "眩耀夜行",
-		artist: "スリーズブーケ",
-		cover: "assets/music/cover/xryx.jpg",
-		url: "assets/music/url/xryx.mp3",
-		duration: 180,
-	},
-	{
-		id: 3,
-		title: "春雷の頃",
-		artist: "22/7",
-		cover: "assets/music/cover/cl.jpg",
-		url: "assets/music/url/cl.mp3",
-		duration: 200,
-	},
+	// {
+	// 	id: 1,
+	// 	title: "ひとり上手",
+	// 	artist: "Kaya",
+	// 	cover: "assets/music/cover/hitori.jpg",
+	// 	url: "assets/music/url/hitori.mp3",
+	// 	duration: 240,
+	// },
 ];
 
 async function fetchMetingPlaylist() {
@@ -134,7 +118,7 @@ async function fetchMetingPlaylist() {
 		}
 		isLoading = false;
 	} catch (e) {
-		showErrorMessage("Meting 歌单获取失败");
+		showErrorMessage("Meting playlist retrieval failed");
 		isLoading = false;
 	}
 }
@@ -258,9 +242,11 @@ function handleLoadSuccess() {
 
 function handleLoadError(_event: Event) {
 	isLoading = false;
-	showErrorMessage(`无法播放 "${currentSong.title}"，正在尝试下一首...`);
+	showErrorMessage(
+		`Unable to play "${currentSong.title}"，Trying the next song...`,
+	);
 	if (playlist.length > 1) setTimeout(() => nextSong(), 1000);
-	else showErrorMessage("播放列表中没有可用的歌曲");
+	else showErrorMessage("No songs available in the playlist");
 }
 
 function handleLoadStart() {}
@@ -357,7 +343,7 @@ onMount(() => {
 		if (playlist.length > 0) {
 			loadSong(playlist[0]);
 		} else {
-			showErrorMessage("本地播放列表为空");
+			showErrorMessage("The local playlist is empty");
 		}
 	}
 });
