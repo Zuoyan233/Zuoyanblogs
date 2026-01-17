@@ -50,7 +50,7 @@ const recentPosts = posts.slice(0, 6);
                         class="px-4 py-2 bg-[var(--primary)] text-white rounded-lg hover:opacity-80 transition-all duration-200 font-medium text-sm whitespace-nowrap"
                         data-url={`${Astro.site}rss.xml`}
                     >
-                        {i18n(I18nKey.rssCopyLink)}
+                        {i18n(I18nKey.rssCopyLink) || "Copy Link"}
                     </button>
                 </div>
             </div>
@@ -109,32 +109,31 @@ const recentPosts = posts.slice(0, 6);
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const copyBtn = document.getElementById('copy-rss-btn');
-            if (copyBtn) {
-                copyBtn.addEventListener('click', async function() {
-                    const url = this.getAttribute('data-url');
-                    if (!url) return;
-                    try {
-                        await navigator.clipboard.writeText(url);
-                        const originalText = this.textContent || "Copy Link";
-                        this.textContent = "RSS link copied to clipboard!";
-                        this.style.backgroundColor = 'var(--success-color, #10b981)';
-                        
-                        setTimeout(() => {
-                            this.textContent = originalText;
-                            this.style.backgroundColor = '';
-                        }, 2000);
-                    } catch (err) {
-                        console.error('复制失败:', err);
-                        const originalText = this.textContent || "Copy Link";
-                        this.textContent = "Copy failed, please copy the link manually";
-                        setTimeout(() => {
-                            this.textContent = originalText;
-                        }, 2000);
-                    }
-                });
-            }
-        });
+    import { i18n } from "@i18n/translation";
+    import I18nKey from "../i18n/i18nKey";
+
+    // Copy button functionality
+    document.getElementById('copy-rss-btn')?.addEventListener('click', function() {
+        const url = this.getAttribute('data-url');
+        if (url) {
+            navigator.clipboard.writeText(url).then(() => {
+                const originalText = this.textContent || "Copy Link";
+                this.textContent = i18n(I18nKey.rssCopied);
+                this.style.backgroundColor = 'var(--success-color, #10b981)';
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.backgroundColor = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('复制失败:', err);
+                const originalText = this.textContent || "Copy Link";
+                this.textContent = i18n(I18nKey.rssCopyFailed);
+                setTimeout(() => {
+                    this.textContent = originalText;
+                }, 2000);
+            });
+        }
+    });
     </script>
 </MainGridLayout>

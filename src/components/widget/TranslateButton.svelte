@@ -1,4 +1,6 @@
 <script lang="ts">
+import I18nKey from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
 import Icon from "@iconify/svelte";
 import { onDestroy, onMount } from "svelte";
 import { siteConfig } from "@/config";
@@ -11,7 +13,7 @@ let currentLanguage = "";
 // 支持的语言列表
 const languages = [
 	{ code: "chinese_simplified", name: "简体中文", icon: "🇨🇳" },
-	{ code: "chinese_traditional", name: "繁體中文", icon: "🇹🇼" },
+	{ code: "chinese_traditional", name: "繁體中文", icon: "🇭🇰" },
 	{ code: "english", name: "English", icon: "🇺🇸" },
 	{ code: "japanese", name: "日本語", icon: "🇯🇵" },
 	{ code: "korean", name: "한국어", icon: "🇰🇷" },
@@ -130,11 +132,11 @@ onDestroy(() => {
     <!-- 翻译按钮 -->
     <button 
         aria-label="Language Translation" 
-        class="group btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90 transition-all duration-300 hover:shadow-md" 
+        class="group btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90" 
         id="translate-switch"
         on:click={togglePanel}
     >
-        <Icon icon="material-symbols:translate" class="text-[1.25rem] transition-all duration-200 ease-in-out text-black/75 dark:text-white/75 group-hover:text-[var(--primary)]"/>
+        <Icon icon="material-symbols:translate" class="text-[1.25rem] transition-all duration-250 ease-in-out text-black/75 dark:text-white/75 group-hover:text-[var(--primary)]"/>
 </button>
 
     <!-- 翻译面板 -->
@@ -144,7 +146,7 @@ onDestroy(() => {
         class="float-panel-closed absolute top-[3.5rem] right-0 z-50 w-64 bg-[var(--float-panel-bg)] rounded-[var(--radius-large)] shadow-lg border border-[var(--line-divider)] p-4"
     >
         <div class="text-sm font-medium text-[var(--primary)] mb-3">
-            选择语言 / Select Language
+            {i18n(I18nKey.translateHeader)}
         </div>
         <div class="grid grid-cols-1 gap-2 max-h-64 overflow-y-auto">
             {#each languages as lang}

@@ -6,6 +6,9 @@ enum I18nKey {
 
 	other = "other",
 
+	// 翻译面板标题
+	translateHeader = "translateHeader",
+
 	// 导航栏标题
 	navLinks = "navLinks",
 	navMy = "navMy",

@@ -16,17 +16,17 @@
 ## 其他支持方式
 
 <div style="display: flex; flex-wrap: wrap; justify-content: left; column-gap: 30px; row-gap: 20px;">
-   <div style="background: #f2f2f2ff; border-radius: 12px; padding: 20px 25px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: 1px solid #eaeaea; flex: 1; min-width: 200px;">
+   <div style="background: #f0f0f0; border-radius: 12px; padding: 20px 25px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: 1px solid #eaeaea; flex: 1; min-width: 200px;">
     <p style="font-size: 2em; margin: 0 0 15px 0; text-align: left;">📤</p>
     <p style="margin: 0; text-align: left;color:black;">将左颜研究部博客分享给更多朋友</p>
    </div>
    
-   <div style="background: #f2f2f2ff; border-radius: 12px; padding: 20px 25px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: 1px solid #eaeaea; flex: 1; min-width: 200px;">
+   <div style="background: #f0f0f0; border-radius: 12px; padding: 20px 25px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: 1px solid #eaeaea; flex: 1; min-width: 200px;">
     <p style="font-size: 2em; margin: 0 0 15px 0; text-align: left;">✍</p>
     <p style="margin: 0; text-align: left;color:black;">在文章下方评论区留下您的想法</p>
    </div>
 
-   <div style="background: #f2f2f2ff; border-radius: 12px; padding: 20px 25px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: 1px solid #eaeaea; flex: 1; min-width: 200px;">
+   <div style="background: #f0f0f0; border-radius: 12px; padding: 20px 25px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: 1px solid #eaeaea; flex: 1; min-width: 200px;">
     <p style="font-size: 2em; margin: 0 0 15px 0; text-align: left;">🌐</p>
     <p style="margin: 0; text-align: left;color:black;">订阅 <a href="/rss/">RSS</a> 与 <a href="/atom/">Atom</a> 获取最新文章</p>
    </div>
@@ -54,7 +54,7 @@
 ---
 
 <script type="text/javascript">
-		var div = document.getElementById("color");
+		var div = document.getElementById("已赞助的小伙伴");
         var colorArr = [];
         for(var j = 0; j < 10; j++){
       
@@ -82,7 +82,7 @@
         setInterval("ShowArr()",3000); 
 </script>
 
-<h2 id="color" style="font-size:24px;font-weight:bold;">🤗 已赞助的小伙伴</h2>
+<h2 id="已赞助的小伙伴" style="font-size:24px;font-weight:bold;">🤗 已赞助的小伙伴</h2>
 
 | **赞助人** | **日期** | **金额** |
 | :---: | :---: | :---: |

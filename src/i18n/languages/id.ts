@@ -9,6 +9,9 @@ export const id: Translation = {
 	[Key.sponsors]: "Penaja",
 	[Key.other]: "Lainnya",
 
+	// Judul panel terjemahan
+	[Key.translateHeader]: "Pilih Bahasa",
+
 	// Judul bilah navigasi
 	[Key.navLinks]: "Tautan",
 	[Key.navMy]: "Saya",

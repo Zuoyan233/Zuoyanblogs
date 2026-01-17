@@ -9,6 +9,9 @@ export const ko: Translation = {
 	[Key.sponsors]: "스폰서",
 	[Key.other]: "기타",
 
+	// 번역 패널 제목
+	[Key.translateHeader]: "언어 선택",
+
 	// 탐색 막대 제목
 	[Key.navLinks]: "링크",
 	[Key.navMy]: "내",

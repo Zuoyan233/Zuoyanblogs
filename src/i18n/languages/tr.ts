@@ -9,6 +9,9 @@ export const tr: Translation = {
 	[Key.sponsors]: "Sponsors",
 	[Key.other]: "Diğer",
 
+	// Çeviri paneli başlığı
+	[Key.translateHeader]: "Dil Seçin",
+
 	// Gezinme çubuğu başlıkları
 	[Key.navLinks]: "Bağlantılar",
 	[Key.navMy]: "Benim",

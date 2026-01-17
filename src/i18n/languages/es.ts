@@ -9,6 +9,9 @@ export const es: Translation = {
 	[Key.sponsors]: "Patrocinador",
 	[Key.other]: "Otros",
 
+	// Título del panel de traducción
+	[Key.translateHeader]: "Seleccionar idioma",
+
 	// Títulos de la barra de navegación
 	[Key.navLinks]: "Enlaces",
 	[Key.navMy]: "Mi",

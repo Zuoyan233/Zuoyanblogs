@@ -8,6 +8,9 @@ export const zh_CN: Translation = {
 	[Key.search]: "搜索",
 	[Key.other]: "其他",
 
+	// 翻译面板标题
+	[Key.translateHeader]: "选择语言",
+
 	// 导航栏标题
 	[Key.navLinks]: "链接",
 	[Key.navMy]: "我的",
