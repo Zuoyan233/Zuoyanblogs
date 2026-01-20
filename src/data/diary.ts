@@ -25,12 +25,6 @@ const diaryData: DiaryItem[] = [
 		date: "2025-11-03T00:00:00Z",
 		images: ["/images/diary/11-03.webp"],
 	},
-	{
-		id: 3,
-		content: "博客框架已升级，基于Mizuki 7.5主题魔改",
-		date: "2025-11-22T00:00:00Z",
-		images: ["/images/diary/11-22.webp"],
-	},
 ];
 
 // 获取日记统计数据

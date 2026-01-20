@@ -37,12 +37,12 @@ const componentMap = {
  * 组件渲染器 - 负责渲染单个组件
  * @param component 组件配置
  * @param index 组件索引
- * @param allComponents 所有组件列表
+ * @param _allComponents 所有组件列表
  */
 function createComponentRenderer(
 	component: WidgetComponentConfig,
 	index: number,
-	allComponents: WidgetComponentConfig[],
+	_allComponents: WidgetComponentConfig[],
 ) {
 	const ComponentToRender =
 		componentMap[component.type as keyof typeof componentMap];

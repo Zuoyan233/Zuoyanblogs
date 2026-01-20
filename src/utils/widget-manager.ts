@@ -71,15 +71,10 @@ export class WidgetManager {
 				return componentSidebar === sidebar;
 			});
 		} else if (
-			this.config.position === "left" ||
-			this.config.position === "right"
+			this.config.position === "unilateral" ||
+			this.config.position === "both"
 		) {
 			// 单侧边栏模式下，只显示对应侧的组件
-			const currentSidebar = this.config.position;
-			components = components.filter((component) => {
-				const componentSidebar = component.sidebar || "left";
-				return componentSidebar === currentSidebar;
-			});
 		}
 
 		return components;

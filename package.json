@@ -1,7 +1,7 @@
 {
 	"name": "Zuoyanblogs",
 	"type": "module",
-	"version": "7.5.0",
+	"version": "7.6.5",
 	"scripts": {
 		"sync-content": "node scripts/sync-content.js",
 		"init-content": "node scripts/init-content-repo.js",

@@ -2,9 +2,9 @@ import {
 	DARK_MODE,
 	DEFAULT_THEME,
 	LIGHT_MODE,
-	WALLPAPER_BANNER,
+	// WALLPAPER_BANNER,
 } from "@constants/constants";
-import { expressiveCodeConfig, siteConfig } from "@/config";
+import { siteConfig } from "@/config";
 import type { LIGHT_DARK_MODE, WALLPAPER_MODE } from "@/types/config";
 
 export function getDefaultHue(): number {
@@ -83,7 +83,6 @@ export function applyThemeToDocument(theme: LIGHT_DARK_MODE) {
 	};
 
 	// 检查浏览器是否支持 View Transitions API
-	// @ts-expect-error
 	if (
 		needsThemeChange &&
 		document.startViewTransition &&
@@ -96,7 +95,6 @@ export function applyThemeToDocument(theme: LIGHT_DARK_MODE) {
 		);
 
 		// 使用 View Transitions API 实现平滑过渡
-		// @ts-expect-error
 		const transition = document.startViewTransition(() => {
 			performThemeChange();
 		});

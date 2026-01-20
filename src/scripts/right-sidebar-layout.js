@@ -13,6 +13,8 @@ function initPageLayout(pageType) {
 	// 如果默认布局是网格模式，则隐藏右侧边栏
 	if (defaultPostListLayout === "grid") {
 		hideRightSidebar();
+	} else {
+		showRightSidebar();
 	}
 
 	// 监听布局切换事件
@@ -22,6 +24,17 @@ function initPageLayout(pageType) {
 			hideRightSidebar();
 		} else {
 			showRightSidebar();
+		}
+	});
+
+	// 监听本地存储变化（用于跨标签页同步）
+	window.addEventListener("storage", (event) => {
+		if (event.key === "postListLayout") {
+			if (event.newValue === "grid") {
+				hideRightSidebar();
+			} else {
+				showRightSidebar();
+			}
 		}
 	});
 
@@ -93,23 +106,30 @@ function showRightSidebar() {
 }
 
 // 页面加载完成后初始化
-if (document.readyState === "loading") {
-	document.addEventListener("DOMContentLoaded", () => {
-		// 从data-page-type属性获取页面类型
-		const pageType =
-			document.documentElement.getAttribute("data-page-type") || "projects";
-		initPageLayout(pageType);
-	});
-} else {
-	// 如果文档已经加载完成，直接初始化
+function initialize() {
 	const pageType =
 		document.documentElement.getAttribute("data-page-type") || "projects";
 	initPageLayout(pageType);
 }
 
+if (document.readyState === "loading") {
+	document.addEventListener("DOMContentLoaded", initialize);
+} else {
+	initialize();
+}
+
 // 导出函数供其他脚本使用
 if (typeof module !== "undefined" && module.exports) {
 	module.exports = {
+		initPageLayout,
+		hideRightSidebar,
+		showRightSidebar,
+	};
+}
+
+// 同时也挂载到 window 对象，以便在浏览器环境中直接调用
+if (typeof window !== "undefined") {
+	window.rightSidebarLayout = {
 		initPageLayout,
 		hideRightSidebar,
 		showRightSidebar,

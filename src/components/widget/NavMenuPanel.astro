@@ -31,21 +31,25 @@ const navTitleMap: Record<string, string> = {
 const getLocalizedName = (name: string): string => {
 	const keyValue = navTitleMap[name];
 	if (keyValue) {
-		return i18n(keyValue);
+		return i18n(keyValue as I18nKey);
 	}
 	return name;
 };
 
+type ProcessedNavBarLink = Omit<NavBarLink, "children"> & {
+	children?: ProcessedNavBarLink[];
+};
+
 // 处理links中的LinkPreset转换
-const processedLinks = Astro.props.links.map(
-	(link: NavBarLink): NavBarLink => ({
+const processedLinks: ProcessedNavBarLink[] = Astro.props.links.map(
+	(link: NavBarLink): ProcessedNavBarLink => ({
 		...link,
 		children: link.children?.map(
-			(child: NavBarLink | LinkPreset): NavBarLink => {
+			(child: NavBarLink | LinkPreset): ProcessedNavBarLink => {
 				if (typeof child === "number") {
-					return LinkPresets[child];
+					return LinkPresets[child] as ProcessedNavBarLink;
 				}
-				return child;
+				return child as ProcessedNavBarLink;
 			},
 		),
 	}),

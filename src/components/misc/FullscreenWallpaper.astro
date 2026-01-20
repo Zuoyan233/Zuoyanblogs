@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+// import { Image } from "astro:assets";
 import { siteConfig } from "../../config";
 import type { FullscreenWallpaperConfig } from "../../types/config";
 
@@ -185,7 +185,7 @@ const positionClass = getPositionClass(position);
 </div>
 
 {isCarouselEnabled && (
-	<script define:vars={{ carouselInterval }}>
+	<script is:inline define:vars={{ carouselInterval }}>
 		// 全屏壁纸轮播逻辑
 		function initFullscreenWallpaperCarousel() {
 			const wallpaperContainer = document.querySelector('[data-fullscreen-wallpaper]');
