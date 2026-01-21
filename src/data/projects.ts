@@ -22,8 +22,7 @@ export const projectsData: Project[] = [
 	{
 		id: "zuoyanblog",
 		title: "Zuoyanblogs",
-		description:
-			"左颜研究部 - 聚集经验知识的后花园 （Astro语言驱动的博客框架）",
+		description: "左颜研究部 - 聚集经验知识的后花园 （Astro驱动的博客框架）",
 		image: "",
 		category: "web",
 		techStack: ["Astro", "TypeScript", "CSS", "MongoDB", "Svelte"],
