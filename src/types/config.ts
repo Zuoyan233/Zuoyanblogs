@@ -109,6 +109,7 @@ export type SiteConfig = {
 	// 添加bangumi配置
 	bangumi?: {
 		userId?: string; // Bangumi用户ID
+		fetchOnDev?: boolean;
 	};
 
 	// 添加番剧页面配置

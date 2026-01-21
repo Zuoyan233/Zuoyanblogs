@@ -603,7 +603,7 @@ onDestroy(() => {
                     <Icon icon="material-symbols:close" class="text-lg" />
                 </button>
             </div>
-            <div class="playlist-content overflow-y-auto max-h-80">
+            <div class="playlist-content overflow-y-auto max-h-80 hide-scrollbar">
                 {#each playlist as song, index}
                     <div class="playlist-item flex items-center gap-3 p-3 hover:bg-[var(--btn-plain-bg-hover)] cursor-pointer transition-colors"
                          class:bg-[var(--btn-plain-bg)]={index === currentIndex}
