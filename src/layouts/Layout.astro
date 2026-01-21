@@ -742,62 +742,68 @@ function initCarousel() {
 function initTranslate() {
 	if (!siteConfig.translate?.enable || typeof window.translate === 'undefined') return;
 	
+	const translate = window.translate;
+	if (!translate) return;
+	
 	// 配置translate.js
-	if (siteConfig.translate.service && window.translate) {
-		window.translate.service.use(siteConfig.translate.service);
+	if (siteConfig.translate.service && translate.service) {
+		translate.service.use(siteConfig.translate.service);
 	}
 	
-	if (siteConfig.translate.defaultLanguage && window.translate) {
-		window.translate.language.setLocal(siteConfig.translate.defaultLanguage);
+	if (siteConfig.translate.defaultLanguage && translate.language) {
+		translate.language.setLocal(siteConfig.translate.defaultLanguage);
 	}
 	
-	if (siteConfig.translate.autoDiscriminate && window.translate) {
-		window.translate.setAutoDiscriminateLocalLanguage();
+	if (siteConfig.translate.autoDiscriminate && translate.setAutoDiscriminateLocalLanguage) {
+		translate.setAutoDiscriminateLocalLanguage();
 	}
 	
 	// 设置忽略的类名和标签
-	if (siteConfig.translate.ignoreClasses && window.translate) {
+	if (siteConfig.translate.ignoreClasses && translate.ignore?.class) {
 		siteConfig.translate.ignoreClasses.forEach(className => {
-			window.translate.ignore.class.push(className);
+			translate.ignore.class.push(className);
 		});
 	}
 	
-	if (siteConfig.translate.ignoreTags && window.translate) {
+	if (siteConfig.translate.ignoreTags && translate.ignore?.tag) {
 		siteConfig.translate.ignoreTags.forEach(tagName => {
-			window.translate.ignore.tag.push(tagName);
+			translate.ignore.tag.push(tagName);
 		});
 	}
 	
 	// 不显示默认的select选择框
-	if (siteConfig.translate.showSelectTag === false && window.translate) {
-		window.translate.selectLanguageTag.show = false;
+	if (siteConfig.translate.showSelectTag === false && translate.selectLanguageTag) {
+		translate.selectLanguageTag.show = false;
 	}
 	
 	// 禁用自动保存翻译状态到localStorage
-	if (window.translate) {
-		window.translate.storage.set = function() {
+	if (translate.storage?.set) {
+		translate.storage.set = function() {
 			// 空函数，阻止保存状态
 		};
+	}
 	
-		// 启动翻译监听
-		window.translate.listener.start();
+	if (translate.listener?.start) {
+		translate.listener.start();
+	}
 	
-		// 执行翻译初始化
-		window.translate.execute();
+	if (translate.execute) {
+		translate.execute();
 	}
 }
 
 // 懒加载并初始化翻译功能
-async function loadAndInitTranslate() {
+(async function loadAndInitTranslate() {
 	if (!siteConfig.translate?.enable) return;
 	
 	try {
-		await window.loadTranslateScript();
+		// 使用可选链和条件调用
+		await window.loadTranslateScript?.();
 		initTranslate();
 	} catch (error) {
 		console.error('Failed to load translate.js:', error);
 	}
-}
+})();
 
 function setupSakura() {
 	const sakuraConfig = (widgetConfigs as any)?.sakura;
