@@ -11,6 +11,7 @@
 		"start": "astro dev",
 		"check": "astro check",
 		"build": "astro build && pagefind --site dist && node scripts/compress-fonts.js",
+		"update-anime": "node scripts/update-bangumi.mjs",
 		"preview": "astro preview",
 		"astro": "astro",
 		"type-check": "tsc --noEmit --isolatedDeclarations",

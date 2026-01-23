@@ -13,18 +13,12 @@ export interface DiaryItem {
 
 // 示例日记数据
 const diaryData: DiaryItem[] = [
-	{
-		id: 1,
-		content: "网站翻译组件成功移植",
-		date: "2025-11-01T00:00:00Z",
-		images: ["/images/diary/11-01.webp"],
-	},
-	{
-		id: 2,
-		content: "文章侧边栏组件移至左边，避免自适应放大排版错乱",
-		date: "2025-11-03T00:00:00Z",
-		images: ["/images/diary/11-03.webp"],
-	},
+	// {
+	// 	id: 1,
+	// 	content: "网站翻译组件成功移植",
+	// 	date: "2025-11-01T00:00:00Z",
+	// 	images: ["/images/diary/11-01.webp"],
+	// },
 ];
 
 // 获取日记统计数据
