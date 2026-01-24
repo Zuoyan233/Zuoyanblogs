@@ -9,7 +9,7 @@ import MainGridLayout from "../layouts/MainGridLayout.astro";
 const sponsorsPost = await getEntry("spec", "sponsors");
 
 if (!sponsorsPost) {
-	throw new Error("sponsors page content not found");
+	throw new Error("Sponsors page content not found");
 }
 
 const { Content } = await render(sponsorsPost);

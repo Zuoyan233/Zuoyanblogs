@@ -1,9 +1,21 @@
-# 🌸 Mizuki  
-![Node.js >= 20](https://img.shields.io/badge/node.js-%3E%3D20-brightgreen) 
-![pnpm >= 9](https://img.shields.io/badge/pnpm-%3E%3D9-blue) 
-![Astro](https://img.shields.io/badge/Astro-5.15.3-orange)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue)
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# 🌸 Mizuki <img align='right' src='logo.png' width='200px' alt="Mizuki logo">
+
+一个现代化、功能丰富的静态博客模板，基于 [Astro](https://astro.build) 构建，具有先进的功能和精美的设计。
+
+[![Node.js >= 20](https://img.shields.io/badge/node.js-%3E%3D20-brightgreen)](https://nodejs.org/)
+[![pnpm >= 9](https://img.shields.io/badge/pnpm-%3E%3D9-blue)](https://pnpm.io/)
+[![Astro](https://img.shields.io/badge/Astro-5.15.3-orange)](https://astro.build/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue)](https://www.typescriptlang.org/)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?logo=apache)](https://opensource.org/licenses/Apache-2.0)
+
+[**🖥️ 在线演示**](https://mizuki.mysqil.com/) | [**📝 用户文档**](https://docs.mizuki.mysqil.com/)
+
+🌏 README 语言
+[**English**](./README.md) / [**中文**](./README.zh.md) / [**日本語**](./README.ja.md) / [**中文繁体**](./README.tw.md) /
+
+通过我们的综合文档快速开始。无论是自定义主题、配置功能，还是部署到生产环境，文档涵盖了您成功启动博客所需的所有内容。
+
+[📚 阅读完整文档](https://docs.mizuki.mysqil.com/) →
 
 ![Mizuki Preview](./README.webp)
 
@@ -20,18 +32,17 @@
   <tr>
 </table>
 
-一个现代化、功能丰富的静态博客模板，基于 [Astro](https://astro.build) 构建，具有先进的功能和精美的设计。
+## 🚀 NEW: 自动分辨率适配
 
-[**🖥️ 在线演示**](https://mizuki.mysqil.com/)
-[**📝 用户文档**](https://docs.mizuki.mysqil.com/)
+> **🎯 自动分辨率算法** - 智能适配内容布局基于设备屏幕分辨率，为所有设备提供最佳观看体验
 
 🌏 README 语言
 [**English**](./README.md) /
 [**中文**](./README.zh.md) /
-[**日本語**](./docs/README.ja.md) /
-[**中文繁体**](./docs/README.tw.md) /
+[**日本語**](./README.ja.md) /
+[**中文繁体**](./README.tw.md) /
 
-![Configuration](configuration.svg)
+
 
 ### 🔧 组件配置系统重构
 - **统一配置架构：** 全新的模块化组件配置体系，支持动态组件管理和顺序配置
@@ -44,7 +55,7 @@
 - **文章目录智能定位：** 当侧边栏在右侧时，文章导航自动移至左侧，提供更好的阅读体验
 - **网格布局改进：** 优化 CSS Grid 布局，解决容器宽度异常问题
 
-### 🎛️ 配置文件格式规范
+### 🎛️ 配置文件格式标准化
 - **标准化配置格式：** 创建统一的组件配置文件格式规范
 - **类型安全：** 完善的 TypeScript 类型定义，确保配置的类型安全
 - **可扩展性：** 支持自定义组件类型和配置选项
@@ -88,7 +99,7 @@
 - [x] **多语言支持**，实时翻译功能
 - [x] **自动语言检测**，基于用户偏好
 - [x] **客户端翻译**，由 Edge Translate 驱动
-- [x] **支持 10+ 种语言（中文、英文、日文、韩文、西班牙文等）**
+- [x] **支持 10+ 种语言**，（中文、英文、日文、韩文、西班牙文等）
 
 ### 🛠 技术特性
 - [x] **增强代码块**，基于 [Expressive Code](https://expressive-code.com/)
@@ -264,10 +275,10 @@ export const siteConfig: SiteConfig = {
 
 ### 📱 特色页面配置
 
-- **追番页面：** 在 `src/pages/anime.ts` 中编辑动画列表
+- **追番页面：** 在 `src/pages/anime.astro` 中编辑动画列表
 - **友链页面：** 在 `src/content/spec/friends.md` 中编辑朋友数据
-- **日记页面：** 在 `src/data/diary.ts` 中编辑动态
-- **关于页面：** 在 `src/content/spec/about.md` 中编辑内容anime
+- **日记页面：** 在 `src/pages/diary.astro` 中编辑动态
+- **关于页面：** 在 `src/content/spec/about.md` 中编辑内容
 
 ### 📦 代码内容分离 (可选)
 
@@ -329,14 +340,29 @@ pnpm run sync-content
 ## 🙏 致谢
 
 - 基于原始 [Fuwari](https://github.com/saicaca/fuwari) 模板
-- 使用 [Astro](https://astro.build) 和 [Tailwind CSS](https://tailwindcss.com) 构建
 - 灵感来源于 [Yukina](https://github.com/WhitePaper233/yukina) - 一个美丽优雅的博客模板
+- 部分设计灵感来源于 [Firefly](https://github.com/CuteLeaf/Firefly) 和 [Twilight](https://github.com/spr-aachen/Twilight) 模板
+- 使用 [Pio](https://github.com/Dreamer-Paul/Pio) 实现可爱的 Live2D 看板娘插件
+- 使用 [Astro](https://astro.build) 和 [Tailwind CSS](https://tailwindcss.com) 构建
 - 图标来自 [Iconify](https://iconify.design/)
 
-### 特别感谢
-
+### 🌸 特别感谢
+- **[Fuwari](https://github.com/saicaca/fuwari)** by saicaca - 本项目所基于的原始模板。感谢您创建了如此漂亮且功能强大的模板。
 - **[Yukina](https://github.com/WhitePaper233/yukina)** - 感谢提供设计灵感和创意，帮助塑造了这个项目。Yukina 是一个优雅的博客模板，展现了出色的设计原则和用户体验。
+- **[Firefly](https://github.com/CuteLeaf/Firefly)** - 感谢提供优秀的布局设计思路，双侧边栏布局、文章双列网格等布局，及部分小组件的设计与实现，让 Mizuki 的界面更加丰富。
+- **[Twilight](https://github.com/spr-aachen/Twilight)** - 感谢提供灵感和技术支持。Twilight 的动态壁纸模式切换系统、响应式设计和过渡效果显著提升了 Mizuki 的使用体验。
 
+## 🍀 贡献者
+
+感谢以下贡献者对本项目做出的贡献，如有问题或建议，请提交 [Issue](https://github.com/matsuzaka-yuki/Mizuki/issues) 或 [Pull Request](https://github.com/matsuzaka-yuki/Mizuki/pulls)。
+
+<a href="https://github.com/matsuzaka-yuki/Mizuki/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=matsuzaka-yuki/Mizuki" />
+</a>
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=matsuzaka-yuki/Mizuki&type=Date)](https://star-history.com/#matsuzaka-yuki/Mizuki&Date)
 ---
 
 ⭐ 如果您觉得这个项目有帮助，请考虑给它一个星标!

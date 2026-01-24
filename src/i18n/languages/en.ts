@@ -6,7 +6,6 @@ export const en: Translation = {
 	[Key.about]: "About",
 	[Key.archive]: "Archive",
 	[Key.search]: "Search",
-	[Key.sponsors]: "Sponsors",
 	[Key.other]: "Other",
 
 	// Translation panel title
@@ -16,6 +15,7 @@ export const en: Translation = {
 	[Key.navLinks]: "Links",
 	[Key.navMy]: "My",
 	[Key.navAbout]: "About",
+	[Key.sponsors]: "Sponsor",
 	[Key.navOthers]: "Others",
 
 	[Key.tags]: "Tags",
@@ -23,6 +23,7 @@ export const en: Translation = {
 	[Key.recentPosts]: "Recent Posts",
 	[Key.postList]: "Post List",
 	[Key.tableOfContents]: "Table of Contents",
+	[Key.tocEmpty]: "No table of contents",
 
 	// Announcement
 	[Key.announcement]: "Announcement",
@@ -30,8 +31,8 @@ export const en: Translation = {
 
 	[Key.comments]: "Comments",
 	[Key.friends]: "Friends",
-	[Key.friendsSubtitle]: "Discover more excellent websites",
-	[Key.friendsSearchPlaceholder]: "Search friend name or description...",
+	[Key.friendsSubtitle]: "Discover more great websites",
+	[Key.friendsSearchPlaceholder]: "Search friend's name or description...",
 	[Key.friendsFilterAll]: "All",
 	[Key.friendsNoResults]: "No matching friends found",
 	[Key.friendsVisit]: "Visit",
@@ -62,7 +63,6 @@ export const en: Translation = {
 	[Key.license]: "License",
 	[Key.anime]: "Anime",
 	[Key.diary]: "Diary",
-	[Key.gallery]: "Gallery",
 
 	// Anime Page
 	[Key.animeTitle]: "My Anime List",
@@ -75,14 +75,14 @@ export const en: Translation = {
 	[Key.animeFilterAll]: "All",
 	[Key.animeYear]: "Year",
 	[Key.animeStudio]: "Studio",
-	[Key.animeEmpty]: "No anime data",
+	[Key.animeEmpty]: "No anime data available",
 	[Key.animeEmptyBangumi]:
 		"Please check Bangumi configuration or network connection",
 	[Key.animeEmptyLocal]:
 		"Please add anime information in src/data/anime.ts file",
 
 	// Diary Page
-	[Key.diarySubtitle]: "Share life anytime, anywhere",
+	[Key.diarySubtitle]: "Share life, anytime, anywhere",
 	[Key.diaryCount]: "diary entries",
 	[Key.diaryReply]: "Reply",
 	[Key.diaryTips]: "Only show the latest 30 diary entries",
@@ -98,7 +98,28 @@ export const en: Translation = {
 	[Key.backToHome]: "Back to Home",
 
 	// Music Player
-	[Key.playlist]: "Playlist",
+	[Key.musicPlayer]: "Music Player",
+	[Key.musicPlayerShow]: "Show Music Player",
+	[Key.musicPlayerHide]: "Hide Music Player",
+	[Key.musicPlayerExpand]: "Expand Music Player",
+	[Key.musicPlayerCollapse]: "Collapse Music Player",
+	[Key.musicPlayerPause]: "Pause",
+	[Key.musicPlayerPlay]: "Play",
+	[Key.musicPlayerPrevious]: "Previous",
+	[Key.musicPlayerNext]: "Next",
+	[Key.musicPlayerShuffle]: "Shuffle",
+	[Key.musicPlayerRepeat]: "Repeat All",
+	[Key.musicPlayerRepeatOne]: "Repeat One",
+	[Key.musicPlayerVolume]: "Volume Control",
+	[Key.musicPlayerProgress]: "Playback Progress",
+	[Key.musicPlayerCover]: "Cover",
+	[Key.musicPlayerPlaylist]: "Playlist",
+	[Key.musicPlayerLoading]: "Loading...",
+	[Key.musicPlayerErrorPlaylist]: "Failed to fetch playlist",
+	[Key.musicPlayerErrorSong]: "Failed to load current song, trying next",
+	[Key.musicPlayerErrorEmpty]: "No available songs in playlist",
+	[Key.unknownSong]: "Unknown Song",
+	[Key.unknownArtist]: "Unknown Artist",
 
 	// Albums Page
 	[Key.albums]: "Albums",
@@ -111,6 +132,7 @@ export const en: Translation = {
 	// Devices Page
 	[Key.devices]: "My Devices",
 	[Key.devicesSubtitle]: "Here are the devices I use in my daily life",
+	[Key.devicesViewDetails]: "View Details",
 	[Key.albumsPhotoCount]: "photo",
 	[Key.albumsPhotosCount]: "photos",
 
@@ -145,7 +167,7 @@ export const en: Translation = {
 	[Key.rss]: "RSS Feed",
 	[Key.rssDescription]: "Subscribe to get latest updates",
 	[Key.rssSubtitle]:
-		"Subscribe via RSS to get the latest articles and updates imediately",
+		"Subscribe via RSS to get the latest articles and updates immediately",
 	[Key.rssLink]: "RSS Link",
 	[Key.rssCopyToReader]: "Copy link to your RSS reader",
 	[Key.rssCopyLink]: "Copy",
@@ -154,7 +176,7 @@ export const en: Translation = {
 	[Key.rssWhatIsRSSDescription]:
 		"RSS (Really Simple Syndication) is a standard format for publishing frequently updated content. With RSS, you can:",
 	[Key.rssBenefit1]:
-		"Get the latest website content in time without manually visiting",
+		"Get latest website content in time without manually visiting",
 	[Key.rssBenefit2]: "Manage subscriptions to multiple websites in one place",
 	[Key.rssBenefit3]: "Avoid missing important updates and articles",
 	[Key.rssBenefit4]: "Enjoy an ad-free, clean reading experience",
@@ -176,7 +198,7 @@ export const en: Translation = {
 	[Key.atomWhatIsAtomDescription]:
 		"Atom (Atom Syndication Format) is an XML-based standard for describing feeds and their items. With Atom, you can:",
 	[Key.atomBenefit1]:
-		"Get the latest website content in time without manually visiting",
+		"Get latest website content in time without manually visiting",
 	[Key.atomBenefit2]: "Manage subscriptions to multiple websites in one place",
 	[Key.atomBenefit3]: "Avoid missing important updates and articles",
 	[Key.atomBenefit4]: "Enjoy an ad-free, clean reading experience",
@@ -276,7 +298,7 @@ export const en: Translation = {
 	[Key.siteStatsCategoryCount]: "Categories",
 	[Key.siteStatsTagCount]: "Tags",
 	[Key.siteStatsTotalWords]: "Total Words",
-	[Key.siteStatsRunningDays]: "Running Time",
+	[Key.siteStatsRunningDays]: "Running Days",
 	[Key.siteStatsLastUpdate]: "Last Activity",
 	[Key.siteStatsDaysAgo]: "{days} days ago",
 	[Key.siteStatsDays]: "{days} days",
@@ -301,4 +323,25 @@ export const en: Translation = {
 	[Key.calendarOctober]: "Oct",
 	[Key.calendarNovember]: "Nov",
 	[Key.calendarDecember]: "Dec",
+
+	// Share Functionality
+	[Key.shareArticle]: "Share",
+	[Key.generatingPoster]: "Generating poster...",
+	[Key.copied]: "Copied",
+	[Key.copyLink]: "Copy Link",
+	[Key.savePoster]: "Save Poster",
+	[Key.scanToRead]: "Scan to Read",
+	[Key.shareOnSocial]: "Share",
+	[Key.shareOnSocialDescription]:
+		"If this article helped you, please share it with others!",
+
+	// Profile Stats
+	[Key.profileStatsLoading]: "Loading stats...",
+	[Key.profileStatsPageViews]: "Page views",
+	[Key.profileStatsVisits]: "Visits",
+	[Key.profileStatsUnavailable]: "Stats unavailable",
+
+	// Layout Switch Button
+	[Key.switchToGridMode]: "Switch to Grid Mode",
+	[Key.switchToListMode]: "Switch to List Mode",
 };

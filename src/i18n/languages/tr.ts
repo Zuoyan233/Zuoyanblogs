@@ -23,6 +23,7 @@ export const tr: Translation = {
 	[Key.recentPosts]: "Son Gönderiler",
 	[Key.postList]: "Gönderi Listesi",
 	[Key.tableOfContents]: "İçindekiler",
+	[Key.tocEmpty]: "İçindekiler tablosu yok",
 
 	// Duyuru
 	[Key.announcement]: "Duyuru",
@@ -62,7 +63,6 @@ export const tr: Translation = {
 	[Key.license]: "Lisans",
 	[Key.anime]: "Anime",
 	[Key.diary]: "Günlük",
-	[Key.gallery]: "Galeri",
 
 	// Anime Sayfası
 	[Key.animeTitle]: "Anime Listem",
@@ -98,7 +98,29 @@ export const tr: Translation = {
 	[Key.backToHome]: "Ana Sayfaya Dön",
 
 	// Müzik Çalar
-	[Key.playlist]: "Çalma Listesi",
+	[Key.musicPlayer]: "Müzik Çalar",
+	[Key.musicPlayerShow]: "Müzik Çalar'ı Göster",
+	[Key.musicPlayerHide]: "Müzik Çalar'ı Gizle",
+	[Key.musicPlayerExpand]: "Müzik Çalar'ı Genişlet",
+	[Key.musicPlayerCollapse]: "Müzik Çalar'ı Daralt",
+	[Key.musicPlayerPause]: "Duraklat",
+	[Key.musicPlayerPlay]: "Çal",
+	[Key.musicPlayerPrevious]: "Önceki",
+	[Key.musicPlayerNext]: "Sonraki",
+	[Key.musicPlayerShuffle]: "Karıştır",
+	[Key.musicPlayerRepeat]: "Tümünü Tekrarla",
+	[Key.musicPlayerRepeatOne]: "Birini Tekrarla",
+	[Key.musicPlayerVolume]: "Ses Seviyesi",
+	[Key.musicPlayerProgress]: "Çalma İlerlemesi",
+	[Key.musicPlayerCover]: "Kapak",
+	[Key.musicPlayerPlaylist]: "Çalma Listesi",
+	[Key.musicPlayerLoading]: "Yükleniyor...",
+	[Key.musicPlayerErrorPlaylist]: "Çalma listesi alınamadı",
+	[Key.musicPlayerErrorSong]:
+		"Geçerli şarkı yüklenemedi, bir sonraki deneniyor",
+	[Key.musicPlayerErrorEmpty]: "Çalma listesinde kullanılabilir şarkı yok",
+	[Key.unknownSong]: "Bilinmeyen Şarkı",
+	[Key.unknownArtist]: "Bilinmeyen Sanatçı",
 
 	// Albümler Sayfası
 	[Key.albums]: "Albümler",
@@ -111,6 +133,7 @@ export const tr: Translation = {
 	// Cihazlar Sayfası
 	[Key.devices]: "Cihazlarım",
 	[Key.devicesSubtitle]: "Günlük hayatımda kullandığım cihazlar",
+	[Key.devicesViewDetails]: "Xem chi tiết",
 	[Key.albumsPhotoCount]: "fotoğraf",
 	[Key.albumsPhotosCount]: "fotoğraflar",
 
@@ -309,4 +332,25 @@ export const tr: Translation = {
 	[Key.calendarOctober]: "Ekim",
 	[Key.calendarNovember]: "Kas",
 	[Key.calendarDecember]: "Ara",
+
+	// Paylaşım İşlevleri
+	[Key.shareArticle]: "Paylaş",
+	[Key.generatingPoster]: "Poster oluşturuluyor...",
+	[Key.copied]: "Kopyalandı",
+	[Key.copyLink]: "Bağlantıyı Kopyala",
+	[Key.savePoster]: "Posteri Kaydet",
+	[Key.scanToRead]: "Okumak için Tara",
+	[Key.shareOnSocial]: "Paylaş",
+	[Key.shareOnSocialDescription]:
+		"Bu makale size yardımcı olduysa, lütfen başkalarıyla paylaşın!",
+
+	// Profil İstatistikleri
+	[Key.profileStatsLoading]: "İstatistikler yükleniyor...",
+	[Key.profileStatsPageViews]: "Sayfa görüntülemeleri",
+	[Key.profileStatsVisits]: "Ziyaretler",
+	[Key.profileStatsUnavailable]: "İstatistikler mevcut değil",
+
+	// Düzen Düğmeyi Değiştir
+	[Key.switchToGridMode]: "Izgara Moduna Geç",
+	[Key.switchToListMode]: "Liste Moduna Geç",
 };

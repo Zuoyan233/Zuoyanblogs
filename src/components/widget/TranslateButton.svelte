@@ -148,10 +148,10 @@ onDestroy(() => {
         <div class="text-sm font-medium text-[var(--primary)] mb-3">
             {i18n(I18nKey.translateHeader)}
         </div>
-        <div class="grid grid-cols-1 gap-2 max-h-64 overflow-y-auto">
+        <div class="grid grid-cols-1 gap-2 max-h-64 overflow-y-auto scrollbar-hide">
             {#each languages as lang}
                 <button
-                    class="flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--btn-plain-bg-hover)] transition-colors text-left w-full {currentLanguage === lang.code ? 'bg-[var(--btn-plain-bg-hover)] border-1 border-[var(--primary)]' : ''}"
+                    class="flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--btn-plain-bg-hover)] transition-colors text-left w-full {currentLanguage === lang.code ? 'bg-[var(--btn-plain-bg-hover)] border-1 border-[var(--primary)]' : '' }"
                     on:click={() => changeLanguage(lang.code)}
                 >
                     <span class="text-lg transition text-black/75 dark:text-white/75">{lang.icon}</span>
@@ -174,32 +174,20 @@ onDestroy(() => {
 .float-panel-closed {
     opacity: 0;
     pointer-events: none;
-    transform: scaleY(0) scaleX(0.5);
+    transform: scale(0.95) translateY(-10px);
     transition: all 0.1s ease-out;
 }
 
 #translate-panel:not(.float-panel-closed) {
     opacity: 1;
     pointer-events: auto;
-    transform: scaleY(1) scaleX(1);
+    transform: scale(1) translateY(0);
     transition: all 0.1s ease-out;
 }
 
-/* 滚动条样式 */
-.overflow-y-auto::-webkit-scrollbar {
-    width: 4px;
-}
-
-.overflow-y-auto::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.overflow-y-auto::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-bg);
-    border-radius: 2px;
-}
-
-.overflow-y-auto::-webkit-scrollbar-thumb:hover {
-    background: var(--scrollbar-bg-hover);
+/* 隐藏滚动条 */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 </style>

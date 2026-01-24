@@ -6,8 +6,7 @@ export const es: Translation = {
 	[Key.about]: "Acerca de",
 	[Key.archive]: "Archivo",
 	[Key.search]: "Buscar",
-	[Key.sponsors]: "Patrocinador",
-	[Key.other]: "Otros",
+	[Key.other]: "Otro",
 
 	// Título del panel de traducción
 	[Key.translateHeader]: "Seleccionar idioma",
@@ -16,6 +15,7 @@ export const es: Translation = {
 	[Key.navLinks]: "Enlaces",
 	[Key.navMy]: "Mi",
 	[Key.navAbout]: "Acerca de",
+	[Key.sponsors]: "Patrocinador",
 	[Key.navOthers]: "Otros",
 
 	[Key.tags]: "Etiquetas",
@@ -23,6 +23,7 @@ export const es: Translation = {
 	[Key.recentPosts]: "Publicaciones recientes",
 	[Key.postList]: "Lista de publicaciones",
 	[Key.tableOfContents]: "Índice",
+	[Key.tocEmpty]: "Sin índice",
 
 	// Anuncio
 	[Key.announcement]: "Anuncio",
@@ -30,10 +31,10 @@ export const es: Translation = {
 
 	[Key.comments]: "Comentarios",
 	[Key.friends]: "Amigos",
-	[Key.friendsSubtitle]: "Descubre más sitios web excelentes",
-	[Key.friendsSearchPlaceholder]: "Buscar nombre o descripción de amigo...",
+	[Key.friendsSubtitle]: "Descubre más sitios web geniales",
+	[Key.friendsSearchPlaceholder]: "Buscar nombre o descripción de un amigo...",
 	[Key.friendsFilterAll]: "Todos",
-	[Key.friendsNoResults]: "No se han encontrado amigos coincidentes",
+	[Key.friendsNoResults]: "No se encontraron amigos que coincidan",
 	[Key.friendsVisit]: "Visitar",
 	[Key.friendsCopyLink]: "Copiar enlace",
 	[Key.friendsCopySuccess]: "Copiado",
@@ -58,31 +59,30 @@ export const es: Translation = {
 	[Key.more]: "Más",
 
 	[Key.author]: "Autor",
-	[Key.publishedAt]: "Publicado el",
+	[Key.publishedAt]: "Publicado en",
 	[Key.license]: "Licencia",
 	[Key.anime]: "Anime",
 	[Key.diary]: "Diario",
-	[Key.gallery]: "Galería",
 
-	// Página de Anime
+	// Página de anime
 	[Key.animeTitle]: "Mi lista de anime",
-	[Key.animeSubtitle]: "Registra mi viaje por el anime",
+	[Key.animeSubtitle]: "Registra mi experiencia en el anime",
 	[Key.animeStatusWatching]: "Viendo",
 	[Key.animeStatusCompleted]: "Completado",
-	[Key.animeStatusPlanned]: "Planeado",
+	[Key.animeStatusPlanned]: "Planificado",
 	[Key.animeStatusOnHold]: "En espera",
 	[Key.animeStatusDropped]: "Abandonado",
-	[Key.animeFilterAll]: "Todos",
+	[Key.animeFilterAll]: "Todo",
 	[Key.animeYear]: "Año",
 	[Key.animeStudio]: "Estudio",
-	[Key.animeEmpty]: "Sin datos de anime",
+	[Key.animeEmpty]: "No hay datos de anime disponibles",
 	[Key.animeEmptyBangumi]:
-		"Por favor, revisa la configuración de Bangumi o la conexión de red",
+		"Revisa la configuración de Bangumi o la conexión de red",
 	[Key.animeEmptyLocal]:
-		"Por favor, añade la información del anime en el archivo src/data/anime.ts",
+		"Agrega la información del anime en el archivo src/data/anime.ts",
 
-	// Página del Diario
-	[Key.diarySubtitle]: "Comparte tu vida en cualquier momento y lugar",
+	// Página del diario
+	[Key.diarySubtitle]: "Comparte tu vida, cuando y donde quieras",
 	[Key.diaryCount]: "Entradas del diario",
 	[Key.diaryReply]: "Responder",
 	[Key.diaryTips]: "Mostrar solo las últimas 30 entradas del diario",
@@ -94,23 +94,48 @@ export const es: Translation = {
 	[Key.notFound]: "404",
 	[Key.notFoundTitle]: "Página no encontrada",
 	[Key.notFoundDescription]:
-		"Lo sentimos, la página que intentaste visitar no existe o se ha movido.",
+		"Lo sentimos, la página que visitaste no existe o ha sido movida.",
 	[Key.backToHome]: "Volver a la página principal",
 
 	// Reproductor de música
-	[Key.playlist]: "Lista de reproducción",
+	[Key.musicPlayer]: "Reproductor de música",
+	[Key.musicPlayerShow]: "Mostrar música Reproductor",
+	[Key.musicPlayerHide]: "Ocultar reproductor de música",
+	[Key.musicPlayerExpand]: "Expandir reproductor de música",
+	[Key.musicPlayerCollapse]: "Contraer reproductor de música",
+	[Key.musicPlayerPause]: "Pausa",
+	[Key.musicPlayerPlay]: "Reproducir",
+	[Key.musicPlayerPrevious]: "Anterior",
+	[Key.musicPlayerNext]: "Siguiente",
+	[Key.musicPlayerShuffle]: "Reproducir aleatoriamente",
+	[Key.musicPlayerRepeat]: "Repetir todo",
+	[Key.musicPlayerRepeatOne]: "Repetir uno",
+	[Key.musicPlayerVolume]: "Control de volumen",
+	[Key.musicPlayerProgress]: "Progreso de reproducción",
+	[Key.musicPlayerCover]: "Portada",
+	[Key.musicPlayerPlaylist]: "Lista de reproducción",
+	[Key.musicPlayerLoading]: "Cargando...",
+	[Key.musicPlayerErrorPlaylist]: "Error al obtener la lista de reproducción",
+	[Key.musicPlayerErrorSong]:
+		"Error al cargar la canción actual, intentar la siguiente",
+	[Key.musicPlayerErrorEmpty]:
+		"No hay canciones disponibles en la lista de reproducción",
+	[Key.unknownSong]: "Canción desconocida",
+	[Key.unknownArtist]: "Artista desconocido",
 
 	// Página de Álbumes
 	[Key.albums]: "Álbumes",
-	[Key.albumsSubtitle]: "Graba momentos bonitos de la vida",
+	[Key.albumsSubtitle]: "Graba momentos hermosos de la vida",
 	[Key.albumsEmpty]: "Sin contenido",
 	[Key.albumsEmptyDesc]:
-		"Aún no se han creado álbumes. ¡Añade recuerdos bonitos!",
+		"Aún no se han creado álbumes. ¡Agrega recuerdos hermosos!",
 	[Key.albumsBackToList]: "Volver a Álbumes",
 
 	// Página de Dispositivos
 	[Key.devices]: "Mis dispositivos",
-	[Key.devicesSubtitle]: "Estos son los dispositivos que uso a diario",
+	[Key.devicesSubtitle]:
+		"Aquí están los dispositivos que Uso en mi vida diaria",
+	[Key.devicesViewDetails]: "Ver detalles",
 	[Key.albumsPhotoCount]: "foto",
 	[Key.albumsPhotosCount]: "fotos",
 
@@ -121,19 +146,19 @@ export const es: Translation = {
 	[Key.projectsWeb]: "Aplicaciones web",
 	[Key.projectsMobile]: "Aplicaciones móviles",
 	[Key.projectsDesktop]: "Aplicaciones de escritorio",
-	[Key.projectsOther]: "Otro",
+	[Key.projectsOther]: "Otros",
 	[Key.projectTechStack]: "Pila tecnológica",
 	[Key.projectLiveDemo]: "Demostración en vivo",
 	[Key.projectSourceCode]: "Código fuente",
 	[Key.projectDescription]: "Descripción del proyecto",
 	[Key.projectStatus]: "Estado",
 	[Key.projectStatusCompleted]: "Completado",
-	[Key.projectStatusInProgress]: "En curso",
+	[Key.projectStatusInProgress]: "En progreso",
 	[Key.projectStatusPlanned]: "Planificado",
 	[Key.projectsTotal]: "Total de proyectos",
 	[Key.projectsCompleted]: "Completado",
-	[Key.projectsInProgress]: "En curso",
-	[Key.projectsTechStack]: "Pila tecnológica Estadísticas",
+	[Key.projectsInProgress]: "En progreso",
+	[Key.projectsTechStack]: "Estadísticas de la pila tecnológica",
 	[Key.projectsFeatured]: "Proyectos destacados",
 	[Key.projectsPlanned]: "Planificado",
 	[Key.projectsDemo]: "Demostración en vivo",
@@ -145,7 +170,7 @@ export const es: Translation = {
 	[Key.rss]: "Feed RSS",
 	[Key.rssDescription]: "Suscríbete para recibir las últimas actualizaciones",
 	[Key.rssSubtitle]:
-		"Suscríbete por RSS para recibir los últimos artículos y actualizaciones al instante",
+		"Suscríbete vía RSS para recibir los últimos artículos y actualizaciones al instante",
 	[Key.rssLink]: "Enlace RSS",
 	[Key.rssCopyToReader]: "Copiar enlace a tu lector RSS",
 	[Key.rssCopyLink]: "Copiar",
@@ -154,16 +179,17 @@ export const es: Translation = {
 	[Key.rssWhatIsRSSDescription]:
 		"RSS (Really Simple Syndication) es un formato estándar para publicar contenido actualizado con frecuencia. Con RSS, puedes:",
 	[Key.rssBenefit1]:
-		"Obtener el contenido más reciente del sitio web a tiempo sin necesidad de visitarlo manualmente",
+		"Obtener el contenido más reciente del sitio web a tiempo sin tener que visitarlo manualmente",
 	[Key.rssBenefit2]:
 		"Administrar suscripciones a varios sitios web en un solo lugar",
 	[Key.rssBenefit3]: "Evitar perderse actualizaciones y artículos importantes",
 	[Key.rssBenefit4]:
-		"Disfrutar de una experiencia de lectura limpia y sin publicidad",
+		"Disfruta de una experiencia de lectura limpia y sin publicidad",
 	[Key.rssHowToUse]:
-		"Se recomienda usar Feedly, Inoreader u otros lectores RSS para suscribirse a este sitio.",
-	[Key.rssCopied]: "¡Enlace RSS copiado al portapapeles!",
-	[Key.rssCopyFailed]: "Error al copiar, copie el enlace manualmente",
+		"Se recomienda usar Feedly, Inoreader u otros lectores RSS para suscribirse a este sitio",
+	[Key.rssCopied]: "Enlace RSS copiado al portapapeles!",
+	[Key.rssCopyFailed]:
+		"Error al copiar, por favor, copie el enlace manualmente",
 
 	// Página de Atom
 	[Key.atom]: "Feed de Atom",
@@ -178,7 +204,7 @@ export const es: Translation = {
 	[Key.atomWhatIsAtomDescription]:
 		"Atom (formato de sindicación de Atom) es un estándar basado en XML para describir feeds y sus elementos. Con Atom, puedes:",
 	[Key.atomBenefit1]:
-		"Obtener el contenido más reciente del sitio web a tiempo sin necesidad de visitarlo manualmente",
+		"Obtener el contenido más reciente del sitio web a tiempo sin tener que visitarlo manualmente",
 	[Key.atomBenefit2]:
 		"Administrar suscripciones a varios sitios web en un solo lugar",
 	[Key.atomBenefit3]: "Evita perderte actualizaciones y artículos importantes",
@@ -216,19 +242,19 @@ export const es: Translation = {
 	[Key.skillsAdvanced]: "Avanzado",
 	[Key.skillsIntermediate]: "Intermedio",
 	[Key.skillsBeginner]: "Principiante",
-	[Key.skillsAdvancedTitle]: "Habilidades profesionales",
-	[Key.skillsProjects]: "Proyectos relacionados",
-	[Key.skillsDistribution]: "Distribución de habilidades",
-	[Key.skillsByLevel]: "Por nivel",
-	[Key.skillsByCategory]: "Por categoría",
+	[Key.skillsAdvancedTitle]: "Habilidades Profesionales",
+	[Key.skillsProjects]: "Proyectos Relacionados",
+	[Key.skillsDistribution]: "Distribución de Habilidades",
+	[Key.skillsByLevel]: "Por Nivel",
+	[Key.skillsByCategory]: "Por Categoría",
 	[Key.noData]: "Sin datos",
 
-	// Página de la Cronología
+	// Página de Cronología
 	[Key.timeline]: "Cronología",
 	[Key.timelineSubtitle]: "Mi trayectoria de crecimiento y logros importantes",
 	[Key.timelineEducation]: "Educación",
-	[Key.timelineWork]: "Experiencia laboral",
-	[Key.timelineProject]: "Experiencia en proyectos",
+	[Key.timelineWork]: "Experiencia Laboral",
+	[Key.timelineProject]: "Experiencia en Proyectos",
 	[Key.timelineAchievement]: "Logros",
 	[Key.timelinePresent]: "Presente",
 	[Key.timelineLocation]: "Ubicación",
@@ -248,19 +274,17 @@ export const es: Translation = {
 	[Key.passwordProtected]: "Protegido con contraseña",
 	[Key.passwordProtectedTitle]: "Este contenido está protegido con contraseña",
 	[Key.passwordProtectedDescription]:
-		"Introduce la contraseña para ver el contenido protegido",
-	[Key.passwordPlaceholder]: "Introduce la contraseña",
+		"Introduzca la contraseña para ver el contenido protegido",
+	[Key.passwordPlaceholder]: "Introduzca la contraseña",
 	[Key.passwordUnlock]: "Desbloquear",
 	[Key.passwordUnlocking]: "Desbloqueando...",
-	[Key.passwordIncorrect]: "Contraseña incorrecta, inténtalo de nuevo",
+	[Key.passwordIncorrect]: "Contraseña incorrecta, inténtelo de nuevo",
 	[Key.passwordDecryptError]:
-		"Error de descifrado, comprueba si la contraseña es correcta",
-	[Key.passwordRequired]: "Introduce la contraseña",
+		"Error de descifrado, compruebe si la contraseña es correcta",
+	[Key.passwordRequired]: "Introduzca la contraseña",
 	[Key.passwordVerifying]: "Verificando...",
-	[Key.passwordDecryptFailed]:
-		"Error en el descifrado, por favor, revise la contraseña",
-	[Key.passwordDecryptRetry]:
-		"Error en el descifrado, por favor, inténtelo de nuevo",
+	[Key.passwordDecryptFailed]: "Error de descifrado, compruebe la contraseña",
+	[Key.passwordDecryptRetry]: "Error de descifrado, inténtelo de nuevo",
 	[Key.passwordUnlockButton]: "Desbloquear",
 	[Key.copyFailed]: "Error en la copia:",
 	[Key.syntaxHighlightFailed]: "Error en el resaltado de sintaxis:",
@@ -268,9 +292,10 @@ export const es: Translation = {
 		"El resaltado de sintaxis automático también falló:",
 	[Key.decryptionError]: "Error durante el descifrado:",
 
-	// Tarjeta de última modificación
-	[Key.lastModifiedPrefix]: "Tiempo desde la última edición:",
-	[Key.lastModifiedOutdated]: "Alguna información puede estar desactualizada",
+	// Tarjeta de tiempo de última modificación
+	[Key.lastModifiedPrefix]: "Tiempo transcurrido desde la última edición:",
+	[Key.lastModifiedOutdated]:
+		"Es posible que parte de la información esté desactualizada",
 	[Key.year]: "y",
 	[Key.month]: "m",
 	[Key.day]: "d",
@@ -284,7 +309,7 @@ export const es: Translation = {
 	[Key.siteStatsCategoryCount]: "Categorías",
 	[Key.siteStatsTagCount]: "Etiquetas",
 	[Key.siteStatsTotalWords]: "Total de palabras",
-	[Key.siteStatsRunningDays]: "Tiempo de ejecución",
+	[Key.siteStatsRunningDays]: "Días de ejecución",
 	[Key.siteStatsLastUpdate]: "Última actividad",
 	[Key.siteStatsDaysAgo]: "{days} días atrás",
 	[Key.siteStatsDays]: "{days} días",
@@ -309,4 +334,25 @@ export const es: Translation = {
 	[Key.calendarOctober]: "Oct",
 	[Key.calendarNovember]: "Nov",
 	[Key.calendarDecember]: "Dic",
+
+	// Función para compartir
+	[Key.shareArticle]: "Compartir",
+	[Key.generatingPoster]: "Generando póster...",
+	[Key.copied]: "Copiado",
+	[Key.copyLink]: "Copiar enlace",
+	[Key.savePoster]: "Guardar póster",
+	[Key.scanToRead]: "Escanear para leer",
+	[Key.shareOnSocial]: "Compartir",
+	[Key.shareOnSocialDescription]:
+		"Si este artículo te ha sido útil, ¡compártelo!",
+
+	// Estadísticas del perfil
+	[Key.profileStatsLoading]: "Cargando estadísticas...",
+	[Key.profileStatsPageViews]: "Visitas de página",
+	[Key.profileStatsVisits]: "Visitas",
+	[Key.profileStatsUnavailable]: "Estadísticas no disponibles",
+
+	// Botón para cambiar de diseño
+	[Key.switchToGridMode]: "Cambiar al modo cuadrícula",
+	[Key.switchToListMode]: "Cambiar al modo lista",
 };

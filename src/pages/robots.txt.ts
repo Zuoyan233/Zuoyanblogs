@@ -6,7 +6,6 @@ Disallow: /
 Allow: /$
 Allow: /posts/
 
-
 Sitemap: ${new URL("sitemap-index.xml", import.meta.env.SITE).href}
 `.trim();
 

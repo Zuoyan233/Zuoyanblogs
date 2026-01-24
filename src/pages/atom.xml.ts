@@ -1,10 +1,12 @@
 import { getImage } from "astro:assets";
+// import { getCollection } from "astro:content";
 import type { APIContext, ImageMetadata } from "astro";
 import MarkdownIt from "markdown-it";
 import { parse as htmlParser } from "node-html-parser";
 import sanitizeHtml from "sanitize-html";
 import { profileConfig, siteConfig } from "@/config";
 import { getSortedPosts } from "@/utils/content-utils";
+import { initPostIdMap } from "@/utils/permalink-utils";
 import { getPostUrl } from "@/utils/url-utils";
 
 const markdownParser = new MarkdownIt();
@@ -24,6 +26,9 @@ export async function GET(context: APIContext) {
 	const posts = (await getSortedPosts()).filter(
 		(post) => !post.data.encrypted && post.data.draft !== true,
 	);
+
+	// 初始化文章 ID 映射（用于 permalink 功能）
+	initPostIdMap(posts);
 
 	// 创建Atom feed头部
 	let atomFeed = `<?xml version="1.0" encoding="utf-8"?>

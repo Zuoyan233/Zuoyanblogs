@@ -23,6 +23,7 @@ export const th: Translation = {
 	[Key.recentPosts]: "โพสต์ล่าสุด",
 	[Key.postList]: "รายการโพสต์",
 	[Key.tableOfContents]: "สารบัญ",
+	[Key.tocEmpty]: "ไม่มีสารบัญ",
 
 	// ประกาศ
 	[Key.announcement]: "ประกาศ",
@@ -62,7 +63,6 @@ export const th: Translation = {
 	[Key.license]: "ใบอนุญาต",
 	[Key.anime]: "อนิเมะ",
 	[Key.diary]: "ไดอารี่",
-	[Key.gallery]: "แกลเลอรี",
 
 	// หน้าอนิเมะ
 	[Key.animeTitle]: "รายการอนิเมะของฉัน",
@@ -95,7 +95,28 @@ export const th: Translation = {
 	[Key.backToHome]: "กลับสู่หน้าแรก",
 
 	// เครื่องเล่นเพลง
-	[Key.playlist]: "เพลย์ลิสต์",
+	[Key.musicPlayer]: "เครื่องเล่นเพลง",
+	[Key.musicPlayerShow]: "แสดงเครื่องเล่นเพลง",
+	[Key.musicPlayerHide]: "ซ่อนเครื่องเล่นเพลง",
+	[Key.musicPlayerExpand]: "ขยายเครื่องเล่นเพลง",
+	[Key.musicPlayerCollapse]: "ยุบเครื่องเล่นเพลง",
+	[Key.musicPlayerPause]: "หยุดชั่วคราว",
+	[Key.musicPlayerPlay]: "เล่น",
+	[Key.musicPlayerPrevious]: "ก่อนหน้า",
+	[Key.musicPlayerNext]: "ถัดไป",
+	[Key.musicPlayerShuffle]: "สุ่มเล่น",
+	[Key.musicPlayerRepeat]: "เล่นซ้ำทั้งหมด",
+	[Key.musicPlayerRepeatOne]: "เล่นซ้ำหนึ่งเพลง",
+	[Key.musicPlayerVolume]: "ควบคุมระดับเสียง",
+	[Key.musicPlayerProgress]: "แสดงความคืบหน้าการเล่น",
+	[Key.musicPlayerCover]: "ปก",
+	[Key.musicPlayerPlaylist]: "เพลย์ลิสต์",
+	[Key.musicPlayerLoading]: "กำลังโหลด...",
+	[Key.musicPlayerErrorPlaylist]: "ไม่สามารถดึงเพลย์ลิสต์ได้",
+	[Key.musicPlayerErrorSong]: "ไม่สามารถโหลดเพลงปัจจุบันได้ ลองเพลงถัดไป",
+	[Key.musicPlayerErrorEmpty]: "ไม่มีเพลงในเพลย์ลิสต์",
+	[Key.unknownSong]: "เพลงไม่ทราบชื่อ",
+	[Key.unknownArtist]: "ศิลปินไม่ทราบชื่อ",
 
 	// หน้าอัลบั้ม
 	[Key.albums]: "อัลบั้ม",
@@ -107,6 +128,7 @@ export const th: Translation = {
 	// หน้าอุปกรณ์
 	[Key.devices]: "อุปกรณ์ของฉัน",
 	[Key.devicesSubtitle]: "นี่คืออุปกรณ์ที่ฉันใช้ในชีวิตประจำวัน",
+	[Key.devicesViewDetails]: "ดูรายละเอียด",
 	[Key.albumsPhotoCount]: "ภาพถ่าย",
 	[Key.albumsPhotosCount]: "ภาพถ่าย",
 
@@ -293,4 +315,24 @@ export const th: Translation = {
 	[Key.calendarOctober]: "ต.ค.",
 	[Key.calendarNovember]: "พ.ย.",
 	[Key.calendarDecember]: "ธ.ค.",
+
+	// ฟังก์ชันการแชร์
+	[Key.shareArticle]: "แชร์",
+	[Key.generatingPoster]: "กำลังสร้างโปสเตอร์...",
+	[Key.copied]: "คัดลอกแล้ว",
+	[Key.copyLink]: "คัดลink",
+	[Key.savePoster]: "บันทึกโปสเตอร์",
+	[Key.scanToRead]: "สแกนเพื่ออ่าน",
+	[Key.shareOnSocial]: "แชร์",
+	[Key.shareOnSocialDescription]: "หากบทความนี้เป็นประโยชน์ โปรดแชร์กับผู้อื่น!",
+
+	// สถิติโปรไฟล์
+	[Key.profileStatsLoading]: "กำลังโหลดสถิติ...",
+	[Key.profileStatsPageViews]: "จำนวนการดูหน้า",
+	[Key.profileStatsVisits]: "จำนวนการเข้าชม",
+	[Key.profileStatsUnavailable]: "สถิติไม่พร้อมใช้งาน",
+
+	// ปุ่มสลับรูปแบบการแสดงผล
+	[Key.switchToGridMode]: "สลับเป็นโหมดตาราง โหมด",
+	[Key.switchToListMode]: "สลับไปที่โหมดรายการ",
 };

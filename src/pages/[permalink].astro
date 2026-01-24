@@ -23,7 +23,6 @@ import {
 } from "@utils/permalink-utils";
 import { getFileDirFromPath, getPostUrlBySlug } from "@utils/url-utils";
 import { Icon } from "astro-icon/components";
-import bcryptjs from "bcryptjs";
 import CryptoJS from "crypto-js";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
@@ -76,20 +75,13 @@ const { remarkPluginFrontmatter } = await render(entry);
 
 // 处理加密逻辑
 let encryptedContent = "";
-let passwordHash = "";
 let isEncrypted = entry.data.encrypted && entry.data.password;
 
 if (isEncrypted) {
-	const contentToEncrypt = entry.body;
-	const saltRounds = Number.parseInt(
-		import.meta.env.BCRYPT_SALT_ROUNDS || "12",
-		10,
-	);
-	passwordHash = bcryptjs.hashSync(entry.data.password, saltRounds);
-	const encryptionKey = passwordHash.substring(0, 32);
+	const contentToEncrypt = "MIZUKI-VERIFY:" + entry.body;
 	encryptedContent = CryptoJS.AES.encrypt(
 		contentToEncrypt,
-		encryptionKey,
+		String(entry.data.password),
 	).toString();
 }
 
@@ -227,7 +219,6 @@ const jsonLd = {
                 isEncrypted ? (
                     <PasswordProtection
                         encryptedContent={encryptedContent}
-                        passwordHash={passwordHash}
                     />
                 ) : (
                     <>
@@ -274,6 +265,8 @@ const jsonLd = {
                 <script is:inline>
                     function runtime() {
                         const lastModifiedElement = document.getElementById('last-modified');
+                        if (!lastModifiedElement) return;  // 如果元素不存在，直接返回
+                        
                         const startDate = new Date(lastModifiedElement.dataset.lastModified);
                         const currentDate = new Date();
                         const diff = currentDate - startDate;

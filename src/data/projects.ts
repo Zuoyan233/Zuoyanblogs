@@ -25,7 +25,7 @@ export const projectsData: Project[] = [
 		description: "左颜研究部 - 聚集经验知识的后花园 （Astro驱动的博客框架）",
 		image: "",
 		category: "web",
-		techStack: ["Astro", "TypeScript", "CSS", "MongoDB", "Svelte"],
+		techStack: ["Astro", "TypeScript", "Tailwind CSS", "MongoDB", "Svelte"],
 		status: "completed",
 		liveDemo: "https://blog.example.com",
 		sourceCode: "https://github.com/Zuoyan233", // 更改为GitHub链接

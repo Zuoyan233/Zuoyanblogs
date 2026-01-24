@@ -23,6 +23,7 @@ export const id: Translation = {
 	[Key.recentPosts]: "Postingan Terbaru",
 	[Key.postList]: "Daftar Postingan",
 	[Key.tableOfContents]: "Daftar Isi",
+	[Key.tocEmpty]: "Tidak ada daftar isi",
 
 	// Pengumuman
 	[Key.announcement]: "Pengumuman",
@@ -60,7 +61,6 @@ export const id: Translation = {
 	[Key.license]: "Lisensi",
 	[Key.anime]: "Anime",
 	[Key.diary]: "Buku Harian",
-	[Key.gallery]: "Galeri",
 
 	// Halaman Anime
 	[Key.animeTitle]: "Daftar Anime Saya",
@@ -96,7 +96,30 @@ export const id: Translation = {
 	[Key.backToHome]: "Kembali ke Beranda",
 
 	// Pemutar Musik
-	[Key.playlist]: "Daftar Putar",
+	[Key.musicPlayer]: "Pemutar Musik",
+	[Key.musicPlayerShow]: "Tampilkan Pemutar Musik",
+	[Key.musicPlayerHide]: "Sembunyikan Pemutar Musik",
+	[Key.musicPlayerExpand]: "Perluas Pemutar Musik",
+	[Key.musicPlayerCollapse]: "Ciutkan Pemutar Musik",
+	[Key.musicPlayerPause]: "Jeda",
+	[Key.musicPlayerPlay]: "Putar",
+	[Key.musicPlayerPrevious]: "Sebelumnya",
+	[Key.musicPlayerNext]: "Berikutnya",
+	[Key.musicPlayerShuffle]: "Acak",
+	[Key.musicPlayerRepeat]: "Ulangi Semua",
+	[Key.musicPlayerRepeatOne]: "Ulangi Satu",
+	[Key.musicPlayerVolume]: "Volume Kontrol",
+	[Key.musicPlayerProgress]: "Kemajuan Pemutaran",
+	[Key.musicPlayerCover]: "Sampul album",
+	[Key.musicPlayerPlaylist]: "Daftar putar",
+	[Key.musicPlayerLoading]: "Memuat...",
+	[Key.musicPlayerErrorPlaylist]: "Kesalahan saat mengambil daftar putar",
+	[Key.musicPlayerErrorSong]:
+		"Kesalahan saat memuat lagu saat ini, silakan coba lagu berikutnya",
+	[Key.musicPlayerErrorEmpty]:
+		"Tidak ada lagu yang tersedia dalam daftar putar",
+	[Key.unknownSong]: "Lagu tidak dikenal",
+	[Key.unknownArtist]: "Artis tidak dikenal",
 
 	// Halaman Album
 	[Key.albums]: "Album",
@@ -110,6 +133,7 @@ export const id: Translation = {
 	[Key.devices]: "Perangkat Saya",
 	[Key.devicesSubtitle]:
 		"Berikut adalah perangkat yang saya gunakan sehari-hari",
+	[Key.devicesViewDetails]: "Lihat Detail",
 	[Key.albumsPhotoCount]: "foto",
 	[Key.albumsPhotosCount]: "foto",
 
@@ -300,4 +324,25 @@ export const id: Translation = {
 	[Key.calendarOctober]: "Okt",
 	[Key.calendarNovember]: "Nov",
 	[Key.calendarDecember]: "Des",
+
+	// Fungsi Berbagi
+	[Key.shareArticle]: "Bagikan",
+	[Key.generatingPoster]: "Membuat poster...",
+	[Key.copied]: "Disalin",
+	[Key.copyLink]: "Salin Tautan",
+	[Key.savePoster]: "Simpan Poster",
+	[Key.scanToRead]: "Pindai untuk Membaca",
+	[Key.shareOnSocial]: "Bagikan",
+	[Key.shareOnSocialDescription]:
+		"Jika artikel ini bermanfaat bagi Anda, silakan bagikan dengan orang lain!",
+
+	// Statistik Profil
+	[Key.profileStatsLoading]: "Memuat statistik...",
+	[Key.profileStatsPageViews]: "Tayangan halaman",
+	[Key.profileStatsVisits]: "Kunjungan",
+	[Key.profileStatsUnavailable]: "Statistik tidak tersedia",
+
+	// Tombol Pengalih Tata Letak
+	[Key.switchToGridMode]: "Beralih ke Mode Grid",
+	[Key.switchToListMode]: "Beralih ke Mode Daftar",
 };

@@ -23,6 +23,7 @@ export const vi: Translation = {
 	[Key.recentPosts]: "Bài đăng gần đây",
 	[Key.postList]: "Danh sách bài đăng",
 	[Key.tableOfContents]: "Mục lục",
+	[Key.tocEmpty]: "Không có mục lục",
 
 	// Thông báo
 	[Key.announcement]: "Thông báo",
@@ -62,7 +63,6 @@ export const vi: Translation = {
 	[Key.license]: "Giấy phép",
 	[Key.anime]: "Anime",
 	[Key.diary]: "Nhật ký",
-	[Key.gallery]: "Thư viện",
 
 	// Trang Anime
 	[Key.animeTitle]: "Danh sách Anime của tôi",
@@ -99,7 +99,29 @@ export const vi: Translation = {
 	[Key.backToHome]: "Quay lại Trang chủ",
 
 	// Trình phát nhạc
-	[Key.playlist]: "Danh sách phát",
+	[Key.musicPlayer]: "Trình phát nhạc",
+	[Key.musicPlayerShow]: "Hiện trình phát nhạc",
+	[Key.musicPlayerHide]: "Ẩn trình phát nhạc",
+	[Key.musicPlayerExpand]: "Mở rộng trình phát nhạc",
+	[Key.musicPlayerCollapse]: "Thu gọn trình phát nhạc",
+	[Key.musicPlayerPause]: "Tạm dừng",
+	[Key.musicPlayerPlay]: "Phát",
+	[Key.musicPlayerPrevious]: "Bài trước",
+	[Key.musicPlayerNext]: "Bài tiếp theo",
+	[Key.musicPlayerShuffle]: "Phát ngẫu nhiên",
+	[Key.musicPlayerRepeat]: "Lặp lại tất cả",
+	[Key.musicPlayerRepeatOne]: "Lặp lại một bài",
+	[Key.musicPlayerVolume]: "Điều chỉnh âm lượng",
+	[Key.musicPlayerProgress]: "Tiến độ phát",
+	[Key.musicPlayerCover]: "Ảnh bìa",
+	[Key.musicPlayerPlaylist]: "Danh sách phát",
+	[Key.musicPlayerLoading]: "Đang tải...",
+	[Key.musicPlayerErrorPlaylist]: "Không thể tải danh sách phát",
+	[Key.musicPlayerErrorSong]:
+		"Không thể tải bài hát hiện tại, thử bài tiếp theo",
+	[Key.musicPlayerErrorEmpty]: "Không có bài hát nào trong danh sách phát",
+	[Key.unknownSong]: "Bài hát không xác định",
+	[Key.unknownArtist]: "Nghệ sĩ không xác định",
 
 	// Trang Album
 	[Key.albums]: "Album",
@@ -114,6 +136,7 @@ export const vi: Translation = {
 	[Key.devices]: "Thiết bị của tôi",
 	[Key.devicesSubtitle]:
 		"Đây là những thiết bị tôi sử dụng trong cuộc sống hàng ngày",
+	[Key.devicesViewDetails]: "Xem chi tiết",
 	[Key.albumsPhotoCount]: "ảnh",
 	[Key.albumsPhotosCount]: "ảnh",
 
@@ -315,4 +338,25 @@ export const vi: Translation = {
 	[Key.calendarOctober]: "Tháng Mười",
 	[Key.calendarNovember]: "Tháng Mười Một",
 	[Key.calendarDecember]: "Tháng Mười Hai",
+
+	// Chức năng Chia sẻ
+	[Key.shareArticle]: "Chia sẻ",
+	[Key.generatingPoster]: "Đang tạo poster...",
+	[Key.copied]: "Đã sao chép",
+	[Key.copyLink]: "Sao chép liên kết",
+	[Key.savePoster]: "Lưu poster",
+	[Key.scanToRead]: "Quét để đọc",
+	[Key.shareOnSocial]: "Chia sẻ",
+	[Key.shareOnSocialDescription]:
+		"Nếu bài viết này hữu ích với bạn, hãy chia sẻ với người khác!",
+
+	// Thống kê Trang cá nhân
+	[Key.profileStatsLoading]: "Đang tải thống kê...",
+	[Key.profileStatsPageViews]: "Lượt xem trang",
+	[Key.profileStatsVisits]: "Lượt truy cập",
+	[Key.profileStatsUnavailable]: "Thống kê không khả dụng",
+
+	// Nút Chuyển đổi Bố cục
+	[Key.switchToGridMode]: "Chuyển sang Chế độ Lưới",
+	[Key.switchToListMode]: "Chuyển sang Chế độ Danh sách Cách thức",
 };

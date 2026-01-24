@@ -10,6 +10,7 @@ import type {
 	PermalinkConfig,
 	ProfileConfig,
 	SakuraConfig,
+	ShareConfig,
 	SidebarLayoutConfig,
 	SiteConfig,
 } from "./types/config";
@@ -36,7 +37,17 @@ export const siteConfig: SiteConfig = {
 		fixed: true, // 对访问者隐藏主题色选择器
 	},
 
-	// 特色页面开关配置(关闭不在使用的页面有助于提升SEO,关闭后直接在顶部导航删除对应的页面就行)
+	translate: {
+		enable: true, // 启用翻译功能
+		service: "client.edge", // 使用 Edge 浏览器翻译服务
+		defaultLanguage: getTranslateLanguageFromConfig(SITE_LANG), // 根据站点语言自动设置默认翻译语言
+		showSelectTag: false, // 不显示默认语言选择下拉菜单，使用自定义按钮
+		autoDiscriminate: true, // 自动检测用户语言
+		ignoreClasses: ["ignore", "banner-title", "banner-subtitle"], // 翻译时忽略的 CSS 类名
+		ignoreTags: ["script", "style", "code", "pre"], // 翻译时忽略的 HTML 标签
+	},
+
+	// 特色页面开关配置（关闭未使用的页面有助于提升 SEO，关闭后请记得在 navbarConfig 中移除对应链接）
 	featurePages: {
 		anime: true, // 番剧页面开关
 		diary: true, // 日记页面开关
@@ -48,22 +59,22 @@ export const siteConfig: SiteConfig = {
 		devices: true, // 设备页面开关
 	},
 
-	translate: {
-		enable: true, // 启用翻译功能
-		service: "client.edge", // 使用 Edge 浏览器翻译服务
-		defaultLanguage: getTranslateLanguageFromConfig(SITE_LANG), // 根据站点语言自动设置默认翻译语言
-		showSelectTag: false, // 不显示默认语言选择下拉菜单，使用自定义按钮
-		autoDiscriminate: true, // 自动检测用户语言
-		ignoreClasses: ["ignore", "banner-title", "banner-subtitle"], // 翻译时忽略的 CSS 类名
-		ignoreTags: ["script", "style", "code", "pre"], // 翻译时忽略的 HTML 标签
-	},
-
 	// 顶栏标题配置
 	navbarTitle: {
+		// 显示模式："text-icon" 显示图标+文本，"logo" 仅显示Logo
+		mode: "text-icon",
 		// 顶栏标题文本
 		text: "左颜研究部",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.png
 		icon: "assets/home/home.ico",
+		// 网站Logo图片路径
+		logo: "",
+	},
+
+	// 页面自动缩放配置
+	pageScaling: {
+		enable: true, // 是否开启自动缩放
+		targetWidth: 2000, // 目标宽度，低于此宽度时开始缩放
 	},
 
 	bangumi: {
@@ -80,7 +91,7 @@ export const siteConfig: SiteConfig = {
 		// 默认布局模式："list" 列表模式（单列布局），"grid" 网格模式（双列布局）
 		// 注意：如果侧边栏配置启用了"both"双侧边栏，则无法使用文章列表"grid"网格（双列）布局
 		defaultMode: "list",
-		// 是否允许用户切换布局grif
+		// 是否允许用户切换布局
 		allowSwitch: false,
 	},
 
@@ -131,7 +142,7 @@ export const siteConfig: SiteConfig = {
 		},
 
 		waves: {
-			enable: true, // 是否启用水波纹效果(这个功能比较吃性能)
+			enable: true, // 是否启用水波纹效果（注意：此功能性能开销较大）
 			performanceMode: true, // 性能模式：减少动画复杂度(性能提升40%)
 			mobileDisable: false, // 移动端禁用
 		},
@@ -170,7 +181,6 @@ export const siteConfig: SiteConfig = {
 
 		credit: {
 			enable: true, // 显示横幅图片来源文本
-
 			text: "图片来自：搜图神器", // 要显示的来源文本
 			url: "https://www.soutushenqi.com/", // （可选）原始艺术品或艺术家页面的 URL 链接
 		},
@@ -181,9 +191,9 @@ export const siteConfig: SiteConfig = {
 	},
 	toc: {
 		enable: true, // 启用目录功能
+		mode: "sidebar", // 目录显示模式："float" 悬浮按钮模式，"sidebar" 侧边栏模式
 		depth: 3, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
 		useJapaneseBadge: false, // 使用日语假名标记（あいうえお...）代替数字，开启后会将 1、2、3... 改为 あ、い、う...
-		mode: "sidebar", // 目录显示模式："float" 悬浮按钮模式，"sidebar" 侧边栏模式
 	},
 	showCoverInContent: true, // 在文章内容页显示文章封面
 	generateOgImages: false, // 启用生成OpenGraph图片功能,注意开启后要渲染很长时间，不建议本地调试的时候开启
@@ -243,7 +253,7 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 		interval: 6, // 轮播间隔时间（秒）
 	},
 	zIndex: -1, // 层级，确保壁纸在背景层
-	opacity: 0.5, // 壁纸透明度
+	opacity: 0.8, // 壁纸透明度
 	blur: 1, // 背景模糊程度
 };
 
@@ -251,7 +261,7 @@ export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
 		LinkPreset.Archive,
-		// 支持自定义导航栏链接,并且支持多级菜单,3.1版本新加
+		// 支持自定义导航栏链接，支持多级菜单
 		{
 			name: "Links",
 			url: "/links/",
@@ -285,7 +295,7 @@ export const navBarConfig: NavBarConfig = {
 			children: [
 				LinkPreset.Anime,
 				LinkPreset.Diary,
-				LinkPreset.Gallery,
+				LinkPreset.Albums,
 				LinkPreset.Devices,
 			],
 		},
@@ -305,7 +315,7 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/zuoyan.webp", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
+	avatar: "assets/images/avatar.webp", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
 	name: "左颜",
 	bio: "世界这么大，我想去看看",
 	typewriter: {
@@ -314,7 +324,7 @@ export const profileConfig: ProfileConfig = {
 	},
 	links: [
 		{
-			name: "Bilibli",
+			name: "Bilibili",
 			icon: "fa6-brands:bilibili",
 			url: "https://space.bilibili.com/352580971",
 		},
@@ -326,17 +336,18 @@ export const profileConfig: ProfileConfig = {
 		// {
 		// 	name: "Gitee",
 		// 	icon: "mdi:git",
-		// 	url: "https://gitee.com/matsuzakayuki",
+		// 	url: "",
 		// },
+
 		// {
 		// 	name: "Codeberg",
 		// 	icon: "simple-icons:codeberg",
-		// 	url: "https://codeberg.org",
+		// 	url: "",
 		// },
 		// {
 		// 	name: "Discord",
 		// 	icon: "fa6-brands:discord",
-		// 	url: "https://discord.gg/MqW6TcQtVM",
+		// 	url: "",
 		// },
 	],
 };
@@ -389,8 +400,12 @@ export const commentConfig: CommentConfig = {
 	},
 };
 
+export const shareConfig: ShareConfig = {
+	enable: true, // 启用分享功能
+};
+
 export const announcementConfig: AnnouncementConfig = {
-	title: "", // 公告标题
+	title: "", // 公告标题，填空使用i18n字符串Key.announcement
 	content: "欢迎来到左颜研究部博客! 聚集经验知识的后花园。", // 公告内容
 	closable: true, // 允许用户关闭公告
 	link: {
@@ -422,7 +437,7 @@ export const footerConfig: FooterConfig = {
 /**
  * 侧边栏布局配置
  * 用于控制侧边栏组件的显示、排序、动画和响应式行为
- * sidebar: 控制组件在左侧栏和右侧栏,注意移动端是不会显示右侧栏的内容(unilateral模式除外),在设置了right属性的时候请确保你使用双侧(both)布局
+ * sidebar: 控制组件所在的侧边栏（left 或 right）。注意：移动端通常不显示右侧栏内容。若组件设置在 right，请确保 layout.position 为 "both"。
  */
 export const sidebarLayoutConfig: SidebarLayoutConfig = {
 	// 侧边栏位置：单侧(unilateral)或双侧(both)
@@ -470,7 +485,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			// 组件显示顺序
 			order: 3,
 			// 组件位置："sticky" 表示粘性定位，可滚动
-			position: "top",
+			position: "sticky",
 			// 所在侧边栏
 			sidebar: "left",
 			// CSS 类名
@@ -490,7 +505,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			enable: true,
 			// 组件显示顺序
 			order: 4,
-			// 组件位置："top" 表示固定在顶部
+			// 组件位置："sticky" 表示粘性定位
 			position: "top",
 			// 所在侧边栏
 			sidebar: "left",
@@ -572,15 +587,16 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			mobile: 768,
 			// 平板端断点：屏幕宽度小于1280px
 			tablet: 1280,
-			// 桌面端断点：屏幕宽度小于1280px
+			// 桌面端断点：屏幕宽度大于等于1280px
 			desktop: 1280,
 		},
 		// 不同设备的布局模式
-		//hidden:不显示侧边栏(桌面端)   drawer:抽屉模式(移动端不显示)   sidebar:显示侧边栏
+		// hidden: 隐藏侧边栏
+		// sidebar: 显示侧边栏
 		layout: {
-			// 移动端：抽屉模式
+			// 移动端：显示侧边栏(抽屉模式)
 			mobile: "sidebar",
-			// 平板端：显示侧边栏
+			// 平板端：显示侧边栏(抽屉模式)
 			tablet: "sidebar",
 			// 桌面端：显示侧边栏
 			desktop: "sidebar",
@@ -591,7 +607,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 export const sakuraConfig: SakuraConfig = {
 	enable: true, // 默认关闭樱花特效
 	sakuraNum: 10, // 樱花数量
-	limitTimes: -1, // 樱花越界限制true次数，-1为无限循环
+	limitTimes: -1, // 樱花越界限制次数，-1为无限循环
 	size: {
 		min: 0.5, // 樱花最小尺寸倍数
 		max: 1.1, // 樱花最大尺寸倍数
@@ -618,19 +634,19 @@ export const sakuraConfig: SakuraConfig = {
 // Pio 看板娘配置
 export const pioConfig: import("./types/config").PioConfig = {
 	enable: true, // 启用看板娘
-	models: ["/pio/models/madoka/model.json"], // 默认模型路径
-	position: "left", // 默认位置在右侧
+	models: ["/pio/models/mikoto/mikoto.model.json"], // 默认模型路径
+	position: "left", // 模型位置
 	width: 280, // 默认宽度
-	height: 360, // 默认高度
+	height: 310, // 默认高度
 	mode: "draggable", // 默认为可拖拽模式
 	hiddenOnMobile: true, // 默认在移动设备上隐藏
 	dialog: {
 		welcome: "欢迎来到左颜研究部博客网站!", // 欢迎词
 		touch: ["你在干什么?", "不要碰我!", "HENTAI!", "你不要玷污我了!"], // 触摸提示
-		home: "点击这里返回主页!", // 首页提示
+		home: "点击这里回到主页!", // 首页提示
 		skin: ["你有看到我的新服装了吗?", "这看起来很好看~"], // 换装提示
 		close: "QWQ 下次再见了~", // 关闭提示
-		link: "https://github.com/Zuoyan233/Zuoyanblogs", // 关于链接
+		link: "", // 关于链接
 	},
 };
 
@@ -643,6 +659,7 @@ export const widgetConfigs = {
 	sakura: sakuraConfig,
 	fullscreenWallpaper: fullscreenWallpaperConfig,
 	pio: pioConfig, // 添加 pio 配置
+	share: shareConfig, // 添加分享配置
 } as const;
 
 export const umamiConfig = {

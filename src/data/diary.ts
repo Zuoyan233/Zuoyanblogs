@@ -15,7 +15,7 @@ export interface DiaryItem {
 const diaryData: DiaryItem[] = [
 	// {
 	// 	id: 1,
-	// 	content: "网站翻译组件成功移植",
+	// 	content: "",
 	// 	date: "2025-11-01T00:00:00Z",
 	// 	images: ["/images/diary/11-01.webp"],
 	// },

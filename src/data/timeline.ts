@@ -64,7 +64,7 @@ export const timelineData: TimelineItem[] = [
 		startDate: "2025-10-01",
 		location: "佛山顺德",
 		organization: "在家开发",
-		skills: ["Astro", "TypeScript", "CSS", "MongoDB", "Svelte"],
+		skills: ["Astro", "TypeScript", "Tailwind CSS", "MongoDB", "Svelte"],
 		achievements: [],
 		icon: "material-symbols:code",
 		color: "#7C3AED",

@@ -38,8 +38,8 @@ export const LinkPresets: { [key in LinkPreset]: NavBarLink } = {
 		url: "/diary/",
 		icon: "material-symbols:book",
 	},
-	[LinkPreset.Gallery]: {
-		name: i18n(I18nKey.gallery),
+	[LinkPreset.Albums]: {
+		name: i18n(I18nKey.albums),
 		url: "/albums/",
 		icon: "material-symbols:photo-library",
 	},

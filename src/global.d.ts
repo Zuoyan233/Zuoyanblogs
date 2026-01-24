@@ -1,5 +1,3 @@
-export { SearchResult };
-
 declare global {
 	interface HTMLElementTagNameMap {
 		"table-of-contents": HTMLElement & {
@@ -57,3 +55,5 @@ interface SearchResult {
 	raw_url?: string;
 	sub_results?: SearchResult[];
 }
+
+export { SearchResult };

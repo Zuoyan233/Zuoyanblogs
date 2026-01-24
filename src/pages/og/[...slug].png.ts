@@ -298,7 +298,10 @@ export async function GET({
 							{
 								type: "div",
 								props: {
-									style: { fontSize: "28px", color: subtleTextColor },
+									style: {
+										fontSize: "28px",
+										color: subtleTextColor,
+									},
 									children: pubDate,
 								},
 							},

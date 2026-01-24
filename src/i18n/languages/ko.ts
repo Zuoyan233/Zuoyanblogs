@@ -23,6 +23,7 @@ export const ko: Translation = {
 	[Key.recentPosts]: "최근 게시물",
 	[Key.postList]: "게시물 목록",
 	[Key.tableOfContents]: "목차",
+	[Key.tocEmpty]: "목차가 없습니다",
 
 	// 공지
 	[Key.announcement]: "공지사항",
@@ -62,7 +63,6 @@ export const ko: Translation = {
 	[Key.license]: "라이선스",
 	[Key.anime]: "애니메이션",
 	[Key.diary]: "일기",
-	[Key.gallery]: "갤러리",
 
 	// 애니메이션 페이지
 	[Key.animeTitle]: "내 애니메이션 목록",
@@ -97,7 +97,29 @@ export const ko: Translation = {
 	[Key.backToHome]: "홈으로 돌아가기",
 
 	// 음악 플레이어
-	[Key.playlist]: "재생목록",
+	[Key.musicPlayer]: "음악 플레이어",
+	[Key.musicPlayerShow]: "음악 플레이어 표시",
+	[Key.musicPlayerHide]: "음악 플레이어 숨기기",
+	[Key.musicPlayerExpand]: "음악 플레이어 펼치기",
+	[Key.musicPlayerCollapse]: "음악 플레이어 접기",
+	[Key.musicPlayerPause]: "일시 정지",
+	[Key.musicPlayerPlay]: "재생",
+	[Key.musicPlayerPrevious]: "이전 곡",
+	[Key.musicPlayerNext]: "다음 곡",
+	[Key.musicPlayerShuffle]: "랜덤 재생",
+	[Key.musicPlayerRepeat]: "전체 반복",
+	[Key.musicPlayerRepeatOne]: "한 곡 반복",
+	[Key.musicPlayerVolume]: "볼륨 조절",
+	[Key.musicPlayerProgress]: "재생 진행 중",
+	[Key.musicPlayerCover]: "표지",
+	[Key.musicPlayerPlaylist]: "재생 목록",
+	[Key.musicPlayerLoading]: "로딩 중...",
+	[Key.musicPlayerErrorPlaylist]: "재생 목록을 가져오는 데 실패했습니다.",
+	[Key.musicPlayerErrorSong]:
+		"현재 곡을 불러오는 데 실패했습니다. 다음 곡을 시도합니다.",
+	[Key.musicPlayerErrorEmpty]: "재생 목록에 사용할 수 있는 곡이 없습니다.",
+	[Key.unknownSong]: "알 수 없는 곡",
+	[Key.unknownArtist]: "알 수 없는 아티스트",
 
 	// 앨범 페이지
 	[Key.albums]: "앨범",
@@ -110,6 +132,7 @@ export const ko: Translation = {
 	// 기기 페이지
 	[Key.devices]: "내 기기",
 	[Key.devicesSubtitle]: "일상 생활에서 사용하는 기기입니다",
+	[Key.devicesViewDetails]: "세부 정보 보기",
 	[Key.albumsPhotoCount]: "사진",
 	[Key.albumsPhotosCount]: "사진",
 
@@ -299,4 +322,25 @@ export const ko: Translation = {
 	[Key.calendarOctober]: "10월",
 	[Key.calendarNovember]: "11월",
 	[Key.calendarDecember]: "12월",
+
+	// 공유 기능
+	[Key.shareArticle]: "공유",
+	[Key.generatingPoster]: "포스터 생성 중...",
+	[Key.copied]: "복사됨",
+	[Key.copyLink]: "링크 복사",
+	[Key.savePoster]: "포스터 저장",
+	[Key.scanToRead]: "읽기 위해 스캔",
+	[Key.shareOnSocial]: "공유",
+	[Key.shareOnSocialDescription]:
+		"이 글이 도움이 되었다면 다른 사람들과 공유해 주세요!",
+
+	// 프로필 통계
+	[Key.profileStatsLoading]: "통계 불러오는 중...",
+	[Key.profileStatsPageViews]: "페이지 조회수",
+	[Key.profileStatsVisits]: "방문 횟수",
+	[Key.profileStatsUnavailable]: "통계를 사용할 수 없습니다",
+
+	// 레이아웃 전환 버튼
+	[Key.switchToGridMode]: "그리드 모드로 전환 모드",
+	[Key.switchToListMode]: "목록 모드로 전환",
 };
