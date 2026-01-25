@@ -3,7 +3,7 @@ enum I18nKey {
 	about = "about",
 	archive = "archive",
 	search = "search",
-	sponsors = "sponsor",
+	sponsors = "sponsors",
 	other = "other",
 
 	// 翻译面板标题

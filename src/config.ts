@@ -484,8 +484,8 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			enable: true,
 			// 组件显示顺序
 			order: 3,
-			// 组件位置："sticky" 表示粘性定位，可滚动
-			position: "sticky",
+			// 组件位置："top" 表示固定在顶部
+			position: "top",
 			// 所在侧边栏
 			sidebar: "left",
 			// CSS 类名
@@ -505,7 +505,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			enable: true,
 			// 组件显示顺序
 			order: 4,
-			// 组件位置："sticky" 表示粘性定位
+			// 组件位置："top" 表示固定在顶部
 			position: "top",
 			// 所在侧边栏
 			sidebar: "left",
