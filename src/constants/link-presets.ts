@@ -16,7 +16,7 @@ export const LinkPresets: { [key in LinkPreset]: NavBarLink } = {
 	[LinkPreset.Sponsors]: {
 		name: i18n(I18nKey.sponsors),
 		url: "/sponsors/",
-		icon: "material-symbols:money",
+		icon: "material-symbols:money-bag",
 	},
 	[LinkPreset.Archive]: {
 		name: i18n(I18nKey.archive),

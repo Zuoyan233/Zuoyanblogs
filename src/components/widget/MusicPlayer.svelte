@@ -50,8 +50,8 @@ let showError = false;
 
 // 当前歌曲信息
 let currentSong = {
-	title: "Sample Song",
-	artist: "Sample Artist",
+	title: i18n(Key.unknownSong),
+	artist: i18n(Key.unknownArtist),
 	cover: "/favicon/Vinyl record.ico",
 	url: "",
 	duration: 0,
