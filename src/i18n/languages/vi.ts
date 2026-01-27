@@ -7,6 +7,7 @@ export const vi: Translation = {
 	[Key.archive]: "Lưu trữ",
 	[Key.search]: "Tìm kiếm",
 	[Key.sponsors]: "nhà tài trợ",
+	[Key.feedback]: "Phản hồi",
 	[Key.other]: "Khác",
 
 	// Tiêu đề bảng dịch

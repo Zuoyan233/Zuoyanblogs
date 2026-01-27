@@ -7,6 +7,7 @@ export const id: Translation = {
 	[Key.archive]: "Arsip",
 	[Key.search]: "Cari",
 	[Key.sponsors]: "Penaja",
+	[Key.feedback]: "Umpan Balik",
 	[Key.other]: "Lainnya",
 
 	// Judul panel terjemahan

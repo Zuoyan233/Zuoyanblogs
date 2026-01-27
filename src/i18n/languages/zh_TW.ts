@@ -6,6 +6,7 @@ export const zh_TW: Translation = {
 	[Key.about]: "關於我們",
 	[Key.archive]: "歸檔",
 	[Key.search]: "搜尋",
+	[Key.feedback]: "回饋",
 	[Key.other]: "其他",
 
 	// 翻譯表格標題

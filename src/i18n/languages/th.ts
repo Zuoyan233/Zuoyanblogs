@@ -7,6 +7,7 @@ export const th: Translation = {
 	[Key.archive]: "เก็บถาวร",
 	[Key.search]: "ค้นหา",
 	[Key.sponsors]: "ผู้สนับสนุน",
+	[Key.feedback]: "ข้อเสนอแนะ",
 	[Key.other]: "อื่นๆ",
 
 	// ชื่อหัวข้อแผงการแปล

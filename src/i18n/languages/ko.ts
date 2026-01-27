@@ -7,6 +7,7 @@ export const ko: Translation = {
 	[Key.archive]: "아카이브",
 	[Key.search]: "검색",
 	[Key.sponsors]: "스폰서",
+	[Key.feedback]: "피드백",
 	[Key.other]: "기타",
 
 	// 번역 패널 제목

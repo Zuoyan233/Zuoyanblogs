@@ -6,6 +6,7 @@ export const ja: Translation = {
 	[Key.about]: "このブログについて",
 	[Key.archive]: "アーカイブ",
 	[Key.search]: "検索",
+	[Key.feedback]: "フィードバック",
 	[Key.other]: "その他",
 
 	// 翻訳パネルのタイトル

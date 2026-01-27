@@ -6,6 +6,7 @@ export const es: Translation = {
 	[Key.about]: "Acerca de",
 	[Key.archive]: "Archivo",
 	[Key.search]: "Buscar",
+	[Key.feedback]: "Retroalimentación",
 	[Key.other]: "Otro",
 
 	// Título del panel de traducción

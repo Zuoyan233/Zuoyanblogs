@@ -18,6 +18,11 @@ export const LinkPresets: { [key in LinkPreset]: NavBarLink } = {
 		url: "/sponsors/",
 		icon: "material-symbols:money-bag",
 	},
+	[LinkPreset.Feedback]: {
+		name: i18n(I18nKey.feedback),
+		url: "/feedback/",
+		icon: "material-symbols:chat",
+	},
 	[LinkPreset.Archive]: {
 		name: i18n(I18nKey.archive),
 		url: "/archive/",
