@@ -62,13 +62,13 @@ export const siteConfig: SiteConfig = {
 	// 顶栏标题配置
 	navbarTitle: {
 		// 显示模式："text-icon" 显示图标+文本，"logo" 仅显示Logo
-		mode: "text-icon",
+		mode: "logo",
 		// 顶栏标题文本
 		text: "左颜研究部",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.png
-		icon: "assets/home/home.ico",
+		icon: "",
 		// 网站Logo图片路径
-		logo: "",
+		logo: "assets/home/home.webp",
 	},
 
 	// 页面自动缩放配置
@@ -311,6 +311,7 @@ export const navBarConfig: NavBarConfig = {
 			icon: "material-symbols:more-horiz",
 			children: [LinkPreset.Projects, LinkPreset.Skills, LinkPreset.Timeline],
 		},
+		LinkPreset.Feedback,
 	],
 };
 
@@ -646,7 +647,7 @@ export const pioConfig: import("./types/config").PioConfig = {
 		home: "点击这里回到主页!", // 首页提示
 		skin: ["你有看到我的新服装了吗?", "这看起来很好看~"], // 换装提示
 		close: "QWQ 下次再见了~", // 关闭提示
-		link: "", // 关于链接
+		link: "https://github.com/Zuoyan233/Zuoyanblogs", // 关于链接
 	},
 };
 
