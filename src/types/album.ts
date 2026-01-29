@@ -23,4 +23,5 @@ export interface AlbumGroup {
 	layout?: "grid" | "masonry";
 	columns?: number;
 	photos: Photo[];
+	hidden?: boolean;
 }

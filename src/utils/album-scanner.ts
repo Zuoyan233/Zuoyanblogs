@@ -30,6 +30,12 @@ export async function scanAlbums(): Promise<AlbumGroup[]> {
 	return albums;
 }
 
+// 扫描并返回所有非隐藏的相册，确保返回的相册列表只包含可以公开显示的相册
+export async function scanVisibleAlbums(): Promise<AlbumGroup[]> {
+	const allAlbums = await scanAlbums();
+	return allAlbums.filter((album) => !album.hidden);
+}
+
 async function processAlbumFolder(
 	folderPath: string,
 	folderName: string,
@@ -78,12 +84,6 @@ async function processAlbumFolder(
 		photos = scanPhotos(folderPath, folderName);
 	}
 
-	// 检查是否隐藏相册
-	if (info.hidden === true) {
-		console.log(`相册 ${folderName} 已设置为隐藏，跳过显示`);
-		return null;
-	}
-
 	// 构建相册对象
 	return {
 		id: folderName,
@@ -96,6 +96,8 @@ async function processAlbumFolder(
 		layout: info.layout || "grid",
 		columns: info.columns || 3,
 		photos,
+		// 添加 hidden 字段，默认为 false
+		hidden: info.hidden || false,
 	};
 }
 

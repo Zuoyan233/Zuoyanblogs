@@ -3,15 +3,20 @@ import { siteConfig } from "../config";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
-import { scanAlbums } from "../utils/album-scanner";
+import { scanVisibleAlbums } from "../utils/album-scanner";
 
 // 检查相册页面是否启用
 if (!siteConfig.featurePages.albums) {
 	return Astro.redirect("/404/");
 }
 
-// 获取所有相册
-const albumsData = await scanAlbums();
+// 只获取非隐藏的相册
+const albumsData = await scanVisibleAlbums();
+
+// 按日期排序（最新的在前面）
+albumsData.sort(
+	(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+);
 ---
 
 <MainGridLayout title={i18n(I18nKey.albums)} description={i18n(I18nKey.albumsSubtitle)}>
