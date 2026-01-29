@@ -303,18 +303,18 @@ export const navBarConfig: NavBarConfig = {
 			name: "About",
 			url: "/content/",
 			icon: "material-symbols:info",
-			children: [LinkPreset.About, LinkPreset.Sponsors, LinkPreset.Friends],
+			children: [
+				LinkPreset.About,
+				LinkPreset.Feedback,
+				LinkPreset.Sponsors,
+				LinkPreset.Friends,
+			],
 		},
 		{
 			name: "Others",
 			url: "#",
 			icon: "material-symbols:more-horiz",
-			children: [
-				LinkPreset.Projects,
-				LinkPreset.Skills,
-				LinkPreset.Timeline,
-				LinkPreset.Feedback,
-			],
+			children: [LinkPreset.Projects, LinkPreset.Skills, LinkPreset.Timeline],
 		},
 	],
 };

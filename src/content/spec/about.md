@@ -2,19 +2,6 @@
 [Zuoyanblogs](https://github.com/Zuoyan233/Zuoyanblogs) 博客项目是基于 [Mizuki](https://github.com/matsuzaka-yuki/mizuki) 主题框架开源项目二次魔改。如果觉得项目可以的话，进入下面两位作者Github项目主页点击小小的 ⭐ 来鼓励我们未来更好的内容创作！
 :::
 
-<details>
-  <summary style="font-weight:bold;">🙋‍♂️ 有问题或者有建议？点击这里联系我！</summary>
-<hr>
-  <figure style="display:flex;flex-wrap: wrap;justify-content: center;row-gap: 20px;column-gap: 20px;">
-    <img src="/images/about/qq friend.webp" width="230px" high="230px" >
-    <img src="/images/about/wechat friend.webp" width="230px" high="230px" >
-  </figure>
-    <figcaption style="text-align:center;">QQ & 微信点击 “扫一扫” 加我好友</figcaption>
-<hr>
-</details>
-
-</br>
-
 ::github{repo="matsuzaka-yuki/Mizuki"}
 ::github{repo="Zuoyan233/Zuoyanblogs"}
 
