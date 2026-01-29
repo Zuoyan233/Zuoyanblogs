@@ -110,7 +110,7 @@ export const siteConfig: SiteConfig = {
 		// "mobile" = 仅在移动端显示
 		// "desktop" = 仅在桌面端显示
 		// "both" = 在所有设备上显示
-		showModeSwitchOnMobile: "desktop",
+		showModeSwitchOnMobile: "both",
 	},
 
 	banner: {
@@ -309,9 +309,13 @@ export const navBarConfig: NavBarConfig = {
 			name: "Others",
 			url: "#",
 			icon: "material-symbols:more-horiz",
-			children: [LinkPreset.Projects, LinkPreset.Skills, LinkPreset.Timeline],
+			children: [
+				LinkPreset.Projects,
+				LinkPreset.Skills,
+				LinkPreset.Timeline,
+				LinkPreset.Feedback,
+			],
 		},
-		LinkPreset.Feedback,
 	],
 };
 
