@@ -45,7 +45,7 @@
 <div style="display: flex; flex-wrap: wrap; justify-content: left; column-gap: 30px; row-gap: 20px;">
    <div style="background: #f0f0f0; border-radius: 12px; padding: 20px 25px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: 1px solid #eaeaea; flex: 1; min-width: 200px;">
     <p style="font-size: 2em; margin: 0 0 15px 0; text-align: left;">📧</p>
-    <p style="margin: 0; text-align: left;color:black;">通过邮箱方式联系站长：</p>
+    <p style="margin: 0; text-align: left;color:black;">通过发送电子邮箱方式联系站长：</p>
     <a href="https://mail.google.com/" target="_blank">zuoxiju233@gmail.com</a>
     </br>
     <a href="https://mail.qq.com/" target="_blank">2417112964@qq.com</a>
@@ -53,7 +53,7 @@
 
    <div style="background: #f0f0f0; border-radius: 12px; padding: 20px 25px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: 1px solid #eaeaea; flex: 1; min-width: 200px;">
     <p style="font-size: 2em; margin: 0 0 15px 0; text-align: left;">💬</p>
-    <p style="margin: 0; text-align: left;color:black;">通过<a href="/albums/contact/">添加社交软件好友</a>方式联系站长</p>
+    <p style="margin: 0; text-align: left;color:black;">通过 <a href="/albums/contact/">添加社交软件好友</a> 方式联系站长</p>
    </div>
 </div>
 
