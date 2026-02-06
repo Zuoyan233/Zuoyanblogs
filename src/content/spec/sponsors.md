@@ -32,25 +32,6 @@
    </div>
 </div>
 
-<style>
-/* 移动端：三个竖排且统一长度 */
-@media screen and (max-width: 768px) {
-    /* 找到包含三个卡片的flex容器 */
-    div[style*="display: flex;"] {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        row-gap: 15px !important;
-    }
-    
-    /* 找到所有卡片 */
-    div[style*="display: flex;"] > div {
-        width: 100% !important;
-        flex: none !important;
-        min-width: 100% !important;
-    }
-}
-</style>
-
 ---
 
 <script type="text/javascript">
