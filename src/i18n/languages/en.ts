@@ -12,6 +12,21 @@ export const en: Translation = {
 	// Translation panel title
 	[Key.translateHeader]: "Select Language",
 
+	// Feedback Page - Contact the Website Administrator Module
+	[Key.contactMe]: "Contact the Website Administrator",
+	[Key.contactEmail]: "Contact the Website Administrator via email",
+	[Key.contactSocialFriends]:
+		"Contact the Website Administrator by adding them as a social media friend",
+	[Key.addFriends]: "Add a friend now",
+
+	// Sponsorship Page - Other Support Methods Module
+	[Key.otherSupportOptions]: "Other support methods",
+	[Key.shareBlog]: "Share my blog with more friends",
+	[Key.leaveComment]:
+		"Leave your thoughts in the comments section below the article",
+	[Key.subscribeToArticles]:
+		"Subscribe to RSS and Atom to get the latest articles",
+
 	// Navigation bar titles
 	[Key.navLinks]: "Links",
 	[Key.navMy]: "My",

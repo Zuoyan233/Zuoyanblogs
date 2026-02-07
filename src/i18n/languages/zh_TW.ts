@@ -12,6 +12,18 @@ export const zh_TW: Translation = {
 	// 翻譯表格標題
 	[Key.translateHeader]: "選擇語言",
 
+	// 回饋頁面 - 聯絡站長方式模組
+	[Key.contactMe]: "聯絡站長",
+	[Key.contactEmail]: "透過發送電子郵件信箱方式聯絡站長",
+	[Key.contactSocialFriends]: "透過加入社群軟體好友方式聯絡站長",
+	[Key.addFriends]: "立即新增好友",
+
+	// 贊助頁面 - 其他支援方式模組
+	[Key.otherSupportOptions]: "其它支援方式",
+	[Key.shareBlog]: "將我的部落格分享給更多朋友",
+	[Key.leaveComment]: "在文章下方留言區留下您的想法",
+	[Key.subscribeToArticles]: "訂閱 RSS 與 Atom 取得最新文章",
+
 	// 導航欄標題
 	[Key.navLinks]: "連結",
 	[Key.navMy]: "我的",

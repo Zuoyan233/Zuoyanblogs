@@ -13,6 +13,22 @@ export const tr: Translation = {
 	// Çeviri paneli başlığı
 	[Key.translateHeader]: "Dil Seçin",
 
+	// Geri Bildirim Sayfası - Web Sitesi Yöneticisiyle İletişime Geçme Modülü
+	[Key.contactMe]: "Web Sitesi Yöneticisiyle İletişime Geçin",
+	[Key.contactEmail]:
+		"Web Sitesi Yöneticisiyle e-posta yoluyla iletişime geçin",
+	[Key.contactSocialFriends]:
+		"Web Sitesi Yöneticisiyle sosyal medya arkadaşı olarak ekleyerek iletişime geçin",
+	[Key.addFriends]: "Şimdi bir arkadaş ekleyin",
+
+	// Sponsorluk Sayfası - Diğer Destek Yöntemleri Modülü
+	[Key.otherSupportOptions]: "Diğer destek yöntemleri",
+	[Key.shareBlog]: "Blogumu daha fazla arkadaşınızla paylaşın",
+	[Key.leaveComment]:
+		"Makalenin altındaki yorumlar bölümüne düşüncelerinizi bırakın",
+	[Key.subscribeToArticles]:
+		"En son makaleleri almak için RSS ve Atom'a abone olun",
+
 	// Gezinme çubuğu başlıkları
 	[Key.navLinks]: "Bağlantılar",
 	[Key.navMy]: "Benim",

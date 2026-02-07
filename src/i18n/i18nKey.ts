@@ -10,6 +10,18 @@ enum I18nKey {
 	// 翻译面板标题
 	translateHeader = "translateHeader",
 
+	// 反馈页面 - 联系站长方式模块
+	contactMe = "contactMe",
+	contactEmail = "contactEmail",
+	contactSocialFriends = "contactSocialFriends",
+	addFriends = "addFriends",
+
+	// 赞助页面 - 其他支持方式模块
+	otherSupportOptions = "otherSupportOptions",
+	shareBlog = "shareBlog",
+	leaveComment = "leaveComment",
+	subscribeToArticles = "subscribeToArticles",
+
 	// 导航栏标题
 	navLinks = "navLinks",
 	navMy = "navMy",

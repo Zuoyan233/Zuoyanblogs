@@ -13,6 +13,19 @@ export const ko: Translation = {
 	// 번역 패널 제목
 	[Key.translateHeader]: "언어 선택",
 
+	// 피드백 페이지 - 웹사이트 관리자에게 문의하기 모듈
+	[Key.contactMe]: "웹사이트 관리자에게 문의하기",
+	[Key.contactEmail]: "이메일로 웹사이트 관리자에게 문의하기",
+	[Key.contactSocialFriends]:
+		"소셜 미디어 친구로 추가하여 웹사이트 관리자에게 문의하기",
+	[Key.addFriends]: "지금 친구 추가하기",
+
+	// 후원 페이지 - 기타 지원 방법 모듈
+	[Key.otherSupportOptions]: "기타 지원 방법",
+	[Key.shareBlog]: "내 블로그를 더 많은 친구와 공유하기",
+	[Key.leaveComment]: "글 아래 댓글란에 의견을 남겨주세요",
+	[Key.subscribeToArticles]: "RSS 및 Atom을 구독하여 최신 글을 받아보세요",
+
 	// 탐색 막대 제목
 	[Key.navLinks]: "링크",
 	[Key.navMy]: "내",

@@ -12,6 +12,20 @@ export const ja: Translation = {
 	// 翻訳パネルのタイトル
 	[Key.translateHeader]: "言語を選択",
 
+	// フィードバックページ - ウェブサイト管理者への連絡モジュール
+	[Key.contactMe]: "ウェブサイト管理者への連絡",
+	[Key.contactEmail]: "メールでウェブサイト管理者への連絡",
+	[Key.contactSocialFriends]:
+		"ソーシャルメディアの友達に追加してウェブサイト管理者に連絡する",
+	[Key.addFriends]: "今すぐ友達を追加する",
+
+	// スポンサーシップページ - その他のサポート方法モジュール
+	[Key.otherSupportOptions]: "その他のサポート方法",
+	[Key.shareBlog]: "ブログをもっと多くの友達と共有する",
+	[Key.leaveComment]: "記事下のコメント欄にご意見をお寄せください",
+	[Key.subscribeToArticles]:
+		"最新の記事を受け取るには、RSSとAtomを購読してください",
+
 	// ナビゲーションバータイトル
 	[Key.navLinks]: "リンク",
 	[Key.navMy]: "私の",

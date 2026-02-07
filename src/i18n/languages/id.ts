@@ -13,6 +13,21 @@ export const id: Translation = {
 	// Judul panel terjemahan
 	[Key.translateHeader]: "Pilih Bahasa",
 
+	// Halaman Umpan Balik - Modul Hubungi Administrator Situs Web
+	[Key.contactMe]: "Hubungi Administrator Situs Web",
+	[Key.contactEmail]: "Hubungi Administrator Situs Web melalui email",
+	[Key.contactSocialFriends]:
+		"Hubungi Administrator Situs Web dengan menambahkannya sebagai teman media sosial",
+	[Key.addFriends]: "Tambahkan teman sekarang",
+
+	// Halaman Sponsorship - Modul Metode Dukungan Lain
+	[Key.otherSupportOptions]: "Metode dukungan lain",
+	[Key.shareBlog]: "Bagikan blog saya dengan lebih banyak teman",
+	[Key.leaveComment]:
+		"Tinggalkan komentar Anda di bagian komentar di bawah artikel",
+	[Key.subscribeToArticles]:
+		"Berlangganan RSS dan Atom untuk mendapatkan artikel terbaru",
+
 	// Judul bilah navigasi
 	[Key.navLinks]: "Tautan",
 	[Key.navMy]: "Saya",

@@ -38,4 +38,38 @@ const title = i18n(I18nKey.sponsors);
             </Markdown>
         </div>
     </div>
+
+</br>
+
+    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full">
+            <!-- 页面标题 -->
+            <div class="flex flex-col items-start justify-center mb-8">
+                <h1 class="text-3xl font-bold text-black/90 dark:text-white/90 mb-2 relative
+                          before:w-1 before:h-8 before:rounded-md before:bg-[var(--primary)]
+                          before:absolute before:top-1/2 before:-translate-y-1/2 before:-left-4">
+                    {i18n(I18nKey.otherSupportOptions)}
+                </h1>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: left; column-gap: 30px; row-gap: 20px;">
+                <div style="background: #f0f0f0; border-radius: 12px; padding: 20px 25px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: 1px solid #eaeaea; flex: 1; min-width: 200px;">
+                <p style="font-size: 2em; margin: 0 0 15px 0; text-align: left;">📤</p>
+                    {i18n(I18nKey.shareBlog)}
+                </div>
+                
+                <div style="background: #f0f0f0; border-radius: 12px; padding: 20px 25px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: 1px solid #eaeaea; flex: 1; min-width: 200px;">
+                <p style="font-size: 2em; margin: 0 0 15px 0; text-align: left;">✍</p>
+                    {i18n(I18nKey.leaveComment)}
+                </div>
+
+                <div style="background: #f0f0f0; border-radius: 12px; padding: 20px 25px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: 1px solid #eaeaea; flex: 1; min-width: 200px;">
+                <p style="font-size: 2em; margin: 0 0 15px 0; text-align: left;">🌐</p>
+                    {i18n(I18nKey.subscribeToArticles)}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </MainGridLayout>

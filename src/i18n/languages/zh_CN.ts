@@ -12,6 +12,18 @@ export const zh_CN: Translation = {
 	// 翻译面板标题
 	[Key.translateHeader]: "选择语言",
 
+	// 反馈页面 - 联系站长方式模块
+	[Key.contactMe]: "联系站长",
+	[Key.contactEmail]: "通过发送电子邮箱方式联系站长",
+	[Key.contactSocialFriends]: "通过添加社交软件好友方式联系站长",
+	[Key.addFriends]: "立即添加好友",
+
+	// 赞助页面 - 其他支持方式模块
+	[Key.otherSupportOptions]: "其它支持方式",
+	[Key.shareBlog]: "将我的博客分享给更多朋友",
+	[Key.leaveComment]: "在文章下方评论区留下您的想法",
+	[Key.subscribeToArticles]: "订阅 RSS 与 Atom 获取最新文章",
+
 	// 导航栏标题
 	[Key.navLinks]: "链接",
 	[Key.navMy]: "我的",
