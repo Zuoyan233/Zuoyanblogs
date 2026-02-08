@@ -40,14 +40,53 @@ if (commentConfig?.enable && commentConfig?.twikoo) {
                     {title}
                 </h1>
             </div>
-            
+
             <!-- 从MD文件读取的内容 -->
             <Markdown class="mt-2">
                 <Content />
             </Markdown>
+
         </div>
     </div>
+
 </br>
+
+    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full">
+            <!-- 页面标题 -->
+            <div class="flex flex-col items-start justify-center mb-8">
+                <h1 class="text-3xl font-bold text-black/90 dark:text-white/90 mb-2 relative
+                          before:w-1 before:h-8 before:rounded-md before:bg-[var(--primary)]
+                          before:absolute before:top-1/2 before:-translate-y-1/2 before:-left-4">
+                    {i18n(I18nKey.contactMe)}
+                </h1>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-5">
+                    <div class="bg-[oklch(0.95_0.015_var(--hue))] dark:bg-[oklch(0.33_0.035_var(--hue))] rounded-xl p-8 shadow-sm hover:shadow-lg dark:hover:shadow-lg dark:hover:shadow-white/30 transition-shadow">
+                        <p class="text-4xl m-0 mb-4 text-left">📧</p>
+                        <p class="text-md font-normal text-black/100 dark:text-white/80">
+                            {i18n(I18nKey.contactEmail)}
+                        </p>
+                        <!-- 此处修改您的邮箱地址 -->
+                        <a class="transition link text-[var(--primary)] hover:text-gray-600 dark:hover:text-white/80 font-medium" target="_blank" href="https://mail.google.com/">zuoxiju233@gmail.com</a>
+                    </br>  
+                        <a class="transition link text-[var(--primary)] hover:text-gray-600 dark:hover:text-white/80 font-medium" target="_blank" href="https://mail.qq.com/">2417112964@qq.com</a>
+                    </div>
+
+                    <div class="bg-[oklch(0.95_0.015_var(--hue))] dark:bg-[oklch(0.33_0.035_var(--hue))] rounded-xl p-8 shadow-sm hover:shadow-lg dark:hover:shadow-lg dark:hover:shadow-white/30 transition-shadow">
+                    <p class="text-4xl m-0 mb-4 text-left">💬</p>
+                    <p class="text-md font-normal text-black/100 dark:text-white/80">
+                        {i18n(I18nKey.contactSocialFriends)}
+                    </p>
+                        <a class="btn-regular bg-[oklch(0.7_0.12_var(--hue))] text-white/80 hover:text-[var(--primary)] h-10 text-sm px-3 rounded-lg mt-2.5" href="/albums/contact/">{i18n(I18nKey.addFriends)}</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</br>
+
     {commentConfig?.enable && (
         <div class="card-base p-6 mb-4">
             {commentService === 'twikoo' && <Twikoo path={path} />}
@@ -55,4 +94,3 @@ if (commentConfig?.enable && commentConfig?.twikoo) {
         </div>
     )}
 </MainGridLayout>
-

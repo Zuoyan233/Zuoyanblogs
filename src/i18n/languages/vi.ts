@@ -13,6 +13,29 @@ export const vi: Translation = {
 	// Tiêu đề bảng dịch
 	[Key.translateHeader]: "Chọn ngôn ngữ",
 
+	// Trang Phản hồi - Mô-đun Liên hệ Quản trị viên Trang web
+	[Key.contactMe]: "Liên hệ với Quản trị viên Trang web",
+	[Key.contactEmail]: "Liên hệ với Quản trị viên Trang web qua email",
+	[Key.contactSocialFriends]:
+		"Liên hệ với Quản trị viên Trang web bằng cách thêm họ làm bạn bè trên mạng xã hội",
+	[Key.addFriends]: "Thêm bạn bè ngay bây giờ",
+
+	// Trang Tài trợ
+	[Key.sponsorsNotice1]:
+		"Nếu bạn thấy nội dung trang web hữu ích, vui lòng hỗ trợ công việc của tôi thông qua các phương thức sau để giúp tạo ra nội dung tốt hơn. Tất cả các khoản tài trợ sẽ được sử dụng cho việc bảo trì trang web, chi phí máy chủ và tạo nội dung.",
+	[Key.sponsorsNotice2]:
+		"Cảm ơn bạn đã hỗ trợ phát triển nội dung dự án blog Zuoyanblogs!",
+	[Key.wechatPay]: "WeChat",
+	[Key.aliPay]: "Alipay",
+	[Key.scanPayQRcode]: "Quét để thanh toán",
+	[Key.sponsorsPartner]: "Đối tác tài trợ",
+	[Key.otherSupportOptions]: "Các phương thức hỗ trợ khác",
+	[Key.shareBlog]: "Chia sẻ blog của tôi với nhiều bạn bè hơn",
+	[Key.leaveComment]:
+		"Để lại ý kiến ​​của bạn trong phần bình luận bên dưới bài viết",
+	[Key.subscribeToArticles]:
+		"Đăng ký RSS và Atom để nhận các bài viết mới nhất",
+
 	// Tiêu đề thanh điều hướng
 	[Key.navLinks]: "Liên kết",
 	[Key.navMy]: "Của tôi",

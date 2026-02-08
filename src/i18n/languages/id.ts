@@ -13,6 +13,29 @@ export const id: Translation = {
 	// Judul panel terjemahan
 	[Key.translateHeader]: "Pilih Bahasa",
 
+	// Halaman Umpan Balik - Modul Hubungi Administrator Situs Web
+	[Key.contactMe]: "Hubungi Administrator Situs Web",
+	[Key.contactEmail]: "Hubungi Administrator Situs Web melalui email",
+	[Key.contactSocialFriends]:
+		"Hubungi Administrator Situs Web dengan menambahkannya sebagai teman media sosial",
+	[Key.addFriends]: "Tambahkan teman sekarang",
+
+	// Halaman Sponsors
+	[Key.sponsorsNotice1]:
+		"Jika Anda merasa konten situs web ini bermanfaat, mohon dukung pekerjaan saya melalui metode berikut untuk membantu menciptakan konten yang lebih baik. Semua sponsor akan digunakan untuk pemeliharaan situs web, biaya server, dan pembuatan konten.",
+	[Key.sponsorsNotice2]:
+		"Terima kasih atas dukungan Anda terhadap pengembangan konten proyek blog Zuoyanblogs!",
+	[Key.wechatPay]: "WeChat",
+	[Key.aliPay]: "Alipay",
+	[Key.scanPayQRcode]: "Pindai untuk Membayar",
+	[Key.sponsorsPartner]: "Mitra Sponsors",
+	[Key.otherSupportOptions]: "Metode dukungan lain",
+	[Key.shareBlog]: "Bagikan blog saya dengan lebih banyak teman",
+	[Key.leaveComment]:
+		"Tinggalkan komentar Anda di bagian komentar di bawah artikel",
+	[Key.subscribeToArticles]:
+		"Berlangganan RSS dan Atom untuk mendapatkan artikel terbaru",
+
 	// Judul bilah navigasi
 	[Key.navLinks]: "Tautan",
 	[Key.navMy]: "Saya",

@@ -12,6 +12,30 @@ export const es: Translation = {
 	// Título del panel de traducción
 	[Key.translateHeader]: "Seleccionar idioma",
 
+	// Página de comentarios - Módulo de contacto con el administrador del sitio web
+	[Key.contactMe]: "Contactar con el administrador del sitio web",
+	[Key.contactEmail]:
+		"Contactar con el administrador del sitio web por correo electrónico",
+	[Key.contactSocialFriends]:
+		"Contactar con el administrador del sitio web agregándolo como amigo en redes sociales",
+	[Key.addFriends]: "Agregar un amigo ahora",
+
+	// Página de patrocinio
+	[Key.sponsorsNotice1]:
+		"Si el contenido del sitio web le resulta útil, por favor, apoye mi trabajo mediante los siguientes métodos para ayudar a crear mejor contenido. Todos los patrocinios se utilizarán para el mantenimiento del sitio web, los costos del servidor y la creación de contenido.",
+	[Key.sponsorsNotice2]:
+		"¡Gracias por apoyar el desarrollo de contenido del proyecto del blog Zuoyanblogs!",
+	[Key.wechatPay]: "WeChat",
+	[Key.aliPay]: "Alipay",
+	[Key.scanPayQRcode]: "Escanear para pagar",
+	[Key.sponsorsPartner]: "Socio patrocinador",
+	[Key.otherSupportOptions]: "Otros métodos de soporte",
+	[Key.shareBlog]: "Comparte mi blog con más amigos",
+	[Key.leaveComment]:
+		"Deja tu opinión en la sección de comentarios debajo del artículo",
+	[Key.subscribeToArticles]:
+		"Suscríbete a RSS y Atom para recibir los últimos artículos",
+
 	// Títulos de la barra de navegación
 	[Key.navLinks]: "Enlaces",
 	[Key.navMy]: "Mi",

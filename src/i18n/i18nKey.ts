@@ -10,6 +10,24 @@ enum I18nKey {
 	// 翻译面板标题
 	translateHeader = "translateHeader",
 
+	// 反馈页面 - 联系站长方式模块
+	contactMe = "contactMe",
+	contactEmail = "contactEmail",
+	contactSocialFriends = "contactSocialFriends",
+	addFriends = "addFriends",
+
+	// 赞助页面
+	sponsorsNotice1 = "sponsorsNotice1",
+	sponsorsNotice2 = "sponsorsNotice2",
+	wechatPay = "wechatPay",
+	aliPay = "aliPay",
+	scanPayQRcode = "scanPayQRcode",
+	sponsorsPartner = "sponsorsPartner",
+	otherSupportOptions = "otherSupportOptions",
+	shareBlog = "shareBlog",
+	leaveComment = "leaveComment",
+	subscribeToArticles = "subscribeToArticles",
+
 	// 导航栏标题
 	navLinks = "navLinks",
 	navMy = "navMy",
