@@ -2,6 +2,8 @@
 import Icon from "@iconify/svelte";
 import QRCode from "qrcode";
 import { onMount } from "svelte";
+import { quintOut } from "svelte/easing";
+import { fly, scale } from "svelte/transition";
 import I18nKey from "../../i18n/i18nKey";
 import { i18n } from "../../i18n/translation";
 
@@ -455,9 +457,10 @@ function portal(node: HTMLElement) {
   <span>{i18n(I18nKey.shareArticle)}</span>
 </button>
 
+
 {#if showModal}
-  <div use:portal class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 transition-opacity" on:click={closeModal}>
-    <div class="bg-white dark:bg-gray-800 rounded-2xl max-w-sm w-full max-h-[90vh] overflow-y-auto flex flex-col shadow-2xl transform transition-all" on:click|stopPropagation>
+  <div use:portal class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 transition-opacity" on:click={closeModal} transition:fly={{ duration: 250 }}>
+    <div class="bg-white dark:bg-gray-800 rounded-2xl max-w-sm w-full max-h-[90vh] overflow-y-auto flex flex-col shadow-2xl" on:click|stopPropagation transition:scale={{ duration: 250, start: 0.8, easing: quintOut }}>
       
       <div class="p-6 flex justify-center bg-gray-50 dark:bg-gray-900 min-h-[200px] items-center">
         {#if posterImage}
