@@ -315,6 +315,7 @@ export const th: Translation = {
 	[Key.siteStatsLastUpdate]: "กิจกรรมล่าสุด",
 	[Key.siteStatsDaysAgo]: "{days} วันที่ผ่านมา",
 	[Key.siteStatsDays]: "{days} วัน",
+	[Key.siteStatsCurrentTime]: "เวลาปัจจุบัน",
 
 	// ส่วนประกอบปฏิทิน
 	[Key.calendarSunday]: "อาทิตย์",

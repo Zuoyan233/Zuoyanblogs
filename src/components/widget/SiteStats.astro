@@ -95,7 +95,7 @@ const stats = [
 	{
 		icon: "material-symbols:calendar-clock-outline",
 		label: i18n(I18nKey.siteStatsRunningDays),
-		value: 0, // 将由客户端更新
+		value: 0,
 		suffix: i18n(I18nKey.siteStatsDays).replace("{days}", ""),
 		dynamic: true,
 		id: "running-days",
@@ -103,10 +103,18 @@ const stats = [
 	{
 		icon: "material-symbols:ecg-heart-outline",
 		label: i18n(I18nKey.siteStatsLastUpdate),
-		value: 0, // 将由客户端更新
+		value: 0,
 		suffix: i18n(I18nKey.siteStatsDaysAgo).replace("{days}", ""),
 		dynamic: true,
 		id: "last-update",
+	},
+	{
+		icon: "material-symbols:schedule-outline",
+		label: i18n(I18nKey.siteStatsCurrentTime),
+		value: "",
+		dynamic: true,
+		id: "current-time",
+		ampm: false, // 启用12小时制（默认为false，24小时制）
 	},
 ];
 ---
@@ -133,6 +141,7 @@ const stats = [
 						<span
 							class="text-base font-bold text-neutral-900 dark:text-neutral-100"
 							data-stat-id={stat.id}
+							data-ampm={stat.ampm}
 						>
 							{stat.formatted
 								? formatNumber(stat.value)
@@ -151,6 +160,27 @@ const stats = [
 </WidgetLayout>
 
 <script is:inline define:vars={{ siteStartDate, lastPostDate }}>
+	// 格式化时间（12小时制，带 AM/PM）
+	function formatTimeWithAMPM(date) {
+		let hours = date.getHours();
+		const minutes = String(date.getMinutes()).padStart(2, '0');
+		const seconds = String(date.getSeconds()).padStart(2, '0');
+		const ampm = hours >= 12 ? 'PM' : 'AM';
+		
+		hours = hours % 12;
+		hours = hours ? hours : 12; // 0 转换为 12
+		
+		return `${hours}:${minutes}:${seconds} ${ampm}`;
+	}
+
+	// 格式化时间（24小时制）
+	function formatTime24(date) {
+		const hours = String(date.getHours()).padStart(2, '0');
+		const minutes = String(date.getMinutes()).padStart(2, '0');
+		const seconds = String(date.getSeconds()).padStart(2, '0');
+		return `${hours}:${minutes}:${seconds}`;
+	}
+
 	function updateDynamicStats() {
 		const today = new Date();
 
@@ -183,11 +213,26 @@ const stats = [
 				lastUpdateElement.textContent = daysSinceLastUpdate.toString();
 			}
 		}
+
+		// 更新当前时间
+		const currentTimeElement = document.querySelector(
+			'[data-stat-id="current-time"]',
+		);
+		if (currentTimeElement) {
+			// 根据 data-ampm 属性判断使用哪种格式
+			const useAMPM = currentTimeElement.getAttribute('data-ampm') === 'true';
+			
+			if (useAMPM) {
+				currentTimeElement.textContent = formatTimeWithAMPM(today);
+			} else {
+				currentTimeElement.textContent = formatTime24(today);
+			}
+		}
 	}
 
 	// 页面加载时更新
 	updateDynamicStats();
 
-	// 每小时更新一次（可选，因为天数变化较慢）
-	setInterval(updateDynamicStats, 60 * 60 * 1000);
+	// 每秒更新一次（实时显示）
+	setInterval(updateDynamicStats, 1000);
 </script>

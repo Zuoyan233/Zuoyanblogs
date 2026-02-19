@@ -338,6 +338,7 @@ export const es: Translation = {
 	[Key.siteStatsLastUpdate]: "Última actividad",
 	[Key.siteStatsDaysAgo]: "{days} días atrás",
 	[Key.siteStatsDays]: "{days} días",
+	[Key.siteStatsCurrentTime]: "Hora actual",
 
 	// Componente Calendario
 	[Key.calendarSunday]: "Dom",

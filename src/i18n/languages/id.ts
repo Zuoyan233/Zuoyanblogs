@@ -327,6 +327,7 @@ export const id: Translation = {
 	[Key.siteStatsLastUpdate]: "Aktivitas Terakhir",
 	[Key.siteStatsDaysAgo]: "{days} hari yang lalu",
 	[Key.siteStatsDays]: "{days} hari",
+	[Key.siteStatsCurrentTime]: "Waktu Saat Ini",
 
 	// Komponen Kalender
 	[Key.calendarSunday]: "Min",

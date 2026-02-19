@@ -31,6 +31,7 @@ The Mizuki theme framework will be updated irregularly with its mainline content
   - Adjusted the size of the numbers for multiple articles published on the same day in the upper right corner.
 - Add a feedback page and integrate a way to contact the webmaster.
 - Add a sponsorship page and integrate the payment QR code placement path.
+- Add real-time time to the site.
 - Refactored the hidden album logic and fixed the issue of not being able to access it via a link.
 - Optimized animations for some widgets.
 
