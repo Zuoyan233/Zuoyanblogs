@@ -12,25 +12,6 @@ export const zh_CN: Translation = {
 	// 翻译面板标题
 	[Key.translateHeader]: "选择语言",
 
-	// 反馈页面 - 联系站长方式模块
-	[Key.contactMe]: "联系站长",
-	[Key.contactEmail]: "通过发送电子邮箱方式联系站长",
-	[Key.contactSocialFriends]: "通过添加社交软件好友方式联系站长",
-	[Key.addFriends]: "立即添加好友",
-
-	// 赞助页面
-	[Key.sponsorsNotice1]:
-		"如果网站内容认为有帮助，欢迎通过以下方式支持我的创作，助力打造更优质内容，所有赞助将用于网站维护、服务器费用以及内容创作。",
-	[Key.sponsorsNotice2]: "感谢支持Zuoyanblogs博客项目内容开发！",
-	[Key.wechatPay]: "微信",
-	[Key.aliPay]: "支付宝",
-	[Key.scanPayQRcode]: "扫码支付",
-	[Key.sponsorsPartner]: "已赞助的小伙伴",
-	[Key.otherSupportOptions]: "其它支持方式",
-	[Key.shareBlog]: "将我的博客分享给更多朋友",
-	[Key.leaveComment]: "在文章下方评论区留下您的想法",
-	[Key.subscribeToArticles]: "订阅 RSS 与 Atom 获取最新文章",
-
 	// 导航栏标题
 	[Key.navLinks]: "链接",
 	[Key.navMy]: "我的",
@@ -228,6 +209,25 @@ export const zh_CN: Translation = {
 	[Key.timelineStartDate]: "开始日期",
 	[Key.timelineDuration]: "持续时间",
 
+	// 反馈页面 - 联系站长方式模块
+	[Key.contactMe]: "联系站长",
+	[Key.contactEmail]: "通过发送电子邮箱方式联系站长",
+	[Key.contactSocialFriends]: "通过添加社交软件好友方式联系站长",
+	[Key.addFriends]: "立即添加好友",
+
+	// 赞助页面
+	[Key.sponsorsNotice1]:
+		"如果网站内容认为有帮助，欢迎通过以下方式支持我的创作，助力打造更优质内容，所有赞助将用于网站维护、服务器费用以及内容创作。",
+	[Key.sponsorsNotice2]: "感谢支持Zuoyanblogs博客项目内容开发！",
+	[Key.wechatPay]: "微信",
+	[Key.aliPay]: "支付宝",
+	[Key.scanPayQRcode]: "扫码支付",
+	[Key.sponsorsPartner]: "已赞助的小伙伴",
+	[Key.otherSupportOptions]: "其它支持方式",
+	[Key.shareBlog]: "将我的博客分享给更多朋友",
+	[Key.leaveComment]: "在文章下方评论区留下您的想法",
+	[Key.subscribeToArticles]: "订阅 RSS 与 Atom 获取最新文章",
+
 	// 密码保护
 	[Key.passwordProtected]: "密码保护",
 	[Key.passwordProtectedTitle]: "此内容受密码保护",
@@ -352,4 +352,11 @@ export const zh_CN: Translation = {
 	// 布局切换按钮
 	[Key.switchToGridMode]: "切换到网格模式",
 	[Key.switchToListMode]: "切换到列表模式",
+
+	// 外部链接提示框
+	[Key.leaveSite]: "离开本站",
+	[Key.goToExternalLink]: "您即将前往外部链接：",
+	[Key.warningText]: "请注意您的账号与财产安全",
+	[Key.confirmText]: "继续访问",
+	[Key.cancelText]: "取消",
 };

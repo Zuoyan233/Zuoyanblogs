@@ -10,24 +10,6 @@ enum I18nKey {
 	// 翻译面板标题
 	translateHeader = "translateHeader",
 
-	// 反馈页面 - 联系站长方式模块
-	contactMe = "contactMe",
-	contactEmail = "contactEmail",
-	contactSocialFriends = "contactSocialFriends",
-	addFriends = "addFriends",
-
-	// 赞助页面
-	sponsorsNotice1 = "sponsorsNotice1",
-	sponsorsNotice2 = "sponsorsNotice2",
-	wechatPay = "wechatPay",
-	aliPay = "aliPay",
-	scanPayQRcode = "scanPayQRcode",
-	sponsorsPartner = "sponsorsPartner",
-	otherSupportOptions = "otherSupportOptions",
-	shareBlog = "shareBlog",
-	leaveComment = "leaveComment",
-	subscribeToArticles = "subscribeToArticles",
-
 	// 导航栏标题
 	navLinks = "navLinks",
 	navMy = "navMy",
@@ -225,6 +207,24 @@ enum I18nKey {
 	timelineStartDate = "timelineStartDate",
 	timelineDuration = "timelineDuration",
 
+	// 反馈页面 - 联系站长方式模块
+	contactMe = "contactMe",
+	contactEmail = "contactEmail",
+	contactSocialFriends = "contactSocialFriends",
+	addFriends = "addFriends",
+
+	// 赞助页面
+	sponsorsNotice1 = "sponsorsNotice1",
+	sponsorsNotice2 = "sponsorsNotice2",
+	wechatPay = "wechatPay",
+	aliPay = "aliPay",
+	scanPayQRcode = "scanPayQRcode",
+	sponsorsPartner = "sponsorsPartner",
+	otherSupportOptions = "otherSupportOptions",
+	shareBlog = "shareBlog",
+	leaveComment = "leaveComment",
+	subscribeToArticles = "subscribeToArticles",
+
 	// 密码保护
 	passwordProtected = "passwordProtected",
 	passwordProtectedTitle = "passwordProtectedTitle",
@@ -345,6 +345,13 @@ enum I18nKey {
 	// 布局切换按钮
 	switchToGridMode = "switchToGridMode",
 	switchToListMode = "switchToListMode",
+
+	// 外部链接提示框
+	leaveSite = "leaveSite",
+	goToExternalLink = "goToExternalLink",
+	warningText = "warningText",
+	confirmText = "confirmText",
+	cancelText = "cancelText",
 }
 
 export default I18nKey;

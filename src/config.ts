@@ -2,6 +2,7 @@ import type {
 	AnnouncementConfig,
 	CommentConfig,
 	ExpressiveCodeConfig,
+	ExternalLinkConfirmConfig,
 	FooterConfig,
 	FullscreenWallpaperConfig,
 	LicenseConfig,
@@ -416,6 +417,10 @@ export const commentConfig: CommentConfig = {
 
 export const shareConfig: ShareConfig = {
 	enable: true, // 启用分享功能
+};
+
+export const externalLinkConfirmConfig: ExternalLinkConfirmConfig = {
+	enable: true, // 是否启用外部链接确认功能
 };
 
 export const announcementConfig: AnnouncementConfig = {

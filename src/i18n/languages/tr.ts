@@ -13,30 +13,6 @@ export const tr: Translation = {
 	// Çeviri paneli başlığı
 	[Key.translateHeader]: "Dil Seçin",
 
-	// Geri Bildirim Sayfası - Web Sitesi Yöneticisiyle İletişime Geçme Modülü
-	[Key.contactMe]: "Web Sitesi Yöneticisiyle İletişime Geçin",
-	[Key.contactEmail]:
-		"Web Sitesi Yöneticisiyle e-posta yoluyla iletişime geçin",
-	[Key.contactSocialFriends]:
-		"Web Sitesi Yöneticisiyle sosyal medya arkadaşı olarak ekleyerek iletişime geçin",
-	[Key.addFriends]: "Şimdi bir arkadaş ekleyin",
-
-	// Sponsorluk Sayfası
-	[Key.sponsorsNotice1]:
-		"Web sitesi içeriğini faydalı buluyorsanız, daha iyi içerik oluşturmama yardımcı olmak için lütfen aşağıdaki yöntemlerle çalışmalarımı destekleyin. Tüm sponsorluklar web sitesi bakımı, sunucu maliyetleri ve içerik oluşturma için kullanılacaktır.",
-	[Key.sponsorsNotice2]:
-		"Zuoyanblogs blog projesinin içerik geliştirme çalışmalarını desteklediğiniz için teşekkür ederiz!",
-	[Key.wechatPay]: "WeChat",
-	[Key.aliPay]: "Alipay",
-	[Key.scanPayQRcode]: "Ödeme için Tarayın",
-	[Key.sponsorsPartner]: "Sponsor Ortağı",
-	[Key.otherSupportOptions]: "Diğer destek yöntemleri",
-	[Key.shareBlog]: "Blogumu daha fazla arkadaşınızla paylaşın",
-	[Key.leaveComment]:
-		"Makalenin altındaki yorumlar bölümüne düşüncelerinizi bırakın",
-	[Key.subscribeToArticles]:
-		"En son makaleleri almak için RSS ve Atom'a abone olun",
-
 	// Gezinme çubuğu başlıkları
 	[Key.navLinks]: "Bağlantılar",
 	[Key.navMy]: "Benim",
@@ -292,6 +268,30 @@ export const tr: Translation = {
 	[Key.timelineStartDate]: "Başlangıç ​​Tarihi",
 	[Key.timelineDuration]: "Süre",
 
+	// Geri Bildirim Sayfası - Web Sitesi Yöneticisiyle İletişime Geçme Modülü
+	[Key.contactMe]: "Web Sitesi Yöneticisiyle İletişime Geçin",
+	[Key.contactEmail]:
+		"Web Sitesi Yöneticisiyle e-posta yoluyla iletişime geçin",
+	[Key.contactSocialFriends]:
+		"Web Sitesi Yöneticisiyle sosyal medya arkadaşı olarak ekleyerek iletişime geçin",
+	[Key.addFriends]: "Şimdi bir arkadaş ekleyin",
+
+	// Sponsorluk Sayfası
+	[Key.sponsorsNotice1]:
+		"Web sitesi içeriğini faydalı buluyorsanız, daha iyi içerik oluşturmama yardımcı olmak için lütfen aşağıdaki yöntemlerle çalışmalarımı destekleyin. Tüm sponsorluklar web sitesi bakımı, sunucu maliyetleri ve içerik oluşturma için kullanılacaktır.",
+	[Key.sponsorsNotice2]:
+		"Zuoyanblogs blog projesinin içerik geliştirme çalışmalarını desteklediğiniz için teşekkür ederiz!",
+	[Key.wechatPay]: "WeChat",
+	[Key.aliPay]: "Alipay",
+	[Key.scanPayQRcode]: "Ödeme için Tarayın",
+	[Key.sponsorsPartner]: "Sponsor Ortağı",
+	[Key.otherSupportOptions]: "Diğer destek yöntemleri",
+	[Key.shareBlog]: "Blogumu daha fazla arkadaşınızla paylaşın",
+	[Key.leaveComment]:
+		"Makalenin altındaki yorumlar bölümüne düşüncelerinizi bırakın",
+	[Key.subscribeToArticles]:
+		"En son makaleleri almak için RSS ve Atom'a abone olun",
+
 	// Şifre Koruması
 	[Key.passwordProtected]: "Şifre Korumalı",
 	[Key.passwordProtectedTitle]: "Bu içerik şifre korumalıdır",
@@ -378,4 +378,12 @@ export const tr: Translation = {
 	// Düzen Düğmeyi Değiştir
 	[Key.switchToGridMode]: "Izgara Moduna Geç",
 	[Key.switchToListMode]: "Liste Moduna Geç",
+
+	// Harici Bağlantı Uyarısı
+	[Key.leaveSite]: "Bu siteden ayrılıyorsunuz",
+	[Key.goToExternalLink]: "Harici bir bağlantıyı ziyaret etmek üzeresiniz:",
+	[Key.warningText]:
+		"Lütfen hesabınızın ve varlıklarınızın güvenliğine dikkat edin",
+	[Key.confirmText]: "Ziyarete devam edin",
+	[Key.cancelText]: "İptal",
 };

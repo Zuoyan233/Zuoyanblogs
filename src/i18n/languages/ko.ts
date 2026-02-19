@@ -13,27 +13,6 @@ export const ko: Translation = {
 	// 번역 패널 제목
 	[Key.translateHeader]: "언어 선택",
 
-	// 피드백 페이지 - 웹사이트 관리자에게 문의하기 모듈
-	[Key.contactMe]: "웹사이트 관리자에게 문의하기",
-	[Key.contactEmail]: "이메일로 웹사이트 관리자에게 문의하기",
-	[Key.contactSocialFriends]:
-		"소셜 미디어 친구로 추가하여 웹사이트 관리자에게 문의하기",
-	[Key.addFriends]: "지금 친구 추가하기",
-
-	// 후원 페이지
-	[Key.sponsorsNotice1]:
-		"웹사이트 콘텐츠가 유용하다고 생각되시면, 더 나은 콘텐츠 제작을 위해 아래 방법으로 후원해 주세요. 모든 후원금은 웹사이트 유지 관리, 서버 비용 및 콘텐츠 제작에 사용됩니다.",
-	[Key.sponsorsNotice2]:
-		"Zuoyanblogs 블로그 프로젝트 콘텐츠 개발을 후원해 주셔서 감사합니다!",
-	[Key.wechatPay]: "WeChat",
-	[Key.aliPay]: "Alipay",
-	[Key.scanPayQRcode]: "스캔하여 결제",
-	[Key.sponsorsPartner]: "후원 파트너",
-	[Key.otherSupportOptions]: "기타 지원 방법",
-	[Key.shareBlog]: "내 블로그를 더 많은 친구와 공유하기",
-	[Key.leaveComment]: "글 아래 댓글란에 의견을 남겨주세요",
-	[Key.subscribeToArticles]: "RSS 및 Atom을 구독하여 최신 글을 받아보세요",
-
 	// 탐색 막대 제목
 	[Key.navLinks]: "링크",
 	[Key.navMy]: "내",
@@ -283,6 +262,27 @@ export const ko: Translation = {
 	[Key.timelineStartDate]: "시작일",
 	[Key.timelineDuration]: "기간",
 
+	// 피드백 페이지 - 웹사이트 관리자에게 문의하기 모듈
+	[Key.contactMe]: "웹사이트 관리자에게 문의하기",
+	[Key.contactEmail]: "이메일로 웹사이트 관리자에게 문의하기",
+	[Key.contactSocialFriends]:
+		"소셜 미디어 친구로 추가하여 웹사이트 관리자에게 문의하기",
+	[Key.addFriends]: "지금 친구 추가하기",
+
+	// 후원 페이지
+	[Key.sponsorsNotice1]:
+		"웹사이트 콘텐츠가 유용하다고 생각되시면, 더 나은 콘텐츠 제작을 위해 아래 방법으로 후원해 주세요. 모든 후원금은 웹사이트 유지 관리, 서버 비용 및 콘텐츠 제작에 사용됩니다.",
+	[Key.sponsorsNotice2]:
+		"Zuoyanblogs 블로그 프로젝트 콘텐츠 개발을 후원해 주셔서 감사합니다!",
+	[Key.wechatPay]: "WeChat",
+	[Key.aliPay]: "Alipay",
+	[Key.scanPayQRcode]: "스캔하여 결제",
+	[Key.sponsorsPartner]: "후원 파트너",
+	[Key.otherSupportOptions]: "기타 지원 방법",
+	[Key.shareBlog]: "내 블로그를 더 많은 친구와 공유하기",
+	[Key.leaveComment]: "글 아래 댓글란에 의견을 남겨주세요",
+	[Key.subscribeToArticles]: "RSS 및 Atom을 구독하여 최신 글을 받아보세요",
+
 	// 비밀번호 보호
 	[Key.passwordProtected]: "비밀번호로 보호됨",
 	[Key.passwordProtectedTitle]: "이 콘텐츠는 비밀번호로 보호되어 있습니다.",
@@ -365,4 +365,11 @@ export const ko: Translation = {
 	// 레이아웃 전환 버튼
 	[Key.switchToGridMode]: "그리드 모드로 전환 모드",
 	[Key.switchToListMode]: "목록 모드로 전환",
+
+	// 외부 링크 경고
+	[Key.leaveSite]: "이 사이트를 떠납니다.",
+	[Key.goToExternalLink]: "외부 링크를 방문하려고 합니다.",
+	[Key.warningText]: "계정 및 자산 보안에 유의하십시오.",
+	[Key.confirmText]: "계속 방문하시겠습니까?",
+	[Key.cancelText]: "취소",
 };

@@ -12,29 +12,6 @@ export const en: Translation = {
 	// Translation panel title
 	[Key.translateHeader]: "Select Language",
 
-	// Feedback Page - Contact the Website Administrator Module
-	[Key.contactMe]: "Contact the Website Administrator",
-	[Key.contactEmail]: "Contact the Website Administrator via email",
-	[Key.contactSocialFriends]:
-		"Contact the Website Administrator by adding them as a social media friend",
-	[Key.addFriends]: "Add a friend now",
-
-	// Sponsorship Page
-	[Key.sponsorsNotice1]:
-		"If you find the website content helpful, please support my work through the following methods to help create better content. All sponsorships will be used for website maintenance, server costs, and content creation.",
-	[Key.sponsorsNotice2]:
-		"Thank you for supporting the Zuoyanblogs blog project content development!",
-	[Key.wechatPay]: "WeChat",
-	[Key.aliPay]: "Alipay",
-	[Key.scanPayQRcode]: "Scan to Pay",
-	[Key.sponsorsPartner]: "Sponsors Partner",
-	[Key.otherSupportOptions]: "Other support methods",
-	[Key.shareBlog]: "Share my blog with more friends",
-	[Key.leaveComment]:
-		"Leave your thoughts in the comments section below the article",
-	[Key.subscribeToArticles]:
-		"Subscribe to RSS and Atom to get the latest articles",
-
 	// Navigation bar titles
 	[Key.navLinks]: "Links",
 	[Key.navMy]: "My",
@@ -285,6 +262,29 @@ export const en: Translation = {
 	[Key.timelineStartDate]: "Start Date",
 	[Key.timelineDuration]: "Duration",
 
+	// Feedback Page - Contact the webmaster Module
+	[Key.contactMe]: "Contact the webmaster",
+	[Key.contactEmail]: "Contact the webmaster via email",
+	[Key.contactSocialFriends]:
+		"Contact the webmaster by adding them as a social media friend",
+	[Key.addFriends]: "Add a friend now",
+
+	// Sponsorship Page
+	[Key.sponsorsNotice1]:
+		"If you find the website content helpful, please support my work through the following methods to help create better content. All sponsorships will be used for website maintenance, server costs, and content creation.",
+	[Key.sponsorsNotice2]:
+		"Thank you for supporting the Zuoyanblogs blog project content development!",
+	[Key.wechatPay]: "WeChat",
+	[Key.aliPay]: "Alipay",
+	[Key.scanPayQRcode]: "Scan to Pay",
+	[Key.sponsorsPartner]: "Sponsors Partner",
+	[Key.otherSupportOptions]: "Other support methods",
+	[Key.shareBlog]: "Share my blog with more friends",
+	[Key.leaveComment]:
+		"Leave your thoughts in the comments section below the article",
+	[Key.subscribeToArticles]:
+		"Subscribe to RSS and Atom to get the latest articles",
+
 	// Password Protection
 	[Key.passwordProtected]: "Password Protected",
 	[Key.passwordProtectedTitle]: "This content is password protected",
@@ -368,4 +368,11 @@ export const en: Translation = {
 	// Layout Switch Button
 	[Key.switchToGridMode]: "Switch to Grid Mode",
 	[Key.switchToListMode]: "Switch to List Mode",
+
+	// External Link Warning
+	[Key.leaveSite]: "Leaving this site",
+	[Key.goToExternalLink]: "You are about to visit an external link:",
+	[Key.warningText]: "Please be aware of your account and asset security",
+	[Key.confirmText]: "Continue to visit",
+	[Key.cancelText]: "Cancel",
 };
