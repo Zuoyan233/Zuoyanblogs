@@ -31,7 +31,7 @@ The Mizuki theme framework will be updated irregularly with its mainline content
   - Adjusted the size of the numbers for multiple articles published on the same day in the upper right corner.
 - Add a feedback page and integrate a way to contact the webmaster.
 - Add a sponsorship page and integrate the payment QR code placement path.
-- Add real-time time to the site.
+- Add real-time date and time to the site, date display supports multiple regional formats.
 - Add a confirmation pop-up for external links and modified some of the styles.
 - Moved the Toc sidebar directory from the right to the left-hand widget sidebar.
 - Refactored the hidden album logic and fixed the issue of not being able to access it via a link.
