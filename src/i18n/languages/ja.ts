@@ -328,7 +328,9 @@ export const ja: Translation = {
 	[Key.siteStatsLastUpdate]: "最終更新",
 	[Key.siteStatsDaysAgo]: "{days}日前",
 	[Key.siteStatsDays]: "{days}日",
-	[Key.siteStatsCurrentTime]: "現在の時刻",
+	[Key.siteStatsCurrentDate]: "日付",
+	[Key.siteStatsDateFormat]: "{year} 年 {month} 月 {day} 日",
+	[Key.siteStatsCurrentTime]: "時刻",
 
 	// カレンダーコンポーネント
 	[Key.calendarSunday]: "日",

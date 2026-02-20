@@ -341,7 +341,9 @@ export const vi: Translation = {
 	[Key.siteStatsLastUpdate]: "Hoạt động gần đây nhất",
 	[Key.siteStatsDaysAgo]: "{days} ngày trước",
 	[Key.siteStatsDays]: "{days} ngày",
-	[Key.siteStatsCurrentTime]: "Thời gian hiện tại",
+	[Key.siteStatsCurrentDate]: "Ngày",
+	[Key.siteStatsDateFormat]: " {day} / {month} / {year}",
+	[Key.siteStatsCurrentTime]: "Thời gian",
 
 	// Thành phần Lịch
 	[Key.calendarSunday]: "Chủ Nhật",

@@ -336,7 +336,9 @@ export const tr: Translation = {
 	[Key.siteStatsLastUpdate]: "Son Etkinlik",
 	[Key.siteStatsDaysAgo]: "{days} gün önce",
 	[Key.siteStatsDays]: "{days} gün",
-	[Key.siteStatsCurrentTime]: "Geçerli Zaman",
+	[Key.siteStatsCurrentDate]: "Tarih",
+	[Key.siteStatsDateFormat]: "{day} / {month} / {year}",
+	[Key.siteStatsCurrentTime]: "Saat",
 
 	// Takvim Bileşeni
 	[Key.calendarSunday]: "Paz",

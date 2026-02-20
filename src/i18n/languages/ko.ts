@@ -323,7 +323,9 @@ export const ko: Translation = {
 	[Key.siteStatsLastUpdate]: "마지막 활동",
 	[Key.siteStatsDaysAgo]: "{days}일 전",
 	[Key.siteStatsDays]: "{days}일",
-	[Key.siteStatsCurrentTime]: "현재 시간",
+	[Key.siteStatsCurrentDate]: "날짜",
+	[Key.siteStatsDateFormat]: "{year} 년 {month} 월 {day} 일",
+	[Key.siteStatsCurrentTime]: "시간",
 
 	// 캘린더 구성 요소
 	[Key.calendarSunday]: "일",

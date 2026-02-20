@@ -109,9 +109,17 @@ const stats = [
 		id: "last-update",
 	},
 	{
+		icon: "material-symbols:calendar-month-outline",
+		label: i18n(I18nKey.siteStatsCurrentDate),
+		value: 0,
+		dynamic: true,
+		id: "current-date",
+		dateFormat: i18n(I18nKey.siteStatsDateFormat), // 完整的日期格式模板
+	},
+	{
 		icon: "material-symbols:schedule-outline",
 		label: i18n(I18nKey.siteStatsCurrentTime),
-		value: "",
+		value: 0,
 		dynamic: true,
 		id: "current-time",
 		ampm: false, // 启用12小时制（默认为false，24小时制）
@@ -142,6 +150,7 @@ const stats = [
 							class="text-base font-bold text-neutral-900 dark:text-neutral-100"
 							data-stat-id={stat.id}
 							data-ampm={stat.ampm}
+							data-date-format={stat.dateFormat}
 						>
 							{stat.formatted
 								? formatNumber(stat.value)
@@ -168,7 +177,7 @@ const stats = [
 		const ampm = hours >= 12 ? 'PM' : 'AM';
 		
 		hours = hours % 12;
-		hours = hours ? hours : 12; // 0 转换为 12
+		hours = hours ? hours : 12;
 		
 		return `${hours}:${minutes}:${seconds} ${ampm}`;
 	}
@@ -179,6 +188,54 @@ const stats = [
 		const minutes = String(date.getMinutes()).padStart(2, '0');
 		const seconds = String(date.getSeconds()).padStart(2, '0');
 		return `${hours}:${minutes}:${seconds}`;
+	}
+
+	// 解析日期格式模板
+	function parseDateFormat(template, date) {
+		const year = date.getFullYear();
+		const month = date.getMonth() + 1;
+		const day = date.getDate();
+		
+		const parts = [];
+		let lastIndex = 0;
+		
+		const placeholders = [
+			{ name: 'year', value: year, index: template.indexOf('{year}') },
+			{ name: 'month', value: month, index: template.indexOf('{month}') },
+			{ name: 'day', value: day, index: template.indexOf('{day}') }
+		];
+		
+		const validPlaceholders = placeholders
+			.filter(ph => ph.index !== -1)
+			.sort((a, b) => a.index - b.index);
+		
+		for (let i = 0; i < validPlaceholders.length; i++) {
+			const ph = validPlaceholders[i];
+			
+			if (ph.index > lastIndex) {
+				parts.push({
+					type: 'text',
+					content: template.substring(lastIndex, ph.index)
+				});
+			}
+			
+			parts.push({
+				type: 'number',
+				content: ph.value.toString(),
+				name: ph.name
+			});
+			
+			lastIndex = ph.index + `{${ph.name}}`.length;
+		}
+		
+		if (lastIndex < template.length) {
+			parts.push({
+				type: 'text',
+				content: template.substring(lastIndex)
+			});
+		}
+		
+		return parts;
 	}
 
 	function updateDynamicStats() {
@@ -214,12 +271,80 @@ const stats = [
 			}
 		}
 
+		// 更新当前日期
+		const currentDateElement = document.querySelector(
+			'[data-stat-id="current-date"]',
+		);
+		if (currentDateElement) {
+			const dateFormat = currentDateElement.getAttribute('data-date-format');
+			if (dateFormat) {
+				const parts = parseDateFormat(dateFormat, today);
+				
+				// 检查是否有后缀span
+				const suffixSpan = currentDateElement.nextElementSibling;
+				
+				if (suffixSpan && suffixSpan.classList.contains('ml-1')) {
+					// 临时移除suffixSpan的类，避免影响子元素
+					const originalClasses = suffixSpan.className;
+					suffixSpan.className = 'ml-1'; // 只保留间距，移除所有样式类
+					
+					// 清空suffixSpan
+					suffixSpan.innerHTML = '';
+					
+					// 创建容器来包裹所有内容
+					parts.forEach(part => {
+						if (part.type === 'number') {
+							// 数字部分：使用粗体样式
+							const span = document.createElement('span');
+							span.className = 'text-base font-bold text-neutral-900 dark:text-neutral-100';
+							span.textContent = part.content;
+							suffixSpan.appendChild(span);
+						} else {
+							// 文本部分：使用小号灰色字体
+							const span = document.createElement('span');
+							span.className = 'text-sm text-neutral-500 dark:text-neutral-400';
+							span.textContent = part.content;
+							suffixSpan.appendChild(span);
+						}
+					});
+					
+					// 清空数值span
+					currentDateElement.innerHTML = '';
+				} else {
+					// 如果没有后缀span，创建一个新的容器
+					const container = document.createElement('span');
+					container.className = 'ml-1';
+					
+					// 清空currentDateElement并隐藏它
+					currentDateElement.innerHTML = '';
+					currentDateElement.style.display = 'none';
+					
+					// 将container添加到父元素中
+					currentDateElement.parentElement.appendChild(container);
+					
+					// 在container中构建显示
+					parts.forEach(part => {
+						if (part.type === 'number') {
+							const span = document.createElement('span');
+							span.className = 'text-base font-bold text-neutral-900 dark:text-neutral-100';
+							span.textContent = part.content;
+							container.appendChild(span);
+						} else {
+							const span = document.createElement('span');
+							span.className = 'text-sm text-neutral-500 dark:text-neutral-400';
+							span.textContent = part.content;
+							container.appendChild(span);
+						}
+					});
+				}
+			}
+		}
+
 		// 更新当前时间
 		const currentTimeElement = document.querySelector(
 			'[data-stat-id="current-time"]',
 		);
 		if (currentTimeElement) {
-			// 根据 data-ampm 属性判断使用哪种格式
 			const useAMPM = currentTimeElement.getAttribute('data-ampm') === 'true';
 			
 			if (useAMPM) {
@@ -233,6 +358,6 @@ const stats = [
 	// 页面加载时更新
 	updateDynamicStats();
 
-	// 每秒更新一次（实时显示）
+	// 每秒更新
 	setInterval(updateDynamicStats, 1000);
 </script>

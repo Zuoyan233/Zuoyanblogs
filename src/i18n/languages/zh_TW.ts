@@ -313,7 +313,9 @@ export const zh_TW: Translation = {
 	[Key.siteStatsLastUpdate]: "最後活動",
 	[Key.siteStatsDaysAgo]: "{days} 天前",
 	[Key.siteStatsDays]: "{days} 天",
-	[Key.siteStatsCurrentTime]: "即時時間",
+	[Key.siteStatsCurrentDate]: "日期",
+	[Key.siteStatsDateFormat]: "{year} 年 {month} 月 {day} 日",
+	[Key.siteStatsCurrentTime]: "時間",
 
 	// 日曆組件
 	[Key.calendarSunday]: "日",
