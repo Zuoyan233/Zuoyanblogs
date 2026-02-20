@@ -328,7 +328,7 @@ export const id: Translation = {
 	[Key.siteStatsDaysAgo]: "{days} hari yang lalu",
 	[Key.siteStatsDays]: "{days} hari",
 	[Key.siteStatsCurrentDate]: "Tanggal",
-	[Key.siteStatsDateFormat]: "{day} / {month} / {year}",
+	[Key.siteStatsDateFormat]: "{day}/{month}/{year}",
 	[Key.siteStatsCurrentTime]: "Waktu",
 
 	// Komponen Kalender

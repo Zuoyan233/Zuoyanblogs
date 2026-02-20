@@ -312,7 +312,7 @@ export const zh_CN: Translation = {
 	[Key.siteStatsDaysAgo]: "{days} 天前",
 	[Key.siteStatsDays]: "{days} 天",
 	[Key.siteStatsCurrentDate]: "日期",
-	[Key.siteStatsDateFormat]: "{year} 年 {month} 月 {day} 日",
+	[Key.siteStatsDateFormat]: "{year}/{month}/{day}",
 	[Key.siteStatsCurrentTime]: "时间",
 
 	// 日历组件

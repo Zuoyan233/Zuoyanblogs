@@ -342,7 +342,7 @@ export const vi: Translation = {
 	[Key.siteStatsDaysAgo]: "{days} ngày trước",
 	[Key.siteStatsDays]: "{days} ngày",
 	[Key.siteStatsCurrentDate]: "Ngày",
-	[Key.siteStatsDateFormat]: " {day} / {month} / {year}",
+	[Key.siteStatsDateFormat]: " {day}/{month}/{year}",
 	[Key.siteStatsCurrentTime]: "Thời gian",
 
 	// Thành phần Lịch

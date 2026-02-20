@@ -327,7 +327,7 @@ export const en: Translation = {
 	[Key.siteStatsDaysAgo]: "{days} days ago",
 	[Key.siteStatsDays]: "{days} days",
 	[Key.siteStatsCurrentDate]: "Date",
-	[Key.siteStatsDateFormat]: "{month} / {day} / {year}",
+	[Key.siteStatsDateFormat]: "{month}/{day}/{year}",
 	[Key.siteStatsCurrentTime]: "Time",
 
 	// Calendar Component

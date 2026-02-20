@@ -70,6 +70,22 @@ const lastPostDate = latestPost
 	? latestPost.data.published.toISOString()
 	: null;
 
+// 计算运行天数（静态值，作为后备）
+const startDate = new Date(siteStartDate);
+const today = new Date();
+const diffTime = Math.abs(today.getTime() - startDate.getTime());
+const staticRunningDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+// 计算最后更新天数（静态值，作为后备）
+let staticDaysSinceLastUpdate = 0;
+if (lastPostDate) {
+	const lastPost = new Date(lastPostDate);
+	const timeSinceLastPost = Math.abs(today.getTime() - lastPost.getTime());
+	staticDaysSinceLastUpdate = Math.floor(
+		timeSinceLastPost / (1000 * 60 * 60 * 24),
+	);
+}
+
 const stats = [
 	{
 		icon: "material-symbols:article-outline",
@@ -95,15 +111,15 @@ const stats = [
 	{
 		icon: "material-symbols:calendar-clock-outline",
 		label: i18n(I18nKey.siteStatsRunningDays),
-		value: 0,
+		value: staticRunningDays,
 		suffix: i18n(I18nKey.siteStatsDays).replace("{days}", ""),
-		dynamic: true,
+		dynamic: true, // 动态更新，如果使用false用回value的默认值
 		id: "running-days",
 	},
 	{
 		icon: "material-symbols:ecg-heart-outline",
 		label: i18n(I18nKey.siteStatsLastUpdate),
-		value: 0,
+		value: staticDaysSinceLastUpdate,
 		suffix: i18n(I18nKey.siteStatsDaysAgo).replace("{days}", ""),
 		dynamic: true,
 		id: "last-update",
@@ -111,18 +127,18 @@ const stats = [
 	{
 		icon: "material-symbols:calendar-month-outline",
 		label: i18n(I18nKey.siteStatsCurrentDate),
-		value: 0,
+		value: new Date().toLocaleDateString(),
 		dynamic: true,
 		id: "current-date",
-		dateFormat: i18n(I18nKey.siteStatsDateFormat), // 完整的日期格式模板
+		dateFormat: i18n(I18nKey.siteStatsDateFormat),
 	},
 	{
 		icon: "material-symbols:schedule-outline",
 		label: i18n(I18nKey.siteStatsCurrentTime),
-		value: 0,
+		value: new Date().toLocaleTimeString(),
 		dynamic: true,
 		id: "current-time",
-		ampm: false, // 启用12小时制（默认为false，24小时制）
+		ampm: false, // false=24小时制, true=12小时制
 	},
 ];
 ---
@@ -148,7 +164,7 @@ const stats = [
 					<div class="flex items-center ml-3 shrink-0">
 						<span
 							class="text-base font-bold text-neutral-900 dark:text-neutral-100"
-							data-stat-id={stat.id}
+							{...(stat.dynamic ? { "data-stat-id": stat.id } : {})}
 							data-ampm={stat.ampm}
 							data-date-format={stat.dateFormat}
 						>
@@ -190,174 +206,59 @@ const stats = [
 		return `${hours}:${minutes}:${seconds}`;
 	}
 
-	// 解析日期格式模板
-	function parseDateFormat(template, date) {
-		const year = date.getFullYear();
-		const month = date.getMonth() + 1;
-		const day = date.getDate();
+	// 格式化日期
+	function formatDate(element, date) {
+		const format = element.getAttribute('data-date-format') || '{year}-{month}-{day}';
 		
-		const parts = [];
-		let lastIndex = 0;
-		
-		const placeholders = [
-			{ name: 'year', value: year, index: template.indexOf('{year}') },
-			{ name: 'month', value: month, index: template.indexOf('{month}') },
-			{ name: 'day', value: day, index: template.indexOf('{day}') }
-		];
-		
-		const validPlaceholders = placeholders
-			.filter(ph => ph.index !== -1)
-			.sort((a, b) => a.index - b.index);
-		
-		for (let i = 0; i < validPlaceholders.length; i++) {
-			const ph = validPlaceholders[i];
-			
-			if (ph.index > lastIndex) {
-				parts.push({
-					type: 'text',
-					content: template.substring(lastIndex, ph.index)
-				});
-			}
-			
-			parts.push({
-				type: 'number',
-				content: ph.value.toString(),
-				name: ph.name
-			});
-			
-			lastIndex = ph.index + `{${ph.name}}`.length;
-		}
-		
-		if (lastIndex < template.length) {
-			parts.push({
-				type: 'text',
-				content: template.substring(lastIndex)
-			});
-		}
-		
-		return parts;
+		// 简单替换占位符
+		return format
+			.replace('{year}', date.getFullYear())
+			.replace('{month}', date.getMonth() + 1)
+			.replace('{day}', date.getDate());
 	}
 
 	function updateDynamicStats() {
-		const today = new Date();
+		try {
+			const today = new Date();
 
-		// 更新运行天数
-		const startDate = new Date(siteStartDate);
-		const diffTime = Math.abs(today.getTime() - startDate.getTime());
-		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+			// 更新运行天数
+			const runningDaysElement = document.querySelector('[data-stat-id="running-days"]');
+			if (runningDaysElement && siteStartDate) {
+				const startDate = new Date(siteStartDate);
+				const diffTime = Math.abs(today.getTime() - startDate.getTime());
+				const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+				runningDaysElement.textContent = diffDays.toString();
+			}
 
-		const runningDaysElement = document.querySelector(
-			'[data-stat-id="running-days"]',
-		);
-		if (runningDaysElement) {
-			runningDaysElement.textContent = diffDays.toString();
-		}
-
-		// 更新最后活动时间
-		if (lastPostDate) {
-			const lastPost = new Date(lastPostDate);
-			const timeSinceLastPost = Math.abs(
-				today.getTime() - lastPost.getTime(),
-			);
-			const daysSinceLastUpdate = Math.floor(
-				timeSinceLastPost / (1000 * 60 * 60 * 24),
-			);
-
-			const lastUpdateElement = document.querySelector(
-				'[data-stat-id="last-update"]',
-			);
-			if (lastUpdateElement) {
+			// 更新最后活动时间
+			const lastUpdateElement = document.querySelector('[data-stat-id="last-update"]');
+			if (lastUpdateElement && lastPostDate) {
+				const lastPost = new Date(lastPostDate);
+				const timeSinceLastPost = Math.abs(today.getTime() - lastPost.getTime());
+				const daysSinceLastUpdate = Math.floor(timeSinceLastPost / (1000 * 60 * 60 * 24));
 				lastUpdateElement.textContent = daysSinceLastUpdate.toString();
 			}
-		}
 
-		// 更新当前日期
-		const currentDateElement = document.querySelector(
-			'[data-stat-id="current-date"]',
-		);
-		if (currentDateElement) {
-			const dateFormat = currentDateElement.getAttribute('data-date-format');
-			if (dateFormat) {
-				const parts = parseDateFormat(dateFormat, today);
-				
-				// 检查是否有后缀span
-				const suffixSpan = currentDateElement.nextElementSibling;
-				
-				if (suffixSpan && suffixSpan.classList.contains('ml-1')) {
-					// 临时移除suffixSpan的类，避免影响子元素
-					const originalClasses = suffixSpan.className;
-					suffixSpan.className = 'ml-1'; // 只保留间距，移除所有样式类
-					
-					// 清空suffixSpan
-					suffixSpan.innerHTML = '';
-					
-					// 创建容器来包裹所有内容
-					parts.forEach(part => {
-						if (part.type === 'number') {
-							// 数字部分：使用粗体样式
-							const span = document.createElement('span');
-							span.className = 'text-base font-bold text-neutral-900 dark:text-neutral-100';
-							span.textContent = part.content;
-							suffixSpan.appendChild(span);
-						} else {
-							// 文本部分：使用小号灰色字体
-							const span = document.createElement('span');
-							span.className = 'text-sm text-neutral-500 dark:text-neutral-400';
-							span.textContent = part.content;
-							suffixSpan.appendChild(span);
-						}
-					});
-					
-					// 清空数值span
-					currentDateElement.innerHTML = '';
-				} else {
-					// 如果没有后缀span，创建一个新的容器
-					const container = document.createElement('span');
-					container.className = 'ml-1';
-					
-					// 清空currentDateElement并隐藏它
-					currentDateElement.innerHTML = '';
-					currentDateElement.style.display = 'none';
-					
-					// 将container添加到父元素中
-					currentDateElement.parentElement.appendChild(container);
-					
-					// 在container中构建显示
-					parts.forEach(part => {
-						if (part.type === 'number') {
-							const span = document.createElement('span');
-							span.className = 'text-base font-bold text-neutral-900 dark:text-neutral-100';
-							span.textContent = part.content;
-							container.appendChild(span);
-						} else {
-							const span = document.createElement('span');
-							span.className = 'text-sm text-neutral-500 dark:text-neutral-400';
-							span.textContent = part.content;
-							container.appendChild(span);
-						}
-					});
-				}
+			// 更新当前日期
+			const currentDateElement = document.querySelector('[data-stat-id="current-date"]');
+			if (currentDateElement) {
+				currentDateElement.textContent = formatDate(currentDateElement, today);
 			}
-		}
 
-		// 更新当前时间
-		const currentTimeElement = document.querySelector(
-			'[data-stat-id="current-time"]',
-		);
-		if (currentTimeElement) {
-			const useAMPM = currentTimeElement.getAttribute('data-ampm') === 'true';
-			
-			if (useAMPM) {
-				currentTimeElement.textContent = formatTimeWithAMPM(today);
-			} else {
-				currentTimeElement.textContent = formatTime24(today);
+			// 更新当前时间
+			const currentTimeElement = document.querySelector('[data-stat-id="current-time"]');
+			if (currentTimeElement) {
+				const useAMPM = currentTimeElement.getAttribute('data-ampm') === 'true';
+				currentTimeElement.textContent = useAMPM ? formatTimeWithAMPM(today) : formatTime24(today);
 			}
+		} catch (error) {
+			console.error('Error updating stats:', error);
 		}
 	}
 
-	// 页面加载时更新
+	// 页面加载时更新动态项
 	updateDynamicStats();
 
-	// 每秒更新
+	// 每秒更新动态项
 	setInterval(updateDynamicStats, 1000);
 </script>

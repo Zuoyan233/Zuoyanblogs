@@ -316,7 +316,7 @@ export const th: Translation = {
 	[Key.siteStatsDaysAgo]: "{days} วันที่ผ่านมา",
 	[Key.siteStatsDays]: "{days} วัน",
 	[Key.siteStatsCurrentDate]: "วันที่",
-	[Key.siteStatsDateFormat]: "{day} / {month} / {year}",
+	[Key.siteStatsDateFormat]: "{day}/{month}/{year}",
 	[Key.siteStatsCurrentTime]: "เวลา",
 
 	// ส่วนประกอบปฏิทิน

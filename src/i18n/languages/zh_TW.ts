@@ -314,7 +314,7 @@ export const zh_TW: Translation = {
 	[Key.siteStatsDaysAgo]: "{days} 天前",
 	[Key.siteStatsDays]: "{days} 天",
 	[Key.siteStatsCurrentDate]: "日期",
-	[Key.siteStatsDateFormat]: "{year} 年 {month} 月 {day} 日",
+	[Key.siteStatsDateFormat]: "{year}/{month}/{day}",
 	[Key.siteStatsCurrentTime]: "時間",
 
 	// 日曆組件

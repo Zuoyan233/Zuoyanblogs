@@ -339,7 +339,7 @@ export const es: Translation = {
 	[Key.siteStatsDaysAgo]: "{days} días atrás",
 	[Key.siteStatsDays]: "{days} días",
 	[Key.siteStatsCurrentDate]: "Fecha",
-	[Key.siteStatsDateFormat]: "{day} / {month} / {year}",
+	[Key.siteStatsDateFormat]: "{day}/{month}/{year}",
 	[Key.siteStatsCurrentTime]: "Hora",
 
 	// Componente Calendario

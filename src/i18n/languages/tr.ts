@@ -337,7 +337,7 @@ export const tr: Translation = {
 	[Key.siteStatsDaysAgo]: "{days} gün önce",
 	[Key.siteStatsDays]: "{days} gün",
 	[Key.siteStatsCurrentDate]: "Tarih",
-	[Key.siteStatsDateFormat]: "{day} / {month} / {year}",
+	[Key.siteStatsDateFormat]: "{day}/{month}/{year}",
 	[Key.siteStatsCurrentTime]: "Saat",
 
 	// Takvim Bileşeni
