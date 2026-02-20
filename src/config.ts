@@ -571,10 +571,10 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			animationDelay: 250,
 		},
 		{
-			//组件类型:目录
+			// 组件类型:目录
 			type: "toc",
-			//是否启用该组件
-			enable: true,
+			// 根据Toc mode配置启用sidebar模式
+			enable: siteConfig.toc.mode === "sidebar",
 			// 组件显示顺序
 			order: 10,
 			// 组件位置："sticky" 表示粘性定位

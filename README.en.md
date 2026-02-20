@@ -22,9 +22,9 @@ The Mizuki theme framework will be updated irregularly with its mainline content
 
 ## 🛠 Modified Content of This Project
 
+- Added site language text for six countries; future site updates will synchronize the site language text.
 - Added multilingual international translation component:
   - Modified the mobile-navbar stylesheet to adapt to the translate panel style.
-  - Added site language text for six countries; future site updates will synchronize the site language text.
 - Modified calendar style and optimized for a more comfortable appearance:
   - Changed the left/right switching icon.
   - Adjusted the position of the small circle at the bottom of the article posting page.
@@ -32,6 +32,8 @@ The Mizuki theme framework will be updated irregularly with its mainline content
 - Add a feedback page and integrate a way to contact the webmaster.
 - Add a sponsorship page and integrate the payment QR code placement path.
 - Add real-time time to the site.
+- Add a confirmation pop-up for external links and modified some of the styles.
+- Moved the Toc sidebar directory from the right to the left-hand widget sidebar.
 - Refactored the hidden album logic and fixed the issue of not being able to access it via a link.
 - Optimized animations for some widgets.
 
