@@ -249,69 +249,116 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 		private content: HTMLElement | null;
 		private wrapper: HTMLElement | null;
 		private isOpen = false;
-		private observer: MutationObserver | null = null;
 		private headings: HTMLElement[] = [];
+		private containerObserver: MutationObserver | null = null;
+		
+		// 添加 AbortController 用于清理事件监听
+		private abortController: AbortController;
 
 		constructor() {
 			this.btn = document.getElementById("floating-toc-btn");
 			this.panel = document.getElementById("floating-toc-panel");
 			this.content = document.getElementById("floating-toc-content");
 			this.wrapper = document.querySelector(".floating-toc-wrapper");
+			this.abortController = new AbortController();
+
+			if (!this.btn || !this.panel || !this.content || !this.wrapper) {
+				console.warn('FloatingTOC: Required elements not found');
+				return;
+			}
 
 			this.init();
 		}
 
 		private init() {
-			window.addEventListener(
-				"scroll",
-				() => {
-					this.updateProgress();
-					this.updateActiveHeading();
-				},
-				{ passive: true },
-			);
+			// 使用 AbortController 的信号来添加事件监听
+			const signal = this.abortController.signal;
+			
+			window.addEventListener("scroll", () => {
+				this.updateProgress();
+				this.updateActiveHeading();
+			}, { 
+				passive: true,
+				signal 
+			});
 
-			window.addEventListener(
-				"resize",
-				() => {
-					this.updateActiveHeading();
+			window.addEventListener("resize", () => {
+				this.updateActiveHeading();
+			}, { 
+				passive: true,
+				signal 
+			});
+
+			// 使用防抖优化滚动性能
+			let scrollTimeout: number;
+			window.addEventListener("scroll", () => {
+				if (scrollTimeout) {
+					cancelAnimationFrame(scrollTimeout);
+				}
+				scrollTimeout = requestAnimationFrame(() => {
 					this.updateProgress();
-				},
-				{ passive: true },
-			);
+					this.updateActiveHeading();
+				});
+			}, { 
+				passive: true,
+				signal 
+			});
 
 			this.bindEvents();
 			this.generateTOC();
-			this.observeContent();
+			this.observeDocument();
 			this.updateProgress();
 		}
 
-		private observeContent() {
-			const contentWrapper = document.getElementById("post-container");
-			if (contentWrapper) {
-				this.observer = new MutationObserver(() => {
-					this.generateTOC();
-					this.updateProgress();
-				});
-				this.observer.observe(contentWrapper, {
-					childList: true,
-					subtree: true,
-				});
+		private observeDocument() {
+			// 断开已有的观察器
+			if (this.containerObserver) {
+				this.containerObserver.disconnect();
 			}
+
+			// 监听整个文档的变化
+			this.containerObserver = new MutationObserver((mutations) => {
+				// 检查是否有标题相关的变化
+				const hasHeadingChanges = mutations.some(mutation => {
+					return Array.from(mutation.addedNodes).some(node => {
+						if (node.nodeType === Node.ELEMENT_NODE) {
+							const element = node as Element;
+							return element.matches?.('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]') ||
+								   element.querySelector?.('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]');
+						}
+						return false;
+					});
+				});
+
+				if (hasHeadingChanges || this.headings.length === 0) {
+					// 使用防抖避免频繁生成
+					clearTimeout((this as any).generateTimeout);
+					(this as any).generateTimeout = setTimeout(() => {
+						this.generateTOC();
+					}, 100);
+				}
+			});
+
+			this.containerObserver.observe(document.body, {
+				childList: true,
+				subtree: true
+			});
+		}
+
+		private hide() {
+			this.wrapper?.classList.remove("active-toc");
+			this.close();
 		}
 
 		private updateProgress() {
 			if (!this.btn) return;
 
-			const scrollTop =
-				window.scrollY || document.documentElement.scrollTop;
-			const docHeight =
-				document.documentElement.scrollHeight -
-				document.documentElement.clientHeight;
+			const scrollTop = window.scrollY || document.documentElement.scrollTop;
+			const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 			const scrollPercent = docHeight > 0 ? scrollTop / docHeight : 0;
 
 			const circle = this.btn.querySelector(
-				".progress-ring-circle",
+				".progress-ring-circle"
 			) as SVGCircleElement;
 			if (circle) {
 				const radius = circle.r.baseVal.value;
@@ -320,8 +367,8 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 					0,
 					Math.min(
 						circumference,
-						circumference - scrollPercent * circumference,
-					),
+						circumference - scrollPercent * circumference
+					)
 				);
 				circle.style.strokeDashoffset = offset.toString();
 			}
@@ -329,43 +376,29 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 
 		private updateActiveHeading() {
 			if (!this.content || this.headings.length === 0) return;
+			
 			const scrollY = window.scrollY;
 			const offsetTop = 150;
 
 			let activeIndex = -1;
-			for (let i = 0; i < this.headings.length; i++) {
+			for (let i = this.headings.length - 1; i >= 0; i--) {
 				const heading = this.headings[i];
-				if (
-					heading.getBoundingClientRect().top + scrollY <
-					scrollY + offsetTop
-				) {
-					activeIndex = i;
-				} else {
-					break;
+				if (heading && heading.isConnected) { // 检查元素是否还在 DOM 中
+					const headingTop = heading.getBoundingClientRect().top + scrollY;
+					if (headingTop <= scrollY + offsetTop) {
+						activeIndex = i;
+						break;
+					}
 				}
 			}
 
 			const links = Array.from(
-				this.content.querySelectorAll(".floating-toc-item"),
+				this.content.querySelectorAll(".floating-toc-item")
 			);
+			
 			links.forEach((link, index) => {
 				if (index === activeIndex) {
 					link.classList.add("active");
-					if (this.isOpen) {
-						const panelContent = this.content;
-						if (panelContent) {
-							const linkEl = link as HTMLElement;
-							const panelRect =
-								panelContent.getBoundingClientRect();
-							const linkRect = linkEl.getBoundingClientRect();
-							if (
-								linkRect.top < panelRect.top ||
-								linkRect.bottom > panelRect.bottom
-							) {
-								linkEl.scrollIntoView({ block: "nearest" });
-							}
-						}
-					}
 				} else {
 					link.classList.remove("active");
 				}
@@ -373,64 +406,30 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 		}
 
 		private generateTOC() {
-			const container = document.getElementById("post-container");
-
-			if (!container) {
-				this.wrapper?.classList.remove("active-toc");
-				this.wrapper?.classList.add("no-toc");
-				return;
-			}
+			const container = document.querySelector(
+				"#post-container, article, main, .content, .post-content, .prose, .markdown-content, .custom-md"
+			) || document.body;
 
 			const allHeadings = container.querySelectorAll(
-				"h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]",
+				"h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]"
 			);
 
 			if (allHeadings.length === 0) {
-				this.wrapper?.classList.remove("active-toc");
-				this.wrapper?.classList.add("no-toc");
+				this.hide();
 				this.headings = [];
 				return;
 			}
 
-			this.wrapper?.classList.remove("no-toc");
 			this.wrapper?.classList.add("active-toc");
 			this.headings = [];
 
 			const maxLevel = parseInt(this.wrapper?.dataset.depth || "3");
-			const useJapaneseBadge =
-				this.wrapper?.dataset.japaneseBadge === "true";
+			const useJapaneseBadge = this.wrapper?.dataset.japaneseBadge === "true";
 
 			const japaneseKatakana = [
-				"ア",
-				"イ",
-				"ウ",
-				"エ",
-				"オ",
-				"カ",
-				"キ",
-				"ク",
-				"ケ",
-				"コ",
-				"サ",
-				"シ",
-				"ス",
-				"セ",
-				"ソ",
-				"タ",
-				"チ",
-				"ツ",
-				"テ",
-				"ト",
-				"ナ",
-				"ニ",
-				"ヌ",
-				"ネ",
-				"ノ",
-				"ハ",
-				"ヒ",
-				"フ",
-				"ヘ",
-				"ホ",
+				"ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ",
+				"サ", "シ", "ス", "セ", "ソ", "タ", "チ", "ツ", "テ", "ト",
+				"ナ", "ニ", "ヌ", "ネ", "ノ", "ハ", "ヒ", "フ", "ヘ", "ホ",
 			];
 
 			let minLevel = 6;
@@ -441,6 +440,7 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 
 			let html = "";
 			let h1Count = 0;
+			
 			allHeadings.forEach((heading) => {
 				const level = parseInt(heading.tagName[1]);
 
@@ -453,11 +453,9 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 
 				if (level === minLevel) {
 					h1Count++;
-					const badgeText =
-						useJapaneseBadge &&
-						h1Count - 1 < japaneseKatakana.length
-							? japaneseKatakana[h1Count - 1]
-							: h1Count.toString();
+					const badgeText = useJapaneseBadge && h1Count - 1 < japaneseKatakana.length
+						? japaneseKatakana[h1Count - 1]
+						: h1Count.toString();
 					badge = `<span class="floating-toc-badge">${badgeText}</span>`;
 				} else if (level === minLevel + 1) {
 					badge = '<span class="floating-toc-dot"></span>';
@@ -477,15 +475,19 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 		}
 
 		private bindEvents() {
+			const signal = this.abortController.signal;
+			
 			this.btn?.addEventListener("click", (e) => {
 				e.stopPropagation();
 				this.toggle();
-			});
+			}, { signal });
+
 			document.addEventListener("click", (e) => {
 				if (this.isOpen && !this.wrapper?.contains(e.target as Node)) {
 					this.close();
 				}
-			});
+			}, { signal });
+
 			this.content?.addEventListener("click", (e) => {
 				const link = (e.target as HTMLElement).closest("a");
 				if (link) {
@@ -494,24 +496,22 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 					if (id) {
 						const element = document.getElementById(id);
 						if (element) {
-							const top =
-								element.getBoundingClientRect().top +
-								window.scrollY -
-								80;
+							const top = element.getBoundingClientRect().top + window.scrollY - 80;
 							window.scrollTo({ top, behavior: "smooth" });
+							
+							setTimeout(() => {
+								this.updateActiveHeading();
+							}, 300);
+							
 							this.close();
 						}
 					}
 				}
-			});
+			}, { signal });
+
 			document.addEventListener("keydown", (e) => {
 				if (e.key === "Escape" && this.isOpen) this.close();
-			});
-			if ((window as any).swup) {
-				(window as any).swup.hooks.on("page:view", () => {
-					setTimeout(() => this.reinit(), 200);
-				});
-			}
+			}, { signal });
 		}
 
 		private toggle() {
@@ -523,6 +523,7 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 			this.panel?.classList.add("show");
 			this.btn?.classList.add("active");
 			this.wrapper?.classList.add("active");
+			this.updateActiveHeading();
 		}
 
 		private close() {
@@ -532,17 +533,54 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 			this.wrapper?.classList.remove("active");
 		}
 
-		private reinit() {
-			if (this.observer) {
-				this.observer.disconnect();
+		// 添加清理方法
+		public destroy() {
+			// 中止所有事件监听
+			this.abortController.abort();
+			
+			// 断开 MutationObserver
+			if (this.containerObserver) {
+				this.containerObserver.disconnect();
+				this.containerObserver = null;
 			}
-			this.close();
-			this.generateTOC();
-			this.observeContent();
-			this.updateProgress();
+			
+			// 清理引用
+			this.btn = null;
+			this.panel = null;
+			this.content = null;
+			this.wrapper = null;
+			this.headings = [];
+			
+			// 清理定时器
+			clearTimeout((this as any).generateTimeout);
 		}
 	}
 
-	document.addEventListener("DOMContentLoaded", () => new FloatingTOC());
-	document.addEventListener("swup:page:view", () => new FloatingTOC());
+	// 使用单例模式管理实例
+	let instance: FloatingTOC | null = null;
+
+	function initTOC() {
+		// 销毁旧实例
+		if (instance) {
+			instance.destroy();
+			instance = null;
+		}
+		
+		// 创建新实例
+		instance = new FloatingTOC();
+	}
+
+	// 页面加载时初始化
+	document.addEventListener("DOMContentLoaded", initTOC);
+	
+	// 页面切换时重新初始化
+	document.addEventListener("swup:page:view", initTOC);
+	
+	// 页面卸载时清理（可选，用于 SPA）
+	window.addEventListener("beforeunload", () => {
+		if (instance) {
+			instance.destroy();
+			instance = null;
+		}
+	});
 </script>
