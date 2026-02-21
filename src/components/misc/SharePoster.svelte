@@ -2,8 +2,6 @@
 import Icon from "@iconify/svelte";
 import QRCode from "qrcode";
 import { onMount } from "svelte";
-import { quintOut } from "svelte/easing";
-import { fly, scale } from "svelte/transition";
 import I18nKey from "../../i18n/i18nKey";
 import { i18n } from "../../i18n/translation";
 
@@ -28,6 +26,10 @@ let showModal = false;
 let posterImage: string | null = null;
 let generating = false;
 let themeColor = "#558e88";
+let copied = false;
+let modalElement: HTMLElement;
+
+const COPY_FEEDBACK_DURATION = 2000;
 
 onMount(() => {
 	const temp = document.createElement("div");
@@ -107,7 +109,6 @@ function drawRoundedRect(
 	ctx.closePath();
 }
 
-// Type for parsed date
 type DateObj = { day: string; month: string; year: string };
 
 function parseDate(dateStr: string): DateObj | null {
@@ -127,6 +128,15 @@ function parseDate(dateStr: string): DateObj | null {
 
 async function generatePoster() {
 	showModal = true;
+
+	// 使用 requestAnimationFrame 确保 DOM 更新后再添加显示类
+	await tick();
+	requestAnimationFrame(() => {
+		if (modalElement) {
+			modalElement.classList.add("modal-show");
+		}
+	});
+
 	if (posterImage) return;
 
 	generating = true;
@@ -407,11 +417,13 @@ function downloadPoster() {
 }
 
 function closeModal() {
-	showModal = false;
+	if (modalElement) {
+		modalElement.classList.remove("modal-show");
+		setTimeout(() => {
+			showModal = false;
+		}, 300); // 与动画持续时间一致
+	}
 }
-
-let copied = false;
-const COPY_FEEDBACK_DURATION = 2000;
 
 async function copyLink() {
 	try {
@@ -439,6 +451,7 @@ async function copyLink() {
 
 function portal(node: HTMLElement) {
 	document.body.appendChild(node);
+	modalElement = node;
 	return {
 		destroy() {
 			if (node.parentNode) {
@@ -446,6 +459,11 @@ function portal(node: HTMLElement) {
 			}
 		},
 	};
+}
+
+// 辅助函数，等待下一个 tick
+function tick() {
+	return new Promise((resolve) => setTimeout(resolve, 0));
 }
 </script>
 
@@ -457,11 +475,17 @@ function portal(node: HTMLElement) {
   <span>{i18n(I18nKey.shareArticle)}</span>
 </button>
 
-
 {#if showModal}
-  <div use:portal class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 transition-opacity" on:click={closeModal} transition:fly={{ duration: 250 }}>
-    <div class="bg-white dark:bg-gray-800 rounded-2xl max-w-sm w-full max-h-[90vh] overflow-y-auto flex flex-col shadow-2xl" on:click|stopPropagation transition:scale={{ duration: 250, start: 0.8, easing: quintOut }}>
-      
+  <div 
+    use:portal 
+    class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 transition-opacity duration-300 ease-[cubic-bezier(0.2,0,0,1)] opacity-0 modal-show:opacity-100"
+    class:modal-show={false} 
+    on:click={closeModal}
+  >
+    <div 
+      class="bg-white dark:bg-gray-800 rounded-2xl max-w-sm w-full max-h-[90vh] overflow-y-auto flex flex-col shadow-2xl transition-all duration-300 ease-[cubic-bezier(0.2,0,0,1)] opacity-0 scale-95 translate-y-2.5 modal-show:opacity-100 modal-show:scale-100 modal-show:translate-y-0"
+      on:click|stopPropagation
+    >
       <div class="p-6 flex justify-center bg-gray-50 dark:bg-gray-900 min-h-[200px] items-center">
         {#if posterImage}
           <img src={posterImage} alt="Poster" class="max-w-full h-auto shadow-lg rounded-lg" />
@@ -499,3 +523,15 @@ function portal(node: HTMLElement) {
     </div>
   </div>
 {/if}
+
+<style>
+  /* 自定义修饰符规则 */
+  .modal-show {
+    opacity: 1 !important;
+  }
+  
+  .modal-show > div {
+    opacity: 1 !important;
+    transform: scale(1) translateY(0) !important;
+  }
+</style>
