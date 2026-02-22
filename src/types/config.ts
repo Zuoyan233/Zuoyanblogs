@@ -486,3 +486,13 @@ export type ShareConfig = {
 export type ExternalLinkConfirmConfig = {
 	enable: boolean;
 };
+
+/**
+ * 联系站长电子邮箱配置
+ */
+export type ContactEmailConfig = {
+	contactEmail1: string;
+	contactEmail1_Link: string;
+	contactEmail2: string;
+	contactEmail2_Link: string;
+};

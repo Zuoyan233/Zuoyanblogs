@@ -152,7 +152,7 @@ pnpm install
 - **スポンサーシップページ:** `src/content/spec/sponsors.md` のコンテンツを編集します。
   - `src/pages/posts/sponsors.astro` に支払い用のQRコードを追加します。支払いQRコードは `public/images/sponsors` に保存されます。
 - **フィードバックページ:** `src/content/spec/feedback.md` のコンテンツを編集し。
-  - `src/pages/posts/feedback.astro` に管理者のメールアドレス連絡先を追加してください。
+  - `src/congfig.ts` で `contactEmailConfig` を見つけて、Web サイト管理者の電子メール アドレスを追加します。
   - `public/images/albums/contact` に管理者のSNS連絡先を追加してください。
 - **プロジェクト表示ページ：** `src/data/projects.ts` で表示内容を編集します。
 - **スキル表示ページ：** `src/data/skills.ts` で表示内容を編集します。

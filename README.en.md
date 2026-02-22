@@ -151,7 +151,7 @@ pnpm install
 - **Sponsors Page:** Edit the content in `src/content/spec/sponsors.md`.
    - Add a payment QR code in `src/pages/posts/sponsors.astro`. The payment QR code is saved in `public/images/sponsors`.
 - **Feedback Page:** Edit the content in `src/content/spec/feedback.md`.
-   - Add the webmaster's email contact information in `src/pages/posts/feedback.astro`.
+   - In `src/congfig.ts`, find `contactEmailConfig` and add the website administrator's email address.
    - Add the webmaster's social media contact information in `public/images/albums/contact`.
 - **Project Display Page:** Edit the displayed content in `src/data/projects.ts`.
 - **Skill Display Page:** Edit the displayed content in `src/data/skills.ts`.

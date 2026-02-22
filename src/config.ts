@@ -1,6 +1,7 @@
 import type {
 	AnnouncementConfig,
 	CommentConfig,
+	ContactEmailConfig,
 	ExpressiveCodeConfig,
 	ExternalLinkConfirmConfig,
 	FooterConfig,
@@ -421,6 +422,15 @@ export const shareConfig: ShareConfig = {
 
 export const externalLinkConfirmConfig: ExternalLinkConfirmConfig = {
 	enable: true, // 是否启用外部链接确认功能
+};
+
+export const contactEmailConfig: ContactEmailConfig = {
+	// contactEmail1 & contactEmail2: 此处填写你的电子邮箱的号码
+	// contactEmail1_Link & contactEmail2_Link：此处填写你需要跳转到对应电子邮箱的网站，格式是 https://example.mail.com/。
+	contactEmail1: "演示邮箱1，请在src/config.ts中修改你的电子邮箱",
+	contactEmail1_Link: "https://example.mail.com/",
+	contactEmail2: "演示邮箱2，请在src/config.ts中修改你的电子邮箱",
+	contactEmail2_Link: "https://example.mail.com/",
 };
 
 export const announcementConfig: AnnouncementConfig = {

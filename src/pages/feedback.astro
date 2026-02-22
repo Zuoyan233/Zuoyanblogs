@@ -2,10 +2,13 @@
 import { getEntry, render } from "astro:content";
 import Twikoo from "@components/comment/Twikoo.astro";
 import Markdown from "@components/misc/Markdown.astro";
-import { commentConfig } from "@/config";
+import { commentConfig, contactEmailConfig } from "@/config";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
+
+const { contactEmail1, contactEmail1_Link, contactEmail2, contactEmail2_Link } =
+	contactEmailConfig;
 
 const feedbackPost = await getEntry("spec", "feedback");
 
@@ -69,9 +72,9 @@ if (commentConfig?.enable && commentConfig?.twikoo) {
                             {i18n(I18nKey.contactEmail)}
                         </p>
                         <!-- 此处修改您的邮箱地址 -->
-                        <a class="transition link text-[var(--primary)] hover:text-gray-600 dark:hover:text-white/80 font-medium" target="_blank" href="https://mail.google.com/">zuoxiju233@gmail.com</a>
+                        <a class="transition link text-[var(--primary)] hover:text-gray-600 dark:hover:text-white/80 font-medium" target="_blank" href={contactEmail1_Link}>{contactEmail1}</a>
                     </br>  
-                        <a class="transition link text-[var(--primary)] hover:text-gray-600 dark:hover:text-white/80 font-medium" target="_blank" href="https://mail.qq.com/">2417112964@qq.com</a>
+                        <a class="transition link text-[var(--primary)] hover:text-gray-600 dark:hover:text-white/80 font-medium" target="_blank" href={contactEmail2_Link}>{contactEmail2}</a>
                     </div>
 
                     <div class="bg-[oklch(0.95_0.025_var(--hue))] dark:bg-[oklch(0.33_0.035_var(--hue))] rounded-xl p-8 shadow-sm hover:shadow-lg dark:hover:shadow-lg dark:hover:shadow-white/30 transition-shadow">
