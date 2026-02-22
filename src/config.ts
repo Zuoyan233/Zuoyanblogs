@@ -1,4 +1,5 @@
 import type {
+	AddpaymentConfig,
 	AnnouncementConfig,
 	CommentConfig,
 	ContactEmailConfig,
@@ -431,6 +432,12 @@ export const contactEmailConfig: ContactEmailConfig = {
 	contactEmail1_Link: "https://example.mail.com/",
 	contactEmail2: "演示邮箱2，请在src/config.ts中修改你的电子邮箱",
 	contactEmail2_Link: "https://example.mail.com/",
+};
+
+export const addpaymentConfig: AddpaymentConfig = {
+	// QR_Code_Payment_1 & QR_Code_Payment_2: 此处存放你的赞助支付二维码，存放路径在 public/images/sponsors 文件夹内。
+	QR_Code_Payment_1: "/images/sponsors/alipay.webp",
+	QR_Code_Payment_2: "/images/sponsors/wechat pay.webp",
 };
 
 export const announcementConfig: AnnouncementConfig = {

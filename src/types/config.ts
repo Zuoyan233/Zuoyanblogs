@@ -496,3 +496,11 @@ export type ContactEmailConfig = {
 	contactEmail2: string;
 	contactEmail2_Link: string;
 };
+
+/**
+ * 添加赞助支付二维码配置
+ */
+export type AddpaymentConfig = {
+	QR_Code_Payment_1: string;
+	QR_Code_Payment_2: string;
+};
