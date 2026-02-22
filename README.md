@@ -136,9 +136,9 @@ Zuoyanblogs博客项目是基于 <a href="https://github.com/matsuzaka-yuki/mizu
 - **日记页面：** 在 `src/data/diary.ts` 中编辑动态。
 - **关于页面：** 在 `src/content/spec/about.md` 中编辑内容。
 - **赞助页面：** 在 `src/content/spec/sponsors.md` 中编辑内容。
-   - 在 `src/pages/posts/sponsors.astro` 中添加支付二维码，支付二维码存放路径在 `public/images/sponsors` 内。
+   - 在 `src/congfig.ts` 中找到 `addpaymentConfig` 配置支付二维码，支付二维码存放路径在 `public/images/sponsors` 内。
 - **反馈页面：** 在 `src/content/spec/feedback.md` 中编辑内容。
-   - 在 `src/congfig.ts` 中找到 `contactEmailConfig` 添加站长的电子邮箱联系方式。
+   - 在 `src/congfig.ts` 中找到 `contactEmailConfig` 配置站长的电子邮箱联系方式。
    - 在 `public/images/albums/contact` 中添加站长的社交软件联系方式。
 - **项目展示页面：** 在 `src/data/projects.ts` 中编辑展示的内容。
 - **技能展示页面：** 在 `src/data/skills.ts` 中编辑展示的内容。

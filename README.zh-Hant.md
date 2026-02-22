@@ -136,9 +136,9 @@ pnpm install
 - **日記頁面：** 在 `src/data/diary.ts` 編輯動態。
 - **關於頁面：** 在 `src/content/spec/about.md` 中編輯內容。
 - **贊助頁面：** 在 `src/content/spec/sponsors.md` 中編輯內容。
-  - 編輯 `src/pages/posts/sponsors.astro` 中支付二維碼，支付二維碼存放路徑在 `public/images/sponsors` 中。
+  - 在 `src/congfig.ts` 中找到 `addpaymentConfig` 配置支付二維碼，支付二維碼存放路徑在 `public/images/sponsors` 內。
 - **回饋頁面：** 在 `src/content/spec/feedback.md` 中編輯內容。
-  - 在 `src/congfig.ts` 中找到 `contactEmailConfig` 新增站長的電子郵件信箱聯絡資訊。 
+  - 在 `src/congfig.ts` 中找到 `contactEmailConfig` 配置站長的電子郵件信箱聯絡資訊。 
   - 編輯 `public/images/albums/contact` 中站長的社群軟體聯絡方式。
 - **專案展示頁面：** 編輯 `src/data/projects.ts` 檔案中的展示內容。
 - **技能展示頁面：** 編輯 `src/data/skills.ts` 檔案中的展示內容。
