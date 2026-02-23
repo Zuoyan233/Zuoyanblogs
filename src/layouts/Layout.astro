@@ -614,10 +614,6 @@ function disableAnimation() {
 				"search-bar",
 				"search-switch",
 			]);
-			setClickOutsideToClose("mobile-toc-panel", [
-				"mobile-toc-panel",
-				"mobile-toc-switch",
-			]);
 			setClickOutsideToClose("wallpaper-mode-panel", [
 				"wallpaper-mode-panel",
 				"wallpaper-mode-switch",
@@ -1108,13 +1104,6 @@ function disableAnimation() {
 				) {
 					setTimeout(() => {
 						(tocElement as any).init();
-					}, 100);
-				}
-
-				// 重新初始化移动端 TOC 组件
-				if (typeof (window as any).mobileTOCInit === "function") {
-					setTimeout(() => {
-						(window as any).mobileTOCInit();
 					}, 100);
 				}
 			}

@@ -22,9 +22,6 @@ export const ko: Translation = {
 	[Key.tags]: "태그",
 	[Key.categories]: "카테고리",
 	[Key.recentPosts]: "최근 게시물",
-	[Key.postList]: "게시물 목록",
-	[Key.tableOfContents]: "목차",
-	[Key.tocEmpty]: "목차가 없습니다",
 
 	// 공지
 	[Key.announcement]: "공지사항",

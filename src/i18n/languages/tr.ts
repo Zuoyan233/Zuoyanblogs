@@ -22,9 +22,6 @@ export const tr: Translation = {
 	[Key.tags]: "Etiketler",
 	[Key.categories]: "Kategoriler",
 	[Key.recentPosts]: "Son Gönderiler",
-	[Key.postList]: "Gönderi Listesi",
-	[Key.tableOfContents]: "İçindekiler",
-	[Key.tocEmpty]: "İçindekiler tablosu yok",
 
 	// Duyuru
 	[Key.announcement]: "Duyuru",

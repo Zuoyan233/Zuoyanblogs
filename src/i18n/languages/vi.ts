@@ -22,9 +22,6 @@ export const vi: Translation = {
 	[Key.tags]: "Thẻ",
 	[Key.categories]: "Danh mục",
 	[Key.recentPosts]: "Bài đăng gần đây",
-	[Key.postList]: "Danh sách bài đăng",
-	[Key.tableOfContents]: "Mục lục",
-	[Key.tocEmpty]: "Không có mục lục",
 
 	// Thông báo
 	[Key.announcement]: "Thông báo",

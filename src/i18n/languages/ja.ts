@@ -22,9 +22,6 @@ export const ja: Translation = {
 	[Key.tags]: "タグ",
 	[Key.categories]: "カテゴリー",
 	[Key.recentPosts]: "最近の投稿",
-	[Key.postList]: "投稿の一覧",
-	[Key.tableOfContents]: "目次",
-	[Key.tocEmpty]: "目次はありません",
 
 	// お知らせ
 	[Key.announcement]: "お知らせ",

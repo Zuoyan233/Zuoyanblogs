@@ -17,7 +17,6 @@ declare global {
 			}>;
 		};
 
-		mobileTOCInit?: () => void;
 		initSemifullScrollDetection?: () => void;
 		iconifyLoaded?: boolean;
 		__iconifyLoader?: {

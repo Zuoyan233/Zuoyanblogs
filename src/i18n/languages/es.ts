@@ -22,9 +22,6 @@ export const es: Translation = {
 	[Key.tags]: "Etiquetas",
 	[Key.categories]: "Categorías",
 	[Key.recentPosts]: "Publicaciones recientes",
-	[Key.postList]: "Lista de publicaciones",
-	[Key.tableOfContents]: "Índice",
-	[Key.tocEmpty]: "Sin índice",
 
 	// Anuncio
 	[Key.announcement]: "Anuncio",

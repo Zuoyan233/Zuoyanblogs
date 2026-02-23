@@ -19,9 +19,6 @@ enum I18nKey {
 	tags = "tags",
 	categories = "categories",
 	recentPosts = "recentPosts",
-	postList = "postList",
-	tableOfContents = "tableOfContents",
-	tocEmpty = "tocEmpty",
 
 	// 公告栏
 	announcement = "announcement",
