@@ -44,27 +44,32 @@ Zuoyanblogs博客專案是基於 <a href="https://github.com/matsuzaka-yuki/mizu
 想了解更多 Mizuki 的功能特性：<a href="https://docs.mizuki.mysqil.com/" target="_blank">進入 Mizuki Docs 官方網站</a>
 
 ### 🔧 組件配置系統重構
+
 - **統一配置架構：** 全新的模塊化組件配置體系，支持動態組件管理和順序配置。
 - **配置驅動的組件加載：** 重構 SideBar 組件，實現完全基於配置的組件加載機制。
 - **統一控制開關：** 移除音樂播放器和公告組件的獨立 enable 開關，統一由 sidebarLayoutConfig 控制。
 - **響應式布局適配：** 組件支持響應式布局，可根據設備類型自動調整顯示。
 
 ### 📐 布局系統優化
+
 - **側邊欄位置動態調整：** 支持左右側邊欄切換，布局自動適配。
 - **文章目錄智能定位：** 當側邊欄在右側時，文章導航自動移至左側，提供更好的閱讀體驗。
 - **網格布局改進：** 優化 CSS Grid 布局，解決容器寬度異常問題。
 
 ### 🎛️ 配置文件格式標準化
+
 - **標準化配置格式：** 創建統一的組件配置文件格式規範。
 - **類型安全：** 完善的 TypeScript 類型定義，確保配置的類型安全。
 - **可擴展性：** 支持自定義組件類型和配置選項。
 
 ### 🧹 代碼優化
+
 - **測試文件清理：** 移除未使用的測試配置和依賴，減少專案體積。
 - **代碼結構優化：** 改進組件架構，提升代碼可維護性。
 - **性能提升：** 優化組件加載邏輯，提升頁面渲染性能。
 
 ### 🎨 設計與界面
+
 - 基於 [Astro](https://astro.build) 和 [Tailwind CSS](https://tailwindcss.com) 構建。
 - 使用 [Swup](https://swup.js.org/) 實現流暢的動畫和頁面過渡。
 - 明暗主題切換，支持系統偏好檢測。
@@ -74,6 +79,7 @@ Zuoyanblogs博客專案是基於 <a href="https://github.com/matsuzaka-yuki/mizu
 - 使用 JetBrains Mono 字體的優美排版。
 
 ### 🔍 內容與搜索
+
 - 基於 [Pagefind](https://pagefind.app/) 的高級搜索功能。
 - [增強的 Markdown 功能](https://docs.mizuki.mysqil.com/press/Markdown/Markdown/)，支持語法高亮。
 - 交互式目錄，支持自動滾動。
@@ -82,6 +88,7 @@ Zuoyanblogs博客專案是基於 <a href="https://github.com/matsuzaka-yuki/mizu
 - 文章分類和標籤系統。
 
 ### 📱 特色頁面
+
 - **動漫追蹤頁面** - 追蹤您的動漫觀看進度和評分。
 - **好友連結頁面** - 用精美卡片展示您好友的網站。
 - **相簿頁面** - 記錄您生活中的美好時刻。
@@ -96,6 +103,7 @@ Zuoyanblogs博客專案是基於 <a href="https://github.com/matsuzaka-yuki/mizu
 - **時間軸頁面** - 成長歷程與重要里程碑。
 
 ### 🛠 技術特性
+
 - **增強代碼塊** - 基於 [Expressive Code](https://expressive-code.com/)。
 - **數學公式支持** - KaTeX 渲染。
 - **圖片優化** - PhotoSwipe 畫廊集成。
@@ -108,12 +116,14 @@ Zuoyanblogs博客專案是基於 <a href="https://github.com/matsuzaka-yuki/mizu
 ## ⚡ 如何運行該專案？
 
 1. **克隆倉庫：**
+
 ```bash
 git clone https://github.com/Zuoyan233/Zuoyanblogs.git
 cd Zuoyanblogs
 ```
 
 2. **安裝依賴：**
+
 ```bash
 # 如果沒有安裝 pnpm，先安裝
 npm install -g pnpm
@@ -123,12 +133,14 @@ pnpm install
 ```
 
 3. **配置博客：**
+
 - 編輯 `src/config.ts` 自定義博客設置。
 - 更新站點信息、主題色彩、橫幅圖片和社交鏈接。
 - 配置特色頁面功能。
 - (可選) 配置內容倉庫分離 - 了解詳細請閱讀 Mizuki Docs 的 [內容倉庫配置](https://docs.mizuki.mysqil.com/Other/separation/)。
 
 4. **特色頁面配置**
+
 - **追番頁面：** 在 `src/pages/anime.astro` 編輯動畫清單。
 - **友鏈頁面：** 在 `src/content/spec/friends.md` 中編輯朋友資料。
 - **相簿頁面：** 在 `public/images/albums/` 中編輯相簿訊息，如何使用請前往 [相簿功能使用說明](./public/images/albums/README.md)。
@@ -138,13 +150,14 @@ pnpm install
 - **贊助頁面：** 在 `src/content/spec/sponsors.md` 中編輯內容。
   - 在 `src/config.ts` 中找到 `addpaymentConfig` 配置支付二維碼，支付二維碼存放路徑在 `public/images/sponsors` 內。
 - **回饋頁面：** 在 `src/content/spec/feedback.md` 中編輯內容。
-  - 在 `src/config.ts` 中找到 `contactEmailConfig` 配置站長電子郵件信箱聯絡資訊。 
+  - 在 `src/config.ts` 中找到 `contactEmailConfig` 配置站長電子郵件信箱聯絡資訊。
   - 編輯 `public/images/albums/contact` 中站長的社群軟體聯絡方式。
 - **專案展示頁面：** 編輯 `src/data/projects.ts` 檔案中的展示內容。
 - **技能展示頁面：** 編輯 `src/data/skills.ts` 檔案中的展示內容。
 - **時間軸頁面：** 編輯 `src/data/timeline.ts` 檔案中的展示內容。
 
 5. **文章內容管理**
+
 - **建立新文章：** `pnpm new-post <檔案名稱>`。
 - **編輯文章：** 修改 `src/content/posts/` 中的檔案。
 - **自訂頁面：** 編輯 `src/content/spec/` 中的特殊頁面。
@@ -152,6 +165,7 @@ pnpm install
 - **Markdown 擴充語法:** 了解詳細請閱讀 Mizuki Docs 的 [Markdown 擴充語法](https://docs.mizuki.mysqil.com/press/Markdown/customize/)。
 
 Frontmatter 欄位說明：
+
 - **title**: 文章標題（必填）
 - **published**: 發布日期（必需）
 - **description**: 文章描述，用於 SEO 和預覽
@@ -159,34 +173,35 @@ Frontmatter 欄位說明：
 - **tags**: 標籤數組，用於分類
 - **category**: 文章分類
 - **draft**: 設定為 `true` 在生產環境中隱藏文章
+- **comment**: 設定為 `true` 或 `false` 可控制目前文章的評論開關。（需先在 `config.ts` 中啟用 Twikoo 評論系統）
 - **pinned**: 設定為 `true` 將文章置頂
 - **lang**: 文章語言（僅當與網站預設語言不同時設定）
 
 6. **啓動開發服務器：**
+
 ```bash
 pnpm dev
 ```
-博客將在 `http://localhost:4321` 可用。
 
+博客將在 `http://localhost:4321` 可用。
 
 7. **所有命令都在專案根目錄運行：**
 
-| 命令 | 操作 |
-|:---------------------------|:---------------------------------------|
-| `pnpm install` | 安裝依賴 |
-| `pnpm dev` | 在 `localhost:4321` 啓動本地開發服務器 |
-| `pnpm build` | 構建生產站點到 `./dist/` |
-| `pnpm preview` | 在部署前本地預覽構建 |
-| `pnpm check` | 運行 Astro 錯誤檢查 |
-| `pnpm format` | 使用 Biome 格式化代碼 |
-| `pnpm lint` | 檢查並修復代碼問題 |
-| `pnpm new-post <文件名>` | 創建新博客文章 |
-| `pnpm astro ...` | 運行 Astro CLI 命令 |
+| 命令                     | 操作                                   |
+| :----------------------- | :------------------------------------- |
+| `pnpm install`           | 安裝依賴                               |
+| `pnpm dev`               | 在 `localhost:4321` 啓動本地開發服務器 |
+| `pnpm build`             | 構建生產站點到 `./dist/`               |
+| `pnpm preview`           | 在部署前本地預覽構建                   |
+| `pnpm check`             | 運行 Astro 錯誤檢查                    |
+| `pnpm format`            | 使用 Biome 格式化代碼                  |
+| `pnpm lint`              | 檢查並修復代碼問題                     |
+| `pnpm new-post <文件名>` | 創建新博客文章                         |
+| `pnpm astro ...`         | 運行 Astro CLI 命令                    |
 
 爲了給開發者提供更流暢、熟悉的體驗，我們依然選擇 Biome 來處理代碼格式化和修復代碼。
 
 盡管 Mizuki 7.6 版本後改爲使用 Prettier + ESLint，但我們認爲 Biome 的 “開箱即用” 特性與我們的工作流程匹配得更好，避免了額外的配置成本。
-
 
 ---
 

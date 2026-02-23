@@ -159,6 +159,7 @@ Frontmatter 字段说明：
 - **tags**: 标签数组，用于分类
 - **category**: 文章分类
 - **draft**: 设置为 `true` 在生产环境中隐藏文章
+- **comment**: 设置为 `true` 或 `false` 可控制当前文章的评论开关（需先在 `config.ts` 中开启 Twikoo 评论系统）
 - **pinned**: 设置为 `true` 将文章置顶
 - **lang**: 文章语言（仅当与站点默认语言不同时设置）
 

@@ -172,6 +172,7 @@ Frontmatter Field Descriptions:
 - **tags**: Array of tags for categorization
 - **category**: Article category
 - **draft**: Set to `true` to hide the article in production
+- **comment**: Set to `true` or `false` to control the comment switch for the current article. (Twikoo comment system must first be enabled in `config.ts`)
 - **pinned**: Set to `true` to pin the article
 - **lang**: Article language (only set if different from the site's default language)
 
