@@ -383,6 +383,10 @@ export const vi: Translation = {
 	[Key.profileStatsVisits]: "Lượt truy cập",
 	[Key.profileStatsUnavailable]: "Thống kê không khả dụng",
 
+	// Thống kê lượt xem trang
+	[Key.pageViewsLoading]: "Đang tải thống kê...",
+	[Key.pageViewsUnavailable]: "Thống kê không khả dụng",
+
 	// Nút Chuyển đổi Bố cục
 	[Key.switchToGridMode]: "Chuyển sang Chế độ Lưới",
 	[Key.switchToListMode]: "Chuyển sang Chế độ Danh sách Cách thức",

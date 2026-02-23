@@ -365,6 +365,10 @@ export const ko: Translation = {
 	[Key.profileStatsVisits]: "방문 횟수",
 	[Key.profileStatsUnavailable]: "통계를 사용할 수 없습니다",
 
+	// 페이지 조회수 통계
+	[Key.pageViewsLoading]: "통계를 불러오는 중...",
+	[Key.pageViewsUnavailable]: "통계를 사용할 수 없습니다",
+
 	// 레이아웃 전환 버튼
 	[Key.switchToGridMode]: "그리드 모드로 전환 모드",
 	[Key.switchToListMode]: "목록 모드로 전환",

@@ -356,6 +356,10 @@ export const th: Translation = {
 	[Key.profileStatsVisits]: "จำนวนการเข้าชม",
 	[Key.profileStatsUnavailable]: "สถิติไม่พร้อมใช้งาน",
 
+	// สถิติการเข้าชมหน้าเว็บ
+	[Key.pageViewsLoading]: "กำลังโหลดสถิติ...",
+	[Key.pageViewsUnavailable]: "ไม่สามารถเข้าถึงสถิติได้",
+
 	// ปุ่มสลับรูปแบบการแสดงผล
 	[Key.switchToGridMode]: "สลับเป็นโหมดตาราง โหมด",
 	[Key.switchToListMode]: "สลับไปที่โหมดรายการ",

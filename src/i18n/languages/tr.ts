@@ -378,6 +378,10 @@ export const tr: Translation = {
 	[Key.profileStatsVisits]: "Ziyaretler",
 	[Key.profileStatsUnavailable]: "İstatistikler mevcut değil",
 
+	// Sayfa Görüntüleme İstatistikleri
+	[Key.pageViewsLoading]: "İstatistikler yükleniyor...",
+	[Key.pageViewsUnavailable]: "İstatistikler mevcut değil",
+
 	// Düzen Düğmeyi Değiştir
 	[Key.switchToGridMode]: "Izgara Moduna Geç",
 	[Key.switchToListMode]: "Liste Moduna Geç",

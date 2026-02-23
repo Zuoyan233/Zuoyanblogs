@@ -369,6 +369,10 @@ export const id: Translation = {
 	[Key.profileStatsVisits]: "Kunjungan",
 	[Key.profileStatsUnavailable]: "Statistik tidak tersedia",
 
+	// Statistik Tayangan Halaman
+	[Key.pageViewsLoading]: "Memuat statistik...",
+	[Key.pageViewsUnavailable]: "Statistik tidak tersedia",
+
 	// Tombol Pengalih Tata Letak
 	[Key.switchToGridMode]: "Beralih ke Mode Grid",
 	[Key.switchToListMode]: "Beralih ke Mode Daftar",

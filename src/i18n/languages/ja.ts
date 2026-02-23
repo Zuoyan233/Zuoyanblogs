@@ -370,6 +370,10 @@ export const ja: Translation = {
 	[Key.profileStatsVisits]: "訪問",
 	[Key.profileStatsUnavailable]: "統計は利用できません",
 
+	// ページビューの統計
+	[Key.pageViewsLoading]: "統計を読み込み中...",
+	[Key.pageViewsUnavailable]: "統計は利用できません",
+
 	// レイアウト切り替えボタン
 	[Key.switchToGridMode]: "グリッドビュー切り替え",
 	[Key.switchToListMode]: "リストビューに切り替え",

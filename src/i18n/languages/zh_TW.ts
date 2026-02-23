@@ -358,6 +358,10 @@ export const zh_TW: Translation = {
 	[Key.switchToGridMode]: "切換到網格模式",
 	[Key.switchToListMode]: "切換到列表模式",
 
+	// 頁面瀏覽統計
+	[Key.pageViewsLoading]: "統計載入中...",
+	[Key.pageViewsUnavailable]: "統計不可用",
+
 	// 外部链接提示框
 	[Key.leaveSite]: "离开本站",
 	[Key.goToExternalLink]: "您即将前往外部链接：",

@@ -356,6 +356,10 @@ export const zh_CN: Translation = {
 	[Key.switchToGridMode]: "切换到网格模式",
 	[Key.switchToListMode]: "切换到列表模式",
 
+	// 页面访问量统计
+	[Key.pageViewsLoading]: "统计加载中...",
+	[Key.pageViewsUnavailable]: "统计不可用",
+
 	// 外部链接提示框
 	[Key.leaveSite]: "离开本站",
 	[Key.goToExternalLink]: "您即将前往外部链接：",

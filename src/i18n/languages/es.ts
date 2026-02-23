@@ -380,6 +380,10 @@ export const es: Translation = {
 	[Key.profileStatsVisits]: "Visitas",
 	[Key.profileStatsUnavailable]: "Estadísticas no disponibles",
 
+	// Estadísticas de visitas a la página
+	[Key.pageViewsLoading]: "Cargando estadísticas...",
+	[Key.pageViewsUnavailable]: "Estadísticas no disponibles",
+
 	// Botón para cambiar de diseño
 	[Key.switchToGridMode]: "Cambiar al modo cuadrícula",
 	[Key.switchToListMode]: "Cambiar al modo lista",
