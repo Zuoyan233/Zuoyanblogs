@@ -572,7 +572,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			animationDelay: 200,
 		},
 		{
-			// 组件类型：日历组件(移动端不显示)
+			// 组件类型：日历组件
 			type: "calendar",
 			// 是否启用该组件
 			enable: true,
@@ -586,6 +586,10 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			class: "onload-animation",
 			// 动画延迟时间
 			animationDelay: 250,
+			// 响应式配置
+			responsive: {
+                hidden:[], // 默认不隐藏任何设备，可选值: "mobile" 、 "tablet" 、 "desktop" 指定设备上隐藏
+			},
 		},
 		{
 			// 组件类型:目录
