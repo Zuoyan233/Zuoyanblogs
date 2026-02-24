@@ -74,6 +74,9 @@ export const id: Translation = {
 	[Key.animeEmpty]: "Tidak ada data anime",
 	[Key.animeEmptyBangumi]:
 		"Silakan periksa konfigurasi Bangumi atau koneksi jaringan",
+	[Key.animeEmptyBilibili]: "Data Bilibili kosong. Silakan jalankan `pnpm run update-bilibili` untuk mendapatkan data",
+	[Key.animeSetBangumiUserId]: "Silakan atur Bangumi userID Anda di file src/config.ts",
+	[Key.animeSetBilibiliVmId]: "Silakan atur Bilibili vmID  Anda di file src/config.ts",
 	[Key.animeEmptyLocal]:
 		"Silakan tambahkan informasi anime di berkas src/data/anime.ts",
 

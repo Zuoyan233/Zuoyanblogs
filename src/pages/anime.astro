@@ -229,8 +229,7 @@ const hiddenAnimeList = animeList.slice(INITIAL_DISPLAY_COUNT);
 									{i18n(I18nKey.animeEmpty)}
 								</h3>
 								<p class="text-black/60 dark:text-white/60">
-									Please set your Bilibili vmid in the
-									src/config.ts file
+									{i18n(I18nKey.animeSetBilibiliVmId)}
 								</p>
 							</div>
 						) : ANIME_MODE !== "local" &&
@@ -242,8 +241,7 @@ const hiddenAnimeList = animeList.slice(INITIAL_DISPLAY_COUNT);
 								{i18n(I18nKey.animeEmpty)}
 							</h3>
 							<p class="text-black/60 dark:text-white/60">
-								Please set your Bangumi userId in the
-								src/config.ts file
+								{i18n(I18nKey.animeSetBangumiUserId)}
 							</p>
 						</div>
 					) : visibleAnimeList.length > 0 ? (
@@ -552,7 +550,7 @@ const hiddenAnimeList = animeList.slice(INITIAL_DISPLAY_COUNT);
 								{ANIME_MODE === "local"
 									? i18n(I18nKey.animeEmptyLocal)
 									: ANIME_MODE === "bilibili"
-										? "Bilibili数据为空，请运行 pnpm run update-bilibili 获取数据"
+										? i18n(I18nKey.animeEmptyBilibili)
 										: i18n(I18nKey.animeEmptyBangumi)}
 							</p>
 						</div>

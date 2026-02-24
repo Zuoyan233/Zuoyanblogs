@@ -74,6 +74,9 @@ enum I18nKey {
 	animeEmpty = "animeEmpty",
 	animeEmptyBangumi = "animeEmptyBangumi",
 	animeEmptyLocal = "animeEmptyLocal",
+	animeSetBangumiUserId = "animeSetBangumiUserId",
+	animeSetBilibiliVmId = "animeSetBilibiliVmId",
+	animeEmptyBilibili = "animeEmptyBilibili",
 
 	// 短文页面
 	diarySubtitle = "diarySubtitle",

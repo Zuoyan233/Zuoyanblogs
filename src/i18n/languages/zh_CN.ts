@@ -75,6 +75,9 @@ export const zh_CN: Translation = {
 	[Key.animeStudio]: "制作",
 	[Key.animeEmpty]: "暂无追番数据",
 	[Key.animeEmptyBangumi]: "请检查 Bangumi 配置或网络连接",
+	[Key.animeEmptyBilibili]: "Bilibili 数据为空，请运行 pnpm run update-bilibili 获取数据",
+	[Key.animeSetBangumiUserId]: "请在 src/config.ts 文件中设置你的 Bangumi userID",
+	[Key.animeSetBilibiliVmId]: "请在 src/config.ts 文件中设置你的 Bilibili vmID",
 	[Key.animeEmptyLocal]: "请在 src/data/anime.ts 文件中添加番剧信息",
 
 	// 短文页面
