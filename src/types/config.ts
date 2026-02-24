@@ -190,7 +190,11 @@ export type SiteConfig = {
 	};
 	toc: {
 		enable: boolean;
-		mode: "float" | "sidebar"; // 目录显示模式："float" 悬浮按钮模式，"sidebar" 侧边栏模式
+		responsive?: {
+			mobile: "float"; // 手机端模式
+			tablet: "float"; // 平板端模式
+			desktop: "float" | "sidebar"; // 桌面端模式
+		};
 		depth: 1 | 2 | 3;
 		useJapaneseBadge?: boolean; // 使用日语假名标记（あいうえお...）代替数字
 	};

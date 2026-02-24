@@ -33,7 +33,7 @@ Zuoyanblogs博客项目是基于 <a href="https://github.com/matsuzaka-yuki/mizu
 - 添加赞助页面，并集成支付二维码放置路径。
 - 添加站点实时日期和时间，日期显示支持多地区格式。
 - 添加外部链接确认弹窗，并魔改部分样式。
-- Toc侧边栏目录从右侧调整至左侧的小组件侧边栏中。
+- TOC目录支持响应式设备配置。
 - 重构隐藏相册逻辑，修复无法通过链接访问的问题。
 - 优化部分小组件动画。
 
@@ -159,7 +159,7 @@ Frontmatter 字段说明：
 - **tags**: 标签数组，用于分类
 - **category**: 文章分类
 - **draft**: 设置为 `true` 在生产环境中隐藏文章
-- **comment**: 设置为 `true` 或 `false` 可控制当前文章的评论开关（需先在 `config.ts` 中开启 Twikoo 评论系统）
+- **comment**: 设置为 `true` 或 `false` 可控制当前文章的评论开关（需先在 `src/config.ts` 中开启 Twikoo 评论系统）
 - **pinned**: 设置为 `true` 将文章置顶
 - **lang**: 文章语言（仅当与站点默认语言不同时设置）
 

@@ -33,7 +33,7 @@ The Mizuki theme framework will be updated irregularly with its mainline content
 - Add a sponsorship page and integrate the payment QR code placement path.
 - Add real-time date and time to the site, date display supports multiple regional formats.
 - Add a confirmation pop-up for external links and modified some of the styles.
-- Moved the Toc sidebar directory from the right to the left-hand widget sidebar.
+- The TOC catalog supports responsive device configuration.
 - Refactored the hidden album logic and fixed the issue of not being able to access it via a link.
 - Optimized animations for some widgets.
 
@@ -172,7 +172,7 @@ Frontmatter Field Descriptions:
 - **tags**: Array of tags for categorization
 - **category**: Article category
 - **draft**: Set to `true` to hide the article in production
-- **comment**: Set to `true` or `false` to control the comment switch for the current article. (Twikoo comment system must first be enabled in `config.ts`)
+- **comment**: Set to `true` or `false` to control the comment switch for the current article. (Twikoo comment system must first be enabled in `src/config.ts`)
 - **pinned**: Set to `true` to pin the article
 - **lang**: Article language (only set if different from the site's default language)
 

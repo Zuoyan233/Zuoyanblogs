@@ -33,7 +33,7 @@ Zuoyanblogs博客專案是基於 <a href="https://github.com/matsuzaka-yuki/mizu
 - 新增贊助頁面，並整合支付二維碼放置路徑。
 - 新增網站即時日期和時間，日期顯示支援多地區格式。
 - 新增外部連結確認彈跳窗，並魔改部分樣式。
-- Toc側邊欄目錄從右側調整至左側的小組件側邊欄。
+- TOC目錄支援響應式設備配置。
 - 重構隱藏相冊邏輯，修復無法通過鏈接訪問的問題。
 - 優化部分小組件動畫。
 
@@ -173,7 +173,7 @@ Frontmatter 欄位說明：
 - **tags**: 標籤數組，用於分類
 - **category**: 文章分類
 - **draft**: 設定為 `true` 在生產環境中隱藏文章
-- **comment**: 設定為 `true` 或 `false` 可控制目前文章的評論開關。（需先在 `config.ts` 中啟用 Twikoo 評論系統）
+- **comment**: 設定為 `true` 或 `false` 可控制目前文章的評論開關。（需先在 `src/config.ts` 中啟用 Twikoo 評論系統）
 - **pinned**: 設定為 `true` 將文章置頂
 - **lang**: 文章語言（僅當與網站預設語言不同時設定）
 

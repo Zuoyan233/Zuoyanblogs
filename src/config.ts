@@ -203,7 +203,12 @@ export const siteConfig: SiteConfig = {
 	},
 	toc: {
 		enable: true, // 启用目录功能
-		mode: "sidebar", // 目录显示模式："float" 悬浮按钮模式，"sidebar" 侧边栏模式
+		responsive: {
+			// 设备响应式配置（最佳设置，不建议修改），"float" 悬浮按钮模式， "sidebar" 侧边栏模式 （仅适用桌面端）
+			mobile: "float", // 移动端默认使用 "float" 悬浮按钮模式
+			tablet: "float", // 平板端默认使用 "float" 悬浮按钮模式
+			desktop: "sidebar", // 桌面端默认使用 "sidebar" 侧边栏模式，可选 "float" 悬浮按钮模式
+		},
 		depth: 3, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
 		useJapaneseBadge: false, // 使用日语假名标记（あいうえお...）代替数字，开启后会将 1、2、3... 改为 あ、い、う...
 	},
@@ -588,24 +593,8 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			animationDelay: 250,
 			// 响应式配置
 			responsive: {
-                hidden:[], // 默认不隐藏任何设备，可选值: "mobile" 、 "tablet" 、 "desktop" 指定设备上隐藏
+				hidden: [], // 默认不隐藏任何设备，可选值: "mobile" 、 "tablet" 、 "desktop" 指定设备上隐藏
 			},
-		},
-		{
-			// 组件类型:目录
-			type: "toc",
-			// 根据Toc mode配置启用sidebar模式
-			enable: siteConfig.toc.mode === "sidebar",
-			// 组件显示顺序
-			order: 10,
-			// 组件位置："sticky" 表示粘性定位
-			position: "sticky",
-			//侧边位置
-			sidebar: "left",
-			//CSS类名
-			class: "pb-4 card-base onload-animation",
-			// 动画延迟时间
-			animationDelay: 250,
 		},
 	],
 
