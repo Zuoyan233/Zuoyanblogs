@@ -48,6 +48,8 @@ export const id: Translation = {
 	[Key.postCount]: "posting",
 	[Key.postsCount]: "posting",
 	[Key.themeColor]: "Warna Tema",
+	[Key.colorCycle]: "Siklus Warna",
+	[Key.cycleSpeedControl]: "Kontrol Kecepatan",
 	[Key.lightMode]: "Terang",
 	[Key.darkMode]: "Gelap",
 	[Key.systemMode]: "Sistem",
@@ -74,9 +76,12 @@ export const id: Translation = {
 	[Key.animeEmpty]: "Tidak ada data anime",
 	[Key.animeEmptyBangumi]:
 		"Silakan periksa konfigurasi Bangumi atau koneksi jaringan",
-	[Key.animeEmptyBilibili]: "Data Bilibili kosong. Silakan jalankan `pnpm run update-bilibili` untuk mendapatkan data",
-	[Key.animeSetBangumiUserId]: "Silakan atur Bangumi userID Anda di file src/config.ts",
-	[Key.animeSetBilibiliVmId]: "Silakan atur Bilibili vmID  Anda di file src/config.ts",
+	[Key.animeEmptyBilibili]:
+		"Data Bilibili kosong. Silakan jalankan `pnpm run update-bilibili` untuk mendapatkan data",
+	[Key.animeSetBangumiUserId]:
+		"Silakan atur Bangumi userID Anda di file src/config.ts",
+	[Key.animeSetBilibiliVmId]:
+		"Silakan atur Bilibili vmID  Anda di file src/config.ts",
 	[Key.animeEmptyLocal]:
 		"Silakan tambahkan informasi anime di berkas src/data/anime.ts",
 

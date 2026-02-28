@@ -49,6 +49,8 @@ export const tr: Translation = {
 	[Key.postsCount]: "gönderiler",
 
 	[Key.themeColor]: "Tema Rengi",
+	[Key.colorCycle]: "Renk Döngüsü",
+	[Key.cycleSpeedControl]: "Hız Kontrolü",
 
 	[Key.lightMode]: "Açık",
 	[Key.darkMode]: "Koyu",
@@ -76,9 +78,12 @@ export const tr: Translation = {
 	[Key.animeEmpty]: "Hayır anime verileri",
 	[Key.animeEmptyBangumi]:
 		"Lütfen Bangumi yapılandırmasını veya ağ bağlantısını kontrol edin",
-	[Key.animeEmptyBilibili]: "Bilibili verileri boş. Verileri almak için lütfen `pnpm run update-bilibili` komutunu çalıştırın",
-	[Key.animeSetBangumiUserId]: "Lütfen Bangumi userID değerinizi src/config.ts dosyasında ayarlayın",
-	[Key.animeSetBilibiliVmId]: "Lütfen Bilibili vmID değerinizi src/config.ts dosyasında ayarlayın",
+	[Key.animeEmptyBilibili]:
+		"Bilibili verileri boş. Verileri almak için lütfen `pnpm run update-bilibili` komutunu çalıştırın",
+	[Key.animeSetBangumiUserId]:
+		"Lütfen Bangumi userID değerinizi src/config.ts dosyasında ayarlayın",
+	[Key.animeSetBilibiliVmId]:
+		"Lütfen Bilibili vmID değerinizi src/config.ts dosyasında ayarlayın",
 	[Key.animeEmptyLocal]:
 		"Lütfen anime bilgilerini src/data/anime.ts dosyasına ekleyin",
 

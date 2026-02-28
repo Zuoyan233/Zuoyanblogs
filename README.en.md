@@ -35,6 +35,7 @@ The Mizuki theme framework will be updated irregularly with its mainline content
 - Add a confirmation pop-up for external links and modified some of the styles.
 - The TOC catalog supports responsive device configuration.
 - Refactored the hidden album logic and fixed the issue of not being able to access it via a link.
+- Theme colors support color cycling and speed cycling control.
 - Optimized animations for some widgets.
 
 ---

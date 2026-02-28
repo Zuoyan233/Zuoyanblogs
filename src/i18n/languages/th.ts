@@ -49,6 +49,8 @@ export const th: Translation = {
 	[Key.postsCount]: "โพสต์",
 
 	[Key.themeColor]: "สีธีม",
+	[Key.colorCycle]: "วนรอบสี",
+	[Key.cycleSpeedControl]: "ควบคุมความเร็ว",
 
 	[Key.lightMode]: "สว่าง",
 	[Key.darkMode]: "มืด",
@@ -75,7 +77,8 @@ export const th: Translation = {
 	[Key.animeStudio]: "สตูดิโอ",
 	[Key.animeEmpty]: "ไม่มีข้อมูลอนิเมะ",
 	[Key.animeEmptyBangumi]: "โปรดตรวจสอบการตั้งค่า Bangumi หรือการเชื่อมต่อเครือข่าย",
-	[Key.animeEmptyBilibili]: "ข้อมูล Bilibili ว่างเปล่า โปรดเรียกใช้ `pnpm run update-bilibili` เพื่อรับข้อมูล",
+	[Key.animeEmptyBilibili]:
+		"ข้อมูล Bilibili ว่างเปล่า โปรดเรียกใช้ `pnpm run update-bilibili` เพื่อรับข้อมูล",
 	[Key.animeSetBangumiUserId]: "โปรดตั้งค่า Bangumi vmID ของคุณในไฟล์ src/config.ts",
 	[Key.animeSetBilibiliVmId]: "โปรดตั้งค่า Bilibili vmID ของคุณในไฟล์ src/config.ts",
 	[Key.animeEmptyLocal]: "กรุณาเพิ่มข้อมูลอนิเมะใน ไฟล์ src/data/anime.ts",

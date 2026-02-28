@@ -23,7 +23,7 @@ import { getTranslateLanguageFromConfig } from "./utils/language-utils";
 // 移除i18n导入以避免循环依赖
 
 // 定义站点语言
-const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
+const SITE_LANG = "en"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 const SITE_TIMEZONE = 8; //设置你的网站时区 from -12 to 12 default in UTC+8
 export const siteConfig: SiteConfig = {
 	title: "左颜研究部",
@@ -38,6 +38,11 @@ export const siteConfig: SiteConfig = {
 	themeColor: {
 		hue: 250, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
 		fixed: false, // 对访问者隐藏主题色选择器
+		cycle: {
+			enabled: false, // 是否默认开启彩色循环（性能配置强可以打开，性能配置低则不建议）
+			speed: 100000, // 循环速度（毫秒），值越小变化越快，范围建议 10000ms - 100000ms
+			direction: 1, // 循环方向：1 正向，-1 反向（预留）
+		},
 	},
 
 	translate: {

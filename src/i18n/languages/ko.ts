@@ -49,6 +49,8 @@ export const ko: Translation = {
 	[Key.postsCount]: "게시물",
 
 	[Key.themeColor]: "테마 색상",
+	[Key.colorCycle]: "색상 순환",
+	[Key.cycleSpeedControl]: "속도 제어",
 
 	[Key.lightMode]: "밝게",
 	[Key.darkMode]: "어둡게",
@@ -75,9 +77,12 @@ export const ko: Translation = {
 	[Key.animeStudio]: "스튜디오",
 	[Key.animeEmpty]: "애니메이션 데이터 없음",
 	[Key.animeEmptyBangumi]: "방구미 설정 또는 네트워크 연결을 확인하세요",
-	[Key.animeEmptyBilibili]: "빌리빌리 데이터가 비어 있습니다. 데이터를 가져오려면 `pnpm run update-bilibili` 를 실행하세요",
-	[Key.animeSetBangumiUserId]: "src/config.ts 파일에 Bangumi userID 를 설정해 주세요",
-	[Key.animeSetBilibiliVmId]: "src/config.ts 파일에 Bilibili vmID 를 설정해 주세요",
+	[Key.animeEmptyBilibili]:
+		"빌리빌리 데이터가 비어 있습니다. 데이터를 가져오려면 `pnpm run update-bilibili` 를 실행하세요",
+	[Key.animeSetBangumiUserId]:
+		"src/config.ts 파일에 Bangumi userID 를 설정해 주세요",
+	[Key.animeSetBilibiliVmId]:
+		"src/config.ts 파일에 Bilibili vmID 를 설정해 주세요",
 	[Key.animeEmptyLocal]:
 		"src/data/anime.ts 파일에 애니메이션 정보를 추가하세요",
 

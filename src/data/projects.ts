@@ -20,9 +20,9 @@ export interface Project {
 
 export const projectsData: Project[] = [
 	{
-		id: "zuoyanblog",
+		id: "1",
 		title: "Zuoyanblogs",
-		description: "左颜研究部 - 聚集经验知识的后花园 （Astro驱动的博客框架）",
+		description: "基于 Mizuki 主题轻度定制魔改（Astro驱动的博客框架）",
 		image: "",
 		category: "web",
 		techStack: ["Astro", "TypeScript", "Tailwind CSS", "MongoDB", "Svelte"],

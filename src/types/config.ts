@@ -55,6 +55,11 @@ export type SiteConfig = {
 	themeColor: {
 		hue: number;
 		fixed: boolean;
+		cycle: {
+			enabled: boolean;
+			speed: number;
+			direction: number;
+		};
 	};
 
 	translate?: {

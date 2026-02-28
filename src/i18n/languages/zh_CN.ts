@@ -49,6 +49,8 @@ export const zh_CN: Translation = {
 	[Key.postsCount]: "篇文章",
 
 	[Key.themeColor]: "主题色",
+	[Key.colorCycle]: "彩色循环",
+	[Key.cycleSpeedControl]: "速率控制",
 
 	[Key.lightMode]: "亮色",
 	[Key.darkMode]: "暗色",
@@ -75,8 +77,10 @@ export const zh_CN: Translation = {
 	[Key.animeStudio]: "制作",
 	[Key.animeEmpty]: "暂无追番数据",
 	[Key.animeEmptyBangumi]: "请检查 Bangumi 配置或网络连接",
-	[Key.animeEmptyBilibili]: "Bilibili 数据为空，请运行 pnpm run update-bilibili 获取数据",
-	[Key.animeSetBangumiUserId]: "请在 src/config.ts 文件中设置你的 Bangumi userID",
+	[Key.animeEmptyBilibili]:
+		"Bilibili 数据为空，请运行 pnpm run update-bilibili 获取数据",
+	[Key.animeSetBangumiUserId]:
+		"请在 src/config.ts 文件中设置你的 Bangumi userID",
 	[Key.animeSetBilibiliVmId]: "请在 src/config.ts 文件中设置你的 Bilibili vmID",
 	[Key.animeEmptyLocal]: "请在 src/data/anime.ts 文件中添加番剧信息",
 

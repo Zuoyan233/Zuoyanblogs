@@ -49,6 +49,8 @@ export const vi: Translation = {
 	[Key.postsCount]: "bài đăng",
 
 	[Key.themeColor]: "Màu chủ đề",
+	[Key.colorCycle]: "Chu kỳ màu",
+	[Key.cycleSpeedControl]: "Điều khiển tốc độ",
 
 	[Key.lightMode]: "Sáng",
 	[Key.darkMode]: "Tối",
@@ -76,9 +78,12 @@ export const vi: Translation = {
 	[Key.animeEmpty]: "Không có dữ liệu anime",
 	[Key.animeEmptyBangumi]:
 		"Vui lòng kiểm tra cấu hình Bangumi hoặc kết nối mạng",
-	[Key.animeEmptyBilibili]: "Dữ liệu Bilibili trống. Vui lòng chạy `pnpm run update-bilibili` để lấy dữ liệu.",
-	[Key.animeSetBangumiUserId]: "Vui lòng thiết lập Bangumi userID của bạn trong tệp src/config.ts",
-	[Key.animeSetBilibiliVmId]: "Vui lòng thiết lập Bilibili vmID của bạn trong tệp src/config.ts",
+	[Key.animeEmptyBilibili]:
+		"Dữ liệu Bilibili trống. Vui lòng chạy `pnpm run update-bilibili` để lấy dữ liệu.",
+	[Key.animeSetBangumiUserId]:
+		"Vui lòng thiết lập Bangumi userID của bạn trong tệp src/config.ts",
+	[Key.animeSetBilibiliVmId]:
+		"Vui lòng thiết lập Bilibili vmID của bạn trong tệp src/config.ts",
 	[Key.animeEmptyLocal]:
 		"Vui lòng thêm thông tin anime vào tệp src/data/anime.ts",
 

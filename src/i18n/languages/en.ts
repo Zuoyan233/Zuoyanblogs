@@ -49,6 +49,8 @@ export const en: Translation = {
 	[Key.postsCount]: "posts",
 
 	[Key.themeColor]: "Theme Color",
+	[Key.colorCycle]: "Color Cycle",
+	[Key.cycleSpeedControl]: "Speed ​​Control",
 
 	[Key.lightMode]: "Light",
 	[Key.darkMode]: "Dark",
@@ -76,9 +78,12 @@ export const en: Translation = {
 	[Key.animeEmpty]: "No anime data available",
 	[Key.animeEmptyBangumi]:
 		"Please check Bangumi configuration or network connection",
-	[Key.animeEmptyBilibili]: "Bilibili data is empty. Please run `pnpm run update-bilibili` to get data",
-	[Key.animeSetBangumiUserId]: "Please set your Bangumi userID in the src/config.ts file",
-	[Key.animeSetBilibiliVmId]: "Please set your Bilibili vmID in the src/config.ts file",
+	[Key.animeEmptyBilibili]:
+		"Bilibili data is empty. Please run `pnpm run update-bilibili` to get data",
+	[Key.animeSetBangumiUserId]:
+		"Please set your Bangumi userID in the src/config.ts file",
+	[Key.animeSetBilibiliVmId]:
+		"Please set your Bilibili vmID in the src/config.ts file",
 	[Key.animeEmptyLocal]:
 		"Please add anime information in src/data/anime.ts file",
 
