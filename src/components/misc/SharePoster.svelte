@@ -475,6 +475,13 @@ function tick() {
   <span>{i18n(I18nKey.shareArticle)}</span>
 </button>
 
+<a 
+  class="btn-regular px-6 py-3 rounded-lg inline-flex items-center gap-2"
+  href="/sponsors/"
+>
+  <span>{i18n(I18nKey.sponsors)}</span>
+</a>
+
 {#if showModal}
   <div 
     use:portal 
@@ -486,7 +493,7 @@ function tick() {
       class="bg-white dark:bg-gray-800 rounded-2xl max-w-sm w-full max-h-[90vh] overflow-y-auto flex flex-col shadow-2xl transition-all duration-300 ease-[cubic-bezier(0.2,0,0,1)] opacity-0 scale-95 translate-y-2.5 modal-show:opacity-100 modal-show:scale-100 modal-show:translate-y-0"
       on:click|stopPropagation
     >
-      <div class="p-6 flex justify-center bg-gray-50 dark:bg-gray-900 min-h-[200px] items-center">
+      <div class="p-6 flex justify-center bg-gray-50 dark:bg-[oklch(0.23_0.015_var(--hue))] min-h-[200px] items-center">
         {#if posterImage}
           <img src={posterImage} alt="Poster" class="max-w-full h-auto shadow-lg rounded-lg" />
         {:else}
@@ -497,9 +504,9 @@ function tick() {
         {/if}
       </div>
       
-      <div class="p-4 border-t border-gray-100 dark:border-gray-700 grid grid-cols-2 gap-3">
+      <div class="p-4 border-t border-black/5 dark:border-white/10 dark:bg-[oklch(0.23_0.015_var(--hue))] grid grid-cols-2 gap-3">
         <button 
-          class="py-3 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl font-medium hover:bg-gray-200 dark:hover:bg-gray-600 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+          class="py-3 bg-[oklch(0.95_0.025_var(--hue))] dark:bg-[oklch(0.33_0.035_var(--hue))] text-gray-700 dark:text-gray-200 rounded-xl font-medium hover:bg-[oklch(0.98_0.015_var(--hue))] dark:hover:bg-[oklch(0.3_0.035_var(--hue))] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
           on:click={copyLink}
         >
           {#if copied}
