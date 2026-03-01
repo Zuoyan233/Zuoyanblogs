@@ -34,6 +34,7 @@ import { Icon } from "astro-icon/components";
     transform: translateX(5rem)
     pointer-events: auto
     transition: box-shadow 1s ease-in-out
+    box-shadow: 0 0 12px color-mix(var(--primary) 60%, transparent)
 
     i
       font-size: 1.75rem
@@ -42,13 +43,10 @@ import { Icon } from "astro-icon/components";
       transform: translateX(5rem) scale(0.9)
       opacity: 0
       pointer-events: none
+      box-shadow: none
 
     &:active
       transform: translateX(5rem) scale(0.9)
-
-  @media (max-width: 1560px)
-    .back-to-top-btn
-      box-shadow: none
 
   // 手机端隐藏返回顶部按钮
   @media (max-width: 768px)
