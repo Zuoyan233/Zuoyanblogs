@@ -23,7 +23,7 @@ import { getTranslateLanguageFromConfig } from "./utils/language-utils";
 // 移除i18n导入以避免循环依赖
 
 // 定义站点语言
-const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
+const SITE_LANG = "en"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 const SITE_TIMEZONE = 8; //设置你的网站时区 from -12 to 12 default in UTC+8
 export const siteConfig: SiteConfig = {
 	title: "左颜研究部",
@@ -104,7 +104,7 @@ export const siteConfig: SiteConfig = {
 		// 注意：如果侧边栏配置启用了"both"双侧边栏，则无法使用文章列表"grid"网格（双列）布局
 		defaultMode: "list",
 		// 是否允许用户切换布局
-		allowSwitch: false,
+		allowSwitch: true,
 	},
 
 	// 标签样式配置
@@ -313,7 +313,10 @@ export const navBarConfig: NavBarConfig = {
 				LinkPreset.Anime,
 				LinkPreset.Diary,
 				LinkPreset.Albums,
-				LinkPreset.Devices,
+				LinkPreset.Projects, 
+				LinkPreset.Skills, 
+				LinkPreset.Timeline,
+				LinkPreset.Devices
 			],
 		},
 		{
@@ -322,8 +325,6 @@ export const navBarConfig: NavBarConfig = {
 			icon: "material-symbols:info",
 			children: [
 				LinkPreset.About,
-				LinkPreset.Feedback,
-				LinkPreset.Sponsors,
 				LinkPreset.Friends,
 			],
 		},
@@ -331,7 +332,7 @@ export const navBarConfig: NavBarConfig = {
 			name: "Others",
 			url: "#",
 			icon: "material-symbols:more-horiz",
-			children: [LinkPreset.Projects, LinkPreset.Skills, LinkPreset.Timeline],
+			children: [LinkPreset.Feedback, LinkPreset.Sponsors],
 		},
 	],
 };

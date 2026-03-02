@@ -377,7 +377,7 @@ export const en: Translation = {
 	[Key.switchToListMode]: "Switch to List Mode",
 
 	// External Link Warning
-	[Key.leaveSite]: "Leaving this site",
+	[Key.leaveSite]: "Leave this site",
 	[Key.goToExternalLink]: "You are about to visit an external link:",
 	[Key.warningText]: "Please be aware of your account and asset security",
 	[Key.confirmText]: "Continue to visit",
