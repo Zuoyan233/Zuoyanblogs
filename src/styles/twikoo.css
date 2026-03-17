@@ -189,10 +189,14 @@ Make the emoji component display correctly when there are too many emoji packs
   z-index: 100;
 }
 
-.tk-sort-select {
-  @apply border-none rounded-lg font-normal px-2 py-0 h-8
-         bg-[oklch(0.85_0.08_var(--hue))]
-         dark:bg-[oklch(0.43_0.045_var(--hue))]
-         text-[var(--btn-content)] 
-         shadow-none !important; 
+.tk-sort-item {
+  @apply font-normal
+  !text-[oklch(0.55_0.12_var(--hue))]
+  dark:!text-[oklch(0.75_0.1_var(--hue))]
+}
+
+.tk-sort-item.__active {
+  @apply border-none rounded-lg px-3 py-0 h-8
+  bg-[oklch(0.85_0.08_var(--hue))]
+  dark:bg-[oklch(0.43_0.045_var(--hue))]
 }
