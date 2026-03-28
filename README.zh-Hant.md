@@ -22,7 +22,7 @@ Zuoyanblogs博客專案是基於 <a href="https://github.com/matsuzaka-yuki/mizu
 
 ## 🛠 本專案魔改的內容
 
-- 添加六個國家的站點語言文本，未來站點更新並同步更新站點語言文本。
+- 添加十個國家的站點語言文本，未來站點更新並同步更新站點語言文本。
 - 添加多語言國際翻譯組件：
   - 魔改mobile-navbar樣式表適配translate面板樣式。
 - 修改日歷樣式，並魔改最舒服的外觀：

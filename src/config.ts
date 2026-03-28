@@ -23,7 +23,7 @@ import { getTranslateLanguageFromConfig } from "./utils/language-utils";
 // 移除i18n导入以避免循环依赖
 
 // 定义站点语言
-const SITE_LANG = "en"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
+const SITE_LANG = "en"; // 语言代码，例如：'en', 'zh_CN', 'zh-TW' , 'ja' , 'ar' , 'de' , 'es' , 'fr', 'id' , 'ko' , 'ru' , 'th' , 'tr' , 'vi' 等。
 const SITE_TIMEZONE = 8; //设置你的网站时区 from -12 to 12 default in UTC+8
 export const siteConfig: SiteConfig = {
 	title: "左颜研究部",
@@ -88,14 +88,14 @@ export const siteConfig: SiteConfig = {
 	bilibili: {
 		// 第一次配置请把vmid和anime mode模式正确设置好，然后输入pnpm run update-bilibili获取番剧数据
 		vmid: "", // 在此处设置你的Bilibili用户ID (vmid)，例如 "1129280784"
-		fetchOnDev: true, // 是否在开发环境下获取 Bilibili 数据（默认 false）
+		fetchOnDev: false, // 是否在开发环境下获取 Bilibili 数据（默认 false）
 		SESSDATA: "", // Bilibili SESSDATA（可选，用于获取观看进度，从浏览器cookie中获取）
 		coverMirror: "", // 封面图片镜像源（可选，如果需要使用镜像源，例如 "https://images.weserv.nl/?url="）
 		useWebp: true, // 是否使用WebP格式（默认 true）
 	},
 
 	anime: {
-		mode: "bilibili", // 番剧页面模式："bangumi" 使用Bangumi API，"local" 使用本地配置，"bilibili" 使用Bilibili API
+		mode: "bangumi", // 番剧页面模式："bangumi" 使用Bangumi API，"local" 使用本地配置，"bilibili" 使用Bilibili API
 	},
 
 	// 文章列表布局配置
@@ -313,20 +313,17 @@ export const navBarConfig: NavBarConfig = {
 				LinkPreset.Anime,
 				LinkPreset.Diary,
 				LinkPreset.Albums,
-				LinkPreset.Projects, 
-				LinkPreset.Skills, 
+				LinkPreset.Projects,
+				LinkPreset.Skills,
 				LinkPreset.Timeline,
-				LinkPreset.Devices
+				LinkPreset.Devices,
 			],
 		},
 		{
 			name: "About",
 			url: "/content/",
 			icon: "material-symbols:info",
-			children: [
-				LinkPreset.About,
-				LinkPreset.Friends,
-			],
+			children: [LinkPreset.About, LinkPreset.Friends],
 		},
 		{
 			name: "Others",
@@ -463,7 +460,7 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	mode: "meting", // 音乐播放器模式，可选 "local" 或 "meting"
 	meting_api:
 		"https://meting.mysqil.com/api?server=:server&type=:type&id=:id&auth=:auth&r=:r", // Meting API 地址
-	id: "8887970739", // 歌单ID
+	id: "766208154", // 歌单ID
 	server: "netease", // 音乐源服务器。有的meting的api源支持更多平台,一般来说,netease=网易云音乐, tencent=QQ音乐, kugou=酷狗音乐, xiami=虾米音乐, baidu=百度音乐
 	type: "playlist", // 播单类型
 };

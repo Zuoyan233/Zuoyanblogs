@@ -22,7 +22,7 @@ The Mizuki theme framework will be updated irregularly with its mainline content
 
 ## 🛠 Modified Content of This Project
 
-- Added site language text for six countries; future site updates will synchronize the site language text.
+- Added site language text for ten countries; future site updates will synchronize the site language text.
 - Added multilingual international translation component:
   - Modified the mobile-navbar stylesheet to adapt to the translate panel style.
 - Modified calendar style and optimized for a more comfortable appearance:

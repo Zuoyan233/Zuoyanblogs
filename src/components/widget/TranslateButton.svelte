@@ -13,7 +13,7 @@ let currentLanguage = "";
 // 支持的语言列表
 const languages = [
 	{ code: "chinese_simplified", name: "简体中文", icon: "🇨🇳" },
-	{ code: "chinese_traditional", name: "繁體中文", icon: "🇭🇰" },
+	{ code: "chinese_traditional", name: "繁體中文", icon: "🇹🇼" },
 	{ code: "english", name: "English", icon: "🇺🇸" },
 	{ code: "japanese", name: "日本語", icon: "🇯🇵" },
 	{ code: "korean", name: "한국어", icon: "🇰🇷" },
