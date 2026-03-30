@@ -131,13 +131,16 @@ export const ar: Translation = {
 	[Key.albumsEmptyDesc]:
 		"لم يتم إنشاء أي ألبومات بعد. أضف بعض الذكريات الجميلة!",
 	[Key.albumsBackToList]: "العودة إلى الألبومات",
+	[Key.albumsPhotoCount]: "صورة",
+	[Key.albumsPhotosCount]: "صور",
+	[Key.hiddenAlbum]: "الألبوم المخفي",
+	[Key.hideAlbumTip]:
+		"تم ضبط هذا الألبوم على وضع المخفي، ولن يظهر في قائمة الألبومات، ولكن لا يزال من الممكن الوصول إليه عبر رابط مباشر",
 
 	// Devices Page
 	[Key.devices]: "أجهزتي",
 	[Key.devicesSubtitle]: "هذه هي الأجهزة التي أستخدمها في حياتي اليومية",
 	[Key.devicesViewDetails]: "عرض التفاصيل",
-	[Key.albumsPhotoCount]: "صورة",
-	[Key.albumsPhotosCount]: "صور",
 
 	// Projects Page
 	[Key.projects]: "المشاريع",
@@ -323,7 +326,7 @@ export const ar: Translation = {
 	[Key.siteStatsDaysAgo]: "منذ {days} يوم",
 	[Key.siteStatsDays]: "{days} يوم",
 	[Key.siteStatsCurrentDate]: "التاريخ",
-	[Key.siteStatsDateFormat]: "{year}/{month}/{day}",
+	[Key.siteStatsDateFormat]: "{month}/{day}/{year}",
 	[Key.siteStatsCurrentTime]: "الوقت",
 
 	// Calendar Component

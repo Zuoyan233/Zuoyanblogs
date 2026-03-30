@@ -6,17 +6,17 @@ export const es: Translation = {
 	[Key.about]: "Acerca de",
 	[Key.archive]: "Archivo",
 	[Key.search]: "Buscar",
-	[Key.feedback]: "Retroalimentación",
-	[Key.other]: "Otro",
+	[Key.feedback]: "Comentarios",
+	[Key.other]: "Otros",
 
 	// Título del panel de traducción
 	[Key.translateHeader]: "Seleccionar idioma",
 
 	// Títulos de la barra de navegación
 	[Key.navLinks]: "Enlaces",
-	[Key.navMy]: "Mi",
+	[Key.navMy]: "Mis",
 	[Key.navAbout]: "Acerca de",
-	[Key.sponsors]: "Patrocinador",
+	[Key.sponsors]: "Patrocinadores",
 	[Key.navOthers]: "Otros",
 
 	[Key.tags]: "Etiquetas",
@@ -29,16 +29,16 @@ export const es: Translation = {
 
 	[Key.comments]: "Comentarios",
 	[Key.friends]: "Amigos",
-	[Key.friendsSubtitle]: "Descubre más sitios web geniales",
-	[Key.friendsSearchPlaceholder]: "Buscar nombre o descripción de un amigo...",
+	[Key.friendsSubtitle]: "Descubre más sitios web increíbles",
+	[Key.friendsSearchPlaceholder]: "Buscar por nombre o descripción...",
 	[Key.friendsFilterAll]: "Todos",
-	[Key.friendsNoResults]: "No se encontraron amigos que coincidan",
+	[Key.friendsNoResults]: "No se encontraron amigos",
 	[Key.friendsVisit]: "Visitar",
 	[Key.friendsCopyLink]: "Copiar enlace",
-	[Key.friendsCopySuccess]: "Copiado",
+	[Key.friendsCopySuccess]: "¡Copiado!",
 	[Key.friendsTags]: "Etiquetas",
 	[Key.untitled]: "Sin título",
-	[Key.uncategorized]: "Sin categorizar",
+	[Key.uncategorized]: "Sin categoría",
 	[Key.noTags]: "Sin etiquetas",
 
 	[Key.wordCount]: "palabra",
@@ -57,63 +57,63 @@ export const es: Translation = {
 	[Key.more]: "Más",
 
 	[Key.author]: "Autor",
-	[Key.publishedAt]: "Publicado en",
+	[Key.publishedAt]: "Publicado el",
 	[Key.license]: "Licencia",
 	[Key.anime]: "Anime",
 	[Key.diary]: "Diario",
 
-	// Página de anime
+	// Página de Anime
 	[Key.animeTitle]: "Mi lista de anime",
-	[Key.animeSubtitle]: "Registra mi experiencia en el anime",
+	[Key.animeSubtitle]: "Registro de mi viaje por el anime",
 	[Key.animeStatusWatching]: "Viendo",
 	[Key.animeStatusCompleted]: "Completado",
-	[Key.animeStatusPlanned]: "Planificado",
-	[Key.animeStatusOnHold]: "En espera",
+	[Key.animeStatusPlanned]: "Planeado",
+	[Key.animeStatusOnHold]: "En pausa",
 	[Key.animeStatusDropped]: "Abandonado",
-	[Key.animeFilterAll]: "Todo",
+	[Key.animeFilterAll]: "Todos",
 	[Key.animeYear]: "Año",
 	[Key.animeStudio]: "Estudio",
 	[Key.animeEmpty]: "No hay datos de anime disponibles",
 	[Key.animeEmptyBangumi]:
-		"Revisa la configuración de Bangumi o la conexión de red",
+		"Por favor, verifica la configuración de Bangumi o la conexión de red",
 	[Key.animeEmptyBilibili]:
-		"Los datos de Bilibili están vacíos. Ejecute pnpm run update-bilibili para obtenerlos",
+		"Los datos de Bilibili están vacíos. Ejecuta `pnpm run update-bilibili` para obtenerlos",
 	[Key.animeSetBangumiUserId]:
-		"Configure su Bangumi userID en el archivo src/config.ts",
+		"Por favor, establece tu ID de usuario de Bangumi en el archivo src/config.ts",
 	[Key.animeSetBilibiliVmId]:
-		"Configure su Bilibili vmID en el archivo src/config.ts",
+		"Por favor, establece tu vmID de Bilibili en el archivo src/config.ts",
 	[Key.animeEmptyLocal]:
-		"Agrega la información del anime en el archivo src/data/anime.ts",
+		"Por favor, añade información de anime en el archivo src/data/anime.ts",
 
-	// Página del diario
-	[Key.diarySubtitle]: "Comparte tu vida, cuando y donde quieras",
-	[Key.diaryCount]: "Entradas del diario",
+	// Página de Diario
+	[Key.diarySubtitle]: "Comparte la vida, en cualquier momento y lugar",
+	[Key.diaryCount]: "entradas de diario",
 	[Key.diaryReply]: "Responder",
-	[Key.diaryTips]: "Mostrar solo las últimas 30 entradas del diario",
-	[Key.diaryMinutesAgo]: "Hace minutos",
-	[Key.diaryHoursAgo]: "Hace horas",
-	[Key.diaryDaysAgo]: "Hace días",
+	[Key.diaryTips]: "Solo se muestran las últimas 30 entradas",
+	[Key.diaryMinutesAgo]: "minutos atrás",
+	[Key.diaryHoursAgo]: "horas atrás",
+	[Key.diaryDaysAgo]: "días atrás",
 
 	// Página 404
 	[Key.notFound]: "404",
 	[Key.notFoundTitle]: "Página no encontrada",
 	[Key.notFoundDescription]:
 		"Lo sentimos, la página que visitaste no existe o ha sido movida.",
-	[Key.backToHome]: "Volver a la página principal",
+	[Key.backToHome]: "Volver al inicio",
 
 	// Reproductor de música
 	[Key.musicPlayer]: "Reproductor de música",
-	[Key.musicPlayerShow]: "Mostrar música Reproductor",
-	[Key.musicPlayerHide]: "Ocultar reproductor de música",
-	[Key.musicPlayerExpand]: "Expandir reproductor de música",
-	[Key.musicPlayerCollapse]: "Contraer reproductor de música",
-	[Key.musicPlayerPause]: "Pausa",
+	[Key.musicPlayerShow]: "Mostrar reproductor",
+	[Key.musicPlayerHide]: "Ocultar reproductor",
+	[Key.musicPlayerExpand]: "Expandir reproductor",
+	[Key.musicPlayerCollapse]: "Colapsar reproductor",
+	[Key.musicPlayerPause]: "Pausar",
 	[Key.musicPlayerPlay]: "Reproducir",
 	[Key.musicPlayerPrevious]: "Anterior",
 	[Key.musicPlayerNext]: "Siguiente",
-	[Key.musicPlayerShuffle]: "Reproducir aleatoriamente",
+	[Key.musicPlayerShuffle]: "Aleatorio",
 	[Key.musicPlayerRepeat]: "Repetir todo",
-	[Key.musicPlayerRepeatOne]: "Repetir uno",
+	[Key.musicPlayerRepeatOne]: "Repetir una",
 	[Key.musicPlayerVolume]: "Control de volumen",
 	[Key.musicPlayerProgress]: "Progreso de reproducción",
 	[Key.musicPlayerCover]: "Portada",
@@ -121,27 +121,28 @@ export const es: Translation = {
 	[Key.musicPlayerLoading]: "Cargando...",
 	[Key.musicPlayerErrorPlaylist]: "Error al obtener la lista de reproducción",
 	[Key.musicPlayerErrorSong]:
-		"Error al cargar la canción actual, intentar la siguiente",
-	[Key.musicPlayerErrorEmpty]:
-		"No hay canciones disponibles en la lista de reproducción",
+		"Error al cargar la canción, probando con la siguiente",
+	[Key.musicPlayerErrorEmpty]: "No hay canciones disponibles en la lista",
 	[Key.unknownSong]: "Canción desconocida",
 	[Key.unknownArtist]: "Artista desconocido",
 
 	// Página de Álbumes
 	[Key.albums]: "Álbumes",
-	[Key.albumsSubtitle]: "Graba momentos hermosos de la vida",
+	[Key.albumsSubtitle]: "Registra los momentos hermosos de la vida",
 	[Key.albumsEmpty]: "Sin contenido",
 	[Key.albumsEmptyDesc]:
-		"Aún no se han creado álbumes. ¡Agrega recuerdos hermosos!",
-	[Key.albumsBackToList]: "Volver a Álbumes",
+		"Aún no se ha creado ningún álbum. ¡Agrega algunos recuerdos hermosos!",
+	[Key.albumsBackToList]: "Volver a los álbumes",
+	[Key.albumsPhotoCount]: "foto",
+	[Key.albumsPhotosCount]: "fotos",
+	[Key.hiddenAlbum]: "Álbum oculto",
+	[Key.hideAlbumTip]:
+		"Este álbum está configurado como oculto y no aparecerá en la lista de álbumes, pero se puede acceder a él mediante un enlace directo",
 
 	// Página de Dispositivos
 	[Key.devices]: "Mis dispositivos",
-	[Key.devicesSubtitle]:
-		"Aquí están los dispositivos que Uso en mi vida diaria",
+	[Key.devicesSubtitle]: "Estos son los dispositivos que uso en mi día a día",
 	[Key.devicesViewDetails]: "Ver detalles",
-	[Key.albumsPhotoCount]: "foto",
-	[Key.albumsPhotosCount]: "fotos",
 
 	// Página de Proyectos
 	[Key.projects]: "Proyectos",
@@ -151,21 +152,21 @@ export const es: Translation = {
 	[Key.projectsMobile]: "Aplicaciones móviles",
 	[Key.projectsDesktop]: "Aplicaciones de escritorio",
 	[Key.projectsOther]: "Otros",
-	[Key.projectTechStack]: "Pila tecnológica",
-	[Key.projectLiveDemo]: "Demostración en vivo",
+	[Key.projectTechStack]: "Tecnologías",
+	[Key.projectLiveDemo]: "Demo en vivo",
 	[Key.projectSourceCode]: "Código fuente",
 	[Key.projectDescription]: "Descripción del proyecto",
 	[Key.projectStatus]: "Estado",
 	[Key.projectStatusCompleted]: "Completado",
 	[Key.projectStatusInProgress]: "En progreso",
-	[Key.projectStatusPlanned]: "Planificado",
+	[Key.projectStatusPlanned]: "Planeado",
 	[Key.projectsTotal]: "Total de proyectos",
-	[Key.projectsCompleted]: "Completado",
+	[Key.projectsCompleted]: "Completados",
 	[Key.projectsInProgress]: "En progreso",
-	[Key.projectsTechStack]: "Estadísticas de la pila tecnológica",
+	[Key.projectsTechStack]: "Estadísticas de tecnologías",
 	[Key.projectsFeatured]: "Proyectos destacados",
-	[Key.projectsPlanned]: "Planificado",
-	[Key.projectsDemo]: "Demostración en vivo",
+	[Key.projectsPlanned]: "Planeados",
+	[Key.projectsDemo]: "Demo en vivo",
 	[Key.projectsSource]: "Código fuente",
 	[Key.projectsVisit]: "Visitar proyecto",
 	[Key.projectsGitHub]: "GitHub",
@@ -174,66 +175,65 @@ export const es: Translation = {
 	[Key.rss]: "Feed RSS",
 	[Key.rssDescription]: "Suscríbete para recibir las últimas actualizaciones",
 	[Key.rssSubtitle]:
-		"Suscríbete vía RSS para recibir los últimos artículos y actualizaciones al instante",
+		"Suscríbete vía RSS para obtener los últimos artículos y actualizaciones al instante",
 	[Key.rssLink]: "Enlace RSS",
-	[Key.rssCopyToReader]: "Copiar enlace a tu lector RSS",
+	[Key.rssCopyToReader]: "Copia el enlace a tu lector RSS",
 	[Key.rssCopyLink]: "Copiar",
 	[Key.rssLatestPosts]: "Últimas publicaciones",
 	[Key.rssWhatIsRSS]: "¿Qué es RSS?",
 	[Key.rssWhatIsRSSDescription]:
-		"RSS (Really Simple Syndication) es un formato estándar para publicar contenido actualizado con frecuencia. Con RSS, puedes:",
+		"RSS (Really Simple Syndication) es un formato estándar para publicar contenido actualizado con frecuencia. Con RSS puedes:",
 	[Key.rssBenefit1]:
-		"Obtener el contenido más reciente del sitio web a tiempo sin tener que visitarlo manualmente",
+		"Obtener contenido nuevo del sitio web sin necesidad de visitarlo manualmente",
 	[Key.rssBenefit2]:
-		"Administrar suscripciones a varios sitios web en un solo lugar",
-	[Key.rssBenefit3]: "Evitar perderse actualizaciones y artículos importantes",
+		"Gestionar suscripciones de múltiples sitios en un solo lugar",
+	[Key.rssBenefit3]: "No perderte actualizaciones y artículos importantes",
 	[Key.rssBenefit4]:
-		"Disfruta de una experiencia de lectura limpia y sin publicidad",
+		"Disfrutar de una experiencia de lectura limpia y sin anuncios",
 	[Key.rssHowToUse]:
-		"Se recomienda usar Feedly, Inoreader u otros lectores RSS para suscribirse a este sitio",
-	[Key.rssCopied]: "Enlace RSS copiado al portapapeles!",
-	[Key.rssCopyFailed]:
-		"Error al copiar, por favor, copie el enlace manualmente",
+		"Se recomienda usar Feedly, Inoreader u otros lectores RSS para suscribirse a este sitio.",
+	[Key.rssCopied]: "¡Enlace RSS copiado al portapapeles!",
+	[Key.rssCopyFailed]: "Error al copiar, por favor copia el enlace manualmente",
 
-	// Página de Atom
-	[Key.atom]: "Feed de Atom",
+	// Página Atom
+	[Key.atom]: "Feed Atom",
 	[Key.atomDescription]: "Suscríbete para recibir las últimas actualizaciones",
 	[Key.atomSubtitle]:
-		"Suscríbete a través de Atom para recibir los últimos artículos y actualizaciones al instante",
-	[Key.atomLink]: "Enlace de Atom",
-	[Key.atomCopyToReader]: "Copiar enlace a tu lector de Atom",
+		"Suscríbete vía Atom para obtener los últimos artículos y actualizaciones al instante",
+	[Key.atomLink]: "Enlace Atom",
+	[Key.atomCopyToReader]: "Copia el enlace a tu lector Atom",
 	[Key.atomCopyLink]: "Copiar",
 	[Key.atomLatestPosts]: "Últimas publicaciones",
 	[Key.atomWhatIsAtom]: "¿Qué es Atom?",
 	[Key.atomWhatIsAtomDescription]:
-		"Atom (formato de sindicación de Atom) es un estándar basado en XML para describir feeds y sus elementos. Con Atom, puedes:",
+		"Atom (Atom Syndication Format) es un estándar basado en XML para describir feeds y sus elementos. Con Atom puedes:",
 	[Key.atomBenefit1]:
-		"Obtener el contenido más reciente del sitio web a tiempo sin tener que visitarlo manualmente",
+		"Obtener contenido nuevo del sitio web sin necesidad de visitarlo manualmente",
 	[Key.atomBenefit2]:
-		"Administrar suscripciones a varios sitios web en un solo lugar",
-	[Key.atomBenefit3]: "Evita perderte actualizaciones y artículos importantes",
+		"Gestionar suscripciones de múltiples sitios en un solo lugar",
+	[Key.atomBenefit3]: "No perderte actualizaciones y artículos importantes",
 	[Key.atomBenefit4]:
-		"Disfruta de una experiencia de lectura limpia y sin publicidad",
+		"Disfrutar de una experiencia de lectura limpia y sin anuncios",
 	[Key.atomHowToUse]:
-		"Se recomienda usar Feedly, Inoreader u otros lectores de Atom para suscribirse a este sitio",
-	[Key.atomCopied]: "¡Enlace de Atom copiado al portapapeles!",
+		"Se recomienda usar Feedly, Inoreader u otros lectores Atom para suscribirse a este sitio.",
+	[Key.atomCopied]: "¡Enlace Atom copiado al portapapeles!",
 	[Key.atomCopyFailed]:
-		"Error al copiar, por favor, copia el enlace manualmente",
+		"Error al copiar, por favor copia el enlace manualmente",
 
-	// Modo fondo de pantalla
+	// Modo de fondo de pantalla
 	[Key.wallpaperBanner]: "Modo banner",
 	[Key.wallpaperFullscreen]: "Modo pantalla completa",
 	[Key.wallpaperNone]: "Ocultar fondo de pantalla",
 
-	// Página de habilidades
+	// Página de Habilidades
 	[Key.skills]: "Habilidades",
 	[Key.skillsSubtitle]: "Mis habilidades técnicas y experiencia",
 	[Key.skillsFrontend]: "Desarrollo frontend",
-	[Key.skillsBackend]: "Backend Desarrollo",
+	[Key.skillsBackend]: "Desarrollo backend",
 	[Key.skillsDatabase]: "Base de datos",
 	[Key.skillsTools]: "Herramientas de desarrollo",
 	[Key.skillsOther]: "Otras habilidades",
-	[Key.skillLevel]: "Competencia",
+	[Key.skillLevel]: "Nivel",
 	[Key.skillLevelBeginner]: "Principiante",
 	[Key.skillLevelIntermediate]: "Intermedio",
 	[Key.skillLevelAdvanced]: "Avanzado",
@@ -246,21 +246,21 @@ export const es: Translation = {
 	[Key.skillsAdvanced]: "Avanzado",
 	[Key.skillsIntermediate]: "Intermedio",
 	[Key.skillsBeginner]: "Principiante",
-	[Key.skillsAdvancedTitle]: "Habilidades Profesionales",
-	[Key.skillsProjects]: "Proyectos Relacionados",
-	[Key.skillsDistribution]: "Distribución de Habilidades",
-	[Key.skillsByLevel]: "Por Nivel",
-	[Key.skillsByCategory]: "Por Categoría",
+	[Key.skillsAdvancedTitle]: "Habilidades profesionales",
+	[Key.skillsProjects]: "Proyectos relacionados",
+	[Key.skillsDistribution]: "Distribución de habilidades",
+	[Key.skillsByLevel]: "Por nivel",
+	[Key.skillsByCategory]: "Por categoría",
 	[Key.noData]: "Sin datos",
 
-	// Página de Cronología
-	[Key.timeline]: "Cronología",
-	[Key.timelineSubtitle]: "Mi trayectoria de crecimiento y logros importantes",
+	// Página de Línea de tiempo
+	[Key.timeline]: "Línea de tiempo",
+	[Key.timelineSubtitle]: "Mi viaje de crecimiento e hitos importantes",
 	[Key.timelineEducation]: "Educación",
-	[Key.timelineWork]: "Experiencia Laboral",
-	[Key.timelineProject]: "Experiencia en Proyectos",
+	[Key.timelineWork]: "Experiencia laboral",
+	[Key.timelineProject]: "Experiencia en proyectos",
 	[Key.timelineAchievement]: "Logros",
-	[Key.timelinePresent]: "Presente",
+	[Key.timelinePresent]: "Actualidad",
 	[Key.timelineLocation]: "Ubicación",
 	[Key.timelineDescription]: "Descripción detallada",
 	[Key.timelineMonths]: "meses",
@@ -274,57 +274,59 @@ export const es: Translation = {
 	[Key.timelineStartDate]: "Fecha de inicio",
 	[Key.timelineDuration]: "Duración",
 
-	// Página de comentarios - Módulo de contacto con el administrador del sitio web
-	[Key.contactMe]: "Contactar con el administrador del sitio web",
-	[Key.contactEmail]:
-		"Contactar con el administrador del sitio web por correo electrónico",
+	// Página de Comentarios - Módulo de contacto con el webmaster
+	[Key.contactMe]: "Contactar al webmaster",
+	[Key.contactEmail]: "Contacta al webmaster por correo electrónico",
 	[Key.contactSocialFriends]:
-		"Contactar con el administrador del sitio web agregándolo como amigo en redes sociales",
-	[Key.addFriends]: "Agregar un amigo ahora",
+		"Contacta al webmaster agregándolo como amigo en redes sociales",
+	[Key.addFriends]: "Agregar amigo ahora",
 
-	// Página de patrocinio
+	// Página de Patrocinios
 	[Key.sponsorsNotice1]:
-		"Si el contenido del sitio web le resulta útil, por favor, apoye mi trabajo mediante los siguientes métodos para ayudar a crear mejor contenido. Todos los patrocinios se utilizarán para el mantenimiento del sitio web, los costos del servidor y la creación de contenido.",
+		"Si encuentras útil el contenido del sitio web, por favor apoya mi trabajo a través de los siguientes métodos para ayudar a crear mejor contenido. Todos los patrocinios se utilizarán para el mantenimiento del sitio web, costos de servidor y creación de contenido.",
 	[Key.sponsorsNotice2]:
-		"¡Gracias por apoyar el desarrollo de contenido del proyecto del blog Zuoyanblogs!",
+		"¡Gracias por apoyar el desarrollo del contenido del blog Zuoyanblogs!",
 	[Key.wechatPay]: "WeChat",
 	[Key.aliPay]: "Alipay",
 	[Key.scanPayQRcode]: "Escanear para pagar",
-	[Key.sponsorsPartner]: "Socio patrocinador",
-	[Key.otherSupportOptions]: "Otros métodos de soporte",
+	[Key.sponsorsPartner]: "Socios patrocinadores",
+	[Key.otherSupportOptions]: "Otras formas de apoyo",
 	[Key.shareBlog]: "Comparte mi blog con más amigos",
 	[Key.leaveComment]:
-		"Deja tu opinión en la sección de comentarios debajo del artículo",
+		"Deja tus comentarios en la sección de comentarios debajo del artículo",
 	[Key.subscribeToArticles]:
-		"Suscríbete a RSS y Atom para recibir los últimos artículos",
+		"Suscríbete a RSS y Atom para obtener los últimos artículos",
 
-	// Protección con contraseña
+	// Protección por contraseña
 	[Key.passwordProtected]: "Protegido con contraseña",
 	[Key.passwordProtectedTitle]: "Este contenido está protegido con contraseña",
 	[Key.passwordProtectedDescription]:
-		"Introduzca la contraseña para ver el contenido protegido",
-	[Key.passwordPlaceholder]: "Introduzca la contraseña",
+		"Por favor, introduce la contraseña para ver el contenido protegido",
+	[Key.passwordPlaceholder]: "Introducir contraseña",
 	[Key.passwordUnlock]: "Desbloquear",
 	[Key.passwordUnlocking]: "Desbloqueando...",
-	[Key.passwordIncorrect]: "Contraseña incorrecta, inténtelo de nuevo",
+	[Key.passwordIncorrect]:
+		"Contraseña incorrecta, por favor inténtalo de nuevo",
 	[Key.passwordDecryptError]:
-		"Error de descifrado, compruebe si la contraseña es correcta",
-	[Key.passwordRequired]: "Introduzca la contraseña",
+		"Error de descifrado, por favor verifica si la contraseña es correcta",
+	[Key.passwordRequired]: "Por favor, introduce la contraseña",
 	[Key.passwordVerifying]: "Verificando...",
-	[Key.passwordDecryptFailed]: "Error de descifrado, compruebe la contraseña",
-	[Key.passwordDecryptRetry]: "Error de descifrado, inténtelo de nuevo",
+	[Key.passwordDecryptFailed]:
+		"Error de descifrado, por favor verifica la contraseña",
+	[Key.passwordDecryptRetry]:
+		"Error de descifrado, por favor inténtalo de nuevo",
 	[Key.passwordUnlockButton]: "Desbloquear",
-	[Key.copyFailed]: "Error en la copia:",
-	[Key.syntaxHighlightFailed]: "Error en el resaltado de sintaxis:",
+	[Key.copyFailed]: "Error al copiar:",
+	[Key.syntaxHighlightFailed]: "Error al resaltar la sintaxis:",
 	[Key.autoSyntaxHighlightFailed]:
-		"El resaltado de sintaxis automático también falló:",
-	[Key.decryptionError]: "Error durante el descifrado:",
+		"El resaltado automático de sintaxis también falló:",
+	[Key.decryptionError]: "Ocurrió un error durante el descifrado:",
 
-	// Tarjeta de tiempo de última modificación
-	[Key.lastModifiedPrefix]: "Tiempo transcurrido desde la última edición:",
+	// Tarjeta de última modificación
+	[Key.lastModifiedPrefix]: "Tiempo desde la última edición: ",
 	[Key.lastModifiedOutdated]:
 		"Es posible que parte de la información esté desactualizada",
-	[Key.year]: "y",
+	[Key.year]: "a",
 	[Key.month]: "m",
 	[Key.day]: "d",
 	[Key.hour]: "h",
@@ -337,15 +339,15 @@ export const es: Translation = {
 	[Key.siteStatsCategoryCount]: "Categorías",
 	[Key.siteStatsTagCount]: "Etiquetas",
 	[Key.siteStatsTotalWords]: "Total de palabras",
-	[Key.siteStatsRunningDays]: "Días de ejecución",
+	[Key.siteStatsRunningDays]: "Días en funcionamiento",
 	[Key.siteStatsLastUpdate]: "Última actividad",
-	[Key.siteStatsDaysAgo]: "{days} días atrás",
+	[Key.siteStatsDaysAgo]: "hace {days} días",
 	[Key.siteStatsDays]: "{days} días",
 	[Key.siteStatsCurrentDate]: "Fecha",
-	[Key.siteStatsDateFormat]: "{day}/{month}/{year}",
+	[Key.siteStatsDateFormat]: "{month}/{day}/{year}",
 	[Key.siteStatsCurrentTime]: "Hora",
 
-	// Componente Calendario
+	// Componente de calendario
 	[Key.calendarSunday]: "Dom",
 	[Key.calendarMonday]: "Lun",
 	[Key.calendarTuesday]: "Mar",
@@ -366,7 +368,7 @@ export const es: Translation = {
 	[Key.calendarNovember]: "Nov",
 	[Key.calendarDecember]: "Dic",
 
-	// Función para compartir
+	// Funcionalidad de compartir
 	[Key.shareArticle]: "Compartir",
 	[Key.generatingPoster]: "Generando póster...",
 	[Key.copied]: "Copiado",
@@ -375,27 +377,26 @@ export const es: Translation = {
 	[Key.scanToRead]: "Escanear para leer",
 	[Key.shareOnSocial]: "Compartir",
 	[Key.shareOnSocialDescription]:
-		"Si este artículo te ha sido útil, ¡compártelo!",
+		"Si este artículo te ayudó, ¡compártelo con otros!",
 
-	// Estadísticas del perfil
+	// Estadísticas de perfil
 	[Key.profileStatsLoading]: "Cargando estadísticas...",
-	[Key.profileStatsPageViews]: "Visitas de página",
+	[Key.profileStatsPageViews]: "Vistas de página",
 	[Key.profileStatsVisits]: "Visitas",
 	[Key.profileStatsUnavailable]: "Estadísticas no disponibles",
 
-	// Estadísticas de visitas a la página
+	// Estadísticas de vistas de página
 	[Key.pageViewsLoading]: "Cargando estadísticas...",
 	[Key.pageViewsUnavailable]: "Estadísticas no disponibles",
 
-	// Botón para cambiar de diseño
-	[Key.switchToGridMode]: "Cambiar al modo cuadrícula",
-	[Key.switchToListMode]: "Cambiar al modo lista",
+	// Botón de cambio de diseño
+	[Key.switchToGridMode]: "Cambiar a modo cuadrícula",
+	[Key.switchToListMode]: "Cambiar a modo lista",
 
 	// Advertencia de enlace externo
-	[Key.leaveSite]: "Saliendo de este sitio",
-	[Key.goToExternalLink]: "Está a punto de visitar un enlace externo:",
-	[Key.warningText]:
-		"Por favor, tenga en cuenta la seguridad de su cuenta y activos",
-	[Key.confirmText]: "Continuar visitando",
+	[Key.leaveSite]: "Salir de este sitio",
+	[Key.goToExternalLink]: "Estás a punto de visitar un enlace externo:",
+	[Key.warningText]: "Por favor, cuida la seguridad de tu cuenta y activos",
+	[Key.confirmText]: "Continuar a la visita",
 	[Key.cancelText]: "Cancelar",
 };

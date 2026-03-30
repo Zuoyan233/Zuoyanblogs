@@ -125,6 +125,8 @@ enum I18nKey {
 	albumsBackToList = "albumsBackToList",
 	albumsPhotoCount = "albumsPhotoCount",
 	albumsPhotosCount = "albumsPhotosCount",
+	hiddenAlbum = "hiddenAlbum",
+	hideAlbumTip = "hideAlbumTip",
 
 	// 设备页面
 	devices = "devices",

@@ -6,8 +6,7 @@ export const id: Translation = {
 	[Key.about]: "Tentang",
 	[Key.archive]: "Arsip",
 	[Key.search]: "Cari",
-	[Key.sponsors]: "Penaja",
-	[Key.feedback]: "Umpan Balik",
+	[Key.feedback]: "Masukan",
 	[Key.other]: "Lainnya",
 
 	// Judul panel terjemahan
@@ -17,6 +16,7 @@ export const id: Translation = {
 	[Key.navLinks]: "Tautan",
 	[Key.navMy]: "Saya",
 	[Key.navAbout]: "Tentang",
+	[Key.sponsors]: "Sponsor",
 	[Key.navOthers]: "Lainnya",
 
 	[Key.tags]: "Tag",
@@ -29,10 +29,10 @@ export const id: Translation = {
 
 	[Key.comments]: "Komentar",
 	[Key.friends]: "Teman",
-	[Key.friendsSubtitle]: "Temukan situs web yang lebih menarik",
-	[Key.friendsSearchPlaceholder]: "Cari nama atau deskripsi teman...",
+	[Key.friendsSubtitle]: "Temukan situs web hebat lainnya",
+	[Key.friendsSearchPlaceholder]: "Cari nama teman atau deskripsi...",
 	[Key.friendsFilterAll]: "Semua",
-	[Key.friendsNoResults]: "Tidak ditemukan teman yang cocok",
+	[Key.friendsNoResults]: "Tidak ada teman yang cocok ditemukan",
 	[Key.friendsVisit]: "Kunjungi",
 	[Key.friendsCopyLink]: "Salin Tautan",
 	[Key.friendsCopySuccess]: "Disalin",
@@ -45,9 +45,11 @@ export const id: Translation = {
 	[Key.wordsCount]: "kata",
 	[Key.minuteCount]: "menit",
 	[Key.minutesCount]: "menit",
-	[Key.postCount]: "posting",
-	[Key.postsCount]: "posting",
+	[Key.postCount]: "postingan",
+	[Key.postsCount]: "postingan",
+
 	[Key.themeColor]: "Warna Tema",
+
 	[Key.lightMode]: "Terang",
 	[Key.darkMode]: "Gelap",
 	[Key.systemMode]: "Sistem",
@@ -55,39 +57,38 @@ export const id: Translation = {
 	[Key.more]: "Lainnya",
 
 	[Key.author]: "Penulis",
-	[Key.publishedAt]: "Diterbitkan di",
+	[Key.publishedAt]: "Dipublikasikan pada",
 	[Key.license]: "Lisensi",
 	[Key.anime]: "Anime",
-	[Key.diary]: "Buku Harian",
+	[Key.diary]: "Catatan Harian",
 
 	// Halaman Anime
 	[Key.animeTitle]: "Daftar Anime Saya",
 	[Key.animeSubtitle]: "Rekam perjalanan anime saya",
-	[Key.animeStatusWatching]: "Menonton",
+	[Key.animeStatusWatching]: "Sedang Ditonton",
 	[Key.animeStatusCompleted]: "Selesai",
 	[Key.animeStatusPlanned]: "Direncanakan",
 	[Key.animeStatusOnHold]: "Ditunda",
-	[Key.animeStatusDropped]: "Dihapus",
+	[Key.animeStatusDropped]: "Dibatalkan",
 	[Key.animeFilterAll]: "Semua",
 	[Key.animeYear]: "Tahun",
 	[Key.animeStudio]: "Studio",
-	[Key.animeEmpty]: "Tidak ada data anime",
-	[Key.animeEmptyBangumi]:
-		"Silakan periksa konfigurasi Bangumi atau koneksi jaringan",
+	[Key.animeEmpty]: "Tidak ada data anime yang tersedia",
+	[Key.animeEmptyBangumi]: "Periksa konfigurasi Bangumi atau koneksi jaringan",
 	[Key.animeEmptyBilibili]:
-		"Data Bilibili kosong. Silakan jalankan `pnpm run update-bilibili` untuk mendapatkan data",
+		"Data Bilibili kosong. Jalankan `pnpm run update-bilibili` untuk mendapatkan data",
 	[Key.animeSetBangumiUserId]:
-		"Silakan atur Bangumi userID Anda di file src/config.ts",
+		"Harap atur ID pengguna Bangumi Anda di file src/config.ts",
 	[Key.animeSetBilibiliVmId]:
-		"Silakan atur Bilibili vmID  Anda di file src/config.ts",
+		"Harap atur vmID Bilibili Anda di file src/config.ts",
 	[Key.animeEmptyLocal]:
-		"Silakan tambahkan informasi anime di berkas src/data/anime.ts",
+		"Harap tambahkan informasi anime di file src/data/anime.ts",
 
-	// Halaman Buku Harian
-	[Key.diarySubtitle]: "Bagikan kehidupan kapan saja, di mana saja",
-	[Key.diaryCount]: "entri buku harian",
+	// Halaman Catatan Harian
+	[Key.diarySubtitle]: "Berbagi kehidupan, kapan saja, di mana saja",
+	[Key.diaryCount]: "entri catatan harian",
 	[Key.diaryReply]: "Balas",
-	[Key.diaryTips]: "Hanya tampilkan 30 entri buku harian terbaru",
+	[Key.diaryTips]: "Hanya menampilkan 30 entri catatan harian terbaru",
 	[Key.diaryMinutesAgo]: "menit yang lalu",
 	[Key.diaryHoursAgo]: "jam yang lalu",
 	[Key.diaryDaysAgo]: "hari yang lalu",
@@ -108,45 +109,47 @@ export const id: Translation = {
 	[Key.musicPlayerPause]: "Jeda",
 	[Key.musicPlayerPlay]: "Putar",
 	[Key.musicPlayerPrevious]: "Sebelumnya",
-	[Key.musicPlayerNext]: "Berikutnya",
+	[Key.musicPlayerNext]: "Selanjutnya",
 	[Key.musicPlayerShuffle]: "Acak",
 	[Key.musicPlayerRepeat]: "Ulangi Semua",
 	[Key.musicPlayerRepeatOne]: "Ulangi Satu",
-	[Key.musicPlayerVolume]: "Volume Kontrol",
+	[Key.musicPlayerVolume]: "Kontrol Volume",
 	[Key.musicPlayerProgress]: "Kemajuan Pemutaran",
-	[Key.musicPlayerCover]: "Sampul album",
-	[Key.musicPlayerPlaylist]: "Daftar putar",
+	[Key.musicPlayerCover]: "Sampul",
+	[Key.musicPlayerPlaylist]: "Daftar Putar",
 	[Key.musicPlayerLoading]: "Memuat...",
-	[Key.musicPlayerErrorPlaylist]: "Kesalahan saat mengambil daftar putar",
+	[Key.musicPlayerErrorPlaylist]: "Gagal mengambil daftar putar",
 	[Key.musicPlayerErrorSong]:
-		"Kesalahan saat memuat lagu saat ini, silakan coba lagu berikutnya",
-	[Key.musicPlayerErrorEmpty]:
-		"Tidak ada lagu yang tersedia dalam daftar putar",
-	[Key.unknownSong]: "Lagu tidak dikenal",
-	[Key.unknownArtist]: "Artis tidak dikenal",
+		"Gagal memuat lagu saat ini, mencoba lagu berikutnya",
+	[Key.musicPlayerErrorEmpty]: "Tidak ada lagu tersedia di daftar putar",
+	[Key.unknownSong]: "Lagu Tidak Dikenal",
+	[Key.unknownArtist]: "Artis Tidak Dikenal",
 
 	// Halaman Album
 	[Key.albums]: "Album",
-	[Key.albumsSubtitle]: "Rekam momen-momen indah dalam hidup",
+	[Key.albumsSubtitle]: "Rekam momen indah dalam hidup",
 	[Key.albumsEmpty]: "Tidak ada konten",
 	[Key.albumsEmptyDesc]:
-		"Belum ada album yang dibuat. Ayo tambahkan beberapa kenangan indah!",
+		"Belum ada album yang dibuat. Yuk, tambahkan beberapa kenangan indah!",
 	[Key.albumsBackToList]: "Kembali ke Album",
+	[Key.albumsPhotoCount]: "foto",
+	[Key.albumsPhotosCount]: "foto",
+	[Key.hiddenAlbum]: "Album Tersembunyi",
+	[Key.hideAlbumTip]:
+		"Album ini diatur sebagai tersembunyi dan tidak akan muncul dalam daftar album, tetapi masih dapat diakses melalui tautan langsung",
 
 	// Halaman Perangkat
 	[Key.devices]: "Perangkat Saya",
 	[Key.devicesSubtitle]:
-		"Berikut adalah perangkat yang saya gunakan sehari-hari",
+		"Berikut adalah perangkat yang saya gunakan dalam kehidupan sehari-hari",
 	[Key.devicesViewDetails]: "Lihat Detail",
-	[Key.albumsPhotoCount]: "foto",
-	[Key.albumsPhotosCount]: "foto",
 
 	// Halaman Proyek
 	[Key.projects]: "Proyek",
 	[Key.projectsSubtitle]: "Portofolio proyek pengembangan saya",
 	[Key.projectsAll]: "Semua",
 	[Key.projectsWeb]: "Aplikasi Web",
-	[Key.projectsMobile]: "Aplikasi Seluler",
+	[Key.projectsMobile]: "Aplikasi Mobile",
 	[Key.projectsDesktop]: "Aplikasi Desktop",
 	[Key.projectsOther]: "Lainnya",
 	[Key.projectTechStack]: "Tumpukan Teknologi",
@@ -155,11 +158,11 @@ export const id: Translation = {
 	[Key.projectDescription]: "Deskripsi Proyek",
 	[Key.projectStatus]: "Status",
 	[Key.projectStatusCompleted]: "Selesai",
-	[Key.projectStatusInProgress]: "Sedang Diproses",
+	[Key.projectStatusInProgress]: "Dalam Pengerjaan",
 	[Key.projectStatusPlanned]: "Direncanakan",
 	[Key.projectsTotal]: "Total Proyek",
 	[Key.projectsCompleted]: "Selesai",
-	[Key.projectsInProgress]: "Sedang Diproses",
+	[Key.projectsInProgress]: "Dalam Pengerjaan",
 	[Key.projectsTechStack]: "Statistik Tumpukan Teknologi",
 	[Key.projectsFeatured]: "Proyek Unggulan",
 	[Key.projectsPlanned]: "Direncanakan",
@@ -172,76 +175,76 @@ export const id: Translation = {
 	[Key.rss]: "Umpan RSS",
 	[Key.rssDescription]: "Berlangganan untuk mendapatkan pembaruan terbaru",
 	[Key.rssSubtitle]:
-		"Berlangganan melalui RSS untuk mendapatkan artikel dan pembaruan terbaru segera",
+		"Berlangganan melalui RSS untuk mendapatkan artikel dan pembaruan terbaru secara instan",
 	[Key.rssLink]: "Tautan RSS",
 	[Key.rssCopyToReader]: "Salin tautan ke pembaca RSS Anda",
 	[Key.rssCopyLink]: "Salin",
 	[Key.rssLatestPosts]: "Postingan Terbaru",
 	[Key.rssWhatIsRSS]: "Apa itu RSS?",
 	[Key.rssWhatIsRSSDescription]:
-		"RSS (Really Simple Syndication) adalah format standar untuk menerbitkan konten yang sering diperbarui. Dengan RSS, Anda dapat:",
+		"RSS (Really Simple Syndication) adalah format standar untuk mempublikasikan konten yang sering diperbarui. Dengan RSS, Anda dapat:",
 	[Key.rssBenefit1]:
-		"Dapatkan konten situs web terbaru tepat waktu tanpa perlu mengunjungi situs web secara manual",
-	[Key.rssBenefit2]: "Kelola langganan ke beberapa situs web di satu tempat",
-	[Key.rssBenefit3]: "Hindari melewatkan pembaruan dan artikel penting",
-	[Key.rssBenefit4]: "Nikmati pengalaman membaca yang bersih dan bebas iklan",
+		"Mendapatkan konten situs web terbaru tepat waktu tanpa mengunjungi secara manual",
+	[Key.rssBenefit2]: "Kelola langganan ke banyak situs web dalam satu tempat",
+	[Key.rssBenefit3]: "Hindari kehilangan pembaruan dan artikel penting",
+	[Key.rssBenefit4]: "Nikmati pengalaman membaca tanpa iklan dan bersih",
 	[Key.rssHowToUse]:
-		"Disarankan untuk menggunakan Feedly, Inoreader, atau pembaca RSS lainnya untuk berlangganan situs ini.",
+		"Disarankan menggunakan Feedly, Inoreader, atau pembaca RSS lainnya untuk berlangganan situs ini.",
 	[Key.rssCopied]: "Tautan RSS disalin ke papan klip!",
-	[Key.rssCopyFailed]: "Penyalinan gagal, silakan salin tautan secara manual",
+	[Key.rssCopyFailed]: "Salin gagal, silakan salin tautan secara manual",
 
 	// Halaman Atom
 	[Key.atom]: "Umpan Atom",
 	[Key.atomDescription]: "Berlangganan untuk mendapatkan pembaruan terbaru",
 	[Key.atomSubtitle]:
-		"Berlangganan melalui Atom untuk segera mendapatkan artikel dan pembaruan terbaru",
+		"Berlangganan melalui Atom untuk mendapatkan artikel dan pembaruan terbaru secara instan",
 	[Key.atomLink]: "Tautan Atom",
 	[Key.atomCopyToReader]: "Salin tautan ke pembaca Atom Anda",
 	[Key.atomCopyLink]: "Salin",
 	[Key.atomLatestPosts]: "Postingan Terbaru",
 	[Key.atomWhatIsAtom]: "Apa itu Atom?",
 	[Key.atomWhatIsAtomDescription]:
-		"Atom (Format Sindikasi Atom) adalah standar berbasis XML untuk mendeskripsikan umpan dan itemnya. Dengan Atom, Anda dapat:",
+		"Atom (Atom Syndication Format) adalah standar berbasis XML untuk mendeskripsikan umpan dan itemnya. Dengan Atom, Anda dapat:",
 	[Key.atomBenefit1]:
-		"Dapatkan konten situs web terbaru tepat waktu tanpa perlu mengunjunginya secara manual",
-	[Key.atomBenefit2]: "Kelola langganan ke beberapa situs web di satu tempat",
-	[Key.atomBenefit3]: "Hindari ketinggalan pembaruan dan artikel penting",
-	[Key.atomBenefit4]: "Nikmati pengalaman membaca yang bersih dan bebas iklan",
+		"Mendapatkan konten situs web terbaru tepat waktu tanpa mengunjungi secara manual",
+	[Key.atomBenefit2]: "Kelola langganan ke banyak situs web dalam satu tempat",
+	[Key.atomBenefit3]: "Hindari kehilangan pembaruan dan artikel penting",
+	[Key.atomBenefit4]: "Nikmati pengalaman membaca tanpa iklan dan bersih",
 	[Key.atomHowToUse]:
-		"Disarankan untuk menggunakan Feedly, Inoreader, atau pembaca Atom lainnya untuk berlangganan situs ini.",
+		"Disarankan menggunakan Feedly, Inoreader, atau pembaca Atom lainnya untuk berlangganan situs ini.",
 	[Key.atomCopied]: "Tautan Atom disalin ke papan klip!",
-	[Key.atomCopyFailed]: "Penyalinan gagal, silakan salin tautan secara manual",
+	[Key.atomCopyFailed]: "Salin gagal, silakan salin tautan secara manual",
 
 	// Mode Wallpaper
-	[Key.wallpaperBanner]: "Mode Banner",
+	[Key.wallpaperBanner]: "Mode Spanduk",
 	[Key.wallpaperFullscreen]: "Mode Layar Penuh",
 	[Key.wallpaperNone]: "Sembunyikan Wallpaper",
 
 	// Halaman Keterampilan
 	[Key.skills]: "Keterampilan",
-	[Key.skillsSubtitle]: "Keterampilan dan keahlian teknis saya",
+	[Key.skillsSubtitle]: "Keterampilan teknis dan keahlian saya",
 	[Key.skillsFrontend]: "Pengembangan Frontend",
 	[Key.skillsBackend]: "Pengembangan Backend",
 	[Key.skillsDatabase]: "Basis Data",
 	[Key.skillsTools]: "Alat Pengembangan",
 	[Key.skillsOther]: "Keterampilan Lainnya",
-	[Key.skillLevel]: "Kemahiran",
+	[Key.skillLevel]: "Tingkat Kemahiran",
 	[Key.skillLevelBeginner]: "Pemula",
 	[Key.skillLevelIntermediate]: "Menengah",
-	[Key.skillLevelAdvanced]: "Mahir",
-	[Key.skillLevelExpert]: "Pakar",
+	[Key.skillLevelAdvanced]: "Lanjutan",
+	[Key.skillLevelExpert]: "Ahli",
 	[Key.skillExperience]: "Pengalaman",
 	[Key.skillYears]: "tahun",
 	[Key.skillMonths]: "bulan",
 	[Key.skillsTotal]: "Total Keterampilan",
 	[Key.skillsExpert]: "Tingkat Ahli",
-	[Key.skillsAdvanced]: "Mahir",
+	[Key.skillsAdvanced]: "Lanjutan",
 	[Key.skillsIntermediate]: "Menengah",
 	[Key.skillsBeginner]: "Pemula",
 	[Key.skillsAdvancedTitle]: "Keterampilan Profesional",
 	[Key.skillsProjects]: "Proyek Terkait",
 	[Key.skillsDistribution]: "Distribusi Keterampilan",
-	[Key.skillsByLevel]: "Berdasarkan Level",
+	[Key.skillsByLevel]: "Berdasarkan Tingkat",
 	[Key.skillsByCategory]: "Berdasarkan Kategori",
 	[Key.noData]: "Tidak ada data",
 
@@ -252,7 +255,7 @@ export const id: Translation = {
 	[Key.timelineWork]: "Pengalaman Kerja",
 	[Key.timelineProject]: "Pengalaman Proyek",
 	[Key.timelineAchievement]: "Pencapaian",
-	[Key.timelinePresent]: "Saat Ini",
+	[Key.timelinePresent]: "Sekarang",
 	[Key.timelineLocation]: "Lokasi",
 	[Key.timelineDescription]: "Deskripsi Detail",
 	[Key.timelineMonths]: "bulan",
@@ -266,26 +269,26 @@ export const id: Translation = {
 	[Key.timelineStartDate]: "Tanggal Mulai",
 	[Key.timelineDuration]: "Durasi",
 
-	// Halaman Umpan Balik - Modul Hubungi Administrator Situs Web
-	[Key.contactMe]: "Hubungi Administrator Situs Web",
-	[Key.contactEmail]: "Hubungi Administrator Situs Web melalui email",
+	// Halaman Masukan - Modul Hubungi Webmaster
+	[Key.contactMe]: "Hubungi Webmaster",
+	[Key.contactEmail]: "Hubungi webmaster melalui email",
 	[Key.contactSocialFriends]:
-		"Hubungi Administrator Situs Web dengan menambahkannya sebagai teman media sosial",
-	[Key.addFriends]: "Tambahkan teman sekarang",
+		"Hubungi webmaster dengan menambahkan sebagai teman media sosial",
+	[Key.addFriends]: "Tambah teman sekarang",
 
-	// Halaman Sponsors
+	// Halaman Sponsor
 	[Key.sponsorsNotice1]:
-		"Jika Anda merasa konten situs web ini bermanfaat, mohon dukung pekerjaan saya melalui metode berikut untuk membantu menciptakan konten yang lebih baik. Semua sponsor akan digunakan untuk pemeliharaan situs web, biaya server, dan pembuatan konten.",
+		"Jika Anda merasa konten situs web ini bermanfaat, dukunglah pekerjaan saya melalui cara-cara berikut untuk membantu menciptakan konten yang lebih baik. Semua sponsor akan digunakan untuk pemeliharaan situs web, biaya server, dan pembuatan konten.",
 	[Key.sponsorsNotice2]:
-		"Terima kasih atas dukungan Anda terhadap pengembangan konten proyek blog Zuoyanblogs!",
+		"Terima kasih telah mendukung pengembangan konten blog Zuoyanblogs!",
 	[Key.wechatPay]: "WeChat",
 	[Key.aliPay]: "Alipay",
 	[Key.scanPayQRcode]: "Pindai untuk Membayar",
-	[Key.sponsorsPartner]: "Mitra Sponsors",
-	[Key.otherSupportOptions]: "Metode dukungan lain",
+	[Key.sponsorsPartner]: "Mitra Sponsor",
+	[Key.otherSupportOptions]: "Metode dukungan lainnya",
 	[Key.shareBlog]: "Bagikan blog saya dengan lebih banyak teman",
 	[Key.leaveComment]:
-		"Tinggalkan komentar Anda di bagian komentar di bawah artikel",
+		"Tinggalkan pemikiran Anda di bagian komentar di bawah artikel",
 	[Key.subscribeToArticles]:
 		"Berlangganan RSS dan Atom untuk mendapatkan artikel terbaru",
 
@@ -293,32 +296,32 @@ export const id: Translation = {
 	[Key.passwordProtected]: "Dilindungi Kata Sandi",
 	[Key.passwordProtectedTitle]: "Konten ini dilindungi kata sandi",
 	[Key.passwordProtectedDescription]:
-		"Silakan masukkan kata sandi untuk melihat konten yang dilindungi",
+		"Harap masukkan kata sandi untuk melihat konten yang dilindungi",
 	[Key.passwordPlaceholder]: "Masukkan kata sandi",
-	[Key.passwordUnlock]: "Buka kunci",
+	[Key.passwordUnlock]: "Buka Kunci",
 	[Key.passwordUnlocking]: "Membuka kunci...",
 	[Key.passwordIncorrect]: "Kata sandi salah, silakan coba lagi",
 	[Key.passwordDecryptError]:
-		"Dekripsi gagal, silakan periksa apakah kata sandi sudah benar",
-	[Key.passwordRequired]: "Silakan masukkan kata sandi",
+		"Dekripsi gagal, periksa apakah kata sandi sudah benar",
+	[Key.passwordRequired]: "Harap masukkan kata sandi",
 	[Key.passwordVerifying]: "Memverifikasi...",
-	[Key.passwordDecryptFailed]: "Dekripsi gagal, silakan periksa kata sandi",
+	[Key.passwordDecryptFailed]: "Dekripsi gagal, periksa kata sandi",
 	[Key.passwordDecryptRetry]: "Dekripsi gagal, silakan coba lagi",
-	[Key.passwordUnlockButton]: "Buka kunci",
-	[Key.copyFailed]: "Penyalinan gagal:",
+	[Key.passwordUnlockButton]: "Buka Kunci",
+	[Key.copyFailed]: "Salin gagal:",
 	[Key.syntaxHighlightFailed]: "Penyorotan sintaks gagal:",
 	[Key.autoSyntaxHighlightFailed]: "Penyorotan sintaks otomatis juga gagal:",
 	[Key.decryptionError]: "Terjadi kesalahan saat dekripsi:",
 
-	// Kartu Waktu Terakhir Diubah
-	[Key.lastModifiedPrefix]: "Waktu sejak penyuntingan terakhir",
+	// Kartu Waktu Terakhir Diedit
+	[Key.lastModifiedPrefix]: "Waktu sejak suntingan terakhir: ",
 	[Key.lastModifiedOutdated]: "Beberapa informasi mungkin sudah kedaluwarsa",
-	[Key.year]: "y",
-	[Key.month]: "m",
-	[Key.day]: "d",
-	[Key.hour]: "h",
-	[Key.minute]: "min",
-	[Key.second]: "d",
+	[Key.year]: "th",
+	[Key.month]: "bln",
+	[Key.day]: "h",
+	[Key.hour]: "j",
+	[Key.minute]: "mnt",
+	[Key.second]: "dtk",
 
 	// Statistik Situs
 	[Key.siteStats]: "Statistik Situs",
@@ -326,19 +329,19 @@ export const id: Translation = {
 	[Key.siteStatsCategoryCount]: "Kategori",
 	[Key.siteStatsTagCount]: "Tag",
 	[Key.siteStatsTotalWords]: "Total Kata",
-	[Key.siteStatsRunningDays]: "Waktu Berjalan",
+	[Key.siteStatsRunningDays]: "Hari Berjalan",
 	[Key.siteStatsLastUpdate]: "Aktivitas Terakhir",
 	[Key.siteStatsDaysAgo]: "{days} hari yang lalu",
 	[Key.siteStatsDays]: "{days} hari",
 	[Key.siteStatsCurrentDate]: "Tanggal",
-	[Key.siteStatsDateFormat]: "{day}/{month}/{year}",
+	[Key.siteStatsDateFormat]: "{month}/{day}/{year}",
 	[Key.siteStatsCurrentTime]: "Waktu",
 
 	// Komponen Kalender
 	[Key.calendarSunday]: "Min",
 	[Key.calendarMonday]: "Sen",
 	[Key.calendarTuesday]: "Sel",
-	[Key.calendarWednesday]: "Rabu",
+	[Key.calendarWednesday]: "Rab",
 	[Key.calendarThursday]: "Kam",
 	[Key.calendarFriday]: "Jum",
 	[Key.calendarSaturday]: "Sab",
@@ -364,26 +367,26 @@ export const id: Translation = {
 	[Key.scanToRead]: "Pindai untuk Membaca",
 	[Key.shareOnSocial]: "Bagikan",
 	[Key.shareOnSocialDescription]:
-		"Jika artikel ini bermanfaat bagi Anda, silakan bagikan dengan orang lain!",
+		"Jika artikel ini membantu Anda, bagikan dengan orang lain!",
 
 	// Statistik Profil
 	[Key.profileStatsLoading]: "Memuat statistik...",
-	[Key.profileStatsPageViews]: "Tayangan halaman",
+	[Key.profileStatsPageViews]: "Tampilan halaman",
 	[Key.profileStatsVisits]: "Kunjungan",
 	[Key.profileStatsUnavailable]: "Statistik tidak tersedia",
 
-	// Statistik Tayangan Halaman
+	// Statistik Tampilan Halaman
 	[Key.pageViewsLoading]: "Memuat statistik...",
 	[Key.pageViewsUnavailable]: "Statistik tidak tersedia",
 
-	// Tombol Pengalih Tata Letak
-	[Key.switchToGridMode]: "Beralih ke Mode Grid",
+	// Tombol Ganti Tata Letak
+	[Key.switchToGridMode]: "Beralih ke Mode Kisi",
 	[Key.switchToListMode]: "Beralih ke Mode Daftar",
 
 	// Peringatan Tautan Eksternal
-	[Key.leaveSite]: "Meninggalkan situs ini",
+	[Key.leaveSite]: "Tinggalkan situs ini",
 	[Key.goToExternalLink]: "Anda akan mengunjungi tautan eksternal:",
-	[Key.warningText]: "Harap perhatikan keamanan akun dan aset Anda",
+	[Key.warningText]: "Harap waspadai keamanan akun dan aset Anda",
 	[Key.confirmText]: "Lanjutkan kunjungan",
 	[Key.cancelText]: "Batal",
 };

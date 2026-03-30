@@ -133,13 +133,16 @@ export const ru: Translation = {
 	[Key.albumsEmptyDesc]:
 		"Альбомы ещё не созданы. Добавьте несколько красивых воспоминаний!",
 	[Key.albumsBackToList]: "К списку альбомов",
+	[Key.albumsPhotoCount]: "фото",
+	[Key.albumsPhotosCount]: "фото",
+	[Key.hiddenAlbum]: "Скрытый альбом",
+	[Key.hideAlbumTip]:
+		"Этот альбом настроен как скрытый и не будет отображаться в списке альбомов, но доступ к нему всё ещё можно получить по прямой ссылке",
 
 	// Страница устройств
 	[Key.devices]: "Мои устройства",
 	[Key.devicesSubtitle]: "Устройства, которые я использую в повседневной жизни",
 	[Key.devicesViewDetails]: "Подробнее",
-	[Key.albumsPhotoCount]: "фото",
-	[Key.albumsPhotosCount]: "фото",
 
 	// Страница проектов
 	[Key.projects]: "Проекты",

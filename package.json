@@ -1,7 +1,7 @@
 {
 	"name": "zuoyanblogs",
 	"type": "module",
-	"version": "26.3.28",
+	"version": "26.3.31",
 	"scripts": {
 		"sync-content": "node scripts/sync-content.js",
 		"init-content": "node scripts/init-content-repo.js",

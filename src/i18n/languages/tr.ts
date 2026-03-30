@@ -2,22 +2,22 @@ import Key from "../i18nKey";
 import type { Translation } from "../translation";
 
 export const tr: Translation = {
-	[Key.home]: "Anasayfa",
-	[Key.about]: "Hakkında",
+	[Key.home]: "Ana Sayfa",
+	[Key.about]: "Hakkımda",
 	[Key.archive]: "Arşiv",
 	[Key.search]: "Ara",
-	[Key.sponsors]: "sponsorlar",
-	[Key.feedback]: "Geri bildirim",
+	[Key.feedback]: "Geri Bildirim",
 	[Key.other]: "Diğer",
 
 	// Çeviri paneli başlığı
 	[Key.translateHeader]: "Dil Seçin",
 
-	// Gezinme çubuğu başlıkları
+	// Navigasyon çubuğu başlıkları
 	[Key.navLinks]: "Bağlantılar",
 	[Key.navMy]: "Benim",
-	[Key.navAbout]: "Hakkında",
-	[Key.navOthers]: "Diğer",
+	[Key.navAbout]: "Hakkımda",
+	[Key.sponsors]: "Sponsorlar",
+	[Key.navOthers]: "Diğerleri",
 
 	[Key.tags]: "Etiketler",
 	[Key.categories]: "Kategoriler",
@@ -29,16 +29,16 @@ export const tr: Translation = {
 
 	[Key.comments]: "Yorumlar",
 	[Key.friends]: "Arkadaşlar",
-	[Key.friendsSubtitle]: "Daha fazla mükemmel web sitesi keşfedin",
-	[Key.friendsSearchPlaceholder]: "Arkadaş adını veya açıklamasını arayın...",
+	[Key.friendsSubtitle]: "Daha fazla harika web sitesi keşfedin",
+	[Key.friendsSearchPlaceholder]: "Arkadaşın adını veya açıklamasını ara...",
 	[Key.friendsFilterAll]: "Tümü",
 	[Key.friendsNoResults]: "Eşleşen arkadaş bulunamadı",
-	[Key.friendsVisit]: "Ziyaret",
+	[Key.friendsVisit]: "Ziyaret Et",
 	[Key.friendsCopyLink]: "Bağlantıyı Kopyala",
 	[Key.friendsCopySuccess]: "Kopyalandı",
 	[Key.friendsTags]: "Etiketler",
 	[Key.untitled]: "Başlıksız",
-	[Key.uncategorized]: "Kategorilendirilmemiş",
+	[Key.uncategorized]: "Kategorisiz",
 	[Key.noTags]: "Etiket Yok",
 
 	[Key.wordCount]: "kelime",
@@ -46,7 +46,7 @@ export const tr: Translation = {
 	[Key.minuteCount]: "dakika",
 	[Key.minutesCount]: "dakika",
 	[Key.postCount]: "gönderi",
-	[Key.postsCount]: "gönderiler",
+	[Key.postsCount]: "gönderi",
 
 	[Key.themeColor]: "Tema Rengi",
 
@@ -65,85 +65,87 @@ export const tr: Translation = {
 	// Anime Sayfası
 	[Key.animeTitle]: "Anime Listem",
 	[Key.animeSubtitle]: "Anime yolculuğumu kaydet",
-	[Key.animeStatusWatching]: "İzleniyor",
+	[Key.animeStatusWatching]: "İzliyorum",
 	[Key.animeStatusCompleted]: "Tamamlandı",
-	[Key.animeStatusPlanned]: "Planlandı",
+	[Key.animeStatusPlanned]: "Planlanan",
 	[Key.animeStatusOnHold]: "Beklemede",
 	[Key.animeStatusDropped]: "Bırakıldı",
 	[Key.animeFilterAll]: "Tümü",
 	[Key.animeYear]: "Yıl",
 	[Key.animeStudio]: "Stüdyo",
-	[Key.animeEmpty]: "Hayır anime verileri",
+	[Key.animeEmpty]: "Anime verisi mevcut değil",
 	[Key.animeEmptyBangumi]:
 		"Lütfen Bangumi yapılandırmasını veya ağ bağlantısını kontrol edin",
 	[Key.animeEmptyBilibili]:
-		"Bilibili verileri boş. Verileri almak için lütfen `pnpm run update-bilibili` komutunu çalıştırın",
+		"Bilibili verisi boş. Veri almak için lütfen `pnpm run update-bilibili` komutunu çalıştırın",
 	[Key.animeSetBangumiUserId]:
-		"Lütfen Bangumi userID değerinizi src/config.ts dosyasında ayarlayın",
+		"Lütfen src/config.ts dosyasında Bangumi kullanıcı kimliğinizi ayarlayın",
 	[Key.animeSetBilibiliVmId]:
-		"Lütfen Bilibili vmID değerinizi src/config.ts dosyasında ayarlayın",
+		"Lütfen src/config.ts dosyasında Bilibili vm kimliğinizi ayarlayın",
 	[Key.animeEmptyLocal]:
-		"Lütfen anime bilgilerini src/data/anime.ts dosyasına ekleyin",
+		"Lütfen src/data/anime.ts dosyasına anime bilgisi ekleyin",
 
 	// Günlük Sayfası
-	[Key.diarySubtitle]: "Hayatı her zaman, her yerde paylaş",
-	[Key.diaryCount]: "günlük girişleri",
-	[Key.diaryReply]: "Yanıtla",
-	[Key.diaryTips]: "Yalnızca son 30 günlük girişini göster",
-	[Key.diaryMinutesAgo]: "dakikalar önce",
-	[Key.diaryHoursAgo]: "saatler önce",
-	[Key.diaryDaysAgo]: "günler önce",
+	[Key.diarySubtitle]: "Hayatı paylaş, her zaman, her yerde",
+	[Key.diaryCount]: "günlük kaydı",
+	[Key.diaryReply]: "Cevapla",
+	[Key.diaryTips]: "Sadece son 30 günlük kaydı gösterir",
+	[Key.diaryMinutesAgo]: "dakika önce",
+	[Key.diaryHoursAgo]: "saat önce",
+	[Key.diaryDaysAgo]: "gün önce",
 
 	// 404 Sayfası
 	[Key.notFound]: "404",
 	[Key.notFoundTitle]: "Sayfa Bulunamadı",
 	[Key.notFoundDescription]:
-		"Üzgünüz, ziyaret ettiğiniz sayfa mevcut değil veya taşınmış.",
+		"Üzgünüz, ziyaret ettiğiniz sayfa mevcut değil veya taşınmış olabilir.",
 	[Key.backToHome]: "Ana Sayfaya Dön",
 
 	// Müzik Çalar
 	[Key.musicPlayer]: "Müzik Çalar",
-	[Key.musicPlayerShow]: "Müzik Çalar'ı Göster",
-	[Key.musicPlayerHide]: "Müzik Çalar'ı Gizle",
-	[Key.musicPlayerExpand]: "Müzik Çalar'ı Genişlet",
-	[Key.musicPlayerCollapse]: "Müzik Çalar'ı Daralt",
+	[Key.musicPlayerShow]: "Müzik Çaları Göster",
+	[Key.musicPlayerHide]: "Müzik Çaları Gizle",
+	[Key.musicPlayerExpand]: "Müzik Çaları Genişlet",
+	[Key.musicPlayerCollapse]: "Müzik Çaları Daralt",
 	[Key.musicPlayerPause]: "Duraklat",
-	[Key.musicPlayerPlay]: "Çal",
+	[Key.musicPlayerPlay]: "Oynat",
 	[Key.musicPlayerPrevious]: "Önceki",
 	[Key.musicPlayerNext]: "Sonraki",
 	[Key.musicPlayerShuffle]: "Karıştır",
 	[Key.musicPlayerRepeat]: "Tümünü Tekrarla",
 	[Key.musicPlayerRepeatOne]: "Birini Tekrarla",
-	[Key.musicPlayerVolume]: "Ses Seviyesi",
-	[Key.musicPlayerProgress]: "Çalma İlerlemesi",
+	[Key.musicPlayerVolume]: "Ses Kontrolü",
+	[Key.musicPlayerProgress]: "Oynatma İlerlemesi",
 	[Key.musicPlayerCover]: "Kapak",
 	[Key.musicPlayerPlaylist]: "Çalma Listesi",
 	[Key.musicPlayerLoading]: "Yükleniyor...",
 	[Key.musicPlayerErrorPlaylist]: "Çalma listesi alınamadı",
-	[Key.musicPlayerErrorSong]:
-		"Geçerli şarkı yüklenemedi, bir sonraki deneniyor",
-	[Key.musicPlayerErrorEmpty]: "Çalma listesinde kullanılabilir şarkı yok",
+	[Key.musicPlayerErrorSong]: "Geçerli şarkı yüklenemedi, sonraki deneniyor",
+	[Key.musicPlayerErrorEmpty]: "Çalma listesinde uygun şarkı yok",
 	[Key.unknownSong]: "Bilinmeyen Şarkı",
 	[Key.unknownArtist]: "Bilinmeyen Sanatçı",
 
 	// Albümler Sayfası
 	[Key.albums]: "Albümler",
-	[Key.albumsSubtitle]: "Hayattaki güzel anları kaydedin",
+	[Key.albumsSubtitle]: "Hayatın güzel anlarını kaydet",
 	[Key.albumsEmpty]: "İçerik yok",
 	[Key.albumsEmptyDesc]:
-		"Henüz albüm oluşturulmadı. Hadi güzel anılar ekleyin!",
+		"Henüz albüm oluşturulmamış. Git biraz güzel anı ekle!",
 	[Key.albumsBackToList]: "Albümlere Dön",
+	[Key.albumsPhotoCount]: "fotoğraf",
+	[Key.albumsPhotosCount]: "fotoğraf",
+	[Key.hiddenAlbum]: "Gizli Albüm",
+	[Key.hideAlbumTip]:
+		"Bu albüm gizli olarak ayarlandı ve albüm listesinde görünmeyecek, ancak doğrudan bir bağlantı üzerinden erişilebilir durumda",
 
 	// Cihazlar Sayfası
 	[Key.devices]: "Cihazlarım",
 	[Key.devicesSubtitle]: "Günlük hayatımda kullandığım cihazlar",
-	[Key.devicesViewDetails]: "Xem chi tiết",
-	[Key.albumsPhotoCount]: "fotoğraf",
-	[Key.albumsPhotosCount]: "fotoğraflar",
+	[Key.devicesViewDetails]: "Detayları Görüntüle",
 
 	// Projeler Sayfası
 	[Key.projects]: "Projeler",
-	[Key.projectsSubtitle]: "Geliştirme projesi portföyüm",
+	[Key.projectsSubtitle]: "Geliştirme proje portfolyom",
 	[Key.projectsAll]: "Tümü",
 	[Key.projectsWeb]: "Web Uygulamaları",
 	[Key.projectsMobile]: "Mobil Uygulamalar",
@@ -156,36 +158,36 @@ export const tr: Translation = {
 	[Key.projectStatus]: "Durum",
 	[Key.projectStatusCompleted]: "Tamamlandı",
 	[Key.projectStatusInProgress]: "Devam Ediyor",
-	[Key.projectStatusPlanned]: "Planlandı",
+	[Key.projectStatusPlanned]: "Planlanan",
 	[Key.projectsTotal]: "Toplam Proje",
-	[Key.projectsCompleted]: "Tamamlandı",
-	[Key.projectsInProgress]: "Devam Ediyor",
+	[Key.projectsCompleted]: "Tamamlanan",
+	[Key.projectsInProgress]: "Devam Eden",
 	[Key.projectsTechStack]: "Teknoloji Yığını İstatistikleri",
 	[Key.projectsFeatured]: "Öne Çıkan Projeler",
-	[Key.projectsPlanned]: "Planlandı",
+	[Key.projectsPlanned]: "Planlanan",
 	[Key.projectsDemo]: "Canlı Demo",
 	[Key.projectsSource]: "Kaynak Kodu",
 	[Key.projectsVisit]: "Projeyi Ziyaret Et",
 	[Key.projectsGitHub]: "GitHub",
 
 	// RSS Sayfası
-	[Key.rss]: "RSS Akışı",
+	[Key.rss]: "RSS Beslemesi",
 	[Key.rssDescription]: "En son güncellemeleri almak için abone olun",
 	[Key.rssSubtitle]:
 		"En son makaleleri ve güncellemeleri anında almak için RSS ile abone olun",
 	[Key.rssLink]: "RSS Bağlantısı",
 	[Key.rssCopyToReader]: "RSS okuyucunuza bağlantıyı kopyalayın",
 	[Key.rssCopyLink]: "Kopyala",
-	[Key.rssLatestPosts]: "En Son Gönderiler",
+	[Key.rssLatestPosts]: "Son Gönderiler",
 	[Key.rssWhatIsRSS]: "RSS Nedir?",
 	[Key.rssWhatIsRSSDescription]:
-		"RSS (Gerçekten Basit Yayıncılık), sık güncellenen içerikleri yayınlamak için standart bir formattır. RSS ile şunları yapabilirsiniz:",
+		"RSS (Gerçekten Basit Bildirim Sistemi), sık güncellenen içeriklerin yayınlanması için standart bir formattır. RSS ile şunları yapabilirsiniz:",
 	[Key.rssBenefit1]:
-		"Manuel olarak ziyaret etmeden en son web sitesi içeriğine zamanında ulaşın",
+		"Manuel olarak ziyaret etmeden web sitesinin en son içeriğini zamanında alın",
 	[Key.rssBenefit2]:
-		"Birden fazla web sitesine abonelikleri tek bir yerden yönetin",
+		"Birden fazla web sitesine olan abonelikleri tek bir yerde yönetin",
 	[Key.rssBenefit3]: "Önemli güncellemeleri ve makaleleri kaçırmayın",
-	[Key.rssBenefit4]: "Reklamsız ve temiz bir okuma deneyiminin keyfini çıkarın",
+	[Key.rssBenefit4]: "Reklamsız, temiz bir okuma deneyiminin keyfini çıkarın",
 	[Key.rssHowToUse]:
 		"Bu siteye abone olmak için Feedly, Inoreader veya diğer RSS okuyucularını kullanmanız önerilir.",
 	[Key.rssCopied]: "RSS bağlantısı panoya kopyalandı!",
@@ -193,40 +195,39 @@ export const tr: Translation = {
 		"Kopyalama başarısız oldu, lütfen bağlantıyı manuel olarak kopyalayın",
 
 	// Atom Sayfası
-	[Key.atom]: "Atom Feed",
+	[Key.atom]: "Atom Beslemesi",
 	[Key.atomDescription]: "En son güncellemeleri almak için abone olun",
 	[Key.atomSubtitle]:
-		"En son makaleleri ve güncellemeleri anında almak için Atom üzerinden abone olun",
+		"En son makaleleri ve güncellemeleri anında almak için Atom ile abone olun",
 	[Key.atomLink]: "Atom Bağlantısı",
-	[Key.atomCopyToReader]: "Bağlantıyı Atom okuyucunuza kopyalayın",
+	[Key.atomCopyToReader]: "Atom okuyucunuza bağlantıyı kopyalayın",
 	[Key.atomCopyLink]: "Kopyala",
-	[Key.atomLatestPosts]: "En Son Gönderiler",
+	[Key.atomLatestPosts]: "Son Gönderiler",
 	[Key.atomWhatIsAtom]: "Atom Nedir?",
 	[Key.atomWhatIsAtomDescription]:
-		"Atom (Atom Sendikasyon Biçimi), feed'leri ve öğelerini tanımlamak için XML tabanlı bir standarttır. Atom ile şunları yapabilirsiniz:",
+		"Atom (Atom Bildirim Formatı), beslemeleri ve öğelerini tanımlamak için XML tabanlı bir standarttır. Atom ile şunları yapabilirsiniz:",
 	[Key.atomBenefit1]:
-		"Manuel olarak herhangi bir değişiklik yapmadan en son web sitesi içeriğini zamanında alın ziyaret ediliyor",
+		"Manuel olarak ziyaret etmeden web sitesinin en son içeriğini zamanında alın",
 	[Key.atomBenefit2]:
-		"Birden fazla web sitesine abonelikleri tek bir yerden yönetin",
+		"Birden fazla web sitesine olan abonelikleri tek bir yerde yönetin",
 	[Key.atomBenefit3]: "Önemli güncellemeleri ve makaleleri kaçırmayın",
-	[Key.atomBenefit4]:
-		"Reklamsız ve temiz bir okuma deneyiminin keyfini çıkarın",
+	[Key.atomBenefit4]: "Reklamsız, temiz bir okuma deneyiminin keyfini çıkarın",
 	[Key.atomHowToUse]:
 		"Bu siteye abone olmak için Feedly, Inoreader veya diğer Atom okuyucularını kullanmanız önerilir.",
 	[Key.atomCopied]: "Atom bağlantısı panoya kopyalandı!",
 	[Key.atomCopyFailed]:
-		"Kopyalama başarısız, lütfen bağlantıyı manuel olarak kopyalayın",
+		"Kopyalama başarısız oldu, lütfen bağlantıyı manuel olarak kopyalayın",
 
-	// Duvar kağıdı modu
+	// Duvar Kağıdı modu
 	[Key.wallpaperBanner]: "Afiş Modu",
 	[Key.wallpaperFullscreen]: "Tam Ekran Modu",
 	[Key.wallpaperNone]: "Duvar Kağıdını Gizle",
 
-	// Beceriler Sayfası
-	[Key.skills]: "Beceriler",
-	[Key.skillsSubtitle]: "Teknik becerilerim ve uzmanlığım",
-	[Key.skillsFrontend]: "Ön Uç Geliştirme",
-	[Key.skillsBackend]: "Arka Uç Geliştirme",
+	// Yetenekler Sayfası
+	[Key.skills]: "Yetenekler",
+	[Key.skillsSubtitle]: "Teknik becerilerim ve uzmanlık alanlarım",
+	[Key.skillsFrontend]: "Ön Yüz Geliştirme",
+	[Key.skillsBackend]: "Arka Yüz Geliştirme",
 	[Key.skillsDatabase]: "Veritabanı",
 	[Key.skillsTools]: "Geliştirme Araçları",
 	[Key.skillsOther]: "Diğer Beceriler",
@@ -238,7 +239,7 @@ export const tr: Translation = {
 	[Key.skillExperience]: "Deneyim",
 	[Key.skillYears]: "yıl",
 	[Key.skillMonths]: "ay",
-	[Key.skillsTotal]: "Toplam Beceriler",
+	[Key.skillsTotal]: "Toplam Beceri",
 	[Key.skillsExpert]: "Uzman Seviyesi",
 	[Key.skillsAdvanced]: "İleri",
 	[Key.skillsIntermediate]: "Orta",
@@ -247,51 +248,50 @@ export const tr: Translation = {
 	[Key.skillsProjects]: "İlgili Projeler",
 	[Key.skillsDistribution]: "Beceri Dağılımı",
 	[Key.skillsByLevel]: "Seviyeye Göre",
-	[Key.skillsByCategory]: "Bana Göre Kategori",
+	[Key.skillsByCategory]: "Kategoriye Göre",
 	[Key.noData]: "Veri yok",
 
 	// Zaman Çizelgesi Sayfası
 	[Key.timeline]: "Zaman Çizelgesi",
-	[Key.timelineSubtitle]: "Büyüme yolculuğum ve önemli dönüm noktaları",
+	[Key.timelineSubtitle]: "Büyüme yolculuğum ve önemli kilometre taşlarım",
 	[Key.timelineEducation]: "Eğitim",
 	[Key.timelineWork]: "İş Deneyimi",
 	[Key.timelineProject]: "Proje Deneyimi",
 	[Key.timelineAchievement]: "Başarılar",
-	[Key.timelinePresent]: "Mevcut",
+	[Key.timelinePresent]: "Günümüz",
 	[Key.timelineLocation]: "Konum",
-	[Key.timelineDescription]: "Ayrıntılı Açıklama",
-	[Key.timelineMonths]: "aylar",
-	[Key.timelineYears]: "yıllar",
+	[Key.timelineDescription]: "Detaylı Açıklama",
+	[Key.timelineMonths]: "ay",
+	[Key.timelineYears]: "yıl",
 	[Key.timelineTotal]: "Toplam",
-	[Key.timelineProjects]: "Projeler",
+	[Key.timelineProjects]: "Proje",
 	[Key.timelineExperience]: "İş Deneyimi",
-	[Key.timelineCurrent]: "Mevcut Durum",
+	[Key.timelineCurrent]: "Güncel Durum",
 	[Key.timelineHistory]: "Geçmiş",
 	[Key.timelineAchievements]: "Başarılar",
-	[Key.timelineStartDate]: "Başlangıç ​​Tarihi",
+	[Key.timelineStartDate]: "Başlangıç Tarihi",
 	[Key.timelineDuration]: "Süre",
 
-	// Geri Bildirim Sayfası - Web Sitesi Yöneticisiyle İletişime Geçme Modülü
-	[Key.contactMe]: "Web Sitesi Yöneticisiyle İletişime Geçin",
-	[Key.contactEmail]:
-		"Web Sitesi Yöneticisiyle e-posta yoluyla iletişime geçin",
+	// Geri Bildirim Sayfası - Webmaster ile İletişim Modülü
+	[Key.contactMe]: "Webmaster ile iletişime geçin",
+	[Key.contactEmail]: "Webmaster ile e-posta yoluyla iletişime geçin",
 	[Key.contactSocialFriends]:
-		"Web Sitesi Yöneticisiyle sosyal medya arkadaşı olarak ekleyerek iletişime geçin",
-	[Key.addFriends]: "Şimdi bir arkadaş ekleyin",
+		"Webmaster'ı sosyal medyada arkadaş olarak ekleyerek iletişime geçin",
+	[Key.addFriends]: "Şimdi arkadaş ekleyin",
 
 	// Sponsorluk Sayfası
 	[Key.sponsorsNotice1]:
-		"Web sitesi içeriğini faydalı buluyorsanız, daha iyi içerik oluşturmama yardımcı olmak için lütfen aşağıdaki yöntemlerle çalışmalarımı destekleyin. Tüm sponsorluklar web sitesi bakımı, sunucu maliyetleri ve içerik oluşturma için kullanılacaktır.",
+		"Web sitesi içeriğini faydalı buluyorsanız, daha iyi içerikler oluşturmama yardımcı olmak için aşağıdaki yöntemlerle çalışmalarımı destekleyebilirsiniz. Tüm sponsorluklar web sitesi bakımı, sunucu maliyetleri ve içerik oluşturma için kullanılacaktır.",
 	[Key.sponsorsNotice2]:
-		"Zuoyanblogs blog projesinin içerik geliştirme çalışmalarını desteklediğiniz için teşekkür ederiz!",
+		"Zuoyanblogs blog projesi içerik gelişimini desteklediğiniz için teşekkür ederiz!",
 	[Key.wechatPay]: "WeChat",
 	[Key.aliPay]: "Alipay",
-	[Key.scanPayQRcode]: "Ödeme için Tarayın",
-	[Key.sponsorsPartner]: "Sponsor Ortağı",
+	[Key.scanPayQRcode]: "Ödeme için Tara",
+	[Key.sponsorsPartner]: "Sponsor Ortakları",
 	[Key.otherSupportOptions]: "Diğer destek yöntemleri",
-	[Key.shareBlog]: "Blogumu daha fazla arkadaşınızla paylaşın",
+	[Key.shareBlog]: "Blogumu daha fazla arkadaşımla paylaş",
 	[Key.leaveComment]:
-		"Makalenin altındaki yorumlar bölümüne düşüncelerinizi bırakın",
+		"Makalenin altındaki yorumlar bölümünde düşüncelerinizi belirtin",
 	[Key.subscribeToArticles]:
 		"En son makaleleri almak için RSS ve Atom'a abone olun",
 
@@ -302,8 +302,8 @@ export const tr: Translation = {
 		"Korumalı içeriği görüntülemek için lütfen şifreyi girin",
 	[Key.passwordPlaceholder]: "Şifreyi girin",
 	[Key.passwordUnlock]: "Kilidi Aç",
-	[Key.passwordUnlocking]: "Kilit Açılıyor...",
-	[Key.passwordIncorrect]: "Şifre yanlış, Lütfen tekrar deneyin",
+	[Key.passwordUnlocking]: "Kilit açılıyor...",
+	[Key.passwordIncorrect]: "Şifre yanlış, lütfen tekrar deneyin",
 	[Key.passwordDecryptError]:
 		"Şifre çözme başarısız oldu, lütfen şifrenin doğru olup olmadığını kontrol edin",
 	[Key.passwordRequired]: "Lütfen şifreyi girin",
@@ -312,18 +312,18 @@ export const tr: Translation = {
 		"Şifre çözme başarısız oldu, lütfen şifreyi kontrol edin",
 	[Key.passwordDecryptRetry]:
 		"Şifre çözme başarısız oldu, lütfen tekrar deneyin",
-	[Key.passwordUnlockButton]: "Kilidi aç",
+	[Key.passwordUnlockButton]: "Kilidi Aç",
 	[Key.copyFailed]: "Kopyalama başarısız oldu:",
-	[Key.syntaxHighlightFailed]: "Sözdizimi vurgulama başarısız oldu:",
+	[Key.syntaxHighlightFailed]: "Sözdizimi vurgulaması başarısız oldu:",
 	[Key.autoSyntaxHighlightFailed]:
-		"Otomatik sözdizimi vurgulama da başarısız oldu:",
+		"Otomatik sözdizimi vurgulaması da başarısız oldu:",
 	[Key.decryptionError]: "Şifre çözme sırasında bir hata oluştu:",
 
-	// Son Değiştirilen Zaman Kartı
-	[Key.lastModifiedPrefix]: "Son düzenlemeden bu yana geçen süre: ",
-	[Key.lastModifiedOutdated]: "Bazı bilgiler güncelliğini yitirmiş olabilir",
+	// Son Düzenlenme Zamanı Kartı
+	[Key.lastModifiedPrefix]: "Son düzenlenme süresi: ",
+	[Key.lastModifiedOutdated]: "Bazı bilgiler güncel olmayabilir",
 	[Key.year]: "y",
-	[Key.month]: "m",
+	[Key.month]: "a",
 	[Key.day]: "g",
 	[Key.hour]: "s",
 	[Key.minute]: "dk",
@@ -335,32 +335,32 @@ export const tr: Translation = {
 	[Key.siteStatsCategoryCount]: "Kategoriler",
 	[Key.siteStatsTagCount]: "Etiketler",
 	[Key.siteStatsTotalWords]: "Toplam Kelime",
-	[Key.siteStatsRunningDays]: "Çalışma Süresi",
-	[Key.siteStatsLastUpdate]: "Son Etkinlik",
+	[Key.siteStatsRunningDays]: "Çalışma Günü",
+	[Key.siteStatsLastUpdate]: "Son Aktivite",
 	[Key.siteStatsDaysAgo]: "{days} gün önce",
 	[Key.siteStatsDays]: "{days} gün",
 	[Key.siteStatsCurrentDate]: "Tarih",
-	[Key.siteStatsDateFormat]: "{day}/{month}/{year}",
+	[Key.siteStatsDateFormat]: "{month}/{day}/{year}",
 	[Key.siteStatsCurrentTime]: "Saat",
 
 	// Takvim Bileşeni
 	[Key.calendarSunday]: "Paz",
 	[Key.calendarMonday]: "Pzt",
-	[Key.calendarTuesday]: "Salı",
-	[Key.calendarWednesday]: "Çarşamba",
-	[Key.calendarThursday]: "Perşembe",
-	[Key.calendarFriday]: "Cuma",
+	[Key.calendarTuesday]: "Sal",
+	[Key.calendarWednesday]: "Çar",
+	[Key.calendarThursday]: "Per",
+	[Key.calendarFriday]: "Cum",
 	[Key.calendarSaturday]: "Cmt",
-	[Key.calendarJanuary]: "Ocak",
-	[Key.calendarFebruary]: "Şubat",
+	[Key.calendarJanuary]: "Oca",
+	[Key.calendarFebruary]: "Şub",
 	[Key.calendarMarch]: "Mar",
 	[Key.calendarApril]: "Nis",
-	[Key.calendarMay]: "Mayıs",
-	[Key.calendarJune]: "Haziran",
+	[Key.calendarMay]: "May",
+	[Key.calendarJune]: "Haz",
 	[Key.calendarJuly]: "Tem",
-	[Key.calendarAugust]: "Ağustos",
+	[Key.calendarAugust]: "Ağu",
 	[Key.calendarSeptember]: "Eyl",
-	[Key.calendarOctober]: "Ekim",
+	[Key.calendarOctober]: "Eki",
 	[Key.calendarNovember]: "Kas",
 	[Key.calendarDecember]: "Ara",
 
@@ -377,7 +377,7 @@ export const tr: Translation = {
 
 	// Profil İstatistikleri
 	[Key.profileStatsLoading]: "İstatistikler yükleniyor...",
-	[Key.profileStatsPageViews]: "Sayfa görüntülemeleri",
+	[Key.profileStatsPageViews]: "Sayfa görüntüleme",
 	[Key.profileStatsVisits]: "Ziyaretler",
 	[Key.profileStatsUnavailable]: "İstatistikler mevcut değil",
 
@@ -385,15 +385,14 @@ export const tr: Translation = {
 	[Key.pageViewsLoading]: "İstatistikler yükleniyor...",
 	[Key.pageViewsUnavailable]: "İstatistikler mevcut değil",
 
-	// Düzen Düğmeyi Değiştir
+	// Düzen Değiştirme Düğmesi
 	[Key.switchToGridMode]: "Izgara Moduna Geç",
 	[Key.switchToListMode]: "Liste Moduna Geç",
 
 	// Harici Bağlantı Uyarısı
-	[Key.leaveSite]: "Bu siteden ayrılıyorsunuz",
-	[Key.goToExternalLink]: "Harici bir bağlantıyı ziyaret etmek üzeresiniz:",
-	[Key.warningText]:
-		"Lütfen hesabınızın ve varlıklarınızın güvenliğine dikkat edin",
-	[Key.confirmText]: "Ziyarete devam edin",
+	[Key.leaveSite]: "Bu siteden ayrıl",
+	[Key.goToExternalLink]: "Harici bir bağlantıya gitmek üzeresiniz:",
+	[Key.warningText]: "Hesap ve varlık güvenliğinize dikkat edin",
+	[Key.confirmText]: "Ziyarete Devam Et",
 	[Key.cancelText]: "İptal",
 };

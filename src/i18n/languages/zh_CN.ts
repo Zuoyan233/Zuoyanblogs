@@ -129,6 +129,9 @@ export const zh_CN: Translation = {
 	[Key.albumsBackToList]: "返回相册",
 	[Key.albumsPhotoCount]: "张照片",
 	[Key.albumsPhotosCount]: "张照片",
+	[Key.hiddenAlbum]: "隐藏相册",
+	[Key.hideAlbumTip]:
+		"此相册已设置为隐藏，不会出现在相册列表中，但仍可通过直接链接访问",
 
 	// 设备页面
 	[Key.devices]: "我的设备",

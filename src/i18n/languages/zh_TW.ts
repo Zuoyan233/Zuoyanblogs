@@ -2,14 +2,14 @@ import Key from "../i18nKey";
 import type { Translation } from "../translation";
 
 export const zh_TW: Translation = {
-	[Key.home]: "首頁",
+	[Key.home]: "主頁",
 	[Key.about]: "關於我們",
 	[Key.archive]: "歸檔",
 	[Key.search]: "搜尋",
 	[Key.feedback]: "回饋",
 	[Key.other]: "其他",
 
-	// 翻譯表格標題
+	// 翻譯面板標題
 	[Key.translateHeader]: "選擇語言",
 
 	// 導航欄標題
@@ -27,14 +27,14 @@ export const zh_TW: Translation = {
 	[Key.announcement]: "公告",
 	[Key.announcementClose]: "關閉",
 
-	[Key.comments]: "評論",
+	[Key.comments]: "留言",
 	[Key.friends]: "友鏈",
-	[Key.friendsSubtitle]: "發現更多優秀網站",
-	[Key.friendsSearchPlaceholder]: "搜索友鏈名稱或描述...",
+	[Key.friendsSubtitle]: "發現更多優質網站",
+	[Key.friendsSearchPlaceholder]: "搜尋友鏈名稱或描述...",
 	[Key.friendsFilterAll]: "全部",
-	[Key.friendsNoResults]: "未找到匹配的友鏈",
-	[Key.friendsVisit]: "訪問",
-	[Key.friendsCopyLink]: "複製鏈接",
+	[Key.friendsNoResults]: "未找到符合條件的友鏈",
+	[Key.friendsVisit]: "拜訪",
+	[Key.friendsCopyLink]: "複製連結",
 	[Key.friendsCopySuccess]: "已複製",
 	[Key.friendsTags]: "標籤",
 	[Key.untitled]: "無標題",
@@ -57,15 +57,10 @@ export const zh_TW: Translation = {
 	[Key.more]: "更多",
 
 	[Key.author]: "作者",
-	[Key.publishedAt]: "發布於",
+	[Key.publishedAt]: "發佈於",
 	[Key.license]: "許可協議",
 	[Key.anime]: "追番",
 	[Key.diary]: "日記",
-
-	// 設備頁面
-	[Key.devices]: "我的設備",
-	[Key.devicesSubtitle]: "這裡展示了我日常使用的各類設備",
-	[Key.devicesViewDetails]: "查看詳情",
 
 	// 番劇頁面
 	[Key.animeTitle]: "我的追番記錄",
@@ -78,20 +73,20 @@ export const zh_TW: Translation = {
 	[Key.animeFilterAll]: "全部",
 	[Key.animeYear]: "年份",
 	[Key.animeStudio]: "製作",
-	[Key.animeEmpty]: "暫無追番資料",
-	[Key.animeEmptyBangumi]: "請檢查 Bangumi 設定或網路連線",
+	[Key.animeEmpty]: "暫無追番數據",
+	[Key.animeEmptyBangumi]: "請檢查 Bangumi 配置或網路連線",
 	[Key.animeEmptyBilibili]:
-		"Bilibili 資料為空。請執行 pnpm run update-bilibili 以取得資料",
+		"Bilibili 數據為空，請執行 pnpm run update-bilibili 獲取數據",
 	[Key.animeSetBangumiUserId]:
-		"請在 src/config.ts 檔案中設定您的 Bangumi userID",
-	[Key.animeSetBilibiliVmId]: "請在 src/config.ts 檔案中設定您的 Bilibili vmID",
+		"請在 src/config.ts 檔案中設定你的 Bangumi userID",
+	[Key.animeSetBilibiliVmId]: "請在 src/config.ts 檔案中設定你的 Bilibili vmID",
 	[Key.animeEmptyLocal]: "請在 src/data/anime.ts 檔案中新增番劇資訊",
 
 	// 短文頁面
 	[Key.diarySubtitle]: "隨時隨地，分享生活",
 	[Key.diaryCount]: "條短文",
-	[Key.diaryReply]: "回復",
-	[Key.diaryTips]: "只展示最近30條日記",
+	[Key.diaryReply]: "回覆",
+	[Key.diaryTips]: "只顯示最近30則日記",
 	[Key.diaryMinutesAgo]: "分鐘前",
 	[Key.diaryHoursAgo]: "小時前",
 	[Key.diaryDaysAgo]: "天前",
@@ -118,33 +113,41 @@ export const zh_TW: Translation = {
 	[Key.musicPlayerVolume]: "音量控制",
 	[Key.musicPlayerProgress]: "播放進度",
 	[Key.musicPlayerCover]: "封面",
-	[Key.musicPlayerPlaylist]: "播放列表",
+	[Key.musicPlayerPlaylist]: "播放清單",
 	[Key.musicPlayerLoading]: "載入中...",
-	[Key.musicPlayerErrorPlaylist]: "播放列表獲取失敗",
-	[Key.musicPlayerErrorSong]: "當前歌曲載入失敗，嘗試載入下一首",
-	[Key.musicPlayerErrorEmpty]: "播放列表中沒有可用的歌曲",
+	[Key.musicPlayerErrorPlaylist]: "播放清單獲取失敗",
+	[Key.musicPlayerErrorSong]: "目前歌曲載入失敗，嘗試載入下一首",
+	[Key.musicPlayerErrorEmpty]: "播放清單中沒有可用的歌曲",
 	[Key.unknownSong]: "未知歌曲",
 	[Key.unknownArtist]: "未知藝術家",
 
-	// 相冊頁面
-	[Key.albums]: "相冊",
+	// 相簿頁面
+	[Key.albums]: "相簿",
 	[Key.albumsSubtitle]: "記錄生活中的美好瞬間",
 	[Key.albumsEmpty]: "暫無內容",
-	[Key.albumsEmptyDesc]: "還沒有創建任何相冊，快去添加一些美好的回憶吧！",
-	[Key.albumsBackToList]: "返回相冊",
+	[Key.albumsEmptyDesc]: "還沒有建立任何相簿，快去添加一些美好的回憶吧！",
+	[Key.albumsBackToList]: "返回相簿",
 	[Key.albumsPhotoCount]: "張照片",
 	[Key.albumsPhotosCount]: "張照片",
+	[Key.hiddenAlbum]: "隱藏相簿",
+	[Key.hideAlbumTip]:
+		"此相簿已設定為隱藏，不會出現在相簿清單中，但仍可透過直接連結訪問",
+
+	// 設備頁面
+	[Key.devices]: "我的設備",
+	[Key.devicesSubtitle]: "這裡展示了我日常使用的各類設備",
+	[Key.devicesViewDetails]: "查看詳情",
 
 	// 專案展示頁面
 	[Key.projects]: "專案展示",
 	[Key.projectsSubtitle]: "我的開發專案作品集",
 	[Key.projectsAll]: "全部",
 	[Key.projectsWeb]: "網頁應用",
-	[Key.projectsMobile]: "移動應用",
+	[Key.projectsMobile]: "行動應用",
 	[Key.projectsDesktop]: "桌面應用",
 	[Key.projectsOther]: "其他",
-	[Key.projectTechStack]: "技術堆疊",
-	[Key.projectLiveDemo]: "線上展示",
+	[Key.projectTechStack]: "技術棧",
+	[Key.projectLiveDemo]: "線上演示",
 	[Key.projectSourceCode]: "原始碼",
 	[Key.projectDescription]: "專案描述",
 	[Key.projectStatus]: "專案狀態",
@@ -154,52 +157,13 @@ export const zh_TW: Translation = {
 	[Key.projectsTotal]: "專案總數",
 	[Key.projectsCompleted]: "已完成",
 	[Key.projectsInProgress]: "進行中",
-	[Key.projectsTechStack]: "技術堆疊統計",
+	[Key.projectsTechStack]: "技術棧統計",
 	[Key.projectsFeatured]: "精選專案",
 	[Key.projectsPlanned]: "計劃中",
-	[Key.projectsDemo]: "線上展示",
+	[Key.projectsDemo]: "線上演示",
 	[Key.projectsSource]: "原始碼",
-	[Key.projectsVisit]: "前往專案",
+	[Key.projectsVisit]: "前往",
 	[Key.projectsGitHub]: "GitHub",
-
-	// RSS 頁面
-	[Key.rss]: "RSS 訂閱",
-	[Key.rssDescription]: "訂閱獲取最新更新",
-	[Key.rssSubtitle]: "透過 RSS 訂閱，第一時間獲取最新文章和動態",
-	[Key.rssLink]: "RSS 鏈接",
-	[Key.rssCopyToReader]: "複製鏈接到你的 RSS 閱讀器",
-	[Key.rssCopyLink]: "複製鏈接",
-	[Key.rssLatestPosts]: "最新文章",
-	[Key.rssWhatIsRSS]: "什麼是 RSS？",
-	[Key.rssWhatIsRSSDescription]:
-		"RSS（Really Simple Syndication）是一種用於發布經常更新內容的標準格式。透過 RSS，你可以：",
-	[Key.rssBenefit1]: "及時獲取網站最新內容，無需手動訪問",
-	[Key.rssBenefit2]: "在一個地方管理多個網站的訂閱",
-	[Key.rssBenefit3]: "避免錯過重要更新和文章",
-	[Key.rssBenefit4]: "享受無廣告的純淨閱讀經驗",
-	[Key.rssHowToUse]: "推薦使用 Feedly、Inoreader 或其他 RSS 閱讀器來訂閱本站。",
-	[Key.rssCopied]: "RSS 鏈接已複製到剪貼板！",
-	[Key.rssCopyFailed]: "複製失敗，請手動複製鏈接",
-
-	//Atom Feed 頁面
-	[Key.atom]: "Atom 訂閱",
-	[Key.atomDescription]: "訂閱獲取最新更新",
-	[Key.atomSubtitle]: "透過 Atom 訂閱，第一時間獲取最新文章和動態",
-	[Key.atomLink]: "Atom 鏈接",
-	[Key.atomCopyToReader]: "複製鏈接到你的 Atom 閱讀器",
-	[Key.atomCopyLink]: "複製鏈接",
-	[Key.atomLatestPosts]: "最新文章",
-	[Key.atomWhatIsAtom]: "什麼是 Atom？",
-	[Key.atomWhatIsAtomDescription]:
-		"Atom聯合格式（Atom Syndication Format）是一個基於XML的標準，用於描述訂閱源及其資訊項。透過 Atom，你可以：",
-	[Key.atomBenefit1]: "及時獲取網站最新內容，無需手動訪問",
-	[Key.atomBenefit2]: "在一個地方管理多個網站的訂閱",
-	[Key.atomBenefit3]: "避免錯過重要更新和文章",
-	[Key.atomBenefit4]: "享受無廣告的純淨閱讀經驗",
-	[Key.atomHowToUse]:
-		"推薦使用 Feedly、Inoreader 或其他 Atom 閱讀器來訂閱本站。",
-	[Key.atomCopied]: "Atom 鏈接已複製到剪貼板！",
-	[Key.atomCopyFailed]: "複製失敗，請手動複製鏈接",
 
 	// 技能展示頁面
 	[Key.skills]: "技能展示",
@@ -224,9 +188,10 @@ export const zh_TW: Translation = {
 	[Key.skillsBeginner]: "初級",
 	[Key.skillsAdvancedTitle]: "專業技能",
 	[Key.skillsProjects]: "相關專案",
-	[Key.skillsDistribution]: "技能分布",
-	[Key.skillsByLevel]: "按等級分布",
-	[Key.skillsByCategory]: "按分類分布",
+	[Key.skillsDistribution]: "技能分佈",
+	[Key.skillsByLevel]: "按等級分佈",
+	[Key.skillsByCategory]: "按分類分佈",
+	[Key.noData]: "暫無數據",
 
 	// 時間線頁面
 	[Key.timeline]: "時間線",
@@ -243,17 +208,17 @@ export const zh_TW: Translation = {
 	[Key.timelineTotal]: "總計",
 	[Key.timelineProjects]: "專案數",
 	[Key.timelineExperience]: "工作經驗",
-	[Key.timelineCurrent]: "當前狀態",
+	[Key.timelineCurrent]: "目前狀態",
 	[Key.timelineHistory]: "歷史記錄",
 	[Key.timelineAchievements]: "成就榮譽",
 	[Key.timelineStartDate]: "開始日期",
 	[Key.timelineDuration]: "持續時間",
 
-	// 回饋頁面 - 聯絡站長方式模組
-	[Key.contactMe]: "聯絡站長",
-	[Key.contactEmail]: "透過發送電子郵件信箱方式聯絡站長",
-	[Key.contactSocialFriends]: "透過加入社群軟體好友方式聯絡站長",
-	[Key.addFriends]: "立即新增好友",
+	// 回饋頁面 - 聯繫站長方式模組
+	[Key.contactMe]: "聯繫站長",
+	[Key.contactEmail]: "透過發送電子郵件方式聯繫站長",
+	[Key.contactSocialFriends]: "透過添加社交軟體好友方式聯繫站長",
+	[Key.addFriends]: "立即添加好友",
 
 	// 贊助頁面
 	[Key.sponsorsNotice1]:
@@ -262,14 +227,11 @@ export const zh_TW: Translation = {
 	[Key.wechatPay]: "微信",
 	[Key.aliPay]: "支付寶",
 	[Key.scanPayQRcode]: "掃碼支付",
-	[Key.sponsorsPartner]: "已贊助的夥伴",
-	[Key.otherSupportOptions]: "其它支援方式",
+	[Key.sponsorsPartner]: "已贊助的小夥伴",
+	[Key.otherSupportOptions]: "其它支持方式",
 	[Key.shareBlog]: "將我的部落格分享給更多朋友",
 	[Key.leaveComment]: "在文章下方留言區留下您的想法",
-	[Key.subscribeToArticles]: "訂閱 RSS 與 Atom 取得最新文章",
-
-	// 其他
-	[Key.noData]: "暫無資料",
+	[Key.subscribeToArticles]: "訂閱 RSS 與 Atom 獲取最新文章",
 
 	// 密碼保護
 	[Key.passwordProtected]: "密碼保護",
@@ -300,10 +262,49 @@ export const zh_TW: Translation = {
 	[Key.minute]: "分",
 	[Key.second]: "秒",
 
-	// 壁紙模式
+	// RSS 頁面
+	[Key.rss]: "RSS 訂閱",
+	[Key.rssDescription]: "訂閱獲取最新更新",
+	[Key.rssSubtitle]: "透過 RSS 訂閱，第一時間獲取最新文章和動態",
+	[Key.rssLink]: "RSS 連結",
+	[Key.rssCopyToReader]: "複製連結到你的 RSS 閱讀器",
+	[Key.rssCopyLink]: "複製連結",
+	[Key.rssLatestPosts]: "最新文章",
+	[Key.rssWhatIsRSS]: "什麼是 RSS？",
+	[Key.rssWhatIsRSSDescription]:
+		"RSS（Really Simple Syndication）是一種用於發佈經常更新內容的標準格式。透過 RSS，你可以：",
+	[Key.rssBenefit1]: "及時獲取網站最新內容，無需手動訪問",
+	[Key.rssBenefit2]: "在一個地方管理多個網站的訂閱",
+	[Key.rssBenefit3]: "避免錯過重要更新和文章",
+	[Key.rssBenefit4]: "享受無廣告的純淨閱讀體驗",
+	[Key.rssHowToUse]: "推薦使用 Feedly、Inoreader 或其他 RSS 閱讀器來訂閱本站。",
+	[Key.rssCopied]: "RSS 連結已複製到剪貼簿！",
+	[Key.rssCopyFailed]: "複製失敗，請手動複製連結",
+
+	// Atom 頁面
+	[Key.atom]: "Atom 訂閱",
+	[Key.atomDescription]: "訂閱獲取最新更新",
+	[Key.atomSubtitle]: "透過 Atom 訂閱，第一時間獲取最新文章和動態",
+	[Key.atomLink]: "Atom 連結",
+	[Key.atomCopyToReader]: "複製連結到你的 Atom 閱讀器",
+	[Key.atomCopyLink]: "複製連結",
+	[Key.atomLatestPosts]: "最新文章",
+	[Key.atomWhatIsAtom]: "什麼是 Atom？",
+	[Key.atomWhatIsAtomDescription]:
+		"Atom聯合格式（Atom Syndication Format）是一個基於XML的標準，用於描述訂閱源及其資訊項。透過 Atom，你可以：",
+	[Key.atomBenefit1]: "及時獲取網站最新內容，無需手動訪問",
+	[Key.atomBenefit2]: "在一個地方管理多個網站的訂閱",
+	[Key.atomBenefit3]: "避免錯過重要更新和文章",
+	[Key.atomBenefit4]: "享受無廣告的純淨閱讀體驗",
+	[Key.atomHowToUse]:
+		"推薦使用 Feedly、Inoreader 或其他 Atom 閱讀器來訂閱本站。",
+	[Key.atomCopied]: "Atom 連結已複製到剪貼簿！",
+	[Key.atomCopyFailed]: "複製失敗，請手動複製連結",
+
+	// 桌布模式
 	[Key.wallpaperBanner]: "橫幅模式",
-	[Key.wallpaperFullscreen]: "全屏模式",
-	[Key.wallpaperNone]: "隱藏壁紙",
+	[Key.wallpaperFullscreen]: "全螢幕模式",
+	[Key.wallpaperNone]: "隱藏桌布",
 
 	// 站點統計
 	[Key.siteStats]: "站點統計",
@@ -319,7 +320,7 @@ export const zh_TW: Translation = {
 	[Key.siteStatsDateFormat]: "{year}/{month}/{day}",
 	[Key.siteStatsCurrentTime]: "時間",
 
-	// 日曆組件
+	// 日曆元件
 	[Key.calendarSunday]: "日",
 	[Key.calendarMonday]: "一",
 	[Key.calendarTuesday]: "二",
@@ -350,24 +351,24 @@ export const zh_TW: Translation = {
 	[Key.shareOnSocial]: "分享",
 	[Key.shareOnSocialDescription]: "如果這篇文章對你有幫助，歡迎分享給更多人！",
 
-	// 個人資料統計
+	// 個人資料
 	[Key.profileStatsLoading]: "統計載入中...",
-	[Key.profileStatsPageViews]: "瀏覽次數",
-	[Key.profileStatsVisits]: "造訪次數",
+	[Key.profileStatsPageViews]: "瀏覽量",
+	[Key.profileStatsVisits]: "訪問次數",
 	[Key.profileStatsUnavailable]: "統計不可用",
 
-	// 布局切換按鈕
+	// 佈局切換按鈕
 	[Key.switchToGridMode]: "切換到網格模式",
 	[Key.switchToListMode]: "切換到列表模式",
 
-	// 頁面瀏覽統計
+	// 頁面訪問量統計
 	[Key.pageViewsLoading]: "統計載入中...",
 	[Key.pageViewsUnavailable]: "統計不可用",
 
-	// 外部链接提示框
-	[Key.leaveSite]: "离开本站",
-	[Key.goToExternalLink]: "您即将前往外部链接：",
-	[Key.warningText]: "请注意您的账号与财产安全",
-	[Key.confirmText]: "继续访问",
+	// 外部連結提示框
+	[Key.leaveSite]: "離開本站",
+	[Key.goToExternalLink]: "您即將前往外部連結：",
+	[Key.warningText]: "請注意您的帳號與財產安全",
+	[Key.confirmText]: "繼續訪問",
 	[Key.cancelText]: "取消",
 };

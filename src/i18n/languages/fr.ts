@@ -136,14 +136,17 @@ export const fr: Translation = {
 	[Key.albumsEmptyDesc]:
 		"Aucun album n'a encore été créé. Allez ajouter de beaux souvenirs !",
 	[Key.albumsBackToList]: "Retour aux albums",
+	[Key.albumsPhotoCount]: "photo",
+	[Key.albumsPhotosCount]: "photos",
+	[Key.hiddenAlbum]: "Album caché",
+	[Key.hideAlbumTip]:
+		"Cet album est réglé sur masqué et n'apparaîtra pas dans la liste des albums, mais il reste accessible via un lien direct",
 
 	// Page Appareils
 	[Key.devices]: "Mes appareils",
 	[Key.devicesSubtitle]:
 		"Voici les appareils que j'utilise dans ma vie quotidienne",
 	[Key.devicesViewDetails]: "Voir les détails",
-	[Key.albumsPhotoCount]: "photo",
-	[Key.albumsPhotosCount]: "photos",
 
 	// Page Projets
 	[Key.projects]: "Projets",
