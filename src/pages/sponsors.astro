@@ -4,6 +4,7 @@ import { getEntry, render } from "astro:content";
 import Markdown from "@components/misc/Markdown.astro";
 import { Icon } from "astro-icon/components";
 import { addpaymentConfig } from "@/config";
+import { siteConfig } from "../config";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
@@ -14,6 +15,10 @@ const sponsorsPost = await getEntry("spec", "sponsors");
 
 if (!sponsorsPost) {
 	throw new Error("Sponsors page content not found");
+}
+
+if (!siteConfig.featurePages.sponsors) {
+	return Astro.redirect("/404/");
 }
 
 const { Content } = await render(sponsorsPost);

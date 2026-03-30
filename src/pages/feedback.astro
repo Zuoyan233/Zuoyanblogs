@@ -3,6 +3,7 @@ import { getEntry, render } from "astro:content";
 import Twikoo from "@components/comment/Twikoo.astro";
 import Markdown from "@components/misc/Markdown.astro";
 import { commentConfig, contactEmailConfig } from "@/config";
+import { siteConfig } from "../config";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
@@ -16,10 +17,13 @@ if (!feedbackPost) {
 	throw new Error("Feedback page content not found");
 }
 
+if (!siteConfig.featurePages.feedback) {
+	return Astro.redirect("/404/");
+}
+
 const { Content } = await render(feedbackPost);
 const title = i18n(I18nKey.feedback);
 
-// 将下面的常量移到上面这里
 const path = Astro.url.pathname;
 
 let commentService = "";

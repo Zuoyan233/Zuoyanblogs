@@ -50,7 +50,11 @@ export type SiteConfig = {
 		| "th"
 		| "vi"
 		| "tr"
-		| "id";
+		| "id"
+		| "ar"
+		| "de"
+		| "fr"
+		| "ru";
 
 	themeColor: {
 		hue: number;
@@ -77,6 +81,8 @@ export type SiteConfig = {
 		timeline: boolean; // 时间线页面开关
 		albums: boolean; // 相册页面开关
 		devices: boolean; // 设备页面开关
+		feedback: boolean; // 反馈页面开关
+		sponsors: boolean; // 赞助页面开关
 	};
 
 	// 文章列表布局配置

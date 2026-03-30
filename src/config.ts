@@ -23,12 +23,12 @@ import { getTranslateLanguageFromConfig } from "./utils/language-utils";
 // 移除i18n导入以避免循环依赖
 
 // 定义站点语言
-const SITE_LANG = "en"; // 语言代码，例如：'en', 'zh_CN', 'zh-TW' , 'ja' , 'ar' , 'de' , 'es' , 'fr', 'id' , 'ko' , 'ru' , 'th' , 'tr' , 'vi' 等。
+const SITE_LANG = "en"; // 语言代码，例如：'en', 'zh_CN', 'zh_TW' , 'ja' , 'ar' , 'de' , 'es' , 'fr', 'id' , 'ko' , 'ru' , 'th' , 'tr' , 'vi' 等。
 const SITE_TIMEZONE = 8; //设置你的网站时区 from -12 to 12 default in UTC+8
 export const siteConfig: SiteConfig = {
-	title: "左颜研究部",
-	subtitle: "聚集经验知识的后花园",
-	siteURL: "https://www.zuoyanblogs.xyz/", // 请替换为你的站点URL，以斜杠结尾
+	title: "Zuoyanblogs",
+	subtitle: "Modern, feature-rich static blog",
+	siteURL: "https://www.example.com/", // 请替换为你的站点URL，以斜杠结尾
 	siteStartDate: "2025-10-30", // 站点开始运行日期，用于站点统计组件计算运行天数
 
 	timeZone: SITE_TIMEZONE,
@@ -36,7 +36,7 @@ export const siteConfig: SiteConfig = {
 	lang: SITE_LANG,
 
 	themeColor: {
-		hue: 250, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
+		hue: 0, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
 		fixed: false, // 对访问者隐藏主题色选择器
 	},
 
@@ -60,6 +60,8 @@ export const siteConfig: SiteConfig = {
 		timeline: true, // 时间线页面开关
 		albums: true, // 相册页面开关
 		devices: true, // 设备页面开关
+		feedback: true, // 反馈页面开关
+		sponsors: true, // 赞助页面开关
 	},
 
 	// 顶栏标题配置
@@ -336,8 +338,8 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.webp", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
-	name: "左颜",
-	bio: "世界这么大，我想去看看",
+	name: "Zuoyan",
+	bio: "The world is so big, I want to see it.",
 	typewriter: {
 		enable: true, // 启用个人简介打字机效果
 		speed: 100, // 打字速度（毫秒）
@@ -668,11 +670,16 @@ export const pioConfig: import("./types/config").PioConfig = {
 	mode: "draggable", // 默认为可拖拽模式
 	hiddenOnMobile: true, // 默认在移动设备上隐藏
 	dialog: {
-		welcome: "欢迎来到左颜研究部博客网站!", // 欢迎词
-		touch: ["你在干什么?", "不要碰我!", "HENTAI!", "你不要玷污我了!"], // 触摸提示
-		home: "点击这里回到主页!", // 首页提示
-		skin: ["你有看到我的新服装了吗?", "这看起来很好看~"], // 换装提示
-		close: "QWQ 下次再见了~", // 关闭提示
+		welcome: "Welcome to the Zuoyanblogs!", // 欢迎词
+		touch: [
+			"What are you doing?",
+			"Do not touch me!",
+			"HENTAI!",
+			"Don't defile me!",
+		], // 触摸提示
+		home: "Click here to return to the homepage !", // 首页提示
+		skin: ["Have you seen my new outfit ?", "This looks really good !"], // 换装提示
+		close: "QWQ , Next see you again~", // 关闭提示
 		link: "https://github.com/Zuoyan233/Zuoyanblogs", // 关于链接
 	},
 };
