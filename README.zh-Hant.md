@@ -4,13 +4,13 @@ Zuoyanblogs博客專案是基於 <a href="https://github.com/matsuzaka-yuki/mizu
 
 [![Node.js >= 20](https://img.shields.io/badge/node.js-%3E%3D20-brightgreen)](https://nodejs.org/)
 [![pnpm >= 9](https://img.shields.io/badge/pnpm-%3E%3D9-blue)](https://pnpm.io/)
-[![Astro](https://img.shields.io/badge/Astro-5.15.3-orange)](https://astro.build/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue)](https://www.typescriptlang.org/)
+[![Astro](https://img.shields.io/badge/Astro-5.16.14-orange)](https://astro.build/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-blue)](https://www.typescriptlang.org/)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?logo=apache)](https://opensource.org/licenses/Apache-2.0)
 
 💻 歡迎進入我的網站參觀：[點擊進入](https://www.zuoyanblogs.xyz/)
 
-🌐 README 語言：[简体中文](./README.md) &nbsp; [English](./README.en.md) &nbsp; [日本語](./README.jp.md)
+🌐 README 語言：[简体中文](./README.zh-CN.md) &nbsp; [English](./README.en.md) &nbsp; [日本語](./README.jp.md)
 
 ---
 
