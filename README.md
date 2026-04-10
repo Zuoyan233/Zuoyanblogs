@@ -1,6 +1,6 @@
 # Zuoyanblogs
 
-The Zuoyanblogs blog project is a modified version of the <a href="https://github.com/matsuzaka-yuki/mizuki" target="_blank">Mizuki</a> theme framework, an open-source project. It's a modern, feature-rich static blog template built on <a href="https://astro.build/" target="_blank">Astro</a>, boasting advanced functionality and a beautiful design.
+The Zuoyanblogs blog project is a secondary modification based on the open-source project of the [Mizuki](https://github.com/matsuzaka-yuki/mizuki) theme framework. It is a modern, feature-rich static blog template built with [Astro](https://astro.build/), featuring advanced functionality and exquisite design.
 
 [![Node.js >= 20](https://img.shields.io/badge/node.js-%3E%3D20-brightgreen)](https://nodejs.org/)
 [![pnpm >= 9](https://img.shields.io/badge/pnpm-%3E%3D9-blue)](https://pnpm.io/)
@@ -8,57 +8,79 @@ The Zuoyanblogs blog project is a modified version of the <a href="https://githu
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-blue)](https://www.typescriptlang.org/)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?logo=apache)](https://opensource.org/licenses/Apache-2.0)
 
-💻 Welcome to visit my website: [Click to enter](https://www.zuoyanblogs.xyz/)
+💻 Visit my website: [Click to enter](https://www.zuoyanblogs.xyz/)
 
-🌐 README language: [简体中文](./README.zh-CN.md) &nbsp; [繁體中文](./README.zh-Hant.md) &nbsp; [日本語](./README.jp.md)
+🌐 README Language: [繁體中文](./README.zh_Hant.md) &nbsp; [简体中文](./README.zh_CN.md) &nbsp; [日本語](./README.jp.md)
+
+![Zuoyanblogs preview](./example%20project%20show/images/example%20project%20show.webp)
+
+<table>
+  <tr>
+    <td><img alt="" src="example project show/images/example project show 2.webp"></td>
+    <td><img alt="" src="example project show/images/example project show 3.webp"></td>
+    <td><img alt="" src="example project show/images/example project show 4.webp"></td>
+  <tr>
+  <tr>
+    <td><img alt="" src="example project show/images/example project show 5.webp"></td>
+    <td><img alt="" src="example project show/images/example project show 6.webp"></td>
+    <td><img alt="" src="example project show/images/example project show 7.webp"></td>
+  <tr>
+  <tr>
+    <td><img alt="" src="example project show/images/example project show 8.webp"></td>
+    <td><img alt="" src="example project show/images/example project show 9.webp"></td>
+    <td><img alt="" src="example project show/images/example project show 10.webp"></td>
+  <tr>
+</table>
 
 ---
 
-## 🔄 Update Frequency of this Project
+## 🔄 Update Frequency
 
-The Mizuki theme framework will be updated irregularly with its mainline content. Future plans include customizing modifications based on the framework’s features, and the version numbers will uniformly carry the suffix "Zuoyanblogs Custom Edition (CE)" to indicate it is a lightly customized version for Zuoyanblogs (Currently catching up on learning popular website frameworks in the market—I need to find time to do it, wuwu~~~).
+Asynchronous synchronization with the mainline content of the Mizuki theme framework occurs irregularly. Future plans include custom modifications based on the framework's functionality. Version numbers will uniformly use the Zuoyanblogs Custom Edition (CE) suffix, representing a lightly customized version for Zuoyanblogs (Currently busy catching up on learning popular website frameworks, need to find time, wuwuwu~~~).
 
 ---
 
-## 🛠 Modified Content of This Project
+## 🛠 Modified Content in This Project
 
-- Added site language text for ten countries; future site updates will synchronize the site language text.
-- Added multilingual international translation component:
-  - Modified the mobile-navbar stylesheet to adapt to the translate panel style.
-- Modified calendar style and optimized for a more comfortable appearance:
-  - Changed the left/right switching icon.
-  - Adjusted the position of the small circle at the bottom of the article posting page.
-  - Adjusted the size of the numbers for multiple articles published on the same day in the upper right corner.
-- Add a feedback page and integrate a way to contact the webmaster.
-- Add a sponsorship page and integrate the payment QR code placement path.
-- Add real-time date and time to the site, date display supports multiple regional formats.
-- Add a confirmation pop-up for external links and modified some of the styles.
-- The TOC catalog supports responsive device configuration.
-- Refactored the hidden album logic and fixed the issue of not being able to access it via a link.
-- Optimized animations for some widgets.
+- Added site language texts for ten countries, future site updates will synchronize with site language text updates.
+- Added multi-language international translation component:
+  - Modified `mobile-navbar` stylesheet to adapt the translate panel styles.
+- Modified calendar styles to achieve the most comfortable appearance:
+  - Changed left/right switch icons.
+  - Adjusted the position of the small dot at the bottom indicating post publication.
+  - Adjusted the number size for multiple posts published on the same day (top right corner).
+- Added a feedback page and integrated methods to contact the site owner.
+- Added a sponsors page and integrated paths for placing payment QR codes.
+- Added site real-time date and time, with date display supporting multiple regional formats.
+- Added external link confirmation popup, and modified some styles.
+- Updated and adapted to the latest version of the Twikoo comment system.
+- TOC directory supports responsive device configuration.
+- Refactored hidden photo album logic, fixed issue where it couldn't be accessed via link.
+- Optimized animations for some small components.
 
 ---
 
 ## ✨ Features
 
-To learn more about Mizuki's features: <a href="https://docs.mizuki.mysqil.com/" target="_blank">Visit the Mizuki Docs official website</a>
+To learn more about Mizuki's features: [Enter Mizuki Docs Official Website](https://docs.mizuki.mysqil.com/)
 
 ### 🔧 Component Configuration System Refactoring
-- **Unified Configuration Architecture:** A brand-new modular component configuration system, supporting dynamic component management and sequential configuration.
-- **Configuration-Driven Component Loading:** The SideBar component has been refactored to implement a fully configuration-based component loading mechanism.
-- **Unified Control Switches:** The separate enable switches for the music player and announcement components have been removed; they are now uniformly controlled by sidebarLayoutConfig.
-- **Responsive Layout Adaptation:** Components support responsive layouts and can automatically adjust their display based on device type.
+
+- **Unified Configuration Architecture:** A brand new modular component configuration system, supporting dynamic component management and order configuration.
+- **Configuration-Driven Component Loading:** Refactored the SideBar component to achieve a fully configuration-based component loading mechanism.
+- **Unified Control Switch:** Removed independent enable switches for the music player and announcement components, unified control by `sidebarLayoutConfig`.
+- **Responsive Layout Adaptation:** Components support responsive layout, automatically adjusting display based on device type.
 
 ### 📐 Layout System Optimization
 
-- **Dynamic Sidebar Position Adjustment:** Supports switching between left and right sidebars with automatic layout adaptation.
-- **Intelligent Article Navigation:** When the sidebar is on the right, the article navigation automatically moves to the left, providing a better reading experience.
-- **Grid Layout Improvements:** Optimized CSS Grid layout, resolving abnormal container width issues.
+- **Dynamic Sidebar Position:** Supports switching between left and right sidebars, layout automatically adapts.
+- **Intelligent Table of Contents Positioning:** When the sidebar is on the right, the article navigation automatically moves to the left for a better reading experience.
+- **Grid Layout Improvement:** Optimized CSS Grid layout to resolve container width anomalies.
 
 ### 🎛️ Configuration File Format Standardization
 
-- **Standardized Configuration Format:** Created a unified component configuration file format specification.
-- **Type Safety:** Comprehensive TypeScript type definitions ensure type safety in configurations.
+- **Standardized Configuration Format:** Created a unified specification for component configuration file formats.
+- **Type Safety:** Comprehensive TypeScript type definitions ensure type safety of configurations.
 - **Extensibility:** Supports custom component types and configuration options.
 
 ### 🧹 Code Optimization
@@ -71,43 +93,43 @@ To learn more about Mizuki's features: <a href="https://docs.mizuki.mysqil.com/"
 
 - Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com).
 - Smooth animations and page transitions using [Swup](https://swup.js.org/).
-- Light and dark theme switching with system preference detection.
-- Customizable theme colors and dynamic banner carousel.**
-- Full-screen background image with carousel, transparency, and blur effects.
-- Responsive design across all devices.
-- Beautiful typography using JetBrains Mono font.
+- Light/Dark theme switching with system preference detection.
+- Customizable theme colors and dynamic banner carousel.
+- Full-screen background images with support for carousel, transparency, and blur effects.
+- Fully responsive design for all devices.
+- Beautiful typography using the JetBrains Mono font.
 
 ### 🔍 Content & Search
 
 - Advanced search functionality based on [Pagefind](https://pagefind.app/).
-- [Enhanced Markdown functionality](https://docs.mizuki.mysqil.com/press/Markdown/Markdown/), with syntax highlighting.
-- Interactive catalog with automatic scrolling.
-- RSS and Atom subscription generation.
+- [Enhanced Markdown features](https://docs.mizuki.mysqil.com/press/Markdown/Markdown/) with syntax highlighting.
+- Interactive table of contents with auto-scrolling.
+- RSS and Atom feed generation.
 - Reading time estimation.
 - Article categorization and tagging system.
 
 ### 📱 Featured Pages
 
-- **Anime Tracking Page** - Track your anime viewing progress and ratings.
-- **Friend Links Page** - Showcase your friends' websites with beautiful cards.
-- **Photo Album Page** - Record beautiful moments in your life.
-- **My Devices Page** - Display your device information.
+- **Anime Page** - Track anime viewing progress and ratings.
+- **Friends Page** - Beautiful cards displaying friends' websites.
+- **Photo Album Page** - Capture beautiful moments in life.
+- **My Devices Page** - Display device information.
 - **Diary Page** - Share life moments, similar to social media.
-- **Archives Page** - An organized timeline view of your articles.
-- **About Page** - A customizable personal introduction.
-- **Sponsors Page** - Sponsor the site owner to support quality content.
-- **Feedback Page** - Submit website feedback and suggestions to communicate directly with the webmaster.
-- **Project Page** - development project portfolio.
-- **Skills Page** - technical skills and expertise.
-- **Timeline Page** - growth journey and important milestones.
+- **Archive Page** - Ordered chronological view of articles.
+- **About Page** - Customizable personal introduction.
+- **Sponsors Page** - Support quality content creation by sponsoring the site owner.
+- **Feedback Page** - Submit website suggestions and communicate directly with the site owner.
+- **Projects Page** - Portfolio of development projects.
+- **Skills Page** - Technical skills and expertise.
+- **Timeline Page** - Growth journey and important milestones.
 
 ### 🛠 Technical Features
 
 - **Enhanced Code Blocks** - Based on [Expressive Code](https://expressive-code.com/).
 - **Mathematical Formula Support** - KaTeX rendering.
 - **Image Optimization** - PhotoSwipe gallery integration.
-- **SEO Optimization** - Includes sitemap and meta tags.
-- **erformance Optimization** - Lazy loading and caching mechanisms.
+- **SEO Optimization** - Includes sitemaps and meta tags.
+- **Performance Optimization** - Lazy loading and caching mechanisms.
 - **Comment System** - Supports Twikoo integration.
 
 ---
@@ -138,43 +160,46 @@ pnpm install
 
 - Edit `src/config.ts` to customize blog settings.
 - Update site information, theme colors, banner images, and social links.
-- Configure featured page features.
-- (Optional) Configure content repository separation - For details, please read the Mizuki Docs [Content Repository Configuration](https://docs.mizuki.mysqil.com/Other/separation/).
+- Configure featured page functionalities.
+- (Optional) Configure content repository separation - refer to Mizuki Docs's [Content Repository Configuration](https://docs.mizuki.mysqil.com/Other/separation/) for details.
 
-4. **Featured Page Configuration**
-- **Anime Tracking Page:** Edit the anime list in `src/pages/anime.astro`.
-- **Friends Links Page:** Edit friend data in `src/content/spec/friends.md`.
-- **Albums page:** Edit album information in `public/images/albums`, For instructions on how to use it, please refer to [Album Function Usage Guide](./public/images/albums/README.md).
+4. **Featured Pages Configuration:**
+
+- **Anime Page:** Edit the anime list in `src/pages/anime.astro`.
+- **Friends Page:** Edit friend data in `src/content/spec/friends.md`.
+- **Photo Album Page:** Edit album information in `public/images/albums`. For usage, see [Photo Album Feature Instructions](./public/images/albums/README.md).
 - **My Devices Page:** Edit device information in `src/data/devices.ts`.
 - **Diary Page:** Edit posts in `src/data/diary.ts`.
 - **About Page:** Edit content in `src/content/spec/about.md`.
-- **Sponsors Page:** Edit the content in `src/content/spec/sponsors.md`.
-   - In `src/config.ts`, find `addpaymentConfig` to configure the payment QR code. The payment QR code is stored in `public/images/sponsors`.
-- **Feedback Page:** Edit the content in `src/content/spec/feedback.md`.
-   - Locate `contactEmailConfig` in `src/config.ts` to configure the webmaster's email address.
-   - Add the webmaster's social media contact information in `public/images/albums/contact`.
-- **Project Display Page:** Edit the displayed content in `src/data/projects.ts`.
-- **Skill Display Page:** Edit the displayed content in `src/data/skills.ts`.
-- **Timeline Page:** Edit the displayed content in `src/data/timeline.ts`.
+- **Sponsors Page:** Edit content in `src/content/spec/sponsors.md`.
+  - Find `addpaymentConfig` in `src/config.ts` to configure payment QR codes. QR codes should be stored in `public/images/sponsors`.
+- **Feedback Page:** Edit content in `src/content/spec/feedback.md`.
+  - Find `contactEmailConfig` in `src/config.ts` to configure the site owner's email contact.
+  - Add the site owner's social software contact information in `public/images/albums/contact`.
+- **Projects Page:** Edit displayed content in `src/data/projects.ts`.
+- **Skills Page:** Edit displayed content in `src/data/skills.ts`.
+- **Timeline Page:** Edit displayed content in `src/data/timeline.ts`.
 
-5. **Article Content Management**
-- **Create a new post:** `pnpm new-post <filename>`.
-- **Edit a post:** Modify files in `src/content/posts/`.
-- **Customize a page:** Edit special pages in `src/content/spec/`.
-- **Add an image:** Place images in `src/assets/` or `public/`.
-- **Markdown Extended Syntax:** For details, please read the Mizuki Docs' [Markdown Extended Syntax](https://docs.mizuki.mysqil.com/press/Markdown/customize/).
+5. **Article Content Management:**
+
+- **Create new article:** `pnpm new-post <filename>`.
+- **Edit article:** Modify files in `src/content/posts/`.
+- **Custom Pages:** Edit special pages in `src/content/spec/`.
+- **Add images:** Place images in `src/assets/` or `public/`.
+- **Markdown Extended Syntax:** Refer to Mizuki Docs's [Markdown Extended Syntax](https://docs.mizuki.mysqil.com/press/Markdown/customize/) for details.
 
 Frontmatter Field Descriptions:
-- **title**: Article title (required)
-- **published**: Publication date (required)
-- **description**: Article description, used for SEO and preview
+
+- **title**: Article title (Required)
+- **published**: Publication date (Required)
+- **description**: Article description for SEO and preview
 - **image**: Cover image path (relative to the article file)
 - **tags**: Array of tags for categorization
 - **category**: Article category
 - **draft**: Set to `true` to hide the article in production
-- **comment**: Set to `true` or `false` to control the comment switch for the current article. (Twikoo comment system must first be enabled in `src/config.ts`)
+- **comment**: Set to `true` or `false` to control comment switch for the current article (requires enabling Twikoo comment system in `src/config.ts` first)
 - **pinned**: Set to `true` to pin the article
-- **lang**: Article language (only set if different from the site's default language)
+- **lang**: Article language (only needed if different from the site's default language)
 
 6. **Start the development server:**
 
@@ -197,9 +222,9 @@ The blog will be available at `http://localhost:4321`.
 | `pnpm new-post <filename>` | Create a new blog post                 |
 | `pnpm astro ...`           | Run Astro CLI commands                 |
 
-To provide developers with a smoother and more familiar experience, we still choose Biome for code formatting and fixing.
+To provide developers with a smoother, more familiar experience, we still choose Biome for code formatting and fixing.
 
-Although Mizuki version 7.6 and later switched to Prettier + ESLint, we believe Biome's "out-of-the-box" functionality better suits our workflow, avoiding additional configuration costs.
+Although Mizuki version 7.6 and later switched to Prettier + ESLint, we believe Biome's "out-of-the-box" nature aligns better with our workflow, avoiding additional configuration costs.
 
 ---
 
