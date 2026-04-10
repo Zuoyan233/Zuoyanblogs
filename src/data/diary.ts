@@ -13,12 +13,12 @@ export interface DiaryItem {
 
 // 示例日记数据
 const diaryData: DiaryItem[] = [
-	// {
-	// 	id: 1,
-	// 	content: "",
-	// 	date: "2025-11-01T00:00:00Z",
-	// 	images: ["/images/diary/11-01.webp"],
-	// },
+	{
+	 	id: 1,
+	 	content: "Welcome to Blue Archive !",
+	 	date: "2026-04-10T12:00:00Z",
+	 	images: ["/images/diary/2026-4-10.webp"],
+	 },
 ];
 
 // 获取日记统计数据
