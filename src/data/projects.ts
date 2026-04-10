@@ -20,14 +20,14 @@ export interface Project {
 
 export const projectsData: Project[] = [
 	{
-		id: "zuoyanblog",
+		id: "zuoyanblogs",
 		title: "Zuoyanblogs",
-		description: "左颜研究部 - 聚集经验知识的后花园 （Astro驱动的博客框架）",
+		description: "现代化特色功能的二次元静态博客主题（基于 Astro 框架驱动）",
 		image: "",
 		category: "web",
 		techStack: ["Astro", "TypeScript", "Tailwind CSS", "MongoDB", "Svelte"],
 		status: "completed",
-		liveDemo: "https://blog.example.com",
+		liveDemo: "https://www.zuoyanblogs.xyz/",
 		sourceCode: "https://github.com/Zuoyan233", // 更改为GitHub链接
 		visitUrl: "https://github.com/Zuoyan233/Zuoyanblogs", // 添加前往项目链接
 		startDate: "2025-10-01",

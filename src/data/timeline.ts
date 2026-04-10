@@ -28,7 +28,7 @@ export const timelineData: TimelineItem[] = [
 		id: "current-study",
 		title: "计算机应用技术",
 		description:
-			"就读于计算机技术，专注于 Web 开发和UI设计，毕业前拿过一二级校级奖学金、优秀毕业生与优秀毕业设计",
+			"专注于 Web 开发和 UI 设计，毕业前评选一二级校级奖学金、优秀毕业生与优秀毕业设计，是读书生涯最高光时刻",
 		type: "education",
 		startDate: "2021-09-11",
 		endDate: "2024-06-21",
@@ -43,13 +43,13 @@ export const timelineData: TimelineItem[] = [
 	{
 		id: "work",
 		title: "中国邮政",
-		description: "人生第一份工作，八月初已离职",
+		description: "人生第一份工作，开始邮政人打工生活，现在已经毕业",
 		type: "work",
 		startDate: "2024-11-14",
 		endDate: "2025-08-01",
 		location: "佛山顺德",
 		organization: "开始工作",
-		skills: ["邮件分拣", "上传破损邮件验单", "售前与售后"],
+		skills: ["邮件分拣", "破损验单", "售后工单"],
 		achievements: [],
 		icon: "material-symbols:work",
 		color: "#DC2626",
@@ -59,7 +59,7 @@ export const timelineData: TimelineItem[] = [
 		id: "web-develop",
 		title: "左颜研究部",
 		description:
-			"里程碑：开始基于Mizuki框架开源项目二次开发网站，目前网站成功上线",
+			"个人魔改的开源项目，采用 Astro 框架、Mizuki 主题开源项目基础上二次开发。目前网站成功上线，已有副业收入",
 		type: "project",
 		startDate: "2025-10-01",
 		location: "佛山顺德",
