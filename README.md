@@ -1,6 +1,10 @@
-# Zuoyanblogs
+# BrightMoon
+<img align='right' src='./example project show/images/logo.webp' width='200px' alt="BrightMoon logo">
 
-The Zuoyanblogs blog project is a secondary modification based on the open-source project of the [Mizuki](https://github.com/matsuzaka-yuki/mizuki) theme framework. It is a modern, feature-rich static blog template built with [Astro](https://astro.build/), featuring advanced functionality and exquisite design.
+BrightMoon is a static blog template that has been secondarily modified and customized based on the [Mizuki](https://github.com/matsuzaka-yuki/mizuki) open-source theme project. It continues and enhances the modern, clean, and elegant design style along with a unique anime aesthetic. The project is built on [Astro](https://astro.build/), combining advanced functionality with exquisite visual presentation.
+
+***Like the bright moon rising, its clear radiance remains as ever.*** </br>
+***Taking this as a starting point, set forth anew.***
 
 [![Node.js >= 20](https://img.shields.io/badge/node.js-%3E%3D20-brightgreen)](https://nodejs.org/)
 [![pnpm >= 9](https://img.shields.io/badge/pnpm-%3E%3D9-blue)](https://pnpm.io/)
@@ -12,7 +16,7 @@ The Zuoyanblogs blog project is a secondary modification based on the open-sourc
 
 🌐 README Language: [繁體中文](./README.zh_Hant.md) &nbsp; [简体中文](./README.zh_CN.md) &nbsp; [日本語](./README.jp.md)
 
-![Zuoyanblogs preview](./example%20project%20show/images/example%20project%20show.webp)
+![BrightMoon preview](./example%20project%20show/images/example%20project%20show.webp)
 
 <table>
   <tr>
@@ -36,7 +40,7 @@ The Zuoyanblogs blog project is a secondary modification based on the open-sourc
 
 ## 🔄 Update Frequency
 
-Asynchronous synchronization with the mainline content of the Mizuki theme framework occurs irregularly. Future plans include custom modifications based on the framework's functionality. Version numbers will uniformly use the Zuoyanblogs Custom Edition (CE) suffix, representing a lightly customized version for Zuoyanblogs (Currently busy catching up on learning popular website frameworks, need to find time, wuwuwu~~~).
+Asynchronous synchronization with the mainline content of the Mizuki theme framework occurs irregularly. Future plans include custom modifications based on the framework's functionality. Version numbers will uniformly use the BrightMoon Custom Edition (CE) suffix, representing a lightly customized version for BrightMoon (Currently busy catching up on learning popular website frameworks, need to find time, wuwuwu~~~).
 
 ---
 
@@ -139,9 +143,9 @@ To learn more about Mizuki's features: [Enter Mizuki Docs Official Website](http
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/Zuoyan233/Zuoyanblogs.git
+git clone https://github.com/Zuoyan233/BrightMoon.git
 
-cd Zuoyanblogs
+cd BrightMoon
 
 ```
 
@@ -167,7 +171,7 @@ pnpm install
 
 - **Anime Page:** Edit the anime list in `src/pages/anime.astro`.
 - **Friends Page:** Edit friend data in `src/content/spec/friends.md`.
-- **Photo Album Page:** Edit album information in `public/images/albums`. For usage, see [Photo Album Feature Instructions](./public/images/albums/README.md).
+- **Albums Page:** Edit album information in `public/images/albums`. For usage, see [Photo Album Feature Instructions](./public/images/albums/README.md).
 - **My Devices Page:** Edit device information in `src/data/devices.ts`.
 - **Diary Page:** Edit posts in `src/data/diary.ts`.
 - **About Page:** Edit content in `src/content/spec/about.md`.
@@ -206,21 +210,22 @@ Frontmatter Field Descriptions:
 ```bash
 pnpm dev
 ```
+
 The blog will be available at `http://localhost:4321`.
 
 7. **All commands are run in the project root directory:**
 
-| Commands                   | Operations                              |
-|:---------------------------|:---------------------------------------|
-| `pnpm install`             | Install dependencies                   |
+| Commands                   | Operations                                             |
+| :------------------------- | :----------------------------------------------------- |
+| `pnpm install`             | Install dependencies                                   |
 | `pnpm dev`                 | Start the local development server at `localhost:4321` |
-| `pnpm build`               | Build the production site to `./dist/` |
-| `pnpm preview`             | Preview the build locally before deployment |
-| `pnpm check`               | Run Astro bug checks                   |
-| `pnpm format`              | Format code using Biome                |
-| `pnpm lint`                | Check and fix code issues              |
-| `pnpm new-post <filename>` | Create a new blog post                 |
-| `pnpm astro ...`           | Run Astro CLI commands                 |
+| `pnpm build`               | Build the production site to `./dist/`                 |
+| `pnpm preview`             | Preview the build locally before deployment            |
+| `pnpm check`               | Run Astro bug checks                                   |
+| `pnpm format`              | Format code using Biome                                |
+| `pnpm lint`                | Check and fix code issues                              |
+| `pnpm new-post <filename>` | Create a new blog post                                 |
+| `pnpm astro ...`           | Run Astro CLI commands                                 |
 
 To provide developers with a smoother, more familiar experience, we still choose Biome for code formatting and fixing.
 
@@ -238,4 +243,4 @@ Although Mizuki version 7.6 and later switched to Prettier + ESLint, we believe 
 
 ---
 
-⭐ If you have any questions or suggestions, please submit an [Issue](https://github.com/Zuoyan233/Zuoyanblogs/issues) or a [Pull Request](https://github.com/Zuoyan233/Zuoyanblogs/pulls). Alternatively, you can also contact us through [the feedback page on my website](https://www.zuoyanblogs.xyz/feedback/). If you find this project helpful, please consider giving it a star!
+⭐ If you have any questions or suggestions, please submit an [Issue](https://github.com/Zuoyan233/BrightMoon/issues) or a [Pull Request](https://github.com/Zuoyan233/BrightMoon/pulls). Alternatively, you can also contact us through [the feedback page on my website](https://www.zuoyanblogs.xyz/feedback/). If you find this project helpful, please consider giving it a star!

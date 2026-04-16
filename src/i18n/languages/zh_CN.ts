@@ -223,7 +223,7 @@ export const zh_CN: Translation = {
 	// 赞助页面
 	[Key.sponsorsNotice1]:
 		"如果网站内容认为有帮助，欢迎通过以下方式支持我的创作，助力打造更优质内容，所有赞助将用于网站维护、服务器费用以及内容创作。",
-	[Key.sponsorsNotice2]: "感谢支持Zuoyanblogs博客项目内容开发！",
+	[Key.sponsorsNotice2]: "感谢支持 BrightMoon 博客项目内容开发！",
 	[Key.wechatPay]: "微信",
 	[Key.aliPay]: "支付宝",
 	[Key.scanPayQRcode]: "扫码支付",

@@ -1,6 +1,6 @@
-**很高兴能与您在此交流意见建议，为了维持温馨、有益讨论的氛围，有几件小事想请您留意：**
-- 😎对事不对人：我们鼓励不同观点的碰撞，但请保持礼貌，尊重每一位参与者。
-- 🧐咱们聊聊主题：留言尽量围绕文章内容展开，这样能让讨论对所有人都更有价值。
-- 🤬这里不是广告牌：请勿发布任何形式的广告、推广或无关链接。
-- 🤐保护隐私：请注意保护自己和他人的隐私，避免在留言中透露敏感个人信息。
-- 🤓我会打理园地：为确保环境，我保留对不当留言（如恶意、离题、刷屏）进行管理、编辑或删除的权利。
+**Delighted to exchange thoughts and feedback with you here. To maintain a warm and constructive atmosphere for discussion, here are a few gentle reminders:**
+- 😎 **Critique Ideas, Not People:** We welcome diverse perspectives and healthy debate, but please remain courteous and respect every participant.
+- 🧐 **Stay on Topic:** Kindly keep comments relevant to the article's content. This helps make the discussion valuable for everyone.
+- 🤬 **No Advertising:** Please refrain from posting any form of advertisements, promotions, or unrelated links.
+- 🤐 **Protect Privacy:** Be mindful of safeguarding your own and others' privacy. Avoid disclosing sensitive personal information in comments.
+- 🤓 **I'll Tend the Garden:** To ensure a welcoming environment, I reserve the right to moderate, edit, or remove inappropriate comments (such as those that are malicious, off-topic, or spam).

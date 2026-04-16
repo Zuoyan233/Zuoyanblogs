@@ -281,7 +281,7 @@ export const vi: Translation = {
 	[Key.sponsorsNotice1]:
 		"Nếu bạn thấy nội dung trang web hữu ích, vui lòng hỗ trợ công việc của tôi thông qua các phương thức sau để giúp tạo ra nội dung tốt hơn. Mọi khoản tài trợ sẽ được sử dụng cho việc duy trì trang web, chi phí máy chủ và sáng tạo nội dung.",
 	[Key.sponsorsNotice2]:
-		"Cảm ơn bạn đã hỗ trợ phát triển nội dung dự án blog Zuoyanblogs!",
+		"Cảm ơn bạn đã hỗ trợ phát triển nội dung dự án blog BrightMoon!",
 	[Key.wechatPay]: "WeChat",
 	[Key.aliPay]: "Alipay",
 	[Key.scanPayQRcode]: "Quét mã để thanh toán",

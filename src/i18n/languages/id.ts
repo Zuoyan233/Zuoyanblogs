@@ -280,7 +280,7 @@ export const id: Translation = {
 	[Key.sponsorsNotice1]:
 		"Jika Anda merasa konten situs web ini bermanfaat, dukunglah pekerjaan saya melalui cara-cara berikut untuk membantu menciptakan konten yang lebih baik. Semua sponsor akan digunakan untuk pemeliharaan situs web, biaya server, dan pembuatan konten.",
 	[Key.sponsorsNotice2]:
-		"Terima kasih telah mendukung pengembangan konten blog Zuoyanblogs!",
+		"Terima kasih telah mendukung pengembangan konten blog BrightMoon!",
 	[Key.wechatPay]: "WeChat",
 	[Key.aliPay]: "Alipay",
 	[Key.scanPayQRcode]: "Pindai untuk Membayar",

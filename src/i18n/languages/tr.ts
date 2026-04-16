@@ -283,7 +283,7 @@ export const tr: Translation = {
 	[Key.sponsorsNotice1]:
 		"Web sitesi içeriğini faydalı buluyorsanız, daha iyi içerikler oluşturmama yardımcı olmak için aşağıdaki yöntemlerle çalışmalarımı destekleyebilirsiniz. Tüm sponsorluklar web sitesi bakımı, sunucu maliyetleri ve içerik oluşturma için kullanılacaktır.",
 	[Key.sponsorsNotice2]:
-		"Zuoyanblogs blog projesi içerik gelişimini desteklediğiniz için teşekkür ederiz!",
+		"BrightMoon blog projesi içerik gelişimini desteklediğiniz için teşekkür ederiz!",
 	[Key.wechatPay]: "WeChat",
 	[Key.aliPay]: "Alipay",
 	[Key.scanPayQRcode]: "Ödeme için Tara",

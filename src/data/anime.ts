@@ -22,7 +22,7 @@ const localAnimeList: AnimeItem[] = [
 		status: "completed",
 		rating: 10,
 		cover: "/assets/anime/Pokémon.webp",
-		description: "\"I got a Pokémon!!\"",
+		description: '"I got a Pokémon!!"',
 		episodes: "271 episodes",
 		year: "1997",
 		genre: ["Hot-blooded ", "Battle", "Inspirational", "Children"],
@@ -38,7 +38,8 @@ const localAnimeList: AnimeItem[] = [
 		status: "completed",
 		rating: 9.8,
 		cover: "/assets/anime/Himouto! Umaru-chan.webp",
-		description: "The perfect little sister, the perfect high school student, but at home she's a super lazy himouto.",
+		description:
+			"The perfect little sister, the perfect high school student, but at home she's a super lazy himouto.",
 		episodes: "12 episodes",
 		year: "2015",
 		genre: ["Slice of Life", "Moe"],
@@ -54,7 +55,8 @@ const localAnimeList: AnimeItem[] = [
 		status: "completed",
 		rating: 9.7,
 		cover: "/assets/anime/LoveLive! Sunshine.webp",
-		description: "The story of nine girls who strive forward with radiance as their goal.",
+		description:
+			"The story of nine girls who strive forward with radiance as their goal.",
 		episodes: "13 episodes",
 		year: "2016",
 		genre: ["Music", "Idol"],
@@ -86,7 +88,8 @@ const localAnimeList: AnimeItem[] = [
 		status: "completed",
 		rating: 9.8,
 		cover: "/assets/anime/CITY.webp",
-		description: "Welcome to the wonderfully thrilling CITY where heart-pounding moments await!",
+		description:
+			"Welcome to the wonderfully thrilling CITY where heart-pounding moments await!",
 		episodes: "13 episodes",
 		year: "2025",
 		genre: ["Manga Adaptation", "Slice of Life", "Comedy"],
@@ -187,7 +190,8 @@ const localAnimeList: AnimeItem[] = [
 		status: "completed",
 		rating: 9.8,
 		cover: "/assets/anime/Natsume's Book of Friends.webp",
-		description: "High school student Takashi Natsume has had the ability to see yokai since childhood.",
+		description:
+			"High school student Takashi Natsume has had the ability to see yokai since childhood.",
 		episodes: "13 episodes",
 		year: "2008",
 		genre: ["Fantasy", "Healing", "Tear-jerker", "Slice of Life"],
@@ -203,7 +207,8 @@ const localAnimeList: AnimeItem[] = [
 		status: "completed",
 		rating: 9.9,
 		cover: "/assets/anime/Natsume's Book of Friends_7.webp",
-		description: "High school student Takashi Natsume has had the ability to see yokai since childhood.",
+		description:
+			"High school student Takashi Natsume has had the ability to see yokai since childhood.",
 		episodes: "13 episodes",
 		year: "2024",
 		genre: ["Fantasy", "Healing", "Tear-jerker", "Slice of Life"],

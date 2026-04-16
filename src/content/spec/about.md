@@ -1,22 +1,24 @@
-:::note[关于项目]
-[Zuoyanblogs](https://github.com/Zuoyan233/Zuoyanblogs) 博客项目是基于 [Mizuki](https://github.com/matsuzaka-yuki/mizuki) 主题框架开源项目二次魔改。如果觉得项目可以的话，进入下面两位作者Github项目主页点击小小的 ⭐ 来鼓励我们未来更好的内容创作！
-:::
-
 ::github{repo="matsuzaka-yuki/Mizuki"}
-::github{repo="Zuoyan233/Zuoyanblogs"}
-
---- 
-
-## 🌟为什么要开发博客？
-- 我想为自己记录生活每个点滴，开创博客记录生活，我给网站的定位类型是生活记录。
-- 大家可能已经发现为什么Zuoyanblogs后面要加个“s”的原因，原因是我想把博客真正成为生活记录的一种方式，抽象的人话来说它就是我生活上的一种“东西”，当然未来可能充满变数，往好的方向来说有可能不止在网站写文章还会对未来网站开发功能，往坏的方向来说可能没钱续费网站域名和网站托管服务器而关闭网站，所以最坏的打算希望不会发生吧😂。
-
-## 🎯下一步有什么打算？
-- 除了在博客上分享日常生活，我未来会对博客分享电脑和手机维护等知识与软件，充分发挥优秀大专毕业生在计算机应用技术专业的学习经验心得，为电脑小白少走弯路。
-- 未来会对网站进行架构升级，同步架构功能。
-- 不固定发布帖子内容，当然后面会有游戏的游后感帖子，期待一下。
-
-## 🎨暂时没了，有灵感再写一条吧 (:3」∠)
+::github{repo="Zuoyan233/BrightMoon"}
 
 ---
 
+## ✨ What is the Origin of the BrightMoon Project?
+
+The predecessor of the BrightMoon project was **Zuoyanblogs**. When the project first started, an official name had not yet been decided, so I temporarily combined my online alias "Zuoyan" with "blogs" to create *Zuoyanblogs* as a provisional placeholder.</br>
+
+As the project gradually took shape and evolved from an initial experimental exploration into a more complete form of expression, I kept searching for a formal name that truly matched the project's essence. It needed to embody a spirit of "starting anew," convey simplicity and elegance, carry a touch of anime and two-dimensional (otaku) culture flair, possess a distinct Chinese aesthetic charm, and above all—be easy to remember.</br>
+
+Ultimately, I landed on **BrightMoon** — **皓月** (Hàoyuè).</br>
+
+In Chinese culture, the "Bright Moon" symbolizes clarity, fulfillment, and constancy. It possesses a classical poetic grace while remaining thoroughly modern. It represents a radiance that is luminous yet never harsh, and subtly echoes the sentiment of *"Though miles apart, we share the same beautiful moon"*—a sense of connection and resonance that I hope this project will bring to its users. Compared to the personal and provisional feel of Zuoyanblogs, **BrightMoon** signifies that the project is ready to face the future with greater maturity and openness.
+
+## 🎯 What Are the Next Steps?
+
+- In addition to sharing daily life on the blog, I plan to post content related to computer and mobile phone maintenance tips and software knowledge, making full use of the hands-on experience I've gained as an outstanding college graduate in Computer Application Technology. I hope to help computer beginners avoid unnecessary detours.
+- I will carry out architectural upgrades to the website in the future, synchronizing the structural features.
+- Post updates will remain irregular and freeform, but rest assured, there will be post-game impression write-ups in the future. Stay tuned!
+
+## 🎨 That's All for Now—I'll Write More When Inspiration Strikes (:3」∠)
+
+---

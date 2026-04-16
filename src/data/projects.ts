@@ -20,8 +20,8 @@ export interface Project {
 
 export const projectsData: Project[] = [
 	{
-		id: "zuoyanblogs",
-		title: "Zuoyanblogs",
+		id: "BrightMoon",
+		title: "BrightMoon",
 		description: "现代化特色功能的二次元静态博客主题（基于 Astro 框架驱动）",
 		image: "",
 		category: "web",
@@ -29,7 +29,7 @@ export const projectsData: Project[] = [
 		status: "completed",
 		liveDemo: "https://www.zuoyanblogs.xyz/",
 		sourceCode: "https://github.com/Zuoyan233", // 更改为GitHub链接
-		visitUrl: "https://github.com/Zuoyan233/Zuoyanblogs", // 添加前往项目链接
+		visitUrl: "https://github.com/Zuoyan233/BrightMoon", // 添加前往项目链接
 		startDate: "2025-10-01",
 		endDate: "2025-12-06",
 		featured: true,

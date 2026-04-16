@@ -223,7 +223,7 @@ export const zh_TW: Translation = {
 	// 贊助頁面
 	[Key.sponsorsNotice1]:
 		"如果網站內容認為有幫助，歡迎透過以下方式支持我的創作，助力打造更優質內容，所有贊助將用於網站維護、伺服器費用以及內容創作。",
-	[Key.sponsorsNotice2]: "感謝支持Zuoyanblogs部落格專案內容開發！",
+	[Key.sponsorsNotice2]: "感謝支持 BrightMoon 部落格專案內容開發！",
 	[Key.wechatPay]: "微信",
 	[Key.aliPay]: "支付寶",
 	[Key.scanPayQRcode]: "掃碼支付",

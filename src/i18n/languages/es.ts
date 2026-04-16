@@ -285,7 +285,7 @@ export const es: Translation = {
 	[Key.sponsorsNotice1]:
 		"Si encuentras útil el contenido del sitio web, por favor apoya mi trabajo a través de los siguientes métodos para ayudar a crear mejor contenido. Todos los patrocinios se utilizarán para el mantenimiento del sitio web, costos de servidor y creación de contenido.",
 	[Key.sponsorsNotice2]:
-		"¡Gracias por apoyar el desarrollo del contenido del blog Zuoyanblogs!",
+		"¡Gracias por apoyar el desarrollo del contenido del blog BrightMoon!",
 	[Key.wechatPay]: "WeChat",
 	[Key.aliPay]: "Alipay",
 	[Key.scanPayQRcode]: "Escanear para pagar",

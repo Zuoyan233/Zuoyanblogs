@@ -26,7 +26,7 @@ import { getTranslateLanguageFromConfig } from "./utils/language-utils";
 const SITE_LANG = "en"; // 语言代码，例如：'en', 'zh_CN', 'zh_TW' , 'ja' , 'ar' , 'de' , 'es' , 'fr', 'id' , 'ko' , 'ru' , 'th' , 'tr' , 'vi' 等。
 const SITE_TIMEZONE = 8; //设置你的网站时区 from -12 to 12 default in UTC+8
 export const siteConfig: SiteConfig = {
-	title: "Zuoyanblogs",
+	title: "BrightMoon",
 	subtitle: "Modern, feature-rich static blog",
 	siteURL: "https://www.example.com/", // 请替换为你的站点URL，以斜杠结尾
 	siteStartDate: "2025-10-30", // 站点开始运行日期，用于站点统计组件计算运行天数
@@ -670,7 +670,7 @@ export const pioConfig: import("./types/config").PioConfig = {
 	mode: "draggable", // 默认为可拖拽模式
 	hiddenOnMobile: true, // 默认在移动设备上隐藏
 	dialog: {
-		welcome: "Welcome to the Zuoyanblogs!", // 欢迎词
+		welcome: "Welcome to the BrightMoon!", // 欢迎词
 		touch: [
 			"What are you doing?",
 			"Do not touch me!",
@@ -680,7 +680,7 @@ export const pioConfig: import("./types/config").PioConfig = {
 		home: "Click here to return to the homepage !", // 首页提示
 		skin: ["Have you seen my new outfit ?", "This looks really good !"], // 换装提示
 		close: "QWQ , Next see you again~", // 关闭提示
-		link: "https://github.com/Zuoyan233/Zuoyanblogs", // 关于链接
+		link: "https://github.com/Zuoyan233/BrightMoon", // 关于链接
 	},
 };
 

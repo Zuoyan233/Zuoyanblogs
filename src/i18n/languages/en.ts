@@ -279,7 +279,7 @@ export const en: Translation = {
 	[Key.sponsorsNotice1]:
 		"If you find the website content helpful, please support my work through the following methods to help create better content. All sponsorships will be used for website maintenance, server costs, and content creation.",
 	[Key.sponsorsNotice2]:
-		"Thank you for supporting the Zuoyanblogs blog project content development!",
+		"Thank you for supporting the BrightMoon blog project content development!",
 	[Key.wechatPay]: "WeChat",
 	[Key.aliPay]: "Alipay",
 	[Key.scanPayQRcode]: "Scan to Pay",

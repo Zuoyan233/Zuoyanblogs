@@ -276,7 +276,7 @@ export const ko: Translation = {
 	[Key.sponsorsNotice1]:
 		"웹사이트 콘텐츠가 도움이 되셨다면, 아래 방법으로 제 작업을 후원해주세요. 더 나은 콘텐츠 제작에 도움이 됩니다. 모든 후원금은 웹사이트 유지보수, 서버 비용 및 콘텐츠 제작에 사용됩니다.",
 	[Key.sponsorsNotice2]:
-		"Zuoyanblogs 블로그 프로젝트 콘텐츠 개발을 후원해주셔서 감사합니다!",
+		"BrightMoon 블로그 프로젝트 콘텐츠 개발을 후원해주셔서 감사합니다!",
 	[Key.wechatPay]: "WeChat",
 	[Key.aliPay]: "Alipay",
 	[Key.scanPayQRcode]: "스캔하여 결제",

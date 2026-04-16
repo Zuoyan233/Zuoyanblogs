@@ -276,7 +276,7 @@ export const ja: Translation = {
 	[Key.sponsorsNotice1]:
 		"このウェブサイトの内容が役に立った場合は、以下の方法で活動を支援していただければ幸いです。より良いコンテンツ作成に役立てます。すべての支援は、ウェブサイトの維持、サーバー費用、コンテンツ制作に使用されます。",
 	[Key.sponsorsNotice2]:
-		"Zuoyanblogsブログプロジェクトのコンテンツ開発を支援していただき、ありがとうございます！",
+		"BrightMoon ブログプロジェクトのコンテンツ開発を支援していただき、ありがとうございます！",
 	[Key.wechatPay]: "WeChat",
 	[Key.aliPay]: "Alipay",
 	[Key.scanPayQRcode]: "スキャンして支払う",

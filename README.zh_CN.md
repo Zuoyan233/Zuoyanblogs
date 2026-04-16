@@ -1,6 +1,10 @@
-# Zuoyanblogs
+# BrightMoon
+<img align='right' src='./example project show/images/logo.webp' width='200px' alt="BrightMoon logo">
 
-Zuoyanblogs博客项目是基于 <a href="https://github.com/matsuzaka-yuki/mizuki" target="_blank">Mizuki</a> 主题框架开源项目二次魔改，它是一个现代化、功能丰富的静态博客模板，基于 <a href="https://astro.build/" target="_blank">Astro</a> 构建，具有先进的功能和精美的设计。
+BrightMoon 是基于 [Mizuki](https://github.com/matsuzaka-yuki/mizuki) 主题开源项目二次魔改的静态博客模板，延续并增强了现代化简洁优雅的设计风格与独特的二次元气质。项目使用 [Astro](https://astro.build/) 为构建基石，兼具先进的功能与精美的视觉呈现。
+
+***如明月初升，清辉如故*** </br>
+***以此为始，重新出发。***
 
 [![Node.js >= 20](https://img.shields.io/badge/node.js-%3E%3D20-brightgreen)](https://nodejs.org/)
 [![pnpm >= 9](https://img.shields.io/badge/pnpm-%3E%3D9-blue)](https://pnpm.io/)
@@ -12,7 +16,7 @@ Zuoyanblogs博客项目是基于 <a href="https://github.com/matsuzaka-yuki/mizu
 
 🌐 README 语言：[繁體中文](./README.zh_Hant.md) &nbsp; [English](./README.en.md) &nbsp; [日本語](./README.jp.md)
 
-![Zuoyanblogs preview](./example%20project%20show/images/example%20project%20show.webp)
+![BrightMoon preview](./example%20project%20show/images/example%20project%20show.webp)
 
 <table>
   <tr>
@@ -36,7 +40,7 @@ Zuoyanblogs博客项目是基于 <a href="https://github.com/matsuzaka-yuki/mizu
 
 ## 🔄 本项目的更新频率
 
-不定期同步更新 Mizuki 主题框架主线内容。未来计划在框架功能基础上进行定制化修改，版本号将统一以 Zuoyanblogs Custom Edition（CE）作为后缀，代表其为 Zuoyanblogs 的轻度定制版本（目前在恶补学习市面流行的网站框架，要得有空才行，呜呜呜~~~）。
+不定期同步更新 Mizuki 主题框架主线内容。未来计划在框架功能基础上进行定制化修改，版本号将统一以 BrightMoon Custom Edition（CE）作为后缀，代表其为 BrightMoon 的轻度定制版本（目前在恶补学习市面流行的网站框架，要得有空才行，呜呜呜~~~）。
 
 ---
 
@@ -139,8 +143,8 @@ Zuoyanblogs博客项目是基于 <a href="https://github.com/matsuzaka-yuki/mizu
 1. **克隆仓库：**
 
    ```bash
-   git clone https://github.com/Zuoyan233/Zuoyanblogs.git
-   cd Zuoyanblogs
+   git clone https://github.com/Zuoyan233/BrightMoon.git
+   cd BrightMoon
    ```
 
 2. **安装依赖：**
@@ -148,7 +152,7 @@ Zuoyanblogs博客项目是基于 <a href="https://github.com/matsuzaka-yuki/mizu
    ```bash
    # 如果没有安装 pnpm，先安装
    npm install -g pnpm
-   
+
    # 安装项目依赖
    pnpm install
    ```
@@ -169,10 +173,10 @@ Zuoyanblogs博客项目是基于 <a href="https://github.com/matsuzaka-yuki/mizu
 - **日记页面：** 在 `src/data/diary.ts` 中编辑动态。
 - **关于页面：** 在 `src/content/spec/about.md` 中编辑内容。
 - **赞助页面：** 在 `src/content/spec/sponsors.md` 中编辑内容。
-   - 在 `src/config.ts` 中找到 `addpaymentConfig` 配置支付二维码，支付二维码存放路径在 `public/images/sponsors` 内。
+  - 在 `src/config.ts` 中找到 `addpaymentConfig` 配置支付二维码，支付二维码存放路径在 `public/images/sponsors` 内。
 - **反馈页面：** 在 `src/content/spec/feedback.md` 中编辑内容。
-   - 在 `src/config.ts` 中找到 `contactEmailConfig` 配置站长电子邮箱联系方式。
-   - 在 `public/images/albums/contact` 中添加站长的社交软件联系方式。
+  - 在 `src/config.ts` 中找到 `contactEmailConfig` 配置站长电子邮箱联系方式。
+  - 在 `public/images/albums/contact` 中添加站长的社交软件联系方式。
 - **项目展示页面：** 在 `src/data/projects.ts` 中编辑展示的内容。
 - **技能展示页面：** 在 `src/data/skills.ts` 中编辑展示的内容。
 - **时间线页面：** 在 `src/data/timeline.ts` 中编辑展示的内容。
@@ -203,27 +207,26 @@ Frontmatter 字段说明：
    ```bash
    pnpm dev
    ```
-   博客将在 `http://localhost:4321` 可用。
 
+   博客将在 `http://localhost:4321` 可用。
 
 7. **所有命令都在项目根目录运行：**
 
-| 命令                       | 操作                                   |
-|:---------------------------|:---------------------------------------|
-| `pnpm install`             | 安装依赖                               |
-| `pnpm dev`                 | 在 `localhost:4321` 启动本地开发服务器 |
-| `pnpm build`               | 构建生产站点到 `./dist/`               |
-| `pnpm preview`             | 在部署前本地预览构建                   |
-| `pnpm check`               | 运行 Astro 错误检查                    |
-| `pnpm format`              | 使用 Biome 格式化代码                  |
-| `pnpm lint`                | 检查并修复代码问题                     |
-| `pnpm new-post <文件名>`   | 创建新博客文章                         |
-| `pnpm astro ...`           | 运行 Astro CLI 命令                    |
+| 命令                     | 操作                                   |
+| :----------------------- | :------------------------------------- |
+| `pnpm install`           | 安装依赖                               |
+| `pnpm dev`               | 在 `localhost:4321` 启动本地开发服务器 |
+| `pnpm build`             | 构建生产站点到 `./dist/`               |
+| `pnpm preview`           | 在部署前本地预览构建                   |
+| `pnpm check`             | 运行 Astro 错误检查                    |
+| `pnpm format`            | 使用 Biome 格式化代码                  |
+| `pnpm lint`              | 检查并修复代码问题                     |
+| `pnpm new-post <文件名>` | 创建新博客文章                         |
+| `pnpm astro ...`         | 运行 Astro CLI 命令                    |
 
 为了给开发者提供更流畅、熟悉的体验，我们依然选择 Biome 来处理代码格式化和修复代码。
 
 尽管 Mizuki 7.6 版本后改为使用 Prettier + ESLint，但我们认为 Biome 的 “开箱即用” 特性与我们的工作流程匹配得更好，避免了额外的配置成本。
-
 
 ---
 
@@ -237,4 +240,4 @@ Frontmatter 字段说明：
 
 ---
 
-⭐ 如有问题或建议，请提交 [Issue](https://github.com/Zuoyan233/Zuoyanblogs/issues) 或 [Pull Request](https://github.com/Zuoyan233/Zuoyanblogs/pulls)。另外，您也可以通过 [我的网站反馈页面](https://www.zuoyanblogs.xyz/feedback/) 与我们联系。您觉得这个项目有帮助，请考虑给它一个星标！
+⭐ 如有问题或建议，请提交 [Issue](https://github.com/Zuoyan233/BrightMoon/issues) 或 [Pull Request](https://github.com/Zuoyan233/BrightMoon/pulls)。另外，您也可以通过 [我的网站反馈页面](https://www.zuoyanblogs.xyz/feedback/) 与我们联系。您觉得这个项目有帮助，请考虑给它一个星标！

@@ -275,7 +275,7 @@ export const ar: Translation = {
 	// Sponsorship Page
 	[Key.sponsorsNotice1]:
 		"إذا وجدت محتوى الموقع مفيدًا، يرجى دعم عملي من خلال الطرق التالية للمساعدة في إنشاء محتوى أفضل. سيتم استخدام جميع التبرعات لصيانة الموقع وتكاليف الخادم وإنشاء المحتوى.",
-	[Key.sponsorsNotice2]: "شكرًا لدعمكم لتطوير محتوى مدونة Zuoyanblogs!",
+	[Key.sponsorsNotice2]: "شكرًا لدعمكم لتطوير محتوى مدونة BrightMoon!",
 	[Key.wechatPay]: "WeChat",
 	[Key.aliPay]: "Alipay",
 	[Key.scanPayQRcode]: "امسح للدفع",

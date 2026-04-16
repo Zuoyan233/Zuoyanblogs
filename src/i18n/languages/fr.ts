@@ -292,7 +292,7 @@ export const fr: Translation = {
 	[Key.sponsorsNotice1]:
 		"Si vous trouvez le contenu du site utile, veuillez soutenir mon travail par les moyens suivants pour m'aider à créer un meilleur contenu. Tous les parrainages seront utilisés pour la maintenance du site, les coûts des serveurs et la création de contenu.",
 	[Key.sponsorsNotice2]:
-		"Merci de soutenir le développement du contenu du blog Zuoyanblogs !",
+		"Merci de soutenir le développement du contenu du blog BrightMoon !",
 	[Key.wechatPay]: "WeChat",
 	[Key.aliPay]: "Alipay",
 	[Key.scanPayQRcode]: "Scanner pour payer",

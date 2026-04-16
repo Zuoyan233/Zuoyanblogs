@@ -26,7 +26,7 @@ export const friendsData: FriendItem[] = [
 		imgurl:
 			"https://avatars.githubusercontent.com/u/241030983?s=400&u=4e94ec9d22f989c4befd4923ec399d1efc58fb37&v=4",
 		desc: "Web content developer",
-		siteurl: "https://github.com/Zuoyan233/Zuoyanblogs",
+		siteurl: "https://github.com/Zuoyan233/BrightMoon",
 		tags: ["Github"],
 	},
 	{

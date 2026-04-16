@@ -61,7 +61,7 @@ export const skillsData: Skill[] = [
 		category: "frontend",
 		level: "intermediate",
 		experience: { years: 1, months: 2 },
-		projects: ["Zuoyanblogs"],
+		projects: ["BrightMoon"],
 		color: "#FF5D01",
 	},
 	{
