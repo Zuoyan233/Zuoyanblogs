@@ -397,4 +397,15 @@ export const de: Translation = {
 		"Bitte achten Sie auf die Sicherheit Ihres Kontos und Ihrer Vermögenswerte",
 	[Key.confirmText]: "Weiter besuchen",
 	[Key.cancelText]: "Abbrechen",
+
+	// Freunde auf sozialen Medien hinzufügen
+	[Key.contactMethod1]: "Wechat",
+	[Key.contactMethod2]: "QQ",
+	[Key.contactMethod3]: "Telegram",
+	[Key.scanContact1]:
+		"Scannen Sie den QR-Code, um einen WeChat-Freund hinzuzufügen",
+	[Key.scanContact2]:
+		"Scannen Sie den QR-Code, um einen QQ-Freund hinzuzufügen",
+	[Key.scanContact3]:
+		"Scannen Sie den QR-Code, um einen Telegram-Freund hinzuzufügen",
 };

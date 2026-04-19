@@ -372,4 +372,12 @@ export const th: Translation = {
 	[Key.warningText]: "โปรดระวังความปลอดภัยของบัญชีและทรัพย์สินของคุณ",
 	[Key.confirmText]: "ดำเนินการต่อ",
 	[Key.cancelText]: "ยกเลิก",
+
+	// เพิ่มเพื่อนบนโซเชียลมีเดีย
+	[Key.contactMethod1]: "Wechat",
+	[Key.contactMethod2]: "QQ",
+	[Key.contactMethod3]: "Telegram",
+	[Key.scanContact1]: "สแกน QR Code เพื่อเพิ่มเพื่อนบน WeChat",
+	[Key.scanContact2]: "สแกน QR Code เพื่อเพิ่มเพื่อนบน QQ",
+	[Key.scanContact3]: "สแกน QR Code เพื่อเพิ่มเพื่อนบน Telegram",
 };

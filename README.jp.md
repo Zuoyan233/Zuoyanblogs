@@ -180,7 +180,7 @@ pnpm install
   - `src/config.ts` 内の `addpaymentConfig` で決済用QRコードを設定します。QRコード画像の保存先は `public/images/sponsors` 内です。
 - **フィードバックページ：** `src/content/spec/feedback.md` でコンテンツを編集します。
   - `src/config.ts` 内の `contactEmailConfig` でサイト管理者のメールアドレス連絡先を設定します。
-  - `public/images/albums/contact` にサイト管理者のSNS連絡先を追加します。
+  - `src/config.ts` 内にある `addfriendConfig` 設定で友達追加用のQRコードを追加します。QRコードのファイルパスは `public/images/contact` 内に格納されています。
 - **プロジェクト紹介ページ：** `src/data/projects.ts` で表示コンテンツを編集します。
 - **スキル紹介ページ：** `src/data/skills.ts` で表示コンテンツを編集します。
 - **タイムラインページ：** `src/data/timeline.ts` で表示コンテンツを編集します。

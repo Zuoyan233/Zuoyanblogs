@@ -9,7 +9,7 @@ import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 
-const { QR_Code_Payment_1, QR_Code_Payment_2 } = addpaymentConfig;
+const { paymentQRCode_1, paymentQRCode_2 } = addpaymentConfig;
 
 const sponsorsPost = await getEntry("spec", "sponsors");
 
@@ -65,7 +65,7 @@ const title = i18n(I18nKey.sponsors);
                     
                     <!-- 修改：添加图片容器并设置样式 -->
                     <div class="flex-1 flex items-center justify-center">
-                        <img src={QR_Code_Payment_1} class="max-h-48 object-contain">
+                        <img src={paymentQRCode_1} class="max-h-48 object-contain">
                     </div>
                 </div>
 
@@ -83,7 +83,7 @@ const title = i18n(I18nKey.sponsors);
                     
                     <!-- 修改：添加图片容器并设置样式 -->
                     <div class="flex-1 flex items-center justify-center">
-                        <img src={QR_Code_Payment_2} class="max-h-48 object-contain">
+                        <img src={paymentQRCode_2} class="max-h-48 object-contain">
                     </div>
                 </div>
             </div>

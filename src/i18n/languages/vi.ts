@@ -389,4 +389,12 @@ export const vi: Translation = {
 	[Key.warningText]: "Vui lòng chú ý bảo mật tài khoản và tài sản của bạn",
 	[Key.confirmText]: "Tiếp tục truy cập",
 	[Key.cancelText]: "Hủy bỏ",
+
+	// Thêm bạn bè trên mạng xã hội
+	[Key.contactMethod1]: "Wechat",
+	[Key.contactMethod2]: "QQ",
+	[Key.contactMethod3]: "Telegram",
+	[Key.scanContact1]: "Quét mã QR để kết bạn WeChat",
+	[Key.scanContact2]: "Quét mã QR để kết bạn QQ",
+	[Key.scanContact3]: "Quét mã QR để kết bạn Telegram",
 };

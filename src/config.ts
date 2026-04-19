@@ -3,6 +3,7 @@ import type {
 	AnnouncementConfig,
 	CommentConfig,
 	ContactEmailConfig,
+	ContactMethods,
 	ExpressiveCodeConfig,
 	ExternalLinkConfirmConfig,
 	FooterConfig,
@@ -431,18 +432,42 @@ export const externalLinkConfirmConfig: ExternalLinkConfirmConfig = {
 };
 
 export const contactEmailConfig: ContactEmailConfig = {
-	// contactEmail1 & contactEmail2: 此处填写你的电子邮箱的号码
-	// contactEmail1_Link & contactEmail2_Link：此处填写你需要跳转到对应电子邮箱的网站，格式是 https://example.mail.com/。
-	contactEmail1: "演示邮箱1，请在src/config.ts中修改你的电子邮箱",
-	contactEmail1_Link: "https://example.mail.com/",
-	contactEmail2: "演示邮箱2，请在src/config.ts中修改你的电子邮箱",
-	contactEmail2_Link: "https://example.mail.com/",
+	// email填写你的电子邮箱地址，link此处填写你需要跳转到对应电子邮箱的网站，格式是 https://example.mail.com/。
+  emails: [
+    {
+      email: "演示邮箱1，请在src/config.ts中修改你的电子邮箱",
+      link: "https://example.mail.com/",
+    },
+    {
+      email: "演示邮箱2，请在src/config.ts中修改你的电子邮箱",
+      link: "https://example.mail.com/",
+    },
+  ],
 };
 
+export const contactMethods: ContactMethods = [
+    // method与icon是填写你的社交软件方式，qrCode是填写你的添加好友的二维码，位置位于 "/images/contact/" 文件夹内。
+  {
+    method: "wechat",
+    icon: "simple-icons:wechat",
+    qrCode: "/images/contact/wechat friend.webp",
+  },
+  {
+    method: "qq",
+    icon: "simple-icons:qq",
+    qrCode: "/images/contact/qq friend.webp",
+  },
+  {
+    method: "telegram",
+    icon: "simple-icons:telegram",
+    qrCode: "/images/contact/telegram friend.webp",
+  },
+];
+
 export const addpaymentConfig: AddpaymentConfig = {
-	// QR_Code_Payment_1 & QR_Code_Payment_2: 此处存放你的赞助支付二维码，存放路径在 public/images/sponsors 文件夹内。
-	QR_Code_Payment_1: "/images/sponsors/alipay.webp",
-	QR_Code_Payment_2: "/images/sponsors/wechat pay.webp",
+	// paymentQRCode: 此处存放你的赞助支付二维码，存放路径在 public/images/sponsors 文件夹内。
+	paymentQRCode_1: "/images/sponsors/alipay.webp",
+	paymentQRCode_2: "/images/sponsors/wechat pay.webp",
 };
 
 export const announcementConfig: AnnouncementConfig = {

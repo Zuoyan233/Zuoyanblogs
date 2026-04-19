@@ -371,4 +371,12 @@ export const zh_TW: Translation = {
 	[Key.warningText]: "請注意您的帳號與財產安全",
 	[Key.confirmText]: "繼續訪問",
 	[Key.cancelText]: "取消",
+
+	// 新增社群軟體好友
+	[Key.contactMethod1]: "微信",
+	[Key.contactMethod2]: "QQ",
+	[Key.contactMethod3]: "Telegram",
+	[Key.scanContact1]: "掃描二維碼添加微信好友",
+	[Key.scanContact2]: "掃描二維碼添加QQ好友",
+	[Key.scanContact3]: "掃描二維碼添加Telegram好友",
 };

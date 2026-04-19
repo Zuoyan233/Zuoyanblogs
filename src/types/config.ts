@@ -501,16 +501,25 @@ export type ExternalLinkConfirmConfig = {
  * 联系站长电子邮箱配置
  */
 export type ContactEmailConfig = {
-	contactEmail1: string;
-	contactEmail1_Link: string;
-	contactEmail2: string;
-	contactEmail2_Link: string;
+	emails: {
+		email: string;
+		link: string;
+	}[];
 };
 
 /**
  * 添加赞助支付二维码配置
  */
 export type AddpaymentConfig = {
-	QR_Code_Payment_1: string;
-	QR_Code_Payment_2: string;
+	paymentQRCode_1: string;
+	paymentQRCode_2: string;
 };
+
+/**
+ * 添加添加好友二维码配置
+ */
+export type ContactMethods = {
+	method: string;      // 社交平台名称
+	icon: string;        // 图标名称
+	qrCode: string;      // 二维码图片路径
+}[];

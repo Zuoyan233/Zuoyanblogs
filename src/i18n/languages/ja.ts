@@ -385,4 +385,12 @@ export const ja: Translation = {
 	[Key.warningText]: "アカウントと資産のセキュリティにご注意ください",
 	[Key.confirmText]: "続けて移動する",
 	[Key.cancelText]: "キャンセル",
+
+	// ソーシャルメディアで友達を追加
+	[Key.contactMethod1]: "Wechat",
+	[Key.contactMethod2]: "QQ",
+	[Key.contactMethod3]: "Telegram",
+	[Key.scanContact1]: "QRコードをスキャンしてWeChatの友達を追加",
+	[Key.scanContact2]: "QRコードをスキャンしてQQの友達を追加",
+	[Key.scanContact3]: "QRコードをスキャンしてTelegramの友達を追加",
 };

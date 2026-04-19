@@ -389,4 +389,12 @@ export const id: Translation = {
 	[Key.warningText]: "Harap waspadai keamanan akun dan aset Anda",
 	[Key.confirmText]: "Lanjutkan kunjungan",
 	[Key.cancelText]: "Batal",
+
+	// Tambahkan teman di media sosial
+	[Key.contactMethod1]: "Wechat",
+	[Key.contactMethod2]: "QQ",
+	[Key.contactMethod3]: "Telegram",
+	[Key.scanContact1]: "Pindai kode QR untuk menambahkan teman WeChat",
+	[Key.scanContact2]: "Pindai kode QR untuk menambahkan teman QQ",
+	[Key.scanContact3]: "Pindai kode QR untuk menambahkan teman Telegram",
 };

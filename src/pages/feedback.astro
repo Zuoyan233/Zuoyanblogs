@@ -1,15 +1,18 @@
 ---
 import { getEntry, render } from "astro:content";
 import Twikoo from "@components/comment/Twikoo.astro";
+import FriendQRCode from "@components/FriendQRCode.astro";
 import Markdown from "@components/misc/Markdown.astro";
-import { commentConfig, contactEmailConfig } from "@/config";
+import { commentConfig, contactEmailConfig, contactMethods } from "@/config";
 import { siteConfig } from "../config";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 
-const { contactEmail1, contactEmail1_Link, contactEmail2, contactEmail2_Link } =
-	contactEmailConfig;
+// 使用数组方式获取添加好友的二维码（从配置中过滤出有值的）
+const availableQRCodes = contactMethods
+	.filter((method) => method.qrCode)
+	.map((method) => method.qrCode);
 
 const feedbackPost = await getEntry("spec", "feedback");
 
@@ -33,71 +36,112 @@ if (commentConfig?.enable && commentConfig?.twikoo) {
 ---
 
 <MainGridLayout title={title}>
-	<!-- 引入右侧边栏布局管理器 -->
+  <!-- 引入右侧边栏布局管理器 -->
   <script>
     import('../scripts/right-sidebar-layout.js');
   </script>
-    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
-        <div class="card-base z-10 px-9 py-6 relative w-full">
-            <!-- 页面标题 -->
-            <div class="flex flex-col items-start justify-center mb-8">
-                <h1 class="text-4xl font-bold text-black/90 dark:text-white/90 mb-2 relative
-                          before:w-1 before:h-8 before:rounded-md before:bg-[var(--primary)]
-                          before:absolute before:top-1/2 before:-translate-y-1/2 before:-left-4">
-                    {title}
-                </h1>
-            </div>
+  
+  <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+    <div class="card-base z-10 px-9 py-6 relative w-full">
+      <!-- 页面标题 -->
+      <div class="flex flex-col items-start justify-center mb-8">
+        <h1 class="text-4xl font-bold text-black/90 dark:text-white/90 mb-2 relative
+                  before:w-1 before:h-8 before:rounded-md before:bg-[var(--primary)]
+                  before:absolute before:top-1/2 before:-translate-y-1/2 before:-left-4">
+          {title}
+        </h1>
+      </div>
 
-            <!-- 从MD文件读取的内容 -->
-            <Markdown class="mt-2">
-                <Content />
-            </Markdown>
-
-        </div>
+      <!-- 从MD文件读取的内容 -->
+      <Markdown class="mt-2">
+        <Content />
+      </Markdown>
     </div>
+  </div>
 
-</br>
+  </br>
 
-    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
-        <div class="card-base z-10 px-9 py-6 relative w-full">
-            <!-- 页面标题 -->
-            <div class="flex flex-col items-start justify-center mb-8">
-                <h1 class="text-3xl font-bold text-black/90 dark:text-white/90 mb-2 relative
-                          before:w-1 before:h-8 before:rounded-md before:bg-[var(--primary)]
-                          before:absolute before:top-1/2 before:-translate-y-1/2 before:-left-4">
-                    {i18n(I18nKey.contactMe)}
-                </h1>
+  <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+    <div class="card-base z-10 px-9 py-6 relative w-full">
+      <!-- 页面标题 -->
+      <div class="flex flex-col items-start justify-center mb-8">
+        <h1 class="text-3xl font-bold text-black/90 dark:text-white/90 mb-2 relative
+                  before:w-1 before:h-8 before:rounded-md before:bg-[var(--primary)]
+                  before:absolute before:top-1/2 before:-translate-y-1/2 before:-left-4">
+          {i18n(I18nKey.contactMe)}
+        </h1>
+      </div>
+
+      <!-- 联系站长电子邮箱方式 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-5">
+        <div class="bg-[oklch(0.95_0.025_var(--hue))] dark:bg-[oklch(0.33_0.035_var(--hue))] rounded-xl p-8 shadow-sm hover:shadow-lg dark:hover:shadow-lg dark:hover:shadow-white/30 transition-shadow">
+          <p class="text-4xl m-0 mb-4 text-left">📧</p>
+          <p class="text-md font-normal text-black/100 dark:text-white/80">
+            {i18n(I18nKey.contactEmail)}
+          </p>
+          {contactEmailConfig.emails.map((emailItem, index) => (
+            <div>
+              <a 
+                class="transition link text-[var(--primary)] hover:text-gray-600 dark:hover:text-white/80 font-medium" 
+                target="_blank" 
+                href={emailItem.link}
+              >
+                {emailItem.email}
+              </a>
+              {index < contactEmailConfig.emails.length - 1 && <br />}
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-5">
-                    <div class="bg-[oklch(0.95_0.025_var(--hue))] dark:bg-[oklch(0.33_0.035_var(--hue))] rounded-xl p-8 shadow-sm hover:shadow-lg dark:hover:shadow-lg dark:hover:shadow-white/30 transition-shadow">
-                        <p class="text-4xl m-0 mb-4 text-left">📧</p>
-                        <p class="text-md font-normal text-black/100 dark:text-white/80">
-                            {i18n(I18nKey.contactEmail)}
-                        </p>
-                        <!-- 此处修改您的邮箱地址 -->
-                        <a class="transition link text-[var(--primary)] hover:text-gray-600 dark:hover:text-white/80 font-medium" target="_blank" href={contactEmail1_Link}>{contactEmail1}</a>
-                    </br>  
-                        <a class="transition link text-[var(--primary)] hover:text-gray-600 dark:hover:text-white/80 font-medium" target="_blank" href={contactEmail2_Link}>{contactEmail2}</a>
-                    </div>
-
-                    <div class="bg-[oklch(0.95_0.025_var(--hue))] dark:bg-[oklch(0.33_0.035_var(--hue))] rounded-xl p-8 shadow-sm hover:shadow-lg dark:hover:shadow-lg dark:hover:shadow-white/30 transition-shadow">
-                    <p class="text-4xl m-0 mb-4 text-left">💬</p>
-                    <p class="text-md font-normal text-black/100 dark:text-white/80">
-                        {i18n(I18nKey.contactSocialFriends)}
-                    </p>
-                        <a class="btn-regular bg-[oklch(0.7_0.12_var(--hue))] text-[oklch(0.95_0.025_var(--hue))] hover:text-[var(--primary)] h-10 text-sm px-3 rounded-lg mt-1.5" href="/albums/contact/">{i18n(I18nKey.addFriends)}</a>
-                    </div>
-            </div>
+          ))}
         </div>
+
+        <!-- 联系站长添加好友方式 -->
+        <div class="bg-[oklch(0.95_0.025_var(--hue))] dark:bg-[oklch(0.33_0.035_var(--hue))] rounded-xl p-8 shadow-sm hover:shadow-lg dark:hover:shadow-lg dark:hover:shadow-white/30 transition-shadow">
+          <p class="text-4xl m-0 mb-4 text-left">💬</p>
+          <p class="text-md font-normal text-black/100 dark:text-white/80">
+            {i18n(I18nKey.contactSocialFriends)}
+          </p>
+          <a id="show-qrcode-btn" class="btn-regular bg-[oklch(0.7_0.12_var(--hue))] text-[oklch(0.95_0.025_var(--hue))] hover:text-[var(--primary)] h-10 mx-auto text-sm px-3 rounded-lg mt-2 cursor-pointer">
+            {i18n(I18nKey.addFriends)}
+          </a>
+        </div>
+      </div>
     </div>
+  </div>
 
-</br>
+  </br>
 
-    {commentConfig?.enable && (
-        <div class="card-base p-6 mb-4">
-            {commentService === 'twikoo' && <Twikoo path={path} />}
-            {commentService === '' && null}
-        </div>
-    )}
+  <!-- Twikoo 评论系统 -->
+  {commentConfig?.enable && (
+    <div class="card-base p-6 mb-4">
+      {commentService === 'twikoo' && <Twikoo path={path} />}
+      {commentService === '' && null}
+    </div>
+  )}
+
+  <!-- 添加好友二维码对话框 - 使用数组方式传递 -->
+  <FriendQRCode 
+    qrCodes={availableQRCodes}
+  />
+
+  <!-- 添加好友按钮点击事件 -->
+  <script>
+    // 使用事件委托，确保按钮即使被重新创建也能正常工作
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (target.id === 'show-qrcode-btn' || target.closest('#show-qrcode-btn')) {
+        e.preventDefault();
+        
+        // 等待一小段时间确保对话框已初始化
+        const showDialog = () => {
+          if (typeof (window as any).showContactDialog === 'function') {
+            (window as any).showContactDialog();
+          } else {
+            console.warn('showContactDialog not ready, retrying...');
+            setTimeout(showDialog, 50);
+          }
+        };
+        
+        showDialog();
+      }
+    });
+  </script>
 </MainGridLayout>

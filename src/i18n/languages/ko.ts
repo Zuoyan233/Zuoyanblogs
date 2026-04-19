@@ -383,4 +383,12 @@ export const ko: Translation = {
 	[Key.warningText]: "계정 및 자산 보안에 유의하시기 바랍니다",
 	[Key.confirmText]: "계속 방문하기",
 	[Key.cancelText]: "취소",
+
+	// 소셜 미디어에서 친구 추가하기
+	[Key.contactMethod1]: "Wechat",
+	[Key.contactMethod2]: "QQ",
+	[Key.contactMethod3]: "Telegram",
+	[Key.scanContact1]: "QR 코드를 스캔하여 WeChat 친구 추가",
+	[Key.scanContact2]: "QR 코드를 스캔하여 QQ 친구 추가",
+	[Key.scanContact3]: "QR 코드를 스캔하여 Telegram 친구 추가",
 };

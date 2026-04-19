@@ -399,4 +399,14 @@ export const es: Translation = {
 	[Key.warningText]: "Por favor, cuida la seguridad de tu cuenta y activos",
 	[Key.confirmText]: "Continuar a la visita",
 	[Key.cancelText]: "Cancelar",
+
+	// Añadir amigos en redes sociales
+	[Key.contactMethod1]: "Wechat",
+	[Key.contactMethod2]: "QQ",
+	[Key.contactMethod3]: "Telegram",
+	[Key.scanContact1]:
+		"Escanea el código QR para añadir un amigo en WeChat",
+	[Key.scanContact2]: "Escanea el código QR para añadir un amigo en QQ",
+	[Key.scanContact3]:
+		"Escanea el código QR para añadir un amigo en Telegram",
 };

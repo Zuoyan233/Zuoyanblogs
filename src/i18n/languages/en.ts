@@ -388,4 +388,12 @@ export const en: Translation = {
 	[Key.warningText]: "Please be aware of your account and asset security",
 	[Key.confirmText]: "Continue to visit",
 	[Key.cancelText]: "Cancel",
+
+	// Add friends on social media
+	[Key.contactMethod1]: "Wechat",
+	[Key.contactMethod2]: "QQ",
+	[Key.contactMethod3]: "Telegram",
+	[Key.scanContact1]: "Scan the QR code to add a WeChat friend",
+	[Key.scanContact2]: "Scan the QR code to add a QQ friend",
+	[Key.scanContact3]: "Scan the QR code to add a Telegram friend",
 };

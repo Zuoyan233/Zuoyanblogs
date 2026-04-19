@@ -389,4 +389,12 @@ export const ru: Translation = {
 		"Пожалуйста, будьте осторожны с безопасностью вашего аккаунта и средств",
 	[Key.confirmText]: "Перейти",
 	[Key.cancelText]: "Отмена",
+
+	// Добавить друзей в социальных сетях
+	[Key.contactMethod1]: "Wechat",
+	[Key.contactMethod2]: "QQ",
+	[Key.contactMethod3]: "Telegram",
+	[Key.scanContact1]: "Отсканируйте QR-код, чтобы добавить друга в WeChat",
+	[Key.scanContact2]: "Отсканируйте QR-код, чтобы добавить друга в QQ",
+	[Key.scanContact3]: "Отсканируйте QR-код, чтобы добавить друга в Telegram",
 };

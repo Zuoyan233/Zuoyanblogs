@@ -395,4 +395,12 @@ export const tr: Translation = {
 	[Key.warningText]: "Hesap ve varlık güvenliğinize dikkat edin",
 	[Key.confirmText]: "Ziyarete Devam Et",
 	[Key.cancelText]: "İptal",
+
+	// Sosyal medyada arkadaş ekleme
+	[Key.contactMethod1]: "Wechat",
+	[Key.contactMethod2]: "QQ",
+	[Key.contactMethod3]: "Telegram",
+	[Key.scanContact1]: "Arkadaş eklemek için QR kodu tarayın WeChat",
+	[Key.scanContact2]: "Arkadaş eklemek için QR kodu tarayın QQ",
+	[Key.scanContact3]: "Arkadaş eklemek için QR kodu tarayın Telegram",
 };

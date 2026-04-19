@@ -404,4 +404,12 @@ export const fr: Translation = {
 		"Soyez attentif à la sécurité de votre compte et de vos actifs",
 	[Key.confirmText]: "Continuer la visite",
 	[Key.cancelText]: "Annuler",
+
+	// Ajouter des amis sur les réseaux sociaux
+	[Key.contactMethod1]: "Wechat",
+	[Key.contactMethod2]: "QQ",
+	[Key.contactMethod3]: "Telegram",
+	[Key.scanContact1]: "Scannez le code QR pour ajouter un ami WeChat",
+	[Key.scanContact2]: "Scannez le code QR pour ajouter un ami QQ",
+	[Key.scanContact3]: "Scannez le code QR pour ajouter un ami Telegram",
 };

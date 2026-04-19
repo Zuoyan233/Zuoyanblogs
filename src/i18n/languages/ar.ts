@@ -381,4 +381,12 @@ export const ar: Translation = {
 	[Key.warningText]: "يرجى الانتباه إلى أمان حسابك وأصولك",
 	[Key.confirmText]: "المتابعة للزيارة",
 	[Key.cancelText]: "إلغاء",
+
+	// إضافة أصدقاء على وسائل التواصل الاجتماعي
+	[Key.contactMethod1]: "Wechat",
+	[Key.contactMethod2]: "QQ",
+	[Key.contactMethod3]: "Telegram",
+	[Key.scanContact1]: "امسح رمز QR لإضافة صديق على WeChat",
+	[Key.scanContact2]: "امسح رمز QR لإضافة صديق على QQ",
+	[Key.scanContact3]: "امسح رمز QR لإضافة صديق على Telegram",
 };

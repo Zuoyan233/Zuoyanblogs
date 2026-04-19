@@ -179,7 +179,7 @@ pnpm install
   - Find `addpaymentConfig` in `src/config.ts` to configure payment QR codes. QR codes should be stored in `public/images/sponsors`.
 - **Feedback Page:** Edit content in `src/content/spec/feedback.md`.
   - Find `contactEmailConfig` in `src/config.ts` to configure the site owner's email contact.
-  - Add the site owner's social software contact information in `public/images/albums/contact`.
+  - Find `addfriendConfig` in `src/config.ts` configuration to add a friend QR codes. The QR codes file path is stored in `public/images/contact`.
 - **Projects Page:** Edit displayed content in `src/data/projects.ts`.
 - **Skills Page:** Edit displayed content in `src/data/skills.ts`.
 - **Timeline Page:** Edit displayed content in `src/data/timeline.ts`.

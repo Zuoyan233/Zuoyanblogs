@@ -361,6 +361,14 @@ enum I18nKey {
 	warningText = "warningText",
 	confirmText = "confirmText",
 	cancelText = "cancelText",
+
+	// 添加社交软件好友
+	contactMethod1 = "contactMethod1",
+	contactMethod2 = "contactMethod2",
+	contactMethod3 = "contactMethod3",
+	scanContact1 = "scanContact1",
+	scanContact2 = "scanContact2",
+	scanContact3 = "scanContact3",
 }
 
 export default I18nKey;

@@ -371,4 +371,12 @@ export const zh_CN: Translation = {
 	[Key.warningText]: "请注意您的账号与财产安全",
 	[Key.confirmText]: "继续访问",
 	[Key.cancelText]: "取消",
+
+	// 添加社交软件好友
+	[Key.contactMethod1]: "微信",
+	[Key.contactMethod2]: "QQ",
+	[Key.contactMethod3]: "Telegram",
+	[Key.scanContact1]: "扫描二维码添加微信好友",
+	[Key.scanContact2]: "扫描二维码添加QQ好友",
+	[Key.scanContact3]: "扫描二维码添加Telegram好友",
 };
