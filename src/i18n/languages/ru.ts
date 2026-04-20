@@ -335,6 +335,13 @@ export const ru: Translation = {
 	[Key.siteStatsCurrentDate]: "Дата",
 	[Key.siteStatsDateFormat]: "{month}/{day}/{year}",
 	[Key.siteStatsCurrentTime]: "Время",
+	[Key.siteStatsTimePeriodMorning]: "Утро",
+	[Key.siteStatsTimePeriodNoon]: "Полдень",
+	[Key.siteStatsTimePeriodAfternoon]: "День",
+	[Key.siteStatsTimePeriodEvening]: "Вечер",
+	[Key.siteStatsTimePeriodNight]: "Ночь",
+	[Key.siteStatsAm]: "AM",
+	[Key.siteStatsPm]: "PM",
 
 	// Компонент календаря
 	[Key.calendarSunday]: "Вс",

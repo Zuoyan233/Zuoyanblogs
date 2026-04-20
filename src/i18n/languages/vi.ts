@@ -336,6 +336,13 @@ export const vi: Translation = {
 	[Key.siteStatsCurrentDate]: "Ngày",
 	[Key.siteStatsDateFormat]: "{year}/{month}/{day}",
 	[Key.siteStatsCurrentTime]: "Giờ",
+	[Key.siteStatsTimePeriodMorning]: "Buổi sáng",
+	[Key.siteStatsTimePeriodNoon]: "Buổi trưa",
+	[Key.siteStatsTimePeriodAfternoon]: "Buổi chiều",
+	[Key.siteStatsTimePeriodEvening]: "Chạng vạng",
+	[Key.siteStatsTimePeriodNight]: "Buổi tối",
+	[Key.siteStatsAm]: "SA",
+	[Key.siteStatsPm]: "CH",
 
 	// Calendar Component
 	[Key.calendarSunday]: "CN",

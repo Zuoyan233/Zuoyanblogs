@@ -328,6 +328,13 @@ export const ar: Translation = {
 	[Key.siteStatsCurrentDate]: "التاريخ",
 	[Key.siteStatsDateFormat]: "{month}/{day}/{year}",
 	[Key.siteStatsCurrentTime]: "الوقت",
+	[Key.siteStatsTimePeriodMorning]: "صباحاً",
+	[Key.siteStatsTimePeriodNoon]: "ظهراً",
+	[Key.siteStatsTimePeriodAfternoon]: "بعد الظهر",
+	[Key.siteStatsTimePeriodEvening]: "مساءً",
+	[Key.siteStatsTimePeriodNight]: "ليلاً",
+	[Key.siteStatsAm]: "ص",
+	[Key.siteStatsPm]: "م",
 
 	// Calendar Component
 	[Key.calendarSunday]: "أحد",

@@ -17,8 +17,11 @@ interface Props {
 
 const { class: className, style } = Astro.props;
 
-// 从配置中获取站点开始日期
-const siteStartDate = siteConfig.siteStartDate || "2025-01-01";
+// 从配置中获取站点开始日期和动态更新、时间段显示
+const siteStartDate = siteConfig.siteStats.siteStartDate || "1970-01-01";
+const enableDynamic = siteConfig.siteStats?.dynamicEnable ?? true;
+const enableShowPeriod = siteConfig.siteStats?.dynamicEnable ?? true;
+const enable12HourClock = siteConfig.siteStats?.enable12HourClock ?? false;
 
 // 获取所有文章
 const posts = await getSortedPosts();
@@ -70,21 +73,43 @@ const lastPostDate = latestPost
 	? latestPost.data.published.toISOString()
 	: null;
 
-// 计算运行天数（静态值，作为后备）
-const startDate = new Date(siteStartDate);
-const today = new Date();
-const diffTime = Math.abs(today.getTime() - startDate.getTime());
-const staticRunningDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+// 计算基准日期（使用UTC中午避免时区问题）
+function getUTCDate(dateStr: string): Date {
+	// 使用 UTC 中午12点避免时区偏移问题
+	return new Date(`${dateStr}T12:00:00Z`);
+}
 
-// 计算最后更新天数（静态值，作为后备）
-let staticDaysSinceLastUpdate = 0;
+// 计算运行天数（基准值，客户端会重新计算）
+const startBaseDate = getUTCDate(siteStartDate);
+const nowBase = new Date();
+const baseRunningDays = Math.max(
+	1,
+	Math.floor(
+		(nowBase.getTime() - startBaseDate.getTime()) / (1000 * 60 * 60 * 24),
+	) + 1,
+);
+
+// 计算最后更新天数（基准值）
+let baseDaysSinceLastUpdate = 0;
 if (lastPostDate) {
-	const lastPost = new Date(lastPostDate);
-	const timeSinceLastPost = Math.abs(today.getTime() - lastPost.getTime());
-	staticDaysSinceLastUpdate = Math.floor(
-		timeSinceLastPost / (1000 * 60 * 60 * 24),
+	const lastPostBase = new Date(lastPostDate);
+	baseDaysSinceLastUpdate = Math.max(
+		0,
+		Math.floor(
+			(nowBase.getTime() - lastPostBase.getTime()) / (1000 * 60 * 60 * 24),
+		),
 	);
 }
+
+// 获取日期格式
+const dateFormatStr =
+	i18n(I18nKey.siteStatsDateFormat) || "{year}年{month}月{day}日";
+
+// 计算当前日期（基准值，客户端会重新计算）
+const baseCurrentDate = dateFormatStr
+	.replace("{year}", String(nowBase.getFullYear()))
+	.replace("{month}", String(nowBase.getMonth() + 1))
+	.replace("{day}", String(nowBase.getDate()));
 
 const stats = [
 	{
@@ -111,34 +136,38 @@ const stats = [
 	{
 		icon: "material-symbols:calendar-clock-outline",
 		label: i18n(I18nKey.siteStatsRunningDays),
-		value: staticRunningDays,
+		value: baseRunningDays,
 		suffix: i18n(I18nKey.siteStatsDays).replace("{days}", ""),
-		dynamic: true, // 动态更新，如果使用false用回value的默认值
+		dynamic: enableDynamic, // 是否动态更新
+		updateInterval: "daily", // 每天更新
 		id: "running-days",
 	},
 	{
 		icon: "material-symbols:ecg-heart-outline",
 		label: i18n(I18nKey.siteStatsLastUpdate),
-		value: staticDaysSinceLastUpdate,
+		value: baseDaysSinceLastUpdate,
 		suffix: i18n(I18nKey.siteStatsDaysAgo).replace("{days}", ""),
-		dynamic: true,
+		dynamic: enableDynamic, // 是否动态更新
+		updateInterval: "daily", // 每天更新
 		id: "last-update",
 	},
 	{
 		icon: "material-symbols:calendar-month-outline",
 		label: i18n(I18nKey.siteStatsCurrentDate),
-		value: new Date().toLocaleDateString(),
-		dynamic: true,
+		value: baseCurrentDate,
+		dynamic: enableDynamic, // 是否动态更新
+		updateInterval: "daily", // 每天更新
 		id: "current-date",
-		dateFormat: i18n(I18nKey.siteStatsDateFormat),
+		useFormattedDate: true,
 	},
 	{
 		icon: "material-symbols:schedule-outline",
 		label: i18n(I18nKey.siteStatsCurrentTime),
-		value: new Date().toLocaleTimeString(),
-		dynamic: true,
+		dynamic: enableDynamic, // 是否动态更新
+		updateInterval: "second", // 每秒更新
 		id: "current-time",
-		ampm: false, // false=24小时制, true=12小时制
+		showPeriod: enableShowPeriod, // 是否显示时间段
+		use12Hour: enable12HourClock, // 是否使用12小时制
 	},
 ];
 ---
@@ -151,54 +180,118 @@ const stats = [
 >
 	<div class="flex flex-col gap-1">
 		{
-			stats.map((stat) => (
-				<div class="flex items-center justify-between px-2 py-2">
-					<div class="flex items-center gap-2.5 flex-1 min-w-0">
-						<div class="text-[var(--primary)] text-xl shrink-0">
-							<Icon name={stat.icon} />
-						</div>
-						<span class="text-neutral-700 dark:text-neutral-300 font-medium text-sm break-words leading-tight">
-							{stat.label}
-						</span>
-					</div>
-					<div class="flex items-center ml-3 shrink-0">
-						<span
-							class="text-base font-bold text-neutral-900 dark:text-neutral-100"
-							{...(stat.dynamic ? { "data-stat-id": stat.id } : {})}
-							data-ampm={stat.ampm}
-							data-date-format={stat.dateFormat}
-						>
-							{stat.formatted
-								? formatNumber(stat.value)
-								: stat.value}
-						</span>
-						{stat.suffix && (
-							<span class="text-sm text-neutral-500 dark:text-neutral-400 ml-1">
-								{stat.suffix}
+			stats.map((stat) => {
+				if (stat.dynamic === false && stat.value === undefined) return null;
+				
+				return (
+					<div class="flex items-center justify-between px-2 py-2">
+						<div class="flex items-center gap-2.5 flex-1 min-w-0">
+							<div class="text-[var(--primary)] text-xl shrink-0">
+								<Icon name={stat.icon} />
+							</div>
+							<span class="text-neutral-700 dark:text-neutral-300 font-medium text-sm break-words leading-tight">
+								{stat.label}
 							</span>
-						)}
+						</div>
+						<div class="flex items-center ml-3 shrink-0">
+							{stat.showPeriod && !stat.use12Hour ? (
+								<div class="flex items-center gap-1">
+									<span
+										class="text-base font-bold text-neutral-900 dark:text-neutral-100"
+										data-stat-id={stat.id}
+										data-update-interval={stat.updateInterval}
+									>
+										{ (stat as any).formatted ? formatNumber((stat as any).value) : (stat as any).value }
+									</span>
+									<span
+										class="text-sm text-neutral-500 dark:text-neutral-400"
+										data-stat-id="time-period"
+									>
+									</span>
+								</div>
+							) : stat.showPeriod && stat.use12Hour ? (
+								<div class="flex items-center gap-1">
+									<span
+										class="text-base font-bold text-neutral-900 dark:text-neutral-100"
+										data-stat-id={stat.id}
+										data-update-interval={stat.updateInterval}
+										data-use-12-hour="true"
+									>
+										{ (stat as any).formatted ? formatNumber((stat as any).value) : (stat as any).value }
+									</span>
+									<span
+										class="text-sm text-neutral-500 dark:text-neutral-400"
+										data-stat-id="time-ampm"
+									>
+									</span>
+								</div>
+							) : stat.useFormattedDate ? (
+								<span
+									class="inline-flex items-baseline gap-0.5 text-base font-bold text-neutral-900 dark:text-neutral-100"
+									data-stat-id={stat.id}
+									data-formatted-date="true"
+								>
+								</span>
+							) : (
+								<>
+									<span
+										class="text-base font-bold text-neutral-900 dark:text-neutral-100"
+										data-stat-id={stat.dynamic ? stat.id : undefined}
+										data-update-interval={stat.updateInterval}
+									>
+										{ (stat as any).formatted ? formatNumber((stat as any).value) : (stat as any).value }
+									</span>
+									{stat.suffix && (
+										<span class="text-sm text-neutral-500 dark:text-neutral-400 ml-1">
+											{stat.suffix}
+										</span>
+									)}
+								</>
+							)}
+						</div>
 					</div>
-				</div>
-			))
+				);
+			})
 		}
 	</div>
 </WidgetLayout>
 
-<script is:inline define:vars={{ siteStartDate, lastPostDate }}>
-	// 格式化时间（12小时制，带 AM/PM）
-	function formatTimeWithAMPM(date) {
-		let hours = date.getHours();
-		const minutes = String(date.getMinutes()).padStart(2, '0');
-		const seconds = String(date.getSeconds()).padStart(2, '0');
-		const ampm = hours >= 12 ? 'PM' : 'AM';
-		
-		hours = hours % 12;
-		hours = hours ? hours : 12;
-		
-		return `${hours}:${minutes}:${seconds} ${ampm}`;
+
+
+<script is:inline define:vars={{ 
+	siteStartDate, 
+	lastPostDate,
+	dateFormat: dateFormatStr,
+	timePeriodMorning: i18n(I18nKey.siteStatsTimePeriodMorning),
+	timePeriodNoon: i18n(I18nKey.siteStatsTimePeriodNoon),
+	timePeriodAfternoon: i18n(I18nKey.siteStatsTimePeriodAfternoon),
+	timePeriodEvening: i18n(I18nKey.siteStatsTimePeriodEvening),
+	timePeriodNight: i18n(I18nKey.siteStatsTimePeriodNight),
+	timeAm: i18n(I18nKey.siteStatsAm),
+	timePm: i18n(I18nKey.siteStatsPm)
+}}>
+	// 获取时间段
+	function getTimePeriod(hours) {
+		if (hours >= 5 && hours < 11) {
+			return timePeriodMorning;
+		} else if (hours >= 11 && hours < 13) {
+			return timePeriodNoon;
+		} else if (hours >= 13 && hours < 18) {
+			return timePeriodAfternoon;
+		} else if (hours >= 18 && hours < 20) {
+			return timePeriodEvening;
+		} else {
+			return timePeriodNight;
+		}
 	}
 
-	// 格式化时间（24小时制）
+	function getUTCDate(dateStr) {
+		if (typeof dateStr === 'string') {
+			return new Date(`${dateStr}T12:00:00Z`);
+		}
+		return new Date(dateStr);
+	}
+
 	function formatTime24(date) {
 		const hours = String(date.getHours()).padStart(2, '0');
 		const minutes = String(date.getMinutes()).padStart(2, '0');
@@ -206,59 +299,194 @@ const stats = [
 		return `${hours}:${minutes}:${seconds}`;
 	}
 
-	// 格式化日期
-	function formatDate(element, date) {
-		const format = element.getAttribute('data-date-format') || '{year}-{month}-{day}';
-		
-		// 简单替换占位符
-		return format
-			.replace('{year}', date.getFullYear())
-			.replace('{month}', date.getMonth() + 1)
-			.replace('{day}', date.getDate());
+	function formatTime12(date) {
+		let hours = date.getHours();
+		const minutes = String(date.getMinutes()).padStart(2, '0');
+		const seconds = String(date.getSeconds()).padStart(2, '0');
+		const ampm = hours >= 12 ? timePm : timeAm;
+		hours = hours % 12;
+		hours = hours ? hours : 12; // 0点显示为12
+		return `${hours}:${minutes}:${seconds}`;
 	}
 
+	function getTimeAmPm(date) {
+		return date.getHours() >= 12 ? timePm : timeAm;
+	}
+
+	// 简化的日期格式化函数
+	function updateFormattedDate(element, today) {
+		const year = today.getFullYear();
+		const month = today.getMonth() + 1;
+		const day = today.getDate();
+		
+		// 解析格式字符串，提取纯文本部分
+		const format = dateFormat;
+		
+		// 使用正则表达式分割格式字符串
+		const parts = format.split(/(\{year\}|\{month\}|\{day\})/g);
+		
+		let html = '';
+		
+		parts.forEach(part => {
+			if (part === '{year}') {
+				html += `<span class="text-base leading-6 font-bold text-neutral-900 dark:text-neutral-100">${year}</span>`;
+			} else if (part === '{month}') {
+				html += `<span class="text-base leading-6 font-bold text-neutral-900 dark:text-neutral-100">${month}</span>`;
+			} else if (part === '{day}') {
+				html += `<span class="text-base leading-6 font-bold text-neutral-900 dark:text-neutral-100">${day}</span>`;
+			} else if (part) {
+				html += `<span class="text-sm leading-5 text-neutral-500 font-normal mx-px dark:text-neutral-400">${part}</span>`;
+			}
+		});
+		
+		if (element.innerHTML !== html) {
+			element.innerHTML = html;
+		}
+	}
+
+	// 计算运行天数
+	function updateRunningDays(element, today) {
+		if (!siteStartDate) return;
+		
+		const startDate = getUTCDate(siteStartDate);
+		const diffTime = today.getTime() - startDate.getTime();
+		const diffDays = Math.max(1, Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1);
+		
+		if (element.textContent !== String(diffDays)) {
+			element.textContent = diffDays;
+		}
+	}
+
+    // 计算最后更新天数
+	function updateLastUpdate(element, today) {
+		if (!lastPostDate) return;
+		
+		const lastPost = new Date(lastPostDate);
+		const diffTime = today.getTime() - lastPost.getTime();
+		const daysSinceLastUpdate = Math.max(0, Math.floor(diffTime / (1000 * 60 * 60 * 24)));
+		
+		if (element.textContent !== String(daysSinceLastUpdate)) {
+			element.textContent = daysSinceLastUpdate;
+		}
+	}
+
+    // 计算当前日期
+	function updateCurrentDate(element, today) {
+		const isFormatted = element.hasAttribute('data-formatted-date');
+		
+		if (isFormatted) {
+			updateFormattedDate(element, today);
+		} else {
+			// 兼容旧的格式
+			const newDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+			if (element.textContent !== newDate) {
+				element.textContent = newDate;
+			}
+		}
+	}
+
+	// 计算当前时间
+	function updateCurrentTime(element, today) {
+		const use12Hour = element.hasAttribute('data-use-12-hour') && element.getAttribute('data-use-12-hour') === 'true';
+		const newTime = use12Hour ? formatTime12(today) : formatTime24(today);
+		if (element.textContent !== newTime) {
+			element.textContent = newTime;
+		}
+
+		// 更新AM/PM标识
+		if (use12Hour) {
+			const ampmElement = document.querySelector('[data-stat-id="time-ampm"]');
+			if (ampmElement) {
+				const ampm = getTimeAmPm(today);
+				if (ampmElement.textContent !== ampm) {
+					ampmElement.textContent = ampm;
+				}
+			}
+		}
+	}
+
+	// 计算当前时间段
+	function updateTimePeriod(today) {
+		const timePeriodElement = document.querySelector('[data-stat-id="time-period"]');
+		if (timePeriodElement) {
+			const hours = today.getHours();
+			const period = getTimePeriod(hours);
+			
+			if (timePeriodElement.textContent !== period) {
+				timePeriodElement.textContent = period;
+			}
+		}
+	}
+
+	// 更新所有动态统计
 	function updateDynamicStats() {
 		try {
 			const today = new Date();
-
-			// 更新运行天数
+			
 			const runningDaysElement = document.querySelector('[data-stat-id="running-days"]');
-			if (runningDaysElement && siteStartDate) {
-				const startDate = new Date(siteStartDate);
-				const diffTime = Math.abs(today.getTime() - startDate.getTime());
-				const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-				runningDaysElement.textContent = diffDays.toString();
-			}
-
-			// 更新最后活动时间
 			const lastUpdateElement = document.querySelector('[data-stat-id="last-update"]');
-			if (lastUpdateElement && lastPostDate) {
-				const lastPost = new Date(lastPostDate);
-				const timeSinceLastPost = Math.abs(today.getTime() - lastPost.getTime());
-				const daysSinceLastUpdate = Math.floor(timeSinceLastPost / (1000 * 60 * 60 * 24));
-				lastUpdateElement.textContent = daysSinceLastUpdate.toString();
-			}
-
-			// 更新当前日期
 			const currentDateElement = document.querySelector('[data-stat-id="current-date"]');
-			if (currentDateElement) {
-				currentDateElement.textContent = formatDate(currentDateElement, today);
-			}
-
-			// 更新当前时间
 			const currentTimeElement = document.querySelector('[data-stat-id="current-time"]');
-			if (currentTimeElement) {
-				const useAMPM = currentTimeElement.getAttribute('data-ampm') === 'true';
-				currentTimeElement.textContent = useAMPM ? formatTimeWithAMPM(today) : formatTime24(today);
-			}
+			
+			if (runningDaysElement) updateRunningDays(runningDaysElement, today);
+			if (lastUpdateElement) updateLastUpdate(lastUpdateElement, today);
+			if (currentDateElement) updateCurrentDate(currentDateElement, today);
+			if (currentTimeElement) updateCurrentTime(currentTimeElement, today);
+			
+			updateTimePeriod(today);
 		} catch (error) {
 			console.error('Error updating stats:', error);
 		}
 	}
 
-	// 页面加载时更新动态项
-	updateDynamicStats();
+	let intervalId = null;
+	let dailyIntervalId = null;
+	let minuteIntervalId = null;
 
-	// 每秒更新动态项
-	setInterval(updateDynamicStats, 1000);
+	// 启动定时器
+	function startIntervals() {
+		if (intervalId) clearInterval(intervalId);
+		if (dailyIntervalId) clearInterval(dailyIntervalId);
+		if (minuteIntervalId) clearInterval(minuteIntervalId);
+		
+		intervalId = setInterval(updateDynamicStats, 1000);
+		dailyIntervalId = setInterval(updateDynamicStats, 3600000);
+		minuteIntervalId = setInterval(updateDynamicStats, 60000);
+		
+		updateDynamicStats();
+	}
+
+	// 停止定时器
+	function stopIntervals() {
+		if (intervalId) {
+			clearInterval(intervalId);
+			intervalId = null;
+		}
+		if (dailyIntervalId) {
+			clearInterval(dailyIntervalId);
+			dailyIntervalId = null;
+		}
+		if (minuteIntervalId) {
+			clearInterval(minuteIntervalId);
+			minuteIntervalId = null;
+		}
+	}
+
+	// 监听页面可见性变化
+	function handleVisibilityChange() {
+		if (document.hidden) {
+			stopIntervals();
+		} else {
+			startIntervals();
+		}
+	}
+
+	if (typeof document !== 'undefined') {
+		startIntervals();
+		document.addEventListener('visibilitychange', handleVisibilityChange);
+		window.addEventListener('beforeunload', () => {
+			stopIntervals();
+			document.removeEventListener('visibilitychange', handleVisibilityChange);
+		});
+	}
 </script>

@@ -336,6 +336,13 @@ export const id: Translation = {
 	[Key.siteStatsCurrentDate]: "Tanggal",
 	[Key.siteStatsDateFormat]: "{month}/{day}/{year}",
 	[Key.siteStatsCurrentTime]: "Waktu",
+	[Key.siteStatsTimePeriodMorning]: "Pagi",
+	[Key.siteStatsTimePeriodNoon]: "Siang",
+	[Key.siteStatsTimePeriodAfternoon]: "Sore",
+	[Key.siteStatsTimePeriodEvening]: "Senja",
+	[Key.siteStatsTimePeriodNight]: "Malam",
+	[Key.siteStatsAm]: "AM",
+	[Key.siteStatsPm]: "PM",
 
 	// Komponen Kalender
 	[Key.calendarSunday]: "Min",

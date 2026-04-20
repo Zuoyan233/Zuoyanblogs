@@ -320,6 +320,13 @@ export const th: Translation = {
 	[Key.siteStatsCurrentDate]: "วันที่",
 	[Key.siteStatsDateFormat]: "{month}/{day}/{year}",
 	[Key.siteStatsCurrentTime]: "เวลา",
+	[Key.siteStatsTimePeriodMorning]: "เช้า",
+	[Key.siteStatsTimePeriodNoon]: "เที่ยง",
+	[Key.siteStatsTimePeriodAfternoon]: "บ่าย",
+	[Key.siteStatsTimePeriodEvening]: "เย็น",
+	[Key.siteStatsTimePeriodNight]: "กลางคืน",
+	[Key.siteStatsAm]: "AM",
+	[Key.siteStatsPm]: "PM",
 
 	// Calendar Component
 	[Key.calendarSunday]: "อา",

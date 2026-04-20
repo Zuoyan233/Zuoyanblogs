@@ -30,7 +30,11 @@ export const siteConfig: SiteConfig = {
 	title: "BrightMoon",
 	subtitle: "Modern, feature-rich static blog",
 	siteURL: "https://www.example.com/", // 请替换为你的站点URL，以斜杠结尾
-	siteStartDate: "2025-10-30", // 站点开始运行日期，用于站点统计组件计算运行天数
+	siteStats: {
+		siteStartDate: "2025-10-30", // 站点开始运行日期，用于站点统计组件计算运行天数
+		dynamicEnable: true, // 是否启用动态站点统计，默认启用
+		enable12HourClock: false, // 启用12小时制时间显示 (需要启用动态站点统计生效)
+	},
 
 	timeZone: SITE_TIMEZONE,
 
@@ -432,40 +436,40 @@ export const externalLinkConfirmConfig: ExternalLinkConfirmConfig = {
 };
 
 export const contactEmailConfig: ContactEmailConfig = {
-	// email填写你的电子邮箱地址，link此处填写你需要跳转到对应电子邮箱的网站，格式是 https://example.mail.com/。
-  emails: [
-    {
-      email: "演示邮箱1，请在src/config.ts中修改你的电子邮箱",
-      link: "https://example.mail.com/",
-    },
-    {
-      email: "演示邮箱2，请在src/config.ts中修改你的电子邮箱",
-      link: "https://example.mail.com/",
-    },
-  ],
+	// email填写你的电子邮箱地址，link此处填写你需要跳转到对应电子邮箱的网站，格式是 "https://example.mail.com/"。
+	emails: [
+		{
+			email: "演示邮箱1，请在src/config.ts中修改你的电子邮箱",
+			link: "https://example.mail.com/",
+		},
+		{
+			email: "演示邮箱2，请在src/config.ts中修改你的电子邮箱",
+			link: "https://example.mail.com/",
+		},
+	],
 };
 
 export const contactMethods: ContactMethods = [
-    // method与icon是填写你的社交软件方式，qrCode是填写你的添加好友的二维码，位置位于 "/images/contact/" 文件夹内。
-  {
-    method: "wechat",
-    icon: "simple-icons:wechat",
-    qrCode: "/images/contact/wechat friend.webp",
-  },
-  {
-    method: "qq",
-    icon: "simple-icons:qq",
-    qrCode: "/images/contact/qq friend.webp",
-  },
-  {
-    method: "telegram",
-    icon: "simple-icons:telegram",
-    qrCode: "/images/contact/telegram friend.webp",
-  },
+	// method与icon是填写你的社交软件方式，qrCode是填写你的添加好友的二维码，存放路径在 "public/images/contact/" 文件夹内。
+	{
+		method: "wechat",
+		icon: "simple-icons:wechat",
+		qrCode: "/images/contact/wechat friend.webp",
+	},
+	{
+		method: "qq",
+		icon: "simple-icons:qq",
+		qrCode: "/images/contact/qq friend.webp",
+	},
+	{
+		method: "telegram",
+		icon: "simple-icons:telegram",
+		qrCode: "/images/contact/telegram friend.webp",
+	},
 ];
 
 export const addpaymentConfig: AddpaymentConfig = {
-	// paymentQRCode: 此处存放你的赞助支付二维码，存放路径在 public/images/sponsors 文件夹内。
+	// paymentQRCode: 此处存放你的赞助支付二维码，存放路径在 "public/images/sponsors" 文件夹内。
 	paymentQRCode_1: "/images/sponsors/alipay.webp",
 	paymentQRCode_2: "/images/sponsors/wechat pay.webp",
 };

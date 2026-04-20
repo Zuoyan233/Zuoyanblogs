@@ -342,6 +342,13 @@ export const tr: Translation = {
 	[Key.siteStatsCurrentDate]: "Tarih",
 	[Key.siteStatsDateFormat]: "{month}/{day}/{year}",
 	[Key.siteStatsCurrentTime]: "Saat",
+	[Key.siteStatsTimePeriodMorning]: "Sabah",
+	[Key.siteStatsTimePeriodNoon]: "Öğle",
+	[Key.siteStatsTimePeriodAfternoon]: "Öğleden sonra",
+	[Key.siteStatsTimePeriodEvening]: "Akşam",
+	[Key.siteStatsTimePeriodNight]: "Gece",
+	[Key.siteStatsAm]: "ÖÖ",
+	[Key.siteStatsPm]: "ÖS",
 
 	// Takvim Bileşeni
 	[Key.calendarSunday]: "Paz",

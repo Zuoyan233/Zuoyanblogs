@@ -309,6 +309,13 @@ enum I18nKey {
 	siteStatsCurrentDate = "siteStatsCurrentDate",
 	siteStatsDateFormat = "siteStatsDateFormat",
 	siteStatsCurrentTime = "siteStatsCurrentTime",
+	siteStatsTimePeriodMorning = "siteStatsTimePeriodMorning",
+	siteStatsTimePeriodNoon = "siteStatsTimePeriodNoon",
+	siteStatsTimePeriodAfternoon = "siteStatsTimePeriodAfternoon",
+	siteStatsTimePeriodEvening = "siteStatsTimePeriodEvening",
+	siteStatsTimePeriodNight = "siteStatsTimePeriodNight",
+	siteStatsAm = "siteStatsAm",
+	siteStatsPm = "siteStatsPm",
 
 	// 日历组件
 	calendarSunday = "calendarSunday",

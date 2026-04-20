@@ -346,6 +346,13 @@ export const es: Translation = {
 	[Key.siteStatsCurrentDate]: "Fecha",
 	[Key.siteStatsDateFormat]: "{month}/{day}/{year}",
 	[Key.siteStatsCurrentTime]: "Hora",
+	[Key.siteStatsTimePeriodMorning]: "Mañana",
+	[Key.siteStatsTimePeriodNoon]: "Mediodía",
+	[Key.siteStatsTimePeriodAfternoon]: "Tarde",
+	[Key.siteStatsTimePeriodEvening]: "Atardecer",
+	[Key.siteStatsTimePeriodNight]: "Noche",
+	[Key.siteStatsAm]: "AM",
+	[Key.siteStatsPm]: "PM",
 
 	// Componente de calendario
 	[Key.calendarSunday]: "Dom",
@@ -404,9 +411,7 @@ export const es: Translation = {
 	[Key.contactMethod1]: "Wechat",
 	[Key.contactMethod2]: "QQ",
 	[Key.contactMethod3]: "Telegram",
-	[Key.scanContact1]:
-		"Escanea el código QR para añadir un amigo en WeChat",
+	[Key.scanContact1]: "Escanea el código QR para añadir un amigo en WeChat",
 	[Key.scanContact2]: "Escanea el código QR para añadir un amigo en QQ",
-	[Key.scanContact3]:
-		"Escanea el código QR para añadir un amigo en Telegram",
+	[Key.scanContact3]: "Escanea el código QR para añadir un amigo en Telegram",
 };

@@ -343,6 +343,13 @@ export const de: Translation = {
 	[Key.siteStatsCurrentDate]: "Datum",
 	[Key.siteStatsDateFormat]: "{month}/{day}/{year}",
 	[Key.siteStatsCurrentTime]: "Zeit",
+	[Key.siteStatsTimePeriodMorning]: "Morgen",
+	[Key.siteStatsTimePeriodNoon]: "Mittag",
+	[Key.siteStatsTimePeriodAfternoon]: "Nachmittag",
+	[Key.siteStatsTimePeriodEvening]: "Abend",
+	[Key.siteStatsTimePeriodNight]: "Nacht",
+	[Key.siteStatsAm]: "AM",
+	[Key.siteStatsPm]: "PM",
 
 	// Kalender-Komponente
 	[Key.calendarSunday]: "So",

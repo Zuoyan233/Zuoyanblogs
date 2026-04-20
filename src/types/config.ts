@@ -10,8 +10,12 @@ export type SiteConfig = {
 	title: string;
 	subtitle: string;
 	siteURL: string; // 站点URL，以斜杠结尾，例如：https://mizuki.mysqil.com/
-	keywords?: string[]; // 站点关键词，用于生成 <meta name="keywords">
-	siteStartDate?: string; // 站点开始日期，格式：YYYY-MM-DD，用于计算运行天数
+	keywords?: string[]; // 站点关键词，用于生成 <meta name="keywords">	
+	siteStats: {
+		siteStartDate?: string;
+		dynamicEnable?: boolean; // 启用动态更新站点统计和时间段显示
+		enable12HourClock?: boolean; // 启用12小时制
+	};
 
 	timeZone:
 		| -12
@@ -519,7 +523,7 @@ export type AddpaymentConfig = {
  * 添加添加好友二维码配置
  */
 export type ContactMethods = {
-	method: string;      // 社交平台名称
-	icon: string;        // 图标名称
-	qrCode: string;      // 二维码图片路径
+	method: string; // 社交平台名称
+	icon: string; // 图标名称
+	qrCode: string; // 二维码图片路径
 }[];

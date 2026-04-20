@@ -330,6 +330,13 @@ export const ko: Translation = {
 	[Key.siteStatsCurrentDate]: "날짜",
 	[Key.siteStatsDateFormat]: "{year}/{month}/{day}",
 	[Key.siteStatsCurrentTime]: "시간",
+	[Key.siteStatsTimePeriodMorning]: "아침",
+	[Key.siteStatsTimePeriodNoon]: "정오",
+	[Key.siteStatsTimePeriodAfternoon]: "오후",
+	[Key.siteStatsTimePeriodEvening]: "저녁",
+	[Key.siteStatsTimePeriodNight]: "밤",
+	[Key.siteStatsAm]: "오전",
+	[Key.siteStatsPm]: "오후",
 
 	// 캘린더 컴포넌트
 	[Key.calendarSunday]: "일",

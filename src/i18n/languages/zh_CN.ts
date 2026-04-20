@@ -317,8 +317,15 @@ export const zh_CN: Translation = {
 	[Key.siteStatsDaysAgo]: "{days} 天前",
 	[Key.siteStatsDays]: "{days} 天",
 	[Key.siteStatsCurrentDate]: "日期",
-	[Key.siteStatsDateFormat]: "{year}/{month}/{day}",
+	[Key.siteStatsDateFormat]: "{year}年{month}月{day}日",
 	[Key.siteStatsCurrentTime]: "时间",
+	[Key.siteStatsTimePeriodMorning]: "早晨",
+	[Key.siteStatsTimePeriodNoon]: "中午",
+	[Key.siteStatsTimePeriodAfternoon]: "下午",
+	[Key.siteStatsTimePeriodEvening]: "傍晚",
+	[Key.siteStatsTimePeriodNight]: "夜晚",
+	[Key.siteStatsAm]: "上午",
+	[Key.siteStatsPm]: "下午",
 
 	// 日历组件
 	[Key.calendarSunday]: "日",

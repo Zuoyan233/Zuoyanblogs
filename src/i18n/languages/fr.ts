@@ -350,6 +350,13 @@ export const fr: Translation = {
 	[Key.siteStatsCurrentDate]: "Date",
 	[Key.siteStatsDateFormat]: "{month}/{day}/{year}",
 	[Key.siteStatsCurrentTime]: "Heure",
+	[Key.siteStatsTimePeriodMorning]: "Matin",
+	[Key.siteStatsTimePeriodNoon]: "Midi",
+	[Key.siteStatsTimePeriodAfternoon]: "Après-midi",
+	[Key.siteStatsTimePeriodEvening]: "Soirée",
+	[Key.siteStatsTimePeriodNight]: "Nuit",
+	[Key.siteStatsAm]: "AM",
+	[Key.siteStatsPm]: "PM",
 
 	// Composant Calendrier
 	[Key.calendarSunday]: "Dim",

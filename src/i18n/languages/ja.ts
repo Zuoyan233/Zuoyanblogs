@@ -330,8 +330,15 @@ export const ja: Translation = {
 	[Key.siteStatsDaysAgo]: "{days}日前",
 	[Key.siteStatsDays]: "{days}日",
 	[Key.siteStatsCurrentDate]: "日付",
-	[Key.siteStatsDateFormat]: "{year}/{month}/{day}",
+	[Key.siteStatsDateFormat]: "{year}年{month}月{day}日",
 	[Key.siteStatsCurrentTime]: "時刻",
+	[Key.siteStatsTimePeriodMorning]: "朝",
+	[Key.siteStatsTimePeriodNoon]: "正午",
+	[Key.siteStatsTimePeriodAfternoon]: "午後",
+	[Key.siteStatsTimePeriodEvening]: "夕方",
+	[Key.siteStatsTimePeriodNight]: "夜",
+	[Key.siteStatsAm]: "午前",
+	[Key.siteStatsPm]: "午後",
 
 	// カレンダーコンポーネント
 	[Key.calendarSunday]: "日",

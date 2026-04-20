@@ -55,7 +55,7 @@ Asynchronous synchronization with the mainline content of the Mizuki theme frame
   - Adjusted the number size for multiple posts published on the same day (top right corner).
 - Added a feedback page and integrated methods to contact the site owner.
 - Added a sponsors page and integrated paths for placing payment QR codes.
-- Added site real-time date and time, with date display supporting multiple regional formats.
+- Add real-time date and time for site statistics, with date display supporting multiple regional formats and time display supporting time period representation.
 - Added external link confirmation popup, and modified some styles.
 - Updated and adapted to the latest version of the Twikoo comment system.
 - TOC directory supports responsive device configuration.
