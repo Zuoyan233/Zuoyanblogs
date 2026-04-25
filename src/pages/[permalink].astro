@@ -78,7 +78,7 @@ let encryptedContent = "";
 let isEncrypted = entry.data.encrypted && entry.data.password;
 
 if (isEncrypted) {
-	const contentToEncrypt = "MIZUKI-VERIFY:" + entry.body;
+	const contentToEncrypt = "BRIGHTMOON-VERIFY:" + entry.body;
 	encryptedContent = CryptoJS.AES.encrypt(
 		contentToEncrypt,
 		String(entry.data.password),
