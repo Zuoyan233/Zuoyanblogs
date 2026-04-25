@@ -120,7 +120,7 @@
 
   th,
   td {
-    @apply px-4 py-3 whitespace-nowrap;
+    @apply px-4 py-3 whitespace-nowrap text-left;
     border-bottom: 1px solid var(--line-divider);
     border-right: 1px solid var(--line-divider);
     transition: none;
@@ -130,7 +130,21 @@
     background-color: var(--btn-regular-bg);
     color: var(--btn-content);
     font-weight: 600;
-    text-align: left;
+  }
+
+  td[align="center"],
+  th[align="center"] {
+      text-align: center;
+  }
+
+  td[align="right"],
+  th[align="right"] {
+      text-align: right;
+  }
+
+  td[align="left"],
+  th[align="left"] {
+      text-align: left;
   }
 
   tr:last-child td {
