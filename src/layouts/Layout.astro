@@ -172,7 +172,7 @@ if (siteConfig.font) {
 <html
 	lang={siteLang}
 	class="bg-[var(--page-bg)] text-[14px] md:text-[16px]"
-	data-overlayscrollbars-initialize
+
 >
 	<head>
 		<!-- 第三方分析脚本 - 延迟加载优化 -->
@@ -389,7 +389,6 @@ if (siteConfig.font) {
 			{ "lg:is-home": isHomePage, "enable-banner": enableBanner },
 		]}
 		style={bodyFontFamily ? `font-family: ${bodyFontFamily};` : ""}
-		data-overlayscrollbars-initialize
 	>
 		<noscript
 			><iframe
@@ -502,7 +501,7 @@ if (siteConfig.font) {
 
 <script>
 	// import { animationManager } from '../utils/animation-utils';
-	import "overlayscrollbars/overlayscrollbars.css";
+	// import "overlayscrollbars/overlayscrollbars.css"; // 已禁用body滚动条初始化，无需此CSS
 	// import {
 	//  OverlayScrollbars,
 	//  // ScrollbarsHidingPlugin,
