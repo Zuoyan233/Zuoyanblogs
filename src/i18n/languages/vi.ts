@@ -323,6 +323,9 @@ export const vi: Translation = {
 	[Key.minute]: "ph",
 	[Key.second]: "gi",
 
+	// Mục lục
+	[Key.tocTitle]: "Mục lục",
+
 	// Site Stats
 	[Key.siteStats]: "Thống kê trang web",
 	[Key.siteStatsPostCount]: "Bài viết",

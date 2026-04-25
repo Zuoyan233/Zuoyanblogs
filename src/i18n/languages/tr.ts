@@ -329,6 +329,9 @@ export const tr: Translation = {
 	[Key.minute]: "dk",
 	[Key.second]: "sn",
 
+	// İçindekiler
+	[Key.tocTitle]: "İçindekiler",
+
 	// Site İstatistikleri
 	[Key.siteStats]: "Site İstatistikleri",
 	[Key.siteStatsPostCount]: "Gönderiler",

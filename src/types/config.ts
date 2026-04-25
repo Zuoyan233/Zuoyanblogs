@@ -202,7 +202,7 @@ export type SiteConfig = {
 		enable: boolean;
 		responsive?: {
 			mobile: "float"; // 手机端模式
-			tablet: "float"; // 平板端模式
+			tablet: "float" | "sidebar"; // 平板端模式
 			desktop: "float" | "sidebar"; // 桌面端模式
 		};
 		depth: 1 | 2 | 3;

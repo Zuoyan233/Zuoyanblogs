@@ -211,9 +211,9 @@ export const siteConfig: SiteConfig = {
 	toc: {
 		enable: true, // 启用目录功能
 		responsive: {
-			// 设备响应式配置（最佳设置，不建议修改），"float" 悬浮按钮模式， "sidebar" 侧边栏模式 （仅适用桌面端）
+			// 设备响应式配置（最佳设置，不建议修改），"float" 悬浮按钮模式， "sidebar" 侧边栏模式 （仅适用平板端与桌面端）
 			mobile: "float", // 移动端默认使用 "float" 悬浮按钮模式
-			tablet: "float", // 平板端默认使用 "float" 悬浮按钮模式
+			tablet: "float", // 平板端默认使用 "float" 悬浮按钮模式，可选 "float" 悬浮按钮模式
 			desktop: "sidebar", // 桌面端默认使用 "sidebar" 侧边栏模式，可选 "float" 悬浮按钮模式
 		},
 		depth: 3, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
@@ -588,6 +588,22 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 				// 折叠阈值：当标签数量超过20个时自动折叠
 				collapseThreshold: 20,
 			},
+		},
+		{
+			// 组件类型：目录组件
+			type: "toc",
+			// 是否启用该组件
+			enable: siteConfig.toc.enable,
+			// 组件显示顺序
+			order: 7,
+			// 组件位置："sticky" 表示粘性定位，滚动时固定显示
+			position: "sticky",
+			// 所在侧边栏
+			sidebar: "left",
+			// CSS 类名
+			class: "onload-animation",
+			// 动画延迟时间
+			animationDelay: 300,
 		},
 		{
 			// 组件类型：站点统计组件

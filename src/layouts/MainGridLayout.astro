@@ -11,7 +11,6 @@ import FullscreenWallpaper from "../components/misc/FullscreenWallpaper.astro";
 import IconifyLoader from "../components/misc/IconifyLoader.astro";
 import ImageWrapper from "../components/misc/ImageWrapper.astro";
 import TypewriterText from "../components/TypewriterText.astro";
-import TOC from "../components/widget/TOC.astro";
 import {
 	fullscreenWallpaperConfig,
 	sidebarLayoutConfig,
@@ -297,52 +296,32 @@ const transparentClass = shouldEnableTransparency
         
         const currentMode = responsiveTocModes[deviceType];
         
-        // 移动端和平板端都使用 float 模式，直接显示 FloatingTOC
-        if (deviceType === 'mobile' || deviceType === 'tablet') {
-            const floatingTOC = document.querySelector('floating-toc');
-            if (floatingTOC) {
-                floatingTOC.style.display = '';
-                floatingTOC.removeAttribute('hidden');
-            }
-            
-            // 隐藏侧边栏 TOC
-            const tocWrapper = document.getElementById('toc-wrapper');
-            if (tocWrapper) {
-                tocWrapper.style.display = 'none';
-            }
-            return;
-        }
+        // 获取侧边栏 TOC 组件
+        const sidebarTocWidget = document.querySelector('widget-layout[data-id="toc-widget"]');
         
-        // 桌面端逻辑
+        // 设置 body 的 toc-mode 属性
         document.body.setAttribute('data-toc-mode', currentMode);
         
-        const floatingTOC = document.querySelector('floating-toc');
-        if (floatingTOC) {
-            if (currentMode === 'float') {
+        const floatingTOC = document.querySelector('.floating-toc-wrapper');
+        
+        if (currentMode === 'float' || deviceType === 'mobile') {
+            // float 模式或移动端：显示 FloatingTOC，隐藏侧边栏 TOC
+            if (floatingTOC) {
                 floatingTOC.style.display = '';
-                floatingTOC.removeAttribute('hidden');
-            } else {
-                floatingTOC.style.display = 'none';
-                floatingTOC.setAttribute('hidden', '');
             }
-        }
-        
-        // 处理 banner 模式下的侧边栏 TOC 隐藏
-        const wallpaperMode = localStorage.getItem('wallpaperMode') || defaultWallpaperMode;
-        const tocWrapper = document.getElementById('toc-wrapper');
-        
-        if (tocWrapper) {
-            tocWrapper.style.display = ''; // 确保显示
-            if (wallpaperMode === 'banner') {
-                const scrollTop = document.documentElement.scrollTop;
-                const bannerHeight = window.innerHeight * (BANNER_HEIGHT / 100);
-                if (scrollTop <= bannerHeight) {
-                    tocWrapper.classList.add('toc-hide');
-                } else {
-                    tocWrapper.classList.remove('toc-hide');
+            if (sidebarTocWidget) {
+                sidebarTocWidget.removeAttribute('data-visible');
+            }
+        } else {
+            // sidebar 模式：隐藏 FloatingTOC，恢复侧边栏 TOC 显示
+            if (floatingTOC) {
+                floatingTOC.style.display = 'none';
+            }
+            if (sidebarTocWidget) {
+                const tocElement = document.querySelector('table-of-contents');
+                if (tocElement && tocElement.dataset.loaded === 'true') {
+                    sidebarTocWidget.setAttribute('data-visible', 'true');
                 }
-            } else {
-                tocWrapper.classList.remove('toc-hide');
             }
         }
         
@@ -362,24 +341,12 @@ const transparentClass = shouldEnableTransparency
         }, 150);
     });
 
-    // 监听滚动（用于 banner 模式下的隐藏/显示）
+    // 监听滚动（保留供其他功能使用）
     window.addEventListener('scroll', () => {
         requestAnimationFrame(() => {
-            const wallpaperMode = localStorage.getItem('wallpaperMode') || defaultWallpaperMode;
-            if (wallpaperMode === 'banner') {
-                const tocWrapper = document.getElementById('toc-wrapper');
-                if (tocWrapper) {
-                    const scrollTop = document.documentElement.scrollTop;
-                    const bannerHeight = window.innerHeight * (BANNER_HEIGHT / 100);
-                    if (scrollTop <= bannerHeight) {
-                        tocWrapper.classList.add('toc-hide');
-                    } else {
-                        tocWrapper.classList.remove('toc-hide');
-                    }
-                }
-            }
+            // 滚动相关逻辑
         });
-    });
+    }, { passive: true });
 
     // 监听壁纸模式切换
     window.addEventListener('wallpaper-mode-change', updateTOCDisplay);
@@ -430,6 +397,16 @@ const transparentClass = shouldEnableTransparency
 	(function() {
 		const wallpaperMode = localStorage.getItem('wallpaperMode') || defaultWallpaperMode;
 		const body = document.body;
+		
+		// 立即设置 TOC 模式，避免侧边栏 TOC 在 float 模式下闪现
+		const tocWidth = window.innerWidth;
+		let tocDeviceType = 'desktop';
+		if (tocWidth < 768) {
+			tocDeviceType = 'mobile';
+		} else if (tocWidth >= 768 && tocWidth < 1280) {
+			tocDeviceType = 'tablet';
+		}
+		body.setAttribute('data-toc-mode', responsiveTocModes[tocDeviceType]);
 		
 		// 定义 banner 高度常量（与 constants.ts 保持一致）
 		// const BANNER_HEIGHT = 35;
@@ -520,7 +497,6 @@ const transparentClass = shouldEnableTransparency
 		var navbar = document.getElementById('navbar');
 		var body = document.body;
 		var mainContent = document.querySelector('.absolute.w-full.z-30.pointer-events-none');
-		var tocWrapper = document.getElementById('toc-wrapper');
 		
 		// 强制重排以确保样式正确应用
 		var forceReflow = function() {
@@ -535,14 +511,6 @@ const transparentClass = shouldEnableTransparency
 				}
 				if (fullscreenWallpaper) {
 					fullscreenWallpaper.style.display = 'none';
-				}
-				// 恢复 TOC 在 banner 模式下的隐藏状态，让滚动逻辑接管
-				if (tocWrapper) {
-					const scrollTop = document.documentElement.scrollTop;
-					const bannerHeight = window.innerHeight * (BANNER_HEIGHT / 100);
-					if (scrollTop <= bannerHeight) {
-						tocWrapper.classList.add('toc-hide');
-					}
 				}
 				// 先移除body类，避免CSS冲突
 				body.classList.remove('wallpaper-transparent');
@@ -577,10 +545,6 @@ const transparentClass = shouldEnableTransparency
 				if (fullscreenWallpaper) {
 					fullscreenWallpaper.style.display = 'block';
 				}
-				// 在全屏模式下始终显示 TOC
-				if (tocWrapper) {
-					tocWrapper.classList.remove('toc-hide');
-				}
 				// 先移除body类，避免CSS冲突
 				body.classList.remove('enable-banner');
 				// 强制重排
@@ -609,10 +573,6 @@ const transparentClass = shouldEnableTransparency
 				}
 				if (fullscreenWallpaper) {
 					fullscreenWallpaper.style.display = 'none';
-				}
-				// 在无壁纸模式下也始终显示 TOC
-				if (tocWrapper) {
-					tocWrapper.classList.remove('toc-hide');
 				}
 				// 先移除body类，避免CSS冲突
 				body.classList.remove('enable-banner');
@@ -1037,50 +997,36 @@ const transparentClass = shouldEnableTransparency
     <div class="toc-float-mode" data-toc-mode="float">
         <FloatingTOC />
     </div>
-    
-    <!-- 侧边栏 TOC - 仅在桌面端显示 -->
-    <div class="toc-sidebar-mode absolute w-full z-0 hidden lg:block" data-toc-mode="sidebar">
-        <div class="relative max-w-[var(--page-width)] mx-auto">
-            <div id="toc-wrapper" class="hidden lg:block transition absolute top-0 w-[var(--toc-width)] items-center -right-[var(--toc-width)]">
-                <div id="toc-inner-wrapper" class="fixed top-14 w-[var(--toc-width)] max-h-[calc(100vh_-_10rem)] overflow-hidden">
-                    <div id="toc-container" class="w-full transition-swup-fade">
-                        <TOC headings={headings} />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 </Layout>
 
 <style>
-/* 默认隐藏所有模式 */
-.toc-float-mode,
-.toc-sidebar-mode {
+/* 默认隐藏浮动模式 */
+.toc-float-mode {
     display: none;
 }
 
-/* 移动端和平板端 - 只显示 float TOC */
-@media (max-width: 1279px) {
+/* 移动端 - 始终显示 float TOC */
+@media (max-width: 767px) {
     .toc-float-mode {
         display: block !important;
     }
-    .toc-sidebar-mode {
+}
+
+/* 平板端 - 根据配置显示 float TOC */
+@media (min-width: 768px) and (max-width: 1279px) {
+    .toc-container[data-tablet-mode="float"] .toc-float-mode {
+        display: block !important;
+    }
+    .toc-container[data-tablet-mode="sidebar"] .toc-float-mode {
         display: none !important;
     }
 }
 
-/* 桌面端 */
+/* 桌面端 - 根据 data-desktop-mode 控制 FloatingTOC 的显示 */
 @media (min-width: 1280px) {
     .toc-container[data-desktop-mode="float"] .toc-float-mode {
-        display: block !important;
-    }
-    .toc-container[data-desktop-mode="float"] .toc-sidebar-mode {
-        display: none !important;
-    }
-    
-    .toc-container[data-desktop-mode="sidebar"] .toc-sidebar-mode {
         display: block !important;
     }
     .toc-container[data-desktop-mode="sidebar"] .toc-float-mode {
@@ -1115,22 +1061,6 @@ const transparentClass = shouldEnableTransparency
 /* 当没有 banner 时，主内容区域移到顶部 */
 body.no-banner-mode .absolute.w-full.z-30 {
     top: 5.5rem !important;
-}
-
-/* TOC 垂直对齐优化 */
-body.no-banner-mode #toc-inner-wrapper {
-    top: 5.5rem !important;
-    max-height: calc(100vh - 8rem) !important;
-}
-
-/* 全屏壁纸模式下的 TOC 毛玻璃背景 - 仅在 TOC 加载完成后显示 */
-body.wallpaper-transparent #toc-inner-wrapper:has(table-of-contents[data-loaded="true"]) {
-    background: var(--card-bg-transparent) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border-radius: var(--radius-large);
-    padding: 0.5rem;
-    box-shadow: var(--shadow-lg);
 }
 
 /* 桌面端 banner 模式下的主内容区域位置 */

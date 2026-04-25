@@ -323,6 +323,9 @@ export const id: Translation = {
 	[Key.minute]: "mnt",
 	[Key.second]: "dtk",
 
+	// Daftar Isi
+	[Key.tocTitle]: "Daftar Isi",
+
 	// Statistik Situs
 	[Key.siteStats]: "Statistik Situs",
 	[Key.siteStatsPostCount]: "Postingan",

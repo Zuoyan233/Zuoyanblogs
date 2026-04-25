@@ -347,14 +347,48 @@ html {
         hover:decoration-[var(--link-hover)] active:decoration-[var(--link-active)] underline-offset-[0.25rem];
   }
 
-  .toc-hide,
-  .toc-not-ready {
-    @apply opacity-0 pointer-events-none;
-  }
-
   /* #toc-inner-wrapper {
         mask-image: linear-gradient(to bottom, transparent 0%, black 2rem, black calc(100% - 2rem), transparent 100%);
     } */
+
+  /* 侧边栏 TOC 组件：默认隐藏，由 JS 在文章页面时显示 */
+  widget-layout[data-id="toc-widget"] {
+    display: none !important;
+  }
+
+  /* 自定义元素 widget-layout 需要 display: block 才能正确渲染背景和 backdrop-filter */
+  widget-layout {
+    display: block;
+  }
+
+  /* 全屏壁纸模式下的左侧边栏 TOC 毛玻璃背景 */
+  body.wallpaper-transparent widget-layout[data-id="toc-widget"] {
+    background: var(--card-bg-transparent) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+  }
+
+  /* 桌面端(1280px+)且 JS 设置 data-visible="true" 后显示侧边栏 TOC */
+  @media (min-width: 1280px) {
+    widget-layout[data-id="toc-widget"][data-visible="true"] {
+      display: block !important;
+    }
+  }
+
+  /* 平板端(768px-1279px)且 sidebar 模式下，data-visible="true" 后显示侧边栏 TOC */
+  @media (min-width: 768px) and (max-width: 1279px) {
+    body[data-toc-mode="sidebar"] widget-layout[data-id="toc-widget"][data-visible="true"] {
+      display: block !important;
+    }
+  }
+
+  /* 移动端始终隐藏侧边栏 TOC */
+  @media (max-width: 767px) {
+    widget-layout[data-id="toc-widget"],
+    widget-layout[data-id="toc-widget"][data-visible="true"] {
+      display: none !important;
+    }
+  }
 
   .hide-scrollbar {
     scrollbar-width: none;

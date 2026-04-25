@@ -1,42 +1,23 @@
 ---
 import type { MarkdownHeading } from "astro";
-
-// import { siteConfig } from "../../config";
-
-// import { url } from "../../utils/url-utils";
+import I18nKey from "../../i18n/i18nKey";
+import { i18n } from "../../i18n/translation";
+import WidgetLayout from "./WidgetLayout.astro";
 
 interface Props {
 	class?: string;
+	style?: string;
 	headings: MarkdownHeading[];
 }
 
-let { headings = [] } = Astro.props;
-
-let minDepth = 10;
-for (const heading of headings) {
-	minDepth = Math.min(minDepth, heading.depth);
-}
-
 const className = Astro.props.class;
-// const isPostsRoute =
-// 	Astro.url.pathname.includes("/posts/") || headings.length > 0;
-
-// const removeTailingHash = (text: string) => {
-// 	let lastIndexOfHash = text.lastIndexOf("#");
-// 	if (lastIndexOfHash !== text.length - 1) {
-// 		return text;
-// 	}
-//
-// 	return text.substring(0, lastIndexOfHash);
-// };
-
-// let heading1Count = 1;
-
-// const maxLevel = siteConfig.toc.depth;
+const styleName = Astro.props.style;
 ---
-<table-of-contents class:list={[className, "group"]} id="toc">
-    <!-- TOC内容将由JavaScript动态生成 -->
-</table-of-contents>
+<WidgetLayout name={i18n(I18nKey.tocTitle)} id="toc-widget" class={className} style={styleName}>
+    <table-of-contents class="group" id="toc">
+        <!-- TOC内容将由JavaScript动态生成 -->
+    </table-of-contents>
+</WidgetLayout>
 
 <script>
 class TableOfContents extends HTMLElement {
@@ -53,8 +34,12 @@ class TableOfContents extends HTMLElement {
 
     constructor() {
         super();
+        // rootMargin 顶部偏移 -80px，补偿固定导航栏高度，避免导航栏遮挡的标题仍被视为可见
         this.observer = new IntersectionObserver(
-            this.markVisibleSection, { threshold: 0 }
+            this.markVisibleSection, {
+                threshold: 0,
+                rootMargin: '-80px 0px 0px 0px',
+            }
         );
     };
 
@@ -153,8 +138,10 @@ class TableOfContents extends HTMLElement {
         if (!this.sections.length) return;
 
         for (let i = 0; i < this.sections.length; i++) {
-            let offsetTop = this.sections[i].getBoundingClientRect().top;
-            let offsetBottom = this.sections[i].getBoundingClientRect().bottom;
+            const section = this.sections[i];
+            if (!section) continue;
+            let offsetTop = section.getBoundingClientRect().top;
+            let offsetBottom = section.getBoundingClientRect().bottom;
 
             if (this.isInRange(offsetTop, 0, window.innerHeight)
                 || this.isInRange(offsetBottom, 0, window.innerHeight)
@@ -205,7 +192,44 @@ class TableOfContents extends HTMLElement {
         return min < value && value < max;
     };
 
+    hideWidgetLayout = () => {
+        const widgetLayout = this.closest('widget-layout[data-id="toc-widget"]');
+        if (widgetLayout instanceof HTMLElement) {
+            widgetLayout.removeAttribute('data-visible');
+        }
+    };
+
+    showWidgetLayout = () => {
+        const widgetLayout = this.closest('widget-layout[data-id="toc-widget"]');
+        if (widgetLayout instanceof HTMLElement) {
+            widgetLayout.setAttribute('data-visible', 'true');
+        }
+    };
+
+    handlePageChange = () => {
+        // 先隐藏，等 DOM 更新后再判断
+        this.hideWidgetLayout();
+        this.cleanupObserver();
+        this.headingIdxMap.clear();
+        this.headings = [];
+        this.sections = [];
+        this.tocEntries = [];
+        this.active = [];
+        // 防抖：取消上一次待执行的 init，避免与 Layout.astro 的 init 调用冲突
+        if (this._initTimer) clearTimeout(this._initTimer);
+        this._initTimer = setTimeout(() => {
+            this.init();
+            this._initTimer = null;
+        }, 300);
+    };
+
+    _swupHookAttached = false;
+    _initTimer: ReturnType<typeof setTimeout> | null = null;
+    _setupSwupHook: (() => boolean) | null = null;
+
     connectedCallback() {
+        // 先隐藏 WidgetLayout，避免非文章页面闪现
+        this.hideWidgetLayout();
         // 优先监听动画结束，兜底定时初始化，确保二次刷新也能正常显示 TOC
         const element = document.querySelector('.custom-md') || document.querySelector('.prose') || document.querySelector('.markdown-content');
         let initialized = false;
@@ -224,9 +248,45 @@ class TableOfContents extends HTMLElement {
             tryInit();
             setTimeout(tryInit, 300);
         }
+
+        // 监听 Swup 页面切换，重新生成 TOC
+        document.addEventListener('swup:page:view', this.handlePageChange);
+
+        // 也监听 content:replace 以更早响应
+        const setupSwupHook = () => {
+            if (typeof window !== 'undefined' && (window as any).swup && !this._swupHookAttached) {
+                (window as any).swup.hooks.on('content:replace', this.handlePageChange);
+                this._swupHookAttached = true;
+                return true;
+            }
+            return false;
+        };
+        if (!setupSwupHook()) {
+            this._setupSwupHook = setupSwupHook;
+            document.addEventListener('swup:enable', setupSwupHook);
+        }
+    };
+
+    cleanupObserver = () => {
+        this.sections.forEach((section) => {
+            if (section) this.observer.unobserve(section);
+        });
     };
 
     init() {
+        // 清理旧状态，防止重复观察和监听
+        this.cleanupObserver();
+        if (this.tocEl) {
+            this.tocEl.removeEventListener("click", this.handleAnchorClick, {
+                capture: true,
+            });
+        }
+        this.headingIdxMap.clear();
+        this.headings = [];
+        this.sections = [];
+        this.tocEntries = [];
+        this.active = [];
+
         // 重新生成TOC内容
         this.regenerateTOC();
 
@@ -238,6 +298,11 @@ class TableOfContents extends HTMLElement {
 
         this.activeIndicator = document.getElementById("active-indicator");
 
+        this.bindTOCEntries();
+    };
+
+    /** 将 TOC 链接与页面标题/section 关联，启动观察器 */
+    bindTOCEntries() {
         this.tocEntries = Array.from(
             this.querySelectorAll<HTMLAnchorElement>("a[href^='#']")
         );
@@ -258,9 +323,9 @@ class TableOfContents extends HTMLElement {
         }
         this.active = new Array(this.tocEntries.length).fill(false);
 
-        this.sections.forEach((section) =>
-            this.observer.observe(section)
-        );
+        this.sections.forEach((section) => {
+            if (section) this.observer.observe(section);
+        });
 
         this.fallback();
         this.update();
@@ -271,9 +336,10 @@ class TableOfContents extends HTMLElement {
         const isPostPage = window.location.pathname.includes('/posts/') || 
                           document.querySelector('.custom-md, .markdown-content') !== null;
         if (!isPostPage) {
-            // 如果不是文章页面，隐藏TOC
+            // 如果不是文章页面，隐藏TOC及父级WidgetLayout
             this.innerHTML = '';
             delete this.dataset.loaded;
+            this.hideWidgetLayout();
             return;
         }
         // 从当前页面重新获取标题
@@ -284,25 +350,31 @@ class TableOfContents extends HTMLElement {
                 slug: h.id,
                 text: (h.textContent || '').replace(/#+\s*$/, '')
             }));
-        // 如果没有标题，延迟重试最多3次
+        // 如果没有标题，延迟重试最多3次，重试成功后需要重新初始化
         if (headings.length === 0 && retryCount < 3) {
-            setTimeout(() => this.regenerateTOC(retryCount + 1), 120);
+            setTimeout(() => {
+                this.regenerateTOC(retryCount + 1);
+                // 重试成功生成HTML后，需要重新绑定 entries 和 observer
+                if (this.querySelectorAll("a[href^='#']").length > 0) {
+                    this.bindTOCEntries();
+                }
+            }, 120);
             return;
         }
         if (headings.length === 0) {
             this.innerHTML = '';
             delete this.dataset.loaded;
+            this.hideWidgetLayout();
             return;
         }
+        // 显示父级WidgetLayout（文章页面有标题时）
+        this.showWidgetLayout();
         // 重新生成TOC HTML
         const minDepth = Math.min(...headings.map(h => h.depth));
         // 获取配置信息
         const siteConfig = (window as any).siteConfig || {};
         const maxLevel = siteConfig.toc?.depth || 3;
         const useJapaneseBadge = siteConfig.toc?.useJapaneseBadge || false;
-        
-        // 添加调试信息
-        console.log('TOC Config in regenerateTOC:', { siteConfig: siteConfig.toc, maxLevel, useJapaneseBadge });
         
         // 日语片假名字符集
         const japaneseKatakana = [
@@ -351,11 +423,17 @@ class TableOfContents extends HTMLElement {
     }
 
     disconnectedCallback() {
-        this.sections.forEach((section) =>
-            this.observer.unobserve(section)
-        );
+        this.cleanupObserver();
         this.observer.disconnect();
-        this.tocEl?.removeEventListener("click", this.handleAnchorClick);
+        this.tocEl?.removeEventListener("click", this.handleAnchorClick, { capture: true });
+        document.removeEventListener('swup:page:view', this.handlePageChange);
+        if (this._setupSwupHook) {
+            document.removeEventListener('swup:enable', this._setupSwupHook);
+        }
+        if (this._initTimer) {
+            clearTimeout(this._initTimer);
+            this._initTimer = null;
+        }
     };
 }
 
@@ -366,12 +444,11 @@ if (!customElements.get("table-of-contents")) {
 
 <style>
   table-of-contents#toc {
-      max-height: 100%;
+      max-height: 60vh;
       overflow: auto;
       position: relative;
       scroll-behavior: smooth;
       display: block;
-      max-height: 50vh;
   }
 
   table-of-contents#toc::-webkit-scrollbar {

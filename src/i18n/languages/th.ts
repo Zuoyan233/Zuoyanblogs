@@ -307,6 +307,9 @@ export const th: Translation = {
 	[Key.minute]: "นาที",
 	[Key.second]: "วินาที",
 
+	// สารบัญ
+	[Key.tocTitle]: "สารบัญ",
+
 	// Site Stats
 	[Key.siteStats]: "สถิติเว็บไซต์",
 	[Key.siteStatsPostCount]: "บทความ",

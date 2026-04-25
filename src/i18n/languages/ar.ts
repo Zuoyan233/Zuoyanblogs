@@ -315,6 +315,9 @@ export const ar: Translation = {
 	[Key.minute]: "د",
 	[Key.second]: "ث",
 
+	// TOC
+	[Key.tocTitle]: "فهرس المحتويات",
+
 	// Site Stats
 	[Key.siteStats]: "إحصائيات الموقع",
 	[Key.siteStatsPostCount]: "المقالات",

@@ -319,6 +319,9 @@ export const ja: Translation = {
 	[Key.minute]: "分",
 	[Key.second]: "秒",
 
+	// 目次
+	[Key.tocTitle]: "目次",
+
 	// サイト統計
 	[Key.siteStats]: "サイト統計",
 	[Key.siteStatsPostCount]: "投稿数",

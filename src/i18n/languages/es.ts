@@ -333,6 +333,9 @@ export const es: Translation = {
 	[Key.minute]: "min",
 	[Key.second]: "s",
 
+	// Tabla de contenidos
+	[Key.tocTitle]: "Tabla de contenidos",
+
 	// Estadísticas del sitio
 	[Key.siteStats]: "Estadísticas del sitio",
 	[Key.siteStatsPostCount]: "Publicaciones",

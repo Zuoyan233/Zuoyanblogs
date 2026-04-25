@@ -306,6 +306,9 @@ export const zh_CN: Translation = {
 	[Key.wallpaperFullscreen]: "全屏模式",
 	[Key.wallpaperNone]: "隐藏壁纸",
 
+	// 目录
+	[Key.tocTitle]: "目录",
+
 	// 站点统计
 	[Key.siteStats]: "站点统计",
 	[Key.siteStatsPostCount]: "文章",

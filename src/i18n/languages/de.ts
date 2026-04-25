@@ -330,6 +330,9 @@ export const de: Translation = {
 	[Key.minute]: "Min",
 	[Key.second]: "Sek",
 
+	// Inhaltsverzeichnis
+	[Key.tocTitle]: "Inhaltsverzeichnis",
+
 	// Seitenstatistiken
 	[Key.siteStats]: "Seitenstatistiken",
 	[Key.siteStatsPostCount]: "Beiträge",

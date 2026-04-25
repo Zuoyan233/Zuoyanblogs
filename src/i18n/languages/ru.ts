@@ -322,6 +322,9 @@ export const ru: Translation = {
 	[Key.minute]: "мин",
 	[Key.second]: "с",
 
+	// Содержание
+	[Key.tocTitle]: "Содержание",
+
 	// Статистика сайта
 	[Key.siteStats]: "Статистика сайта",
 	[Key.siteStatsPostCount]: "Записей",

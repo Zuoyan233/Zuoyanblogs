@@ -317,6 +317,9 @@ export const ko: Translation = {
 	[Key.minute]: "분",
 	[Key.second]: "초",
 
+	// 목차
+	[Key.tocTitle]: "목차",
+
 	// 사이트 통계
 	[Key.siteStats]: "사이트 통계",
 	[Key.siteStatsPostCount]: "게시물 수",

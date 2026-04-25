@@ -296,6 +296,9 @@ enum I18nKey {
 	wallpaperFullscreen = "wallpaperFullscreen",
 	wallpaperNone = "wallpaperNone",
 
+	// 目录
+	tocTitle = "tocTitle",
+
 	// 站点统计
 	siteStats = "siteStats",
 	siteStatsPostCount = "siteStatsPostCount",

@@ -337,6 +337,9 @@ export const fr: Translation = {
 	[Key.minute]: "min",
 	[Key.second]: "s",
 
+	// Table des matières
+	[Key.tocTitle]: "Table des matières",
+
 	// Statistiques du site
 	[Key.siteStats]: "Statistiques du site",
 	[Key.siteStatsPostCount]: "Articles",
