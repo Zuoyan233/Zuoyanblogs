@@ -608,7 +608,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 		{
 			// 组件类型：日历组件
 			type: "calendar",
-			// 是否启用该组件
+			// 是否启用该组件（移动端默认不显示）
 			enable: true,
 			// 组件显示顺序
 			order: 6,
@@ -620,10 +620,6 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			class: "onload-animation",
 			// 动画延迟时间
 			animationDelay: 250,
-			// 响应式配置
-			responsive: {
-				hidden: [], // 默认不隐藏任何设备，可选值: "mobile" 、 "tablet" 、 "desktop" 指定设备上隐藏
-			},
 		},
 	],
 
