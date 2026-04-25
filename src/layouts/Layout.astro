@@ -387,6 +387,7 @@ if (siteConfig.font) {
 		class="min-h-screen"
 		class:list={[
 			{ "lg:is-home": isHomePage, "enable-banner": enableBanner },
+			{ "hide-translate-select": siteConfig.translate?.enable && siteConfig.translate?.showSelectTag === false },
 		]}
 		style={bodyFontFamily ? `font-family: ${bodyFontFamily};` : ""}
 	>
@@ -495,6 +496,12 @@ if (siteConfig.font) {
 			100% {
 				transform: translate3d(85px, 0, 0);
 			}
+		}
+
+		/* 当配置 showSelectTag 为 false 时，隐藏 translate.js 默认的语言选择下拉框 */
+		.hide-translate-select #translateSelectLanguage,
+		.hide-translate-select #translate {
+			display: none !important;
 		}
 	}
 </style>
