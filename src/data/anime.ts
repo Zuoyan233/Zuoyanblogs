@@ -138,7 +138,7 @@ const localAnimeList: AnimeItem[] = [
 		title: "SPY x FAMILY",
 		status: "completed",
 		rating: 9.7,
-		cover: "/assets/anime/SPY x FAMILY 1.webp",
+		cover: "/assets/anime/SPY x FAMILY.webp",
 		description:
 			"Everyone has a hidden side. This is an era where nations around the world are secretly engaged in intense intelligence warfare.",
 		episodes: "25 episodes",

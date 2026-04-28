@@ -122,7 +122,7 @@ const getCategoryText = (category: string) => {
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {featuredProjects.map((project) => (
-              <div class="bg-transparent rounded-lg border border-black/10 dark:border-white/10 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div class="bg-transparent rounded-lg border border-black/10 dark:border-white/10 overflow-hidden hover:shadow-lg dark:hover:shadow-white/30 transition-shadow duration-300">
                 {project.image && (
                   <div class="aspect-video overflow-hidden">
                     <img 
@@ -134,7 +134,7 @@ const getCategoryText = (category: string) => {
                 )}
                 <div class="p-6">
                   <div class="flex items-start justify-between mb-3">
-                    <h3 class="text-xl font-semibold text-black/90 dark:text-white/90">
+                    <h3 class="ignore text-xl font-semibold text-black/90 dark:text-white/90">
                       {project.title}
                     </h3>
                     <span class={`px-2 py-1 text-xs rounded-full ${
@@ -149,10 +149,10 @@ const getCategoryText = (category: string) => {
                             I18nKey.projectsPlanned)}
                     </span>
                   </div>
-                  <p class="text-black/60 dark:text-white/60 mb-4 line-clamp-2">
+                  <p class="text-black/60 dark:text-white/60 mb-4 line-clamp-2" title={project.description}>
                     {project.description}
                   </p>
-                  <div class="flex flex-wrap gap-2 mb-4">
+                  <div class="ignore flex flex-wrap gap-2 mb-4">
                     {project.techStack.slice(0, 4).map((tech) => (
                       <span class="px-2 py-1 text-xs bg-blue-600/20 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 rounded">
                         {tech}
@@ -213,7 +213,7 @@ const getCategoryText = (category: string) => {
               </h2>
               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {categoryProjects.map((project) => (
-                  <div class="bg-transparent rounded-lg border border-black/10 dark:border-white/10 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                  <div class="bg-transparent rounded-lg border border-black/10 dark:border-white/10 overflow-hidden hover:shadow-lg dark:hover:shadow-white/30 transition-shadow duration-300">
                     {project.image && (
                       <div class="aspect-video overflow-hidden">
                         <img 
@@ -225,7 +225,7 @@ const getCategoryText = (category: string) => {
                     )}
                     <div class="p-4">
                       <div class="flex items-start justify-between mb-2">
-                        <h3 class="text-lg font-semibold text-black/90 dark:text-white/90 line-clamp-1">
+                        <h3 class="ignore text-lg font-semibold text-black/90 dark:text-white/90 line-clamp-1">
                           {project.title}
                         </h3>
                         <span class={`px-2 py-1 text-xs rounded-full shrink-0 ml-2 ${
@@ -240,10 +240,10 @@ const getCategoryText = (category: string) => {
                                 I18nKey.projectsPlanned)}
                         </span>
                       </div>
-                      <p class="text-black/60 dark:text-white/60 mb-3 text-sm line-clamp-2">
+                      <p class="text-black/60 dark:text-white/60 mb-3 text-sm line-clamp-2" title={project.description}>
                         {project.description}
                       </p>
-                      <div class="flex flex-wrap gap-1 mb-3">
+                      <div class="ignore flex flex-wrap gap-1 mb-3">
                         {project.techStack.slice(0, 3).map((tech) => (
                           <span class="px-2 py-1 text-xs bg-blue-600/20 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 rounded">
                             {tech}
@@ -293,7 +293,7 @@ const getCategoryText = (category: string) => {
         <h2 class="text-2xl font-bold text-black/90 dark:text-white/90 mb-4">
           {i18n(I18nKey.projectsTechStack)}
         </h2>
-        <div class="flex flex-wrap gap-2">
+        <div class="ignore flex flex-wrap gap-2">
           {allTechStack.map((tech) => (
             <span class="px-3 py-1 text-sm bg-gray-600/20 text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-full">
               {tech}

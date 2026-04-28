@@ -18,12 +18,12 @@ export type DeviceCategory = {
 export const devicesData: DeviceCategory = {
 	Xiaomi: [
 		{
-			name: "Xiaomi 17 Ultra by Leica",
-			image: "/images/device/Xiaomi 17 Ultra by Leica.webp",
-			specs: "黑银色 / 16G + 1TB",
+			name: "Xiaomi 17 Pro Max",
+			image: "/images/device/Xiaomi 17 Pro Max.webp",
+			specs: "黑色 / 16G + 1TB",
 			description:
-				"第五代骁龙8至尊版芯片，徕卡APO认证超纯光学系统，徕卡一瞬还原真实相机本色，大师变焦环，双路立体环形冷泵，90W / 50W 有无线极速充电",
-			link: "https://www.mi.com/prod/xiaomi-17-ultra-byleica",
+				"第五代骁龙 8 至尊版移动平台，徕卡光影大师，小米金沙江电池，妙享背屏",
+			link: "https://www.mi.com/prod/xiaomi-17-pro-max",
 		},
 	],
 };

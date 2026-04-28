@@ -141,7 +141,7 @@ const allIcons = skillsData.map((skill) => skill.icon).filter(Boolean);
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {advancedSkills.map((skill) => (
-              <div class="bg-transparent rounded-lg border border-black/10 dark:border-white/10 p-6 hover:shadow-lg transition-shadow duration-300">
+              <div class="bg-transparent rounded-lg border border-black/10 dark:border-white/10 p-6 hover:shadow-lg dark:hover:shadow-white/30 transition-shadow duration-300">
                 <div class="flex items-start gap-4">
                   {skill.icon && (
                     <div class="w-12 h-12 rounded-lg flex items-center justify-center" style={`background-color: ${skill.color || 'rgb(99 102 241)'}20`}>
@@ -166,7 +166,7 @@ const allIcons = skillsData.map((skill) => skill.icon).filter(Boolean);
                          i18n(I18nKey.skillLevelBeginner)}
                       </span>
                     </div>
-                    <p class="text-black/60 dark:text-white/60 mb-3 text-sm">
+                    <p class="text-black/60 dark:text-white/60 mb-3 text-sm" title={skill.description}>
                       {skill.description}
                     </p>
                     <div class="mb-3">
@@ -218,7 +218,7 @@ const allIcons = skillsData.map((skill) => skill.icon).filter(Boolean);
               </h2>
               <div class="skills-grid-container grid grid-cols-1 gap-4">
                 {categorySkills.map((skill) => (
-                  <div class="bg-transparent rounded-lg border border-black/10 dark:border-white/10 p-4 hover:shadow-lg transition-shadow duration-300">
+                  <div class="bg-transparent rounded-lg border border-black/10 dark:border-white/10 p-4 hover:shadow-lg dark:hover:shadow-white/30 transition-shadow duration-300">
                     <div class="flex items-start gap-3">
                       {skill.icon && (
                         <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={`background-color: ${skill.color || 'rgb(99 102 241)'}20`}>
@@ -243,7 +243,7 @@ const allIcons = skillsData.map((skill) => skill.icon).filter(Boolean);
                              i18n(I18nKey.skillLevelBeginner)}
                           </span>
                         </div>
-                        <p class="text-black/60 dark:text-white/60 mb-2 text-sm line-clamp-2">
+                        <p class="text-black/60 dark:text-white/60 mb-2 text-sm line-clamp-2" title={skill.description}>
                           {skill.description}
                         </p>
                         <div class="text-xs text-black/60 dark:text-white/60">

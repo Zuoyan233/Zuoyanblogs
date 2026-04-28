@@ -96,21 +96,33 @@ async function fetchMetingPlaylist() {
 		const res = await fetch(apiUrl);
 		if (!res.ok) throw new Error("meting api error");
 		const list = await res.json();
-		playlist = list.map((song: any) => {
-			let title = song.name ?? song.title ?? i18n(Key.unknownSong);
-			let artist = song.artist ?? song.author ?? i18n(Key.unknownArtist);
-			let dur = song.duration ?? 0;
-			if (dur > 10000) dur = Math.floor(dur / 1000);
-			if (!Number.isFinite(dur) || dur <= 0) dur = 0;
-			return {
-				id: song.id,
-				title,
-				artist,
-				cover: song.pic ?? "",
-				url: song.url ?? "",
-				duration: dur,
-			};
-		});
+		playlist = list.map(
+			(song: {
+				id?: string;
+				name?: string;
+				title?: string;
+				artist?: string;
+				author?: string;
+				duration?: number;
+				pic?: string;
+				url?: string;
+				lrc?: string;
+			}) => {
+				let title = song.name ?? song.title ?? i18n(Key.unknownSong);
+				let artist = song.artist ?? song.author ?? i18n(Key.unknownArtist);
+				let dur = song.duration ?? 0;
+				if (dur > 10000) dur = Math.floor(dur / 1000);
+				if (!Number.isFinite(dur) || dur <= 0) dur = 0;
+				return {
+					id: song.id,
+					title,
+					artist,
+					cover: song.pic ?? "",
+					url: song.url ?? "",
+					duration: dur,
+				};
+			},
+		);
 		if (playlist.length > 0) {
 			loadSong(playlist[0]);
 		}
@@ -499,8 +511,8 @@ onDestroy(() => {
                  role="button"
                  tabindex="0"
                  aria-label={i18n(Key.musicPlayerExpand)}>
-                <div class="text-sm font-medium text-90 truncate">{currentSong.title}</div>
-                <div class="text-xs text-50 truncate">{currentSong.artist}</div>
+                <div class="text-sm font-medium text-90 truncate ignore">{currentSong.title}</div>
+                <div class="text-xs text-50 truncate ignore">{currentSong.artist}</div>
             </div>
             <div class="flex items-center gap-1">
                 <button class="btn-plain w-8 h-8 rounded-lg flex items-center justify-center"
@@ -528,8 +540,8 @@ onDestroy(() => {
                      class:animate-pulse={isLoading} />
             </div>
             <div class="flex-1 min-w-0">
-                <div class="song-title text-lg font-bold text-90 truncate mb-1">{currentSong.title}</div>
-                <div class="song-artist text-sm text-50 truncate">{currentSong.artist}</div>
+                <div class="song-title text-lg font-bold text-90 truncate mb-1 ignore">{currentSong.title}</div>
+                <div class="song-artist text-sm text-50 truncate ignore">{currentSong.artist}</div>
                 <div class="text-xs text-30 mt-1">
                     {formatTime(currentTime)} / {formatTime(duration)}
                 </div>
@@ -688,10 +700,10 @@ onDestroy(() => {
                             <img src={getAssetPath(song.cover)} alt={song.title} loading="lazy" class="w-full h-full object-cover" />
                         </div>
                         <div class="flex-1 min-w-0">
-                            <div class="font-medium truncate" class:text-[var(--primary)]={index === currentIndex} class:text-90={index !== currentIndex}>
+                            <div class="font-medium truncate ignore" class:text-[var(--primary)]={index === currentIndex} class:text-90={index !== currentIndex}>
                                 {song.title}
                             </div>
-                            <div class="text-sm text-[var(--content-meta)] truncate" class:text-[var(--primary)]={index === currentIndex}>
+                            <div class="text-sm text-[var(--content-meta)] truncate ignore" class:text-[var(--primary)]={index === currentIndex}>
                                 {song.artist}
                             </div>
                         </div>

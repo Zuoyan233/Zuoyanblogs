@@ -69,7 +69,7 @@ html.dark {
 }
 
 .tk-comment {
-  @apply border-[1px] border-[rgba(144,147,153,0.31)] p-4 rounded-2xl hover:shadow-md transition-all;
+  @apply border-[1px] border-[rgba(144,147,153,0.31)] p-4 rounded-2xl hover:shadow-lg dark:hover:shadow-white/30 transition-all;
   .tk-action-icon svg {
     @apply fill-[var(--primary)];
   }

@@ -119,19 +119,19 @@ const subtitle = i18n(I18nKey.timelineSubtitle);
 
       <!-- 统计信息卡片 -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-        <div class="bg-blue-500/10 dark:bg-blue-900/30 rounded-xl p-5 border border-blue-500/20 dark:border-blue-900/30 hover:shadow-lg transition-shadow duration-300">
+        <div class="bg-blue-500/10 dark:bg-blue-900/30 rounded-xl p-5 border border-blue-500/20 dark:border-blue-900/30 hover:shadow-lg dark:hover:shadow-white/30 transition-shadow duration-300">
           <div class="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-1">{stats.total}</div>
           <div class="text-sm text-blue-600/70 dark:text-blue-400/70">{i18n(I18nKey.timelineTotal)}</div>
         </div>
-        <div class="bg-green-500/10 dark:bg-green-900/30 rounded-xl p-5 border border-green-500/20 dark:border-green-900/30 hover:shadow-lg transition-shadow duration-300">
+        <div class="bg-green-500/10 dark:bg-green-900/30 rounded-xl p-5 border border-green-500/20 dark:border-green-900/30 hover:shadow-lg dark:hover:shadow-white/30 transition-shadow duration-300">
           <div class="text-2xl font-bold text-green-600 dark:text-green-400 mb-1">{stats.byType.work}</div>
           <div class="text-sm text-green-600/70 dark:text-green-400/70">{i18n(I18nKey.timelineWork)}</div>
         </div>
-        <div class="bg-purple-500/10 dark:bg-purple-900/30 rounded-xl p-5 border border-purple-500/20 dark:border-purple-900/30 hover:shadow-lg transition-shadow duration-300">
+        <div class="bg-purple-500/10 dark:bg-purple-900/30 rounded-xl p-5 border border-purple-500/20 dark:border-purple-900/30 hover:shadow-lg dark:hover:shadow-white/30 transition-shadow duration-300">
           <div class="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-1">{stats.byType.project}</div>
           <div class="text-sm text-purple-600/70 dark:text-purple-400/70">{i18n(I18nKey.timelineProjects)}</div>
         </div>
-        <div class="bg-orange-500/10 dark:bg-orange-900/30 rounded-xl p-5 border border-orange-500/20 dark:border-orange-900/30 hover:shadow-lg transition-shadow duration-300">
+        <div class="bg-orange-500/10 dark:bg-orange-900/30 rounded-xl p-5 border border-orange-500/20 dark:border-orange-900/30 hover:shadow-lg dark:hover:shadow-white/30 transition-shadow duration-300">
           <div class="text-2xl font-bold text-orange-600 dark:text-orange-400 mb-1">
             {workExperience.years}+
           </div>
@@ -148,7 +148,7 @@ const subtitle = i18n(I18nKey.timelineSubtitle);
           </h2>
           <div class="grid grid-cols-1 gap-6">
             {currentItems.map((item) => (
-              <div class="bg-transparent rounded-xl border border-black/10 dark:border-white/10 p-6 hover:shadow-lg transition-shadow duration-300">
+              <div class="bg-transparent rounded-xl border border-black/10 dark:border-white/10 p-6 hover:shadow-lg dark:hover:shadow-white/30 transition-shadow duration-300">
                 <div class="flex flex-col md:flex-row md:items-start gap-5">
                   <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={`background-color: ${item.color || 'rgb(99 102 241)'}20`}>
                     <Icon 
@@ -197,7 +197,7 @@ const subtitle = i18n(I18nKey.timelineSubtitle);
                     </div>
                     
                     {item.skills && item.skills.length > 0 && (
-                      <div class="flex flex-wrap gap-2 mb-4">
+                      <div class="ignore flex flex-wrap gap-2 mb-4">
                         {item.skills.map((skill) => (
                           <span class="px-3 py-1.5 text-xs bg-indigo-600/20 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400 rounded-full">
                             {skill}
@@ -239,7 +239,7 @@ const subtitle = i18n(I18nKey.timelineSubtitle);
         </h2>
         
         <!-- 横向时间线容器 -->
-        <div class="relative overflow-hidden rounded-xl bg-transparent border border-black/10 dark:border-white/10 p-6 hover:shadow-lg transition-shadow duration-300">
+        <div class="relative overflow-hidden rounded-xl bg-transparent border border-black/10 dark:border-white/10 p-6 hover:shadow-lg dark:hover:shadow-white/30 transition-shadow duration-300">
           <!-- 水平滚动区域 -->
           <div class="flex overflow-x-auto pb-6 -mx-2 px-2 timeline-horizontal-scroll" id="timeline-scrollbar">
             

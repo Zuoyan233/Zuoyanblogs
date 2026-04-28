@@ -23,6 +23,20 @@ interface AnimeItem {
 	genre: string[];
 }
 
+interface RawAnimeData {
+	title?: string;
+	cover?: string;
+	link?: string;
+	status?: string;
+	rating?: number | string;
+	progress?: number | string;
+	totalEpisodes?: number | string;
+	description?: string;
+	year?: string;
+	studio?: string;
+	genre?: string[];
+}
+
 if (!siteConfig.featurePages.anime) {
 	return Astro.redirect("/404/");
 }
@@ -49,7 +63,7 @@ if (ANIME_MODE === "local") {
 			if (fs.existsSync(dataPath)) {
 				const fileContent = fs.readFileSync(dataPath, "utf-8");
 				const rawData = JSON.parse(fileContent);
-				animeList = rawData.map((item: any) => ({
+				animeList = rawData.map((item: RawAnimeData) => ({
 					title: item.title || "Unknown",
 					cover: item.cover || "",
 					link: item.link || "",
@@ -85,7 +99,7 @@ if (ANIME_MODE === "local") {
 			if (fs.existsSync(dataPath)) {
 				const fileContent = fs.readFileSync(dataPath, "utf-8");
 				const rawData = JSON.parse(fileContent);
-				animeList = rawData.map((item: any) => ({
+				animeList = rawData.map((item: RawAnimeData) => ({
 					title: item.title || "Unknown",
 					cover: item.cover || "",
 					link: item.link || "",
@@ -263,7 +277,7 @@ const hiddenAnimeList = animeList.slice(INITIAL_DISPLAY_COUNT);
 
 									return (
 										<div
-											class="group relative bg-[var(--card-bg)] border border-[var(--line-divider)] rounded-[var(--radius-large)] overflow-hidden hover:shadow-lg"
+											class="group relative bg-[var(--card-bg)] border border-[var(--line-divider)] rounded-[var(--radius-large)] overflow-hidden hover:shadow-lg dark:hover:shadow-white/30 transition-shadow duration-300"
 											data-anime-status={anime.status}
 										>
 											<div class="relative anime-cover-container aspect-[2/3] overflow-hidden">
@@ -340,7 +354,7 @@ const hiddenAnimeList = animeList.slice(INITIAL_DISPLAY_COUNT);
 											</div>
 
 											<div class="p-3">
-												<h3 class="text-sm font-bold text-black/90 dark:text-white/90 mb-1 leading-tight">
+												<h3 class="ignore text-sm font-bold text-black/90 dark:text-white/90 mb-1 leading-tight">
 													{anime.title}
 												</h3>
 												<p
@@ -404,7 +418,7 @@ const hiddenAnimeList = animeList.slice(INITIAL_DISPLAY_COUNT);
 
 									return (
 										<div
-											class="group relative bg-[var(--card-bg)] border border-[var(--line-divider)] rounded-[var(--radius-large)] overflow-hidden hover:shadow-lg"
+											class="group relative bg-[var(--card-bg)] border border-[var(--line-divider)] rounded-[var(--radius-large)] overflow-hidden hover:shadow-lg dark:hover:shadow-white/30 transition-shadow duration-300"
 											data-anime-status={anime.status}
 										>
 											<div class="relative anime-cover-container aspect-[2/3] overflow-hidden">
@@ -509,7 +523,7 @@ const hiddenAnimeList = animeList.slice(INITIAL_DISPLAY_COUNT);
 															)}
 														</span>
 														<span
-															class="text-black/70 dark:text-white/70 text-right ml-2 line-clamp-2 break-words"
+															class="ignore text-black/70 dark:text-white/70 text-right ml-2 line-clamp-2 break-words"
 															title={anime.studio}
 														>
 															{anime.studio}

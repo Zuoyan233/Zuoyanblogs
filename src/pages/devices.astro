@@ -59,7 +59,7 @@ const brands = Object.keys(devices);
             href={device.link}
             target="_blank"
             rel="noopener noreferrer"
-            class="device-card group relative overflow-hidden rounded-xl border border-[var(--line-divider)] bg-[var(--card-bg)] transition-all duration-300 hover:border-[var(--primary)]/50 hover:shadow-md hover:shadow-black/5 dark:hover:shadow-white/5 hover:scale-[1.02] hover:-translate-y-0.5 block cursor-pointer"
+            class="device-card group relative overflow-hidden rounded-xl border border-[var(--line-divider)] bg-[var(--card-bg)] transition-all duration-300 hover:border-[var(--primary)]/50 hover:shadow-lg dark:hover:shadow-white/30 hover:scale-[1.02] hover:-translate-y-0.5 block cursor-pointer"
             style={`animation-delay: ${index * 100}ms`}
           >
 
@@ -78,7 +78,7 @@ const brands = Object.keys(devices);
             <!-- 设备信息区域 -->
             <div class="p-6 pt-4 relative z-10">
               <div class="flex items-start justify-between mb-3">
-                <h3 class="text-lg font-bold text-black/90 dark:text-white/90 group-hover:text-[var(--primary)] transition-colors duration-300">
+                <h3 class="ignore text-lg font-bold text-black/90 dark:text-white/90 group-hover:text-[var(--primary)] transition-colors duration-300">
                   {device.name}
                 </h3>
                 <div class="p-1.5 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -92,7 +92,7 @@ const brands = Object.keys(devices);
                   <span class="font-medium">{device.specs}</span>
                 </div>
 
-                <p class="text-sm text-black/60 dark:text-white/60 leading-relaxed line-clamp-2">
+                <p class="text-sm text-black/60 dark:text-white/60 leading-relaxed line-clamp-2" title={device.description}>
                   {device.description}
                 </p>
               </div>
@@ -132,7 +132,7 @@ const brands = Object.keys(devices);
             href="${device.link}"
             target="_blank"
             rel="noopener noreferrer"
-            class="device-card group relative overflow-hidden rounded-xl border border-[var(--line-divider)] bg-[var(--card-bg)] transition-all duration-300 hover:border-[var(--primary)]/50 hover:shadow-md hover:shadow-black/5 dark:hover:shadow-white/5 hover:scale-[1.02] hover:-translate-y-0.5 block cursor-pointer"
+            class="device-card group relative overflow-hidden rounded-xl border border-[var(--line-divider)] bg-[var(--card-bg)] transition-all duration-300 hover:border-[var(--primary)]/50 hover:shadow-lg hover:shadow-black/5 dark:hover:shadow-white/5 hover:scale-[1.02] hover:-translate-y-0.5 block cursor-pointer"
             style="animation-delay: ${index * 100}ms; animation: fadeInUp 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; opacity: 0;"
           >
             <!-- 设备图片区域 -->
@@ -150,7 +150,7 @@ const brands = Object.keys(devices);
             <!-- 设备信息区域 -->
             <div class="p-6 pt-4 relative z-10">
               <div class="flex items-start justify-between mb-3">
-                <h3 class="text-lg font-bold text-black/90 dark:text-white/90 group-hover:text-[var(--primary)] transition-colors duration-300">
+                <h3 class="ignore text-lg font-bold text-black/90 dark:text-white/90 group-hover:text-[var(--primary)] transition-colors duration-300">
                   ${device.name}
                 </h3>
                 <div class="p-1.5 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -169,7 +169,7 @@ const brands = Object.keys(devices);
                   <span class="font-medium">${device.specs}</span>
                 </div>
 
-                <p class="text-sm text-black/60 dark:text-white/60 leading-relaxed line-clamp-2">
+                <p class="text-sm text-black/60 dark:text-white/60 leading-relaxed line-clamp-2" title=${device.description}>
                   ${device.description}
                 </p>
               </div>
@@ -312,11 +312,5 @@ const brands = Object.keys(devices);
       }
     }
 
-    /* 在深色模式下微妙的阴影效果 */
-    @media (prefers-color-scheme: dark) {
-      .device-card:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      }
-    }
   </style>
 </MainGridLayout>
