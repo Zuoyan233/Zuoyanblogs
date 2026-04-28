@@ -918,10 +918,22 @@ function disableAnimation() {
 		};
 	}
 	
+	// 启动页面元素动态监听（DOM变化自动翻译）
 	if (translate.listener?.start) {
 		translate.listener.start();
 	}
 	
+	// 启动AJAX请求监听（网络请求完成后自动翻译）
+	if ((translate as any).request?.listener?.start) {
+		(translate as any).request.listener.start();
+	}
+	
+	// 设置URL参数控制语种（通过 ?language=xxx 控制页面语种）
+	if ((translate as any).language?.setUrlParamControl) {
+		(translate as any).language.setUrlParamControl();
+	}
+	
+	// 执行首次翻译
 	if (translate.execute) {
 		translate.execute();
 	}
@@ -1114,11 +1126,14 @@ function disableAnimation() {
 			}
 
 			// 页面内容替换后重新执行翻译（仅在翻译已加载时）
-		setTimeout(() => {
-			if (siteConfig.translate?.enable && typeof (window as any).translate !== 'undefined') {
-				(window as any).translate.execute();
-			}
-		}, 100);
+		// 多次延迟执行，确保Svelte等组件异步渲染后也能被翻译覆盖
+		[300, 800, 1500].forEach(delay => {
+			setTimeout(() => {
+				if (siteConfig.translate?.enable && typeof (window as any).translate !== 'undefined') {
+					(window as any).translate.execute();
+				}
+			}, delay);
+		});
 
 			// 重新初始化semifull模式的滚动检测
 			const navbar = document.getElementById("navbar");
@@ -1240,6 +1255,17 @@ function disableAnimation() {
 				top: 0,
 				behavior: "instant",
 			});
+
+			// 页面切换完成后执行翻译，补充漏翻内容
+			setTimeout(() => {
+				if (siteConfig.translate?.enable && typeof (window as any).translate !== 'undefined') {
+					const t = (window as any).translate;
+					// 如果已经选择了翻译目标语言且不是本地语言，重新执行翻译
+					if (t.to && t.to !== t.language?.getLocal()) {
+						t.execute();
+					}
+				}
+			}, 500);
 
 			// 同步主题状态 - 解决从首页进入文章页面时代码块渲染问题
 			const storedTheme = localStorage.getItem("theme") || DEFAULT_THEME;

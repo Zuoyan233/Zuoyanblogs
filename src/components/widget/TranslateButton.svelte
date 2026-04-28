@@ -52,21 +52,26 @@ async function changeLanguage(languageCode: string) {
 			window.translate.language &&
 			typeof window.translate.language.setLocal === "function"
 		) {
-			// 检查是否选择的是简体中文，且当前本地语言也是简体中文
 			const localLang = window.translate.language.getLocal();
 
+			// 切换语言前先重置，清除上一次翻译的残留
+			if (typeof window.translate.reset === "function") {
+				window.translate.reset();
+			}
+
+			// 选择简体中文且本地语言也是简体中文时，允许翻译本地语种
 			if (
 				languageCode === "chinese_simplified" &&
 				localLang === "chinese_simplified"
 			) {
-				// 如果选择简体中文且本地语言也是简体中文，先重置翻译状态
-				if (typeof window.translate.reset === "function") {
-					window.translate.reset();
-				}
-				// 强制设置允许翻译本地语种
 				if (window.translate.language) {
 					window.translate.language.translateLocal = true;
 				}
+			}
+
+			// reset()会断开MutationObserver，需要重新启动listener
+			if (window.translate.listener?.start) {
+				window.translate.listener.start();
 			}
 
 			// 设置目标语言并执行翻译
@@ -75,7 +80,20 @@ async function changeLanguage(languageCode: string) {
 				window.translate.execute();
 			}
 
-			// 由于我们隐藏了默认的select选择框，不需要更新select.value
+			// 确保 listener 正在运行（首次翻译会通过生命周期钩子自动启动addListener）
+			// 如果listener未启动，手动启动
+			if (window.translate.listener && !window.translate.listener.isStart) {
+				if (typeof window.translate.listener.addListener === "function") {
+					window.translate.listener.addListener();
+				}
+			}
+
+			// 延迟再次执行翻译，确保动态渲染的组件也能被覆盖
+			setTimeout(() => {
+				if (typeof window.translate !== "undefined" && window.translate.to === languageCode) {
+					window.translate.execute();
+				}
+			}, 500);
 		} else {
 			console.warn(
 				"translate.js is not fully loaded or language API is not available",

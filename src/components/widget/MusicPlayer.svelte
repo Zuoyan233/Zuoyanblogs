@@ -7,7 +7,6 @@ import { musicPlayerConfig } from "../../config";
 // 导入国际化相关的 Key 和 i18n 实例
 import Key from "../../i18n/i18nKey";
 import { i18n } from "../../i18n/translation";
-import { triggerTranslate } from "../../utils/language-utils";
 
 // 音乐播放器模式，可选 "local" 或 "meting"，从本地配置中获取或使用默认值 "meting"
 let mode = musicPlayerConfig.mode ?? "meting";
@@ -72,13 +71,6 @@ let currentIndex = 0;
 let audio: HTMLAudioElement;
 let progressBar: HTMLElement;
 let volumeBar: HTMLElement;
-
-// 响应式：监听所有需要翻译的动态状态，一处搞定
-$: {
-	showPlaylist;
-	errorMessage;
-	triggerTranslate();
-}
 
 const localPlaylist = [
 	// {

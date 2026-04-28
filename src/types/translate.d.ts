@@ -1,7 +1,7 @@
 declare global {
 	interface Window {
 		translate?: {
-			reset: any;
+			reset: () => void;
 			changeLanguage: (language: string) => void;
 			service: {
 				use: (service: string) => void;
@@ -11,6 +11,7 @@ declare global {
 				setLocal: (language: string) => void;
 				getCurrent: () => string;
 				getLocal: () => string;
+				setUrlParamControl: (name?: string) => void;
 			};
 			setAutoDiscriminateLocalLanguage: () => void;
 			ignore: {
@@ -23,6 +24,17 @@ declare global {
 			};
 			listener: {
 				start: () => void;
+				addListener: () => void;
+				reset: () => void;
+				isStart: boolean;
+				use: boolean;
+			};
+			request: {
+				listener: {
+					start: () => void;
+					use: boolean;
+					isStart: boolean;
+				};
 			};
 			execute: () => void;
 			to: string;
