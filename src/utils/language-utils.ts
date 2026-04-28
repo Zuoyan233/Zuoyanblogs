@@ -58,6 +58,20 @@ export function getConfigLanguageFromTranslate(translateLang: string): string {
 }
 
 /**
+ * 触发动态内容翻译
+ * 用于在动态内容更新后调用，确保新增的 DOM 文本被翻译
+ * @param delay 延迟毫秒数，默认 100ms，确保 DOM 更新完成后再扫描翻译
+ */
+export function triggerTranslate(delay = 100) {
+	if (
+		typeof window !== "undefined" &&
+		typeof window.triggerDynamicTranslate === "function"
+	) {
+		setTimeout(() => window.triggerDynamicTranslate?.(), delay);
+	}
+}
+
+/**
  * 获取语言的显示名称
  * @param langCode 语言代码（配置文件格式或翻译服务格式）
  * @returns 语言的显示名称
