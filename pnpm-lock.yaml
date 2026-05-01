@@ -147,8 +147,8 @@ importers:
         specifier: ^2.17.2
         version: 2.17.2
       satori:
-        specifier: ^0.18.4
-        version: 0.18.4
+        specifier: ^0.26.0
+        version: 0.26.0
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
@@ -1841,6 +1841,7 @@ packages:
   '@xmldom/xmldom@0.8.12':
     resolution: {integrity: sha512-9k/gHF6n/pAi/9tqr3m3aqkuiNosYTurLLUtc7xQ9sxB/wm7WPygCv8GYa6mS0fLJEHhqMC1ATYhz++U/lRHqg==}
     engines: {node: '>=10.0.0'}
+    deprecated: this version has critical issues, please update to the latest version
 
   abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -4845,8 +4846,8 @@ packages:
   sanitize-html@2.17.2:
     resolution: {integrity: sha512-EnffJUl46VE9uvZ0XeWzObHLurClLlT12gsOk1cHyP2Ol1P0BnBnsXmShlBmWVJM+dKieQI68R0tsPY5m/B+Jg==}
 
-  satori@0.18.4:
-    resolution: {integrity: sha512-HanEzgXHlX3fzpGgxPoR3qI7FDpc/B+uE/KplzA6BkZGlWMaH98B/1Amq+OBF1pYPlGNzAXPYNHlrEVBvRBnHQ==}
+  satori@0.26.0:
+    resolution: {integrity: sha512-tkMFrfIs3l2mQ2JEcyW0ADTy3zGggFRFzi6Ef8YozQSFsFKEqaSO1Y8F9wJg4//PJGQauMalHGTUEkPrFwhVPA==}
     engines: {node: '>=16'}
 
   sax@1.4.4:
@@ -5492,7 +5493,7 @@ packages:
 
   uuid@2.0.3:
     resolution: {integrity: sha512-FULf7fayPdpASncVy4DLh3xydlXEJJpvIELjYjNeQWYUZ9pclcpvCZSr2gkmN2FrrGcI7G/cJsIEwk5/8vfXpg==}
-    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
 
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
@@ -11333,7 +11334,7 @@ snapshots:
       parse-srcset: 1.0.2
       postcss: 8.5.9
 
-  satori@0.18.4:
+  satori@0.26.0:
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
       css-background-parser: 0.1.0
