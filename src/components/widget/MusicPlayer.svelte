@@ -1,12 +1,13 @@
 <script lang="ts">
 import Icon from "@iconify/svelte";
-import { onDestroy, onMount } from "svelte";
+import { onDestroy, onMount, tick } from "svelte";
 import { slide } from "svelte/transition";
 // 从配置文件中导入音乐播放器配置
 import { musicPlayerConfig } from "../../config";
 // 导入国际化相关的 Key 和 i18n 实例
 import Key from "../../i18n/i18nKey";
 import { i18n } from "../../i18n/translation";
+import { translationManager } from "../../utils/translation-manager";
 
 // 音乐播放器模式，可选 "local" 或 "meting"，从本地配置中获取或使用默认值 "meting"
 let mode = musicPlayerConfig.mode ?? "meting";
@@ -29,6 +30,20 @@ let isExpanded = false;
 let isHidden = false;
 // 是否显示播放列表，默认为 false
 let showPlaylist = false;
+let playerRoot: HTMLElement;
+
+// Refresh the player after the lazily rendered playlist panel appears.
+$: if (showPlaylist) {
+	void tick().then(() => {
+		if (playerRoot) {
+			void translationManager.refresh({
+				root: playerRoot,
+				reason: "music-player-playlist",
+			});
+		}
+	});
+}
+
 // 当前播放时间，默认为 0
 let currentTime = 0;
 // 歌曲总时长，默认为 0
@@ -436,7 +451,8 @@ onDestroy(() => {
 </div>
 {/if}
 
-<div class="music-player fixed bottom-4 right-4 z-50 transition-all duration-300 ease-in-out"
+<div bind:this={playerRoot}
+     class="music-player fixed bottom-4 right-4 z-50 transition-all duration-300 ease-in-out"
      class:expanded={isExpanded}
      class:hidden-mode={isHidden}>
 
@@ -511,8 +527,8 @@ onDestroy(() => {
                  role="button"
                  tabindex="0"
                  aria-label={i18n(Key.musicPlayerExpand)}>
-                <div class="text-sm font-medium text-90 truncate ignore">{currentSong.title}</div>
-                <div class="text-xs text-50 truncate ignore">{currentSong.artist}</div>
+                <div class="ignore text-sm font-medium text-90 truncate">{currentSong.title}</div>
+                <div class="ignore text-xs text-50 truncate ">{currentSong.artist}</div>
             </div>
             <div class="flex items-center gap-1">
                 <button class="btn-plain w-8 h-8 rounded-lg flex items-center justify-center"
@@ -540,8 +556,8 @@ onDestroy(() => {
                      class:animate-pulse={isLoading} />
             </div>
             <div class="flex-1 min-w-0">
-                <div class="song-title text-lg font-bold text-90 truncate mb-1 ignore">{currentSong.title}</div>
-                <div class="song-artist text-sm text-50 truncate ignore">{currentSong.artist}</div>
+                <div class="ignore song-title text-lg font-bold text-90 truncate mb-1">{currentSong.title}</div>
+                <div class="ignore song-artist text-sm text-50 truncate">{currentSong.artist}</div>
                 <div class="text-xs text-30 mt-1">
                     {formatTime(currentTime)} / {formatTime(duration)}
                 </div>

@@ -50,6 +50,9 @@ class TableOfContents extends HTMLElement {
     tocEntries: HTMLAnchorElement[] = [];
     active: boolean[] = [];
     activeIndicator: HTMLElement | null = null;
+    _headingObserver: MutationObserver | null = null;
+    _clickBound = false;
+    _skipMutationUntil = 0;
 
     constructor() {
         super();
@@ -224,7 +227,93 @@ class TableOfContents extends HTMLElement {
             tryInit();
             setTimeout(tryInit, 300);
         }
+
+        // 翻译完成后刷新 TOC（heading 文本已翻译）
+        document.addEventListener("translate:applied", () => {
+            this._skipMutationUntil = Date.now() + 200;
+            this.updateTOCText();
+        });
     };
+
+    // 监听 heading 文本变化（translate.js 异步翻译完成后 DOM 自动更新）
+    observeHeadingChanges() {
+        if (this._headingObserver) {
+            this._headingObserver.disconnect();
+        }
+
+        const container = document.querySelector('.custom-md') || document.querySelector('.prose') || document.querySelector('.markdown-content');
+        if (!container) return;
+
+        let debounceTimer: number;
+        this._headingObserver = new MutationObserver((mutations) => {
+            // 如果 translate:applied 已触发 init()，跳过本次 MutationObserver 回调
+            if (Date.now() < this._skipMutationUntil) return;
+
+            for (const mutation of mutations) {
+                // characterData: heading 文本内容被 translate.js 异步修改
+                if (mutation.type === 'characterData') {
+                    const parent = mutation.target.parentElement;
+                    if (parent && /^H[1-6]$/i.test(parent.tagName) && parent.id) {
+                        clearTimeout(debounceTimer);
+                        debounceTimer = window.setTimeout(() => {
+                            this.init();
+                        }, 50);
+                        return;
+                    }
+                }
+                // childList: 新 heading 被动态插入（如密码解密后）
+                if (mutation.type === 'childList') {
+                    for (const node of mutation.addedNodes) {
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            const el = node as HTMLElement;
+                            if (/^H[1-6]$/i.test(el.tagName) && el.id) {
+                                clearTimeout(debounceTimer);
+                                debounceTimer = window.setTimeout(() => {
+                                    this.init();
+                                }, 50);
+                                return;
+                            }
+                            if (el.querySelector?.('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]')) {
+                                clearTimeout(debounceTimer);
+                                debounceTimer = window.setTimeout(() => {
+                                    this.init();
+                                }, 50);
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        this._headingObserver.observe(container, {
+            childList: true,
+            subtree: true,
+            characterData: true,
+        });
+    }
+
+    // 增量更新：仅更新 TOC 条目文本，不重建 DOM（避免翻译后闪烁）
+    updateTOCText() {
+        const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6'))
+            .filter(h => h.id)
+            .map(h => ({
+                slug: h.id,
+                text: (h.textContent || '').replace(/#+\s*$/, '')
+            }));
+
+        const textMap = new Map(headings.map(h => [h.slug, h.text]));
+        for (const entry of this.tocEntries) {
+            const slug = decodeURIComponent(entry.hash?.substring(1));
+            const newText = textMap.get(slug);
+            if (newText !== undefined) {
+                const textEl = entry.querySelector('.text-sm, [class*="text-sm"]');
+                if (textEl && textEl.textContent !== newText) {
+                    textEl.textContent = newText;
+                }
+            }
+        }
+    }
 
     init() {
         // 重新生成TOC内容
@@ -232,9 +321,13 @@ class TableOfContents extends HTMLElement {
 
         this.tocEl = this;
 
-        this.tocEl.addEventListener("click", this.handleAnchorClick, {
-            capture: true,
-        });
+        // 避免重复绑定 click 监听器
+        if (!this._clickBound) {
+            this.tocEl.addEventListener("click", this.handleAnchorClick, {
+                capture: true,
+            });
+            this._clickBound = true;
+        }
 
         this.activeIndicator = document.getElementById("active-indicator");
 
@@ -242,10 +335,20 @@ class TableOfContents extends HTMLElement {
             this.querySelectorAll<HTMLAnchorElement>("a[href^='#']")
         );
 
-        if (this.tocEntries.length === 0) return;
+        if (this.tocEntries.length === 0) {
+            // 没有标题时也要启动 heading 变化监听，以便新增标题后自动刷新
+            this.observeHeadingChanges();
+            return;
+        }
+
+        // 清理旧的 IntersectionObserver，防止重复 observe
+        this.sections.forEach((section) =>
+            this.observer.unobserve(section)
+        );
 
         this.sections = new Array(this.tocEntries.length);
         this.headings = new Array(this.tocEntries.length);
+        this.headingIdxMap.clear();
         for (let i = 0; i < this.tocEntries.length; i++) {
             const id = decodeURIComponent(this.tocEntries[i].hash?.substring(1));
             const heading = document.getElementById(id);
@@ -264,7 +367,12 @@ class TableOfContents extends HTMLElement {
 
         this.fallback();
         this.update();
+
+        // 启动 heading 文本变化的监听
+        this.observeHeadingChanges();
     };
+
+
 
     regenerateTOC(retryCount = 0) {
         // 检查是否为文章页面
@@ -286,7 +394,12 @@ class TableOfContents extends HTMLElement {
             }));
         // 如果没有标题，延迟重试最多3次
         if (headings.length === 0 && retryCount < 3) {
-            setTimeout(() => this.regenerateTOC(retryCount + 1), 120);
+            setTimeout(() => {
+                this.regenerateTOC(retryCount + 1);
+                if (this.dataset.loaded) {
+                    this.init();
+                }
+            }, 120);
             return;
         }
         if (headings.length === 0) {
@@ -300,9 +413,6 @@ class TableOfContents extends HTMLElement {
         const siteConfig = (window as any).siteConfig || {};
         const maxLevel = siteConfig.toc?.depth || 3;
         const useJapaneseBadge = siteConfig.toc?.useJapaneseBadge || false;
-        
-        // 添加调试信息
-        console.log('TOC Config in regenerateTOC:', { siteConfig: siteConfig.toc, maxLevel, useJapaneseBadge });
         
         // 日语片假名字符集
         const japaneseKatakana = [
@@ -356,6 +466,10 @@ class TableOfContents extends HTMLElement {
         );
         this.observer.disconnect();
         this.tocEl?.removeEventListener("click", this.handleAnchorClick);
+        if (this._headingObserver) {
+            this._headingObserver.disconnect();
+            this._headingObserver = null;
+        }
     };
 }
 

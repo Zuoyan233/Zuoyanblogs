@@ -5,11 +5,11 @@ import Icon from "@iconify/svelte";
 import { onDestroy, onMount } from "svelte";
 import { siteConfig } from "@/config";
 import { getTranslateLanguageFromConfig } from "@/utils/language-utils";
+import { translationManager } from "@/utils/translation-manager";
 
 let isOpen = false;
 let translatePanel: HTMLElement;
 let currentLanguage = "";
-
 // 支持的语言列表
 const languages = [
 	{ code: "chinese_simplified", name: "简体中文", icon: "🇨🇳" },
@@ -18,7 +18,7 @@ const languages = [
 	{ code: "japanese", name: "日本語", icon: "🇯🇵" },
 	{ code: "korean", name: "한국어", icon: "🇰🇷" },
 	{ code: "french", name: "Français", icon: "🇫🇷" },
-	{ code: "german", name: "Deutsch", icon: "🇩🇪" },
+	{ code: "deutsch", name: "Deutsch", icon: "🇩🇪" },
 	{ code: "spanish", name: "Español", icon: "🇪🇸" },
 	{ code: "russian", name: "Русский", icon: "🇷🇺" },
 	{ code: "arabic", name: "العربية", icon: "🇸🇦" },
@@ -41,57 +41,19 @@ function togglePanel() {
 }
 
 async function changeLanguage(languageCode: string) {
-	try {
-		// 懒加载翻译脚本
-		if (typeof window.loadTranslateScript === "function") {
-			await window.loadTranslateScript();
-		}
-
-		if (
-			typeof window.translate !== "undefined" &&
-			window.translate.language &&
-			typeof window.translate.language.setLocal === "function"
-		) {
-			// 检查是否选择的是简体中文，且当前本地语言也是简体中文
-			const localLang = window.translate.language.getLocal();
-
-			if (
-				languageCode === "chinese_simplified" &&
-				localLang === "chinese_simplified"
-			) {
-				// 如果选择简体中文且本地语言也是简体中文，先重置翻译状态
-				if (typeof window.translate.reset === "function") {
-					window.translate.reset();
-				}
-				// 强制设置允许翻译本地语种
-				if (window.translate.language) {
-					window.translate.language.translateLocal = true;
-				}
-			}
-
-			// 设置目标语言并执行翻译
-			window.translate.to = languageCode;
-			if (typeof window.translate.execute === "function") {
-				window.translate.execute();
-			}
-
-			// 由于我们隐藏了默认的select选择框，不需要更新select.value
-		} else {
-			console.warn(
-				"translate.js is not fully loaded or language API is not available",
-			);
-		}
-
-		// 更新当前语言状态
-		currentLanguage = languageCode;
-	} catch (error) {
-		console.error("Failed to load or execute translation:", error);
-	}
-
-	// 关闭面板
+	// 立即关闭面板，不等翻译完成
 	isOpen = false;
 	if (translatePanel) {
 		translatePanel.classList.add("float-panel-closed");
+	}
+
+	try {
+		// Use the shared manager so every translation request goes through one queue.
+		await translationManager.setLanguage(languageCode);
+
+		currentLanguage = translationManager.getTargetLanguage() || languageCode;
+	} catch (error) {
+		console.error("[Translate] Failed to change language:", error);
 	}
 }
 
@@ -108,18 +70,13 @@ function handleClickOutside(event: MouseEvent) {
 	}
 }
 
-// 组件挂载时添加事件监听和初始化默认语言
+// Sync the button state with the shared translation manager on mount.
 onMount(() => {
 	document.addEventListener("click", handleClickOutside);
 
-	// 初始化当前语言为默认翻译语言
-	currentLanguage = defaultTranslateLanguage;
-
-	// 如果翻译功能已加载，设置默认语言
-	if (typeof window.translate !== "undefined") {
-		window.translate.to = defaultTranslateLanguage;
-		// 由于我们隐藏了默认的select选择框，不需要设置select.value
-	}
+	currentLanguage =
+		translationManager.getTargetLanguage() || defaultTranslateLanguage;
+	void translationManager.init();
 });
 
 onDestroy(() => {
@@ -137,7 +94,7 @@ onDestroy(() => {
         on:click={togglePanel}
     >
         <Icon icon="material-symbols:translate" class="text-[1.25rem] transition-all duration-250 ease-in-out text-black/75 dark:text-white/75 group-hover:text-[var(--primary)]"/>
-</button>
+    </button>
 
     <!-- 翻译面板 -->
     <div 
@@ -151,7 +108,7 @@ onDestroy(() => {
         <div class="ignore grid grid-cols-1 gap-2 max-h-64 overflow-y-auto scrollbar-hide">
             {#each languages as lang}
                 <button
-                    class="flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--btn-plain-bg-hover)] transition-colors text-left w-full {currentLanguage === lang.code ? 'bg-[var(--btn-plain-bg-hover)] border-1 border-[var(--primary)]' : '' }"
+                    class="flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--btn-plain-bg-hover)] transition-colors text-left w-full {currentLanguage === lang.code ? 'bg-[var(--btn-plain-bg-hover)] border-1 border-[var(--primary)]' : ''}"
                     on:click={() => changeLanguage(lang.code)}
                 >
                     <span class="text-lg transition text-black/75 dark:text-white/75">{lang.icon}</span>
@@ -190,4 +147,5 @@ onDestroy(() => {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
 </style>

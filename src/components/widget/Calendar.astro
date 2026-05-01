@@ -2,7 +2,8 @@
 import { Icon } from "astro-icon/components";
 import { siteConfig } from "../../config";
 import I18nKey from "../../i18n/i18nKey";
-import { i18n } from "../../i18n/translation";
+import { allTranslations } from "../../utils/i18n-dom-updater";
+import { translateToLangMap } from "../../utils/language-utils";
 import WidgetLayout from "./WidgetLayout.astro";
 
 interface Props {
@@ -12,33 +13,49 @@ interface Props {
 
 const { class: className, style } = Astro.props;
 
-const monthNames = [
-	i18n(I18nKey.calendarJanuary),
-	i18n(I18nKey.calendarFebruary),
-	i18n(I18nKey.calendarMarch),
-	i18n(I18nKey.calendarApril),
-	i18n(I18nKey.calendarMay),
-	i18n(I18nKey.calendarJune),
-	i18n(I18nKey.calendarJuly),
-	i18n(I18nKey.calendarAugust),
-	i18n(I18nKey.calendarSeptember),
-	i18n(I18nKey.calendarOctober),
-	i18n(I18nKey.calendarNovember),
-	i18n(I18nKey.calendarDecember),
-];
+// 月份/星期的 i18n key 列表
+const monthKeys = [
+	I18nKey.calendarJanuary,
+	I18nKey.calendarFebruary,
+	I18nKey.calendarMarch,
+	I18nKey.calendarApril,
+	I18nKey.calendarMay,
+	I18nKey.calendarJune,
+	I18nKey.calendarJuly,
+	I18nKey.calendarAugust,
+	I18nKey.calendarSeptember,
+	I18nKey.calendarOctober,
+	I18nKey.calendarNovember,
+	I18nKey.calendarDecember,
+] as const;
+const weekKeys = [
+	I18nKey.calendarMonday,
+	I18nKey.calendarTuesday,
+	I18nKey.calendarWednesday,
+	I18nKey.calendarThursday,
+	I18nKey.calendarFriday,
+	I18nKey.calendarSaturday,
+	I18nKey.calendarSunday,
+] as const;
 
-const weekDays = [
-	i18n(I18nKey.calendarMonday),
-	i18n(I18nKey.calendarTuesday),
-	i18n(I18nKey.calendarWednesday),
-	i18n(I18nKey.calendarThursday),
-	i18n(I18nKey.calendarFriday),
-	i18n(I18nKey.calendarSaturday),
-	i18n(I18nKey.calendarSunday),
-];
+// 构建多语言月份名/星期名/年后缀映射表
+const allMonthNames: Record<string, string[]> = {};
+const allWeekDays: Record<string, string[]> = {};
+const allYearSuffixes: Record<string, string> = {};
 
-const isChinese = siteConfig.lang.startsWith("zh");
-const yearSuffix = isChinese ? "年" : " ";
+for (const [lang, tr] of Object.entries(allTranslations)) {
+	allMonthNames[lang] = monthKeys.map((k) => tr[k] || "");
+	allWeekDays[lang] = weekKeys.map((k) => tr[k] || "");
+	allYearSuffixes[lang] = lang.startsWith("zh") ? "年" : " ";
+}
+
+// 服务端首次渲染用的默认值（来自 siteConfig.lang）
+const weekDays = allWeekDays[siteConfig.lang] || allWeekDays.en;
+
+// 序列化供客户端动态切换
+const allMonthNamesJSON = JSON.stringify(allMonthNames);
+const allYearSuffixesJSON = JSON.stringify(allYearSuffixes);
+const translateToI18nMapJSON = JSON.stringify(translateToLangMap);
 ---
 
 <WidgetLayout
@@ -137,10 +154,34 @@ const yearSuffix = isChinese ? "年" : " ";
 <script
 	is:inline
 	define:vars={{
-		monthNames,
-		yearSuffix,
+		allMonthNamesJSON,
+		allYearSuffixesJSON,
+		translateToI18nMapJSON,
+		defaultLang: siteConfig.lang,
 	}}
 >
+	// 解析多语言映射表
+	const allMonthNames = JSON.parse(allMonthNamesJSON);
+	const allYearSuffixes = JSON.parse(allYearSuffixesJSON);
+	const translateToLangMap = JSON.parse(translateToI18nMapJSON);
+
+	function calGetLang() {
+		const translateTo =
+			window.translationManager?.getTargetLanguage() || window.translate?.to;
+		if (translateTo) {
+			return translateToLangMap[translateTo] || defaultLang;
+		}
+		return defaultLang;
+	}
+	function calGetMonthNames() {
+		const lang = calGetLang();
+		return allMonthNames[lang] || allMonthNames.en;
+	}
+	function calGetYearSuffix() {
+		const lang = calGetLang();
+		return allYearSuffixes[lang] || ' ';
+	}
+
 	let allPostsData = [];
 	const postDateMap = {};
 	const postsByMonth = {};
@@ -242,6 +283,19 @@ const yearSuffix = isChinese ? "年" : " ";
 		fetchCalendarData();
 	}
 
+	function registerCalendarRenderer() {
+		if (!window.translationManager) return;
+		window.translationManager.onRefresh("calendar", () => {
+			renderCalendar();
+		});
+	}
+
+	// 日历标题和选择器由组件自行渲染，切语言时只需重新走一次 render。
+	registerCalendarRenderer();
+	document.addEventListener("translation-manager:ready", registerCalendarRenderer, {
+		once: true,
+	});
+
 	function setupEventListeners() {
 		dom.titleContainer.addEventListener("click", (e) => {
 			e.stopPropagation();
@@ -317,7 +371,12 @@ const yearSuffix = isChinese ? "年" : " ";
 	}
 
 	function updateHeader() {
+		const monthNames = calGetMonthNames();
+		const yearSuffix = calGetYearSuffix();
 		dom.title.textContent = `${currentYear}${yearSuffix} ${monthNames[currentMonth]}`;
+		// 标记 ignore 防止 translate.js 二次翻译
+		dom.title.classList.add("ignore");
+		dom.title.setAttribute("data-i18n-handled", "true");
 		const isCurrentRealMonth =
 			currentYear === todayYear && currentMonth === todayMonth;
 		const shouldShowReset = !isCurrentRealMonth || selectedDateKey !== null;
@@ -452,11 +511,11 @@ const yearSuffix = isChinese ? "年" : " ";
 			"w-full h-full p-4 grid grid-cols-3 gap-3 content-center";
 
 		let html = "";
-		monthNames.forEach((name, index) => {
+		calGetMonthNames().forEach((name, index) => {
 			const isCurrentMonth = index === currentMonth;
 			const hasPost = stats.hasPostInMonth[`${currentYear}-${index + 1}`];
 			let cls =
-				"month-item cursor-pointer rounded-lg flex flex-col items-center justify-center p-2 transition-all hover:bg-[var(--btn-plain-bg-hover)] relative border border-transparent";
+				"month-item ignore cursor-pointer rounded-lg flex flex-col items-center justify-center p-2 transition-all hover:bg-[var(--btn-plain-bg-hover)] relative border border-transparent";
 			if (isCurrentMonth)
 				cls +=
 					" border-[var(--primary)] text-[var(--primary)] bg-[var(--primary)]/5";

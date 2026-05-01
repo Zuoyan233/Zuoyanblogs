@@ -1,9 +1,12 @@
 <script lang="ts">
 import Icon from "@iconify/svelte";
 import QRCode from "qrcode";
-import { onMount } from "svelte";
+import { onDestroy, onMount, tick } from "svelte";
 import I18nKey from "../../i18n/i18nKey";
 import { i18n } from "../../i18n/translation";
+import { applyI18nToDOM, clearI18nMarkers } from "../../utils/i18n-dom-updater";
+import { getConfigLanguageFromTranslate } from "../../utils/language-utils";
+import { translationManager } from "../../utils/translation-manager";
 
 export let title: string;
 export let author: string;
@@ -27,8 +30,27 @@ let posterImage: string | null = null;
 let themeColor = "#558e88";
 let copied = false;
 let modalElement: HTMLElement;
+let shareRootEl: HTMLElement;
+let unregisterTranslationRenderer = () => {};
 
 const COPY_FEEDBACK_DURATION = 2000;
+
+// Refresh component DOM with current translation
+function refreshI18nOnShare() {
+	if (!translationManager.isActive()) return;
+	const translateTo = translationManager.getTargetLanguage();
+	if (!translateTo) return;
+	const configLang = getConfigLanguageFromTranslate(translateTo);
+
+	if (shareRootEl) {
+		clearI18nMarkers(shareRootEl);
+		applyI18nToDOM(configLang, shareRootEl);
+	}
+	if (modalElement) {
+		clearI18nMarkers(modalElement);
+		applyI18nToDOM(configLang, modalElement);
+	}
+}
 
 onMount(() => {
 	const temp = document.createElement("div");
@@ -41,7 +63,29 @@ onMount(() => {
 	if (computedColor) {
 		themeColor = computedColor;
 	}
+
+	unregisterTranslationRenderer = translationManager.onRefresh(
+		"share-poster",
+		refreshI18nOnShare,
+	);
+
+	if (translationManager.isActive()) {
+		void tick().then(() => refreshI18nOnShare());
+	}
 });
+
+onDestroy(() => {
+	unregisterTranslationRenderer();
+});
+
+// Refresh modal content after the portal node is mounted into body.
+$: if (showModal) {
+	void tick().then(() => {
+		if (modalElement) {
+			void translationManager.refresh();
+		}
+	});
+}
 
 async function loadImage(src: string): Promise<HTMLImageElement | null> {
 	return new Promise((resolve) => {
@@ -441,8 +485,10 @@ async function copyLink() {
 		}
 
 		copied = true;
+		tick().then(() => refreshI18nOnShare());
 		setTimeout(() => {
 			copied = false;
+			tick().then(() => refreshI18nOnShare());
 		}, COPY_FEEDBACK_DURATION);
 	} catch (error) {
 		console.error("Failed to copy link:", error);
@@ -460,27 +506,24 @@ function portal(node: HTMLElement) {
 		},
 	};
 }
-
-// 辅助函数，等待下一个 tick
-function tick() {
-	return new Promise((resolve) => setTimeout(resolve, 0));
-}
 </script>
 
-<button 
-  class="btn-regular px-6 py-3 rounded-lg inline-flex items-center gap-2"
-  on:click={generatePoster}
-  aria-label="Generate Share Poster"
->
-  <span>{i18n(I18nKey.shareArticle)}</span>
-</button>
+<div bind:this={shareRootEl} class="inline-flex items-center gap-3">
+  <button 
+    class="btn-regular px-6 py-3 rounded-lg inline-flex items-center gap-2"
+    on:click={generatePoster}
+    aria-label="Generate Share Poster"
+  >
+    <span>{i18n(I18nKey.shareArticle)}</span>
+  </button>
 
-<a 
-  class="btn-regular px-6 py-3 rounded-lg inline-flex items-center gap-2"
-  href="/sponsors/"
->
-  <span>{i18n(I18nKey.sponsors)}</span>
-</a>
+  <a 
+    class="btn-regular px-6 py-3 rounded-lg inline-flex items-center gap-2"
+    href="/sponsors/"
+  >
+    <span>{i18n(I18nKey.sponsors)}</span>
+  </a>
+</div>
 
 {#if showModal}
   <!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->

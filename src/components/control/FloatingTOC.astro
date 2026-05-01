@@ -251,6 +251,7 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 		private isOpen = false;
 		private headings: HTMLElement[] = [];
 		private containerObserver: MutationObserver | null = null;
+		private _skipMutationUntil = 0;
 		
 		// 添加 AbortController 用于清理事件监听
 		private abortController: AbortController;
@@ -304,6 +305,12 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 				signal 
 			});
 
+			// 翻译完成后刷新浮动 TOC（增量更新文本，避免闪烁）
+			document.addEventListener("translate:applied", () => {
+				this._skipMutationUntil = Date.now() + 300;
+				this.updateTOCText();
+			}, { signal });
+
 			this.bindEvents();
 			this.generateTOC();
 			this.observeDocument();
@@ -318,16 +325,28 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 
 			// 监听整个文档的变化
 			this.containerObserver = new MutationObserver((mutations) => {
-				// 检查是否有标题相关的变化
+				// 如果 translate:applied 已触发更新，跳过本次 MutationObserver 回调
+				if (Date.now() < this._skipMutationUntil) return;
+
+				// 检查是否有标题相关的变化（新增标题或标题文本被修改）
 				const hasHeadingChanges = mutations.some(mutation => {
-					return Array.from(mutation.addedNodes).some(node => {
-						if (node.nodeType === Node.ELEMENT_NODE) {
-							const element = node as Element;
-							return element.matches?.('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]') ||
-								   element.querySelector?.('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]');
-						}
-						return false;
-					});
+					// characterData: heading 文本被 translate.js 异步修改
+					if (mutation.type === 'characterData') {
+						const parent = mutation.target.parentElement;
+						return parent !== null && /^H[1-6]$/i.test(parent.tagName) && !!parent.id;
+					}
+					// childList: 新 heading 被动态插入
+					if (mutation.type === 'childList') {
+						return Array.from(mutation.addedNodes).some(node => {
+							if (node.nodeType === Node.ELEMENT_NODE) {
+								const element = node as Element;
+								return element.matches?.('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]') ||
+									   element.querySelector?.('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]');
+							}
+							return false;
+						});
+					}
+					return false;
 				});
 
 				if (hasHeadingChanges || this.headings.length === 0) {
@@ -341,7 +360,8 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 
 			this.containerObserver.observe(document.body, {
 				childList: true,
-				subtree: true
+				subtree: true,
+				characterData: true,
 			});
 		}
 
@@ -401,6 +421,39 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 					link.classList.add("active");
 				} else {
 					link.classList.remove("active");
+				}
+			});
+		}
+
+		// 增量更新：仅更新浮动 TOC 条目文本，不重建 DOM（避免翻译后闪烁）
+		private updateTOCText() {
+			if (!this.content || this.headings.length === 0) {
+				this.generateTOC();
+				return;
+			}
+
+			const container = document.querySelector(
+				"#post-container, article, main, .content, .post-content, .prose, .markdown-content, .custom-md"
+			) || document.body;
+
+			const allHeadings = container.querySelectorAll(
+				"h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]"
+			);
+
+			if (allHeadings.length !== this.headings.length) {
+				this.generateTOC();
+				return;
+			}
+
+			const links = this.content.querySelectorAll<HTMLAnchorElement>(".floating-toc-item");
+			allHeadings.forEach((heading, i) => {
+				const link = links[i];
+				if (link) {
+					const textEl = link.querySelector(".floating-toc-text");
+					const newText = (heading.textContent || "").replace(/#+\s*$/, "");
+					if (textEl && textEl.textContent !== newText) {
+						textEl.textContent = newText;
+					}
 				}
 			});
 		}

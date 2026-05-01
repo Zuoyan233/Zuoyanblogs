@@ -16,67 +16,118 @@ const config = {
 <script is:inline src="/scroll-protection.js"></script>
 <script is:inline src="/assets/js/twikoo.all.min.js"></script>
 <script is:inline define:vars={{ config }}>
-  // 获取当前页面路径
-  function getCurrentPath() {
-    const pathname = window.location.pathname;
-    return pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
-  }
-  
-  // 动态创建配置对象
-  function createTwikooConfig() {
-    return {
-      ...config,
-      path: getCurrentPath(),
-      el: '#tcomment'
-    };
-  }
-  
-  // 初始化 Twikoo
-  function initTwikoo() {
-    if (typeof twikoo !== 'undefined') {
-      const commentEl = document.getElementById('tcomment');
-      if (commentEl) {
-        commentEl.innerHTML = '';
-        
-        const dynamicConfig = createTwikooConfig();
-        console.log('[Twikoo] 初始化配置:', dynamicConfig);
-        
-        twikoo.init(dynamicConfig).then(() => {
-          console.log('[Twikoo] 初始化完成');
-        }).catch((error) => {
-          console.error('[Twikoo] 初始化失败:', error);
-        });
-      }
-    } else {
-      // 如果 Twikoo 未加载，稍后重试
-      setTimeout(initTwikoo, 500);
-    }
-  }
-  
-  // 页面加载时初始化
-  document.addEventListener('DOMContentLoaded', initTwikoo);
-  
-  // Swup 页面切换后重新初始化
-  if (window.swup && window.swup.hooks) {
-    window.swup.hooks.on('content:replace', function() {
-      setTimeout(initTwikoo, 200);
-    });
-  } else {
-    document.addEventListener('swup:enable', function() {
-      if (window.swup && window.swup.hooks) {
-        window.swup.hooks.on('content:replace', function() {
-          setTimeout(initTwikoo, 200);
-        });
-      }
-    });
-  }
-  
-  // 自定义事件监听
-  document.addEventListener('brightmoon:page:loaded', function() {
-    const commentEl = document.getElementById('tcomment');
-    if (commentEl) {
-      console.log('[Twikoo] 通过自定义事件重新初始化');
-      initTwikoo();
-    }
-  });
+
+// 工具函数
+
+function getPath() {
+	const p = window.location.pathname;
+	return p.endsWith('/') && p.length > 1 ? p.slice(0, -1) : p;
+}
+
+function getLang() {
+	return window.translationManager?.getTwikooLanguage() || config.lang || 'zh-CN';
+}
+
+function isTranslateActive() {
+	return !!window.translationManager?.isActive();
+}
+
+// 翻译评论内容
+
+function translateComments() {
+	if (!isTranslateActive()) return;
+	void window.translationManager?.refresh({ reason: 'twikoo-comments' });
+}
+
+// DOM 观察
+
+let observer = null;
+let translateTimer = null;
+
+function observeTcomment() {
+	if (observer) observer.disconnect();
+	const el = document.getElementById('tcomment');
+	if (!el) return;
+	observer = new MutationObserver(function() {
+		clearTimeout(translateTimer);
+		translateTimer = setTimeout(translateComments, 800);
+	});
+	observer.observe(el, { childList: true, subtree: true });
+}
+
+// Twikoo 初始化 
+
+let lastLang = null;
+
+function initTwikoo() {
+	if (typeof twikoo === 'undefined') {
+		setTimeout(initTwikoo, 500);
+		return;
+	}
+
+	const el = document.getElementById('tcomment');
+	if (!el) return;
+
+	el.innerHTML = '';
+	lastLang = getLang();
+
+	const cfg = {
+		...config,
+		lang: lastLang,
+		path: getPath(),
+		el: '#tcomment',
+		onCommentLoaded: function() { setTimeout(translateComments, 500); },
+	};
+
+	console.log('[Twikoo] init:', cfg);
+	twikoo.init(cfg).then(function() {
+		setTimeout(translateComments, 600);
+	}).catch(function(e) {
+		console.error('[Twikoo] failed:', e);
+	});
+}
+
+// Swup 集成 
+
+function onContentReplace() {
+	lastLang = null;
+	setTimeout(function() { initTwikoo(); observeTcomment(); }, 200);
+}
+
+function setupSwup() {
+	if (window.swup?.hooks) {
+		window.swup.hooks.on('content:replace', onContentReplace);
+	} else {
+		document.addEventListener('swup:enable', function() {
+			if (window.swup?.hooks) {
+				window.swup.hooks.on('content:replace', onContentReplace);
+			}
+		});
+	}
+}
+
+// 事件监听 
+
+document.addEventListener('DOMContentLoaded', function() {
+	initTwikoo();
+	observeTcomment();
+});
+
+document.addEventListener('brightmoon:page:loaded', function() {
+	if (document.getElementById('tcomment')) {
+		lastLang = null;
+		initTwikoo();
+		observeTcomment();
+	}
+});
+
+document.addEventListener('translate:applied', function() {
+	const newLang = getLang();
+	if (newLang !== lastLang && document.getElementById('tcomment')) {
+		lastLang = newLang;
+		initTwikoo();
+	}
+});
+
+setupSwup();
 </script>

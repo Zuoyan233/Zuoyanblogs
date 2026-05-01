@@ -420,33 +420,6 @@ if (siteConfig.font) {
 		<!-- increase the page height during page transition to prevent the scrolling animation from jumping -->
 		<div id="page-height-extend" class="hidden h-[300vh]"></div>
 
-		<!-- Translate.js integration - lazy loading -->
-		{siteConfig.translate?.enable && (
-			<script>
-				// 懒加载translate.js，只有在需要时才加载
-				window.loadTranslateScript = function() {
-					if (window.translate || document.getElementById('translate-script')) {
-						return Promise.resolve();
-					}
-					
-					return new Promise((resolve, reject) => {
-						const script = document.createElement('script');
-						script.src = '/translate.js';
-						script.id = 'translate-script';
-						script.async = true;
-						script.onload = () => {
-							if (typeof window.translate !== 'undefined') {
-								resolve();
-							} else {
-								reject(new Error('translate.js loaded but window.translate not available'));
-							}
-						};
-						script.onerror = reject;
-						document.head.appendChild(script);
-					});
-				};
-			</script>
-		)}
 	</body>
 </html>
 
@@ -534,6 +507,7 @@ if (siteConfig.font) {
 	import { siteConfig } from "../config";
 	import { widgetConfigs } from "../config";
 	import { initSakura } from "../utils/sakura-manager";
+	import { translationManager } from "../utils/translation-manager";
 
 	// const setTimeout = window.setTimeout;
 	// @ts-ignore
@@ -874,71 +848,9 @@ function disableAnimation() {
 		}
 	}
 
-	function initTranslate() {
-	if (!siteConfig.translate?.enable || typeof window.translate === 'undefined') return;
-	
-	const translate = window.translate;
-	if (!translate) return;
-	
-	// 配置translate.js
-	if (siteConfig.translate.service && translate.service) {
-		translate.service.use(siteConfig.translate.service);
+	if (siteConfig.translate?.enable) {
+		void translationManager.init();
 	}
-	
-	if (siteConfig.translate.defaultLanguage && translate.language) {
-		translate.language.setLocal(siteConfig.translate.defaultLanguage);
-	}
-	
-	if (siteConfig.translate.autoDiscriminate && translate.setAutoDiscriminateLocalLanguage) {
-		translate.setAutoDiscriminateLocalLanguage();
-	}
-	
-	// 设置忽略的类名和标签
-	if (siteConfig.translate.ignoreClasses && translate.ignore?.class) {
-		siteConfig.translate.ignoreClasses.forEach(className => {
-			translate.ignore.class.push(className);
-		});
-	}
-	
-	if (siteConfig.translate.ignoreTags && translate.ignore?.tag) {
-		siteConfig.translate.ignoreTags.forEach(tagName => {
-			translate.ignore.tag.push(tagName);
-		});
-	}
-	
-	// 不显示默认的select选择框
-	if (siteConfig.translate.showSelectTag === false && translate.selectLanguageTag) {
-		translate.selectLanguageTag.show = false;
-	}
-	
-	// 禁用自动保存翻译状态到localStorage
-	if (translate.storage?.set) {
-		translate.storage.set = function() {
-			// 空函数，阻止保存状态
-		};
-	}
-	
-	if (translate.listener?.start) {
-		translate.listener.start();
-	}
-	
-	if (translate.execute) {
-		translate.execute();
-	}
-}
-
-// 懒加载并初始化翻译功能
-(async function loadAndInitTranslate() {
-	if (!siteConfig.translate?.enable) return;
-	
-	try {
-		// 使用可选链和条件调用
-		await window.loadTranslateScript?.();
-		initTranslate();
-	} catch (error) {
-		console.error('Failed to load translate.js:', error);
-	}
-})();
 
 	function setupSakura() {
 		const sakuraConfig = (widgetConfigs as any)?.sakura;
@@ -1058,6 +970,8 @@ function disableAnimation() {
 		fancyboxSelectors = [];
 	}
 
+	let translateTimer: ReturnType<typeof setTimeout> | null = null;
+
 	const setup = () => {
 		// TODO: temp solution to change the height of the banner
 		/*
@@ -1114,12 +1028,19 @@ function disableAnimation() {
 				}
 			}
 
-			// 页面内容替换后重新执行翻译（仅在翻译已加载时）
-		setTimeout(() => {
-			if (siteConfig.translate?.enable && typeof (window as any).translate !== 'undefined') {
-				(window as any).translate.execute();
-			}
-		}, 100);
+			// 页面内容替换后，下一帧立即补翻新节点
+			if (translateTimer) clearTimeout(translateTimer);
+			translateTimer = setTimeout(() => {
+				if (siteConfig.translate?.enable) {
+					requestAnimationFrame(() => {
+						void translationManager.refresh({
+							root: document.body,
+							reason: "swup-content-replace",
+						});
+					});
+				}
+			}, 0);
+
 
 			// 重新初始化semifull模式的滚动检测
 			const navbar = document.getElementById("navbar");
@@ -1144,8 +1065,15 @@ function disableAnimation() {
 			(...args: unknown[]) => {
 				const visit = args[0] as { to: { url: string } } | undefined;
 				if (!visit) return;
+				// 取消等待中的翻译定时器，防止与新页面的翻译重叠
+				if (translateTimer) { clearTimeout(translateTimer); translateTimer = null; }
 				// 清理上一页的 Fancybox
 				cleanupFancybox();
+
+				// 新页面到达前预初始化翻译系统，让 translate.js 就绪
+				if (siteConfig.translate?.enable) {
+					void translationManager.init();
+				}
 
 				// 处理 Banner class 和显示状态
 				const bodyElement = document.querySelector("body");
