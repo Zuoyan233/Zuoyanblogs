@@ -23,6 +23,9 @@ export const ar: Translation = {
 	[Key.categories]: "التصنيفات",
 	[Key.recentPosts]: "أحدث المشاركات",
 
+	// Table of Contents
+	[Key.tocTitle]: "جدول المحتويات",
+
 	// Announcement
 	[Key.announcement]: "إعلان",
 	[Key.announcementClose]: "إغلاق",

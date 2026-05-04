@@ -23,6 +23,9 @@ export const es: Translation = {
 	[Key.categories]: "Categorías",
 	[Key.recentPosts]: "Publicaciones recientes",
 
+	// Tabla de contenidos
+	[Key.tocTitle]: "Tabla de contenidos",
+
 	// Anuncio
 	[Key.announcement]: "Anuncio",
 	[Key.announcementClose]: "Cerrar",

@@ -211,13 +211,13 @@ export const siteConfig: SiteConfig = {
 	toc: {
 		enable: true, // 启用目录功能
 		responsive: {
-			// 设备响应式配置（最佳设置，不建议修改），"float" 悬浮按钮模式， "sidebar" 侧边栏模式 （仅适用桌面端）
+			// 设备响应式配置（最佳设置，不建议修改），"float" 悬浮按钮模式， "sidebar" 侧边栏模式
 			mobile: "float", // 移动端默认使用 "float" 悬浮按钮模式
-			tablet: "float", // 平板端默认使用 "float" 悬浮按钮模式
+			tablet: "sidebar", /// 平板端默认使用 "sidebar" 侧边栏模式，可选 "float" 悬浮按钮模式
 			desktop: "sidebar", // 桌面端默认使用 "sidebar" 侧边栏模式，可选 "float" 悬浮按钮模式
 		},
 		depth: 3, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
-		useJapaneseBadge: false, // 使用日语假名标记（あいうえお...）代替数字，开启后会将 1、2、3... 改为 あ、い、う...
+		useJapaneseBadge: true, // 使用日语假名标记（あいうえお...）代替数字，开启后会将 1、2、3... 改为 あ、い、う...
 	},
 	showCoverInContent: true, // 在文章内容页显示文章封面
 	generateOgImages: false, // 启用生成OpenGraph图片功能,注意开启后要渲染很长时间，不建议本地调试的时候开启
@@ -590,12 +590,28 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			},
 		},
 		{
+			// 组件类型：目录组件
+			type: "toc",
+			// 是否启用该组件
+			enable: siteConfig.toc.enable,
+			// 组件显示顺序
+			order: 5,
+			// 组件位置：粘性区域，滚动时保持可见
+			position: "sticky",
+			// 所在侧边栏
+			sidebar: "left",
+			// CSS 类名
+			class: "onload-animation",
+			// 动画延迟时间
+			animationDelay: 300,
+		},
+		{
 			// 组件类型：站点统计组件
 			type: "site-stats",
 			// 是否启用该组件
 			enable: true,
 			// 组件显示顺序
-			order: 5,
+			order: 6,
 			// 组件位置
 			position: "top",
 			// 所在侧边栏
@@ -611,7 +627,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			// 是否启用该组件（移动端默认不显示）
 			enable: true,
 			// 组件显示顺序
-			order: 6,
+			order: 7,
 			// 组件位置
 			position: "top",
 			// 所在侧边栏

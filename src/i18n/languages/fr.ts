@@ -23,6 +23,9 @@ export const fr: Translation = {
 	[Key.categories]: "Catégories",
 	[Key.recentPosts]: "Articles récents",
 
+	// Table des matières
+	[Key.tocTitle]: "Table des matières",
+
 	// Annonce
 	[Key.announcement]: "Annonce",
 	[Key.announcementClose]: "Fermer",

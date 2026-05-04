@@ -23,6 +23,9 @@ export const id: Translation = {
 	[Key.categories]: "Kategori",
 	[Key.recentPosts]: "Postingan Terbaru",
 
+	// Daftar Isi
+	[Key.tocTitle]: "Daftar Isi",
+
 	// Pengumuman
 	[Key.announcement]: "Pengumuman",
 	[Key.announcementClose]: "Tutup",

@@ -1006,29 +1006,12 @@ function disableAnimation() {
 		});
 
 		window.swup.hooks.on("content:replace", () => {
-			// 初始化新页面的图片、公式、滚动条和TOC
+			// 初始化新页面的图片、公式和滚动条
 			initFancybox();
 			checkKatex();
 			initCustomScrollbar();
 
-			// 检查当前页面是否为文章页面（有TOC元素）
-			const tocWrapper = document.getElementById("toc-wrapper");
-			const isArticlePage = tocWrapper !== null;
-
-			// 只在文章页面重新初始化 TOC 组件
-			if (isArticlePage) {
-				const tocElement = document.querySelector("table-of-contents");
-				if (
-					tocElement &&
-					typeof (tocElement as any).init === "function"
-				) {
-					setTimeout(() => {
-						(tocElement as any).init();
-					}, 100);
-				}
-			}
-
-			// 页面内容替换后，下一帧立即补翻新节点
+				// 页面内容替换后，下一帧立即补翻新节点
 			if (translateTimer) clearTimeout(translateTimer);
 			translateTimer = setTimeout(() => {
 				if (siteConfig.translate?.enable) {
@@ -1155,11 +1138,7 @@ function disableAnimation() {
 					heightExtend.classList.remove("hidden");
 				}
 
-				// Hide the TOC while scrolling back to top
-				let toc = document.getElementById("toc-wrapper");
-				if (toc) {
-					toc.classList.add("toc-not-ready");
-				}
+	
 			},
 		);
 
@@ -1238,11 +1217,7 @@ function disableAnimation() {
 					heightExtend.classList.add("hidden");
 				}
 
-				// Just make the transition looks better
-				const toc = document.getElementById("toc-wrapper");
-				if (toc) {
-					toc.classList.remove("toc-not-ready");
-				}
+	
 			}, 200);
 		});
 	};
@@ -1266,7 +1241,6 @@ function disableAnimation() {
 	}
 
 	let backToTopBtn = document.getElementById("back-to-top-btn");
-	let toc = document.getElementById("toc-wrapper");
 	let navbar = document.getElementById("navbar-wrapper");
 
 	// 节流函数
@@ -1311,20 +1285,6 @@ function disableAnimation() {
 					backToTopBtn.classList.remove("hide");
 				} else {
 					backToTopBtn.classList.add("hide");
-				}
-			}
-
-			if (bannerEnabled && toc) {
-				const isBannerMode = document.body.classList.contains("enable-banner");
-				if (isBannerMode) {
-					if (scrollTop > bannerHeight) {
-						toc.classList.remove("toc-hide");
-					} else {
-						toc.classList.add("toc-hide");
-					}
-				} else {
-					// In Fullscreen or None mode, always show TOC
-					toc.classList.remove("toc-hide");
 				}
 			}
 

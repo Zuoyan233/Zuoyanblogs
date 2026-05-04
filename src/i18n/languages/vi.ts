@@ -23,6 +23,9 @@ export const vi: Translation = {
 	[Key.categories]: "Danh mục",
 	[Key.recentPosts]: "Bài viết gần đây",
 
+	// Table of Contents
+	[Key.tocTitle]: "Mục lục",
+
 	// Announcement
 	[Key.announcement]: "Thông báo",
 	[Key.announcementClose]: "Đóng",

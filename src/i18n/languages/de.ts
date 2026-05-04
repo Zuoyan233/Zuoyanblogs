@@ -23,6 +23,9 @@ export const de: Translation = {
 	[Key.categories]: "Kategorien",
 	[Key.recentPosts]: "Letzte Beiträge",
 
+	// Inhaltsverzeichnis
+	[Key.tocTitle]: "Inhaltsverzeichnis",
+
 	// Ankündigung
 	[Key.announcement]: "Ankündigung",
 	[Key.announcementClose]: "Schließen",

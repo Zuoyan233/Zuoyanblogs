@@ -20,6 +20,9 @@ enum I18nKey {
 	categories = "categories",
 	recentPosts = "recentPosts",
 
+	// 目录
+	tocTitle = "tocTitle",
+
 	// 公告栏
 	announcement = "announcement",
 	announcementClose = "announcementClose",

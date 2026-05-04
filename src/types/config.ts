@@ -202,7 +202,7 @@ export type SiteConfig = {
 		enable: boolean;
 		responsive?: {
 			mobile: "float"; // 手机端模式
-			tablet: "float"; // 平板端模式
+			tablet: "float" | "sidebar"; // 平板端模式
 			desktop: "float" | "sidebar"; // 桌面端模式
 		};
 		depth: 1 | 2 | 3;
@@ -391,7 +391,7 @@ export type WidgetComponentConfig = {
 		hidden?: ("mobile" | "tablet" | "desktop")[]; // 在指定设备上隐藏
 		collapseThreshold?: number; // 折叠阈值
 	};
-	customProps?: Record<string, any>; // 自定义属性，用于扩展组件功能
+	customProps?: Record<string, unknown>; // 自定义属性，用于扩展组件功能
 };
 
 export type SidebarLayoutConfig = {

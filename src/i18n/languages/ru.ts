@@ -23,6 +23,9 @@ export const ru: Translation = {
 	[Key.categories]: "Категории",
 	[Key.recentPosts]: "Последние записи",
 
+	// Содержание
+	[Key.tocTitle]: "Содержание",
+
 	// Объявление
 	[Key.announcement]: "Объявление",
 	[Key.announcementClose]: "Закрыть",

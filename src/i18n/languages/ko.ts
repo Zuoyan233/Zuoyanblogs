@@ -23,6 +23,9 @@ export const ko: Translation = {
 	[Key.categories]: "카테고리",
 	[Key.recentPosts]: "최근 게시물",
 
+	// 목차
+	[Key.tocTitle]: "목차",
+
 	// 공지사항
 	[Key.announcement]: "공지사항",
 	[Key.announcementClose]: "닫기",

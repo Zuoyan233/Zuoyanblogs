@@ -23,6 +23,9 @@ export const th: Translation = {
 	[Key.categories]: "หมวดหมู่",
 	[Key.recentPosts]: "โพสต์ล่าสุด",
 
+	// Table of Contents
+	[Key.tocTitle]: "สารบัญ",
+
 	// Announcement
 	[Key.announcement]: "ประกาศ",
 	[Key.announcementClose]: "ปิด",

@@ -23,6 +23,9 @@ export const zh_TW: Translation = {
 	[Key.categories]: "分類",
 	[Key.recentPosts]: "最新文章",
 
+	// 目錄
+	[Key.tocTitle]: "目錄",
+
 	// 公告欄
 	[Key.announcement]: "公告",
 	[Key.announcementClose]: "關閉",

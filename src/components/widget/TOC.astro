@@ -1,42 +1,23 @@
 ---
 import type { MarkdownHeading } from "astro";
-
-// import { siteConfig } from "../../config";
-
-// import { url } from "../../utils/url-utils";
+import I18nKey from "../../i18n/i18nKey";
+import { i18n } from "../../i18n/translation";
+import WidgetLayout from "./WidgetLayout.astro";
 
 interface Props {
 	class?: string;
+	style?: string;
 	headings: MarkdownHeading[];
 }
 
-let { headings = [] } = Astro.props;
-
-let minDepth = 10;
-for (const heading of headings) {
-	minDepth = Math.min(minDepth, heading.depth);
-}
-
 const className = Astro.props.class;
-// const isPostsRoute =
-// 	Astro.url.pathname.includes("/posts/") || headings.length > 0;
-
-// const removeTailingHash = (text: string) => {
-// 	let lastIndexOfHash = text.lastIndexOf("#");
-// 	if (lastIndexOfHash !== text.length - 1) {
-// 		return text;
-// 	}
-//
-// 	return text.substring(0, lastIndexOfHash);
-// };
-
-// let heading1Count = 1;
-
-// const maxLevel = siteConfig.toc.depth;
+const style = Astro.props.style;
 ---
-<table-of-contents class:list={[className, "group"]} id="toc">
-    <!-- TOC内容将由JavaScript动态生成 -->
-</table-of-contents>
+<WidgetLayout name={i18n(I18nKey.tocTitle)} id="toc-widget" class={className} style={style}>
+    <table-of-contents class="group" id="toc">
+        <!-- TOC内容将由JavaScript动态生成 -->
+    </table-of-contents>
+</WidgetLayout>
 
 <script>
 class TableOfContents extends HTMLElement {
@@ -233,6 +214,14 @@ class TableOfContents extends HTMLElement {
             this._skipMutationUntil = Date.now() + 200;
             this.updateTOCText();
         });
+
+        // Swup SPA 页面切换时重新初始化（侧边栏持久存在，connectedCallback 不会再次触发）
+        document.addEventListener("swup:page:view", () => {
+            // 延迟等待新页面内容渲染完成
+            setTimeout(() => {
+                this.init();
+            }, 100);
+        });
     };
 
     // 监听 heading 文本变化（translate.js 异步翻译完成后 DOM 自动更新）
@@ -375,13 +364,17 @@ class TableOfContents extends HTMLElement {
 
 
     regenerateTOC(retryCount = 0) {
+        // 获取父级 widget-layout 元素
+        const widgetLayout = this.closest('widget-layout') as HTMLElement | null;
         // 检查是否为文章页面
         const isPostPage = window.location.pathname.includes('/posts/') || 
                           document.querySelector('.custom-md, .markdown-content') !== null;
         if (!isPostPage) {
-            // 如果不是文章页面，隐藏TOC
+            // 如果不是文章页面，隐藏TOC和整个widget
             this.innerHTML = '';
             delete this.dataset.loaded;
+            if (widgetLayout) widgetLayout.style.display = 'none';
+            document.dispatchEvent(new CustomEvent('toc:unloaded'));
             return;
         }
         // 从当前页面重新获取标题
@@ -405,6 +398,8 @@ class TableOfContents extends HTMLElement {
         if (headings.length === 0) {
             this.innerHTML = '';
             delete this.dataset.loaded;
+            if (widgetLayout) widgetLayout.style.display = 'none';
+            document.dispatchEvent(new CustomEvent('toc:unloaded'));
             return;
         }
         // 重新生成TOC HTML
@@ -449,15 +444,21 @@ class TableOfContents extends HTMLElement {
                     badgeContent = '<div class="transition w-1.5 h-1.5 rounded-sm bg-black/5 dark:bg-white/10"></div>';
                 }
                 
-                return `<a href="#${heading.slug}" class="px-2 flex gap-2 relative transition w-full min-h-9 rounded-xl hover:bg-[var(--toc-btn-hover)] active:bg-[var(--toc-btn-active)] py-2">
-                    <div class="transition w-5 h-5 shrink-0 rounded-lg text-xs flex items-center justify-center font-bold ${depthClass} ${heading.depth === minDepth ? 'bg-[var(--toc-badge-bg)] text-[var(--btn-content)]' : ''}">
+                return `<a href="#${heading.slug}" class="px-2 flex gap-2 relative transition w-full min-h-9 rounded-xl hover:bg-[var(--toc-btn-hover)] hover:dark:bg-[var(--btn-card-bg-active)] active:bg-[var(--toc-btn-active)] py-2">
+                    <div class="ignore transition w-5 h-5 shrink-0 rounded-lg text-xs flex items-center justify-center font-bold ${depthClass} ${heading.depth === minDepth ? 'bg-[var(--toc-badge-bg)] text-[var(--btn-content)]' : ''}">
                         ${badgeContent}
                     </div>
                     <div class="transition text-sm ${heading.depth <= minDepth + 1 ? 'text-50' : 'text-30'}">${heading.text}</div>
                 </a>`;
             }).join('');
-        this.innerHTML = tocHTML + '<div id="active-indicator" style="opacity: 0" class="-z-10 absolute bg-[var(--toc-btn-hover)] left-0 right-0 rounded-xl transition-all group-hover:bg-transparent border-2 border-[var(--toc-btn-hover)] group-hover:border-[var(--toc-btn-active)] border-dashed"></div>';
+        this.innerHTML = tocHTML + '<div id="active-indicator" style="opacity: 0" class="-z-10 absolute bg-[var(--toc-btn-hover)] dark:bg-[var(--btn-card-bg-active)] left-0 right-0 rounded-xl transition-all group-hover:bg-transparent border-2 border-[var(--toc-btn-hover)] group-hover:border-[var(--toc-btn-active)] border-dashed"></div>';
         this.dataset.loaded = "true";
+        // 仅在未被响应式 TOC 逻辑隐藏时才恢复显示，避免覆盖 float 模式的隐藏
+        if (widgetLayout && widgetLayout.dataset.hiddenByToc !== 'true') {
+            widgetLayout.style.display = '';
+        }
+        // 通知响应式 TOC 控制逻辑更新显示状态
+        document.dispatchEvent(new CustomEvent('toc:loaded'));
     }
 
     disconnectedCallback() {
@@ -480,12 +481,11 @@ if (!customElements.get("table-of-contents")) {
 
 <style>
   table-of-contents#toc {
-      max-height: 100%;
       overflow: auto;
       position: relative;
       scroll-behavior: smooth;
       display: block;
-      max-height: 50vh;
+      max-height: 60vh;
   }
 
   table-of-contents#toc::-webkit-scrollbar {
