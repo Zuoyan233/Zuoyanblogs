@@ -90,5 +90,11 @@
       "file": "expressions/f08.exp.json"
     }
   ],
-  "physics": "physics.json"
+  "physics": "physics.json",
+  "hit_areas_custom": {
+    "head_x": [-0.5, 0.7],
+    "head_y": [0.5, 0.2],
+    "body_x": [-0.5, 0.2],
+    "body_y": [0.5, -0.5]
+  }
 }
