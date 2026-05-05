@@ -209,7 +209,7 @@ const rightSidebarClass = `
 	onload-animation
 	${isBothSidebarMode && mobileShowSidebar && hasRightSidebarComponents ? "block row-start-3 row-end-4 col-span-1" : "hidden"}
 	${isBothSidebarMode && tabletShowRightSidebar ? "md:block md:mb-4 md:max-w-[17.5rem]" : "md:hidden"}
-	${desktopShowRightSidebar ? `lg:block lg:mb-4 lg:row-start-1 lg:row-end-2 lg:max-w-[17.5rem] ${desktopShowLeftSidebar ? "lg:col-start-3 lg:col-end-4" : "lg:col-start-2 lg:col-end-3"} lg:col-span-1` : "lg:hidden"}
+	${desktopShowRightSidebar ? `lg:block lg:self-start lg:h-fit lg:mb-4 lg:row-start-1 lg:row-end-2 lg:max-w-[17.5rem] ${desktopShowLeftSidebar ? "lg:col-start-3 lg:col-end-4" : "lg:col-start-2 lg:col-end-3"} lg:col-span-1` : "lg:hidden"}
 	${initialRightSidebarHidden ? "hidden-in-grid-mode" : ""}
 `
 	.trim()
@@ -1585,6 +1585,15 @@ body.no-banner-mode .absolute.w-full.z-30 {
 /* Grid 模式下隐藏右侧边栏 */
 .right-sidebar-container.hidden-in-grid-mode {
     display: none !important;
+}
+
+/* 右侧栏容器：对齐方式和盒模型 */
+.right-sidebar-container {
+    align-self: start;
+    display: contents;
+}
+.right-sidebar-container #right-sidebar {
+    height: fit-content;
 }
 
 /* Grid 模式下调整主网格布局 */

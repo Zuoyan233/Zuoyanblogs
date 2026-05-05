@@ -613,7 +613,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			// 组件显示顺序
 			order: 6,
 			// 组件位置
-			position: "top",
+			position: "sticky",
 			// 所在侧边栏
 			sidebar: "right",
 			// CSS 类名
@@ -629,7 +629,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			// 组件显示顺序
 			order: 7,
 			// 组件位置
-			position: "top",
+			position: "sticky",
 			// 所在侧边栏
 			sidebar: "right",
 			// CSS 类名
