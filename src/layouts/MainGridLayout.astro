@@ -753,6 +753,35 @@ const transparentClass = shouldEnableTransparency
 			}
 		});
 	}
+
+	// Feed 页面复制链接按钮 — 使用事件委托，确保 Swup 页面切换后仍然有效
+	document.addEventListener('click', function(e) {
+		const btn = e.target.closest('[data-copy-feed]');
+		if (!btn) return;
+
+		const url = btn.getAttribute('data-url');
+		if (!url) return;
+
+		const originalText = btn.getAttribute('data-original-text') || btn.textContent?.trim() || '';
+		const copiedText = btn.getAttribute('data-copied-text') || originalText;
+		const failedText = btn.getAttribute('data-failed-text') || originalText;
+
+		navigator.clipboard.writeText(url).then(() => {
+			btn.textContent = copiedText;
+			btn.style.backgroundColor = 'var(--success-color, #10b981)';
+
+			setTimeout(() => {
+				btn.textContent = originalText;
+				btn.style.backgroundColor = '';
+			}, 2000);
+		}).catch(err => {
+			console.error('复制失败:', err);
+			btn.textContent = failedText;
+			setTimeout(() => {
+				btn.textContent = originalText;
+			}, 2000);
+		});
+	});
 </script>
 
 <!-- 全屏壁纸 - 始终渲染，通过 JS 控制显示隐藏 -->

@@ -168,7 +168,7 @@ export function applyI18nToDOM(
 
 	let dataAttrCount = 0;
 	const elementsWithData = root.querySelectorAll(
-		"[data-prefix],[data-year],[data-month],[data-day],[data-hour],[data-minute],[data-second]",
+		"[data-prefix],[data-year],[data-month],[data-day],[data-hour],[data-minute],[data-second],[data-copied-text],[data-failed-text]",
 	);
 	for (const element of elementsWithData) {
 		for (const attr of element.getAttributeNames()) {
