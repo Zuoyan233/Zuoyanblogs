@@ -509,7 +509,7 @@ const useJapaneseBadge = siteConfig.toc.useJapaneseBadge;
 					const badgeText = useJapaneseBadge && h1Count - 1 < japaneseKatakana.length
 						? japaneseKatakana[h1Count - 1]
 						: h1Count.toString();
-					badge = `<span class="floating-toc-badge">${badgeText}</span>`;
+					badge = `<span class="ignore floating-toc-badge">${badgeText}</span>`;
 				} else if (level === minLevel + 1) {
 					badge = '<span class="floating-toc-dot"></span>';
 				} else {
