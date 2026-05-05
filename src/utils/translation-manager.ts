@@ -168,8 +168,9 @@ const configure = () => {
 		t.language.setLocal(cfg.defaultLanguage);
 	if (cfg?.autoDiscriminate && t.setAutoDiscriminateLocalLanguage)
 		t.setAutoDiscriminateLocalLanguage();
-	if (t.ignore?.class) pushUnique(t.ignore.class, cfg?.ignoreClasses);
-	if (t.ignore?.tag) pushUnique(t.ignore.tag, cfg?.ignoreTags);
+	if (Array.isArray(t.ignore?.class))
+		pushUnique(t.ignore.class, cfg?.ignoreClasses);
+	if (Array.isArray(t.ignore?.tag)) pushUnique(t.ignore.tag, cfg?.ignoreTags);
 	if (cfg?.showSelectTag === false && t.selectLanguageTag)
 		t.selectLanguageTag.show = false;
 	if (t.storage?.set) t.storage.set = () => {};
@@ -214,13 +215,14 @@ const applyLang = async (lang: string, opts: RefreshOptions = {}) => {
 	if (opts.root && !isConnected(opts.root)) return;
 
 	const t = window.translate;
-	if (t) t.to = lang;
 
 	clearI18nMarkers(root);
 	await runRenderers();
 
 	const cfgLang = getConfigLanguageFromTranslate(lang);
 	applyI18nToDOM(cfgLang, root);
+
+	if (t) t.to = lang;
 
 	if (!t || !needRemote(lang)) {
 		document.dispatchEvent(
