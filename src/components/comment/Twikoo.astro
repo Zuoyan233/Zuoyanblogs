@@ -17,67 +17,45 @@ const config = {
 <script is:inline src="/assets/js/twikoo.all.min.js"></script>
 <script is:inline define:vars={{ config }}>
 
-// 工具函数
-
 function getPath() {
-	const p = window.location.pathname;
+	var p = window.location.pathname;
 	return p.endsWith('/') && p.length > 1 ? p.slice(0, -1) : p;
 }
 
 function getLang() {
-	return window.translationManager?.getTwikooLanguage() || config.lang || 'zh-CN';
+	return window.translationManager?.getTwikooLanguage() || config.lang;
 }
 
 function isTranslateActive() {
 	return !!window.translationManager?.isActive();
 }
 
-// 翻译评论内容
-
 function translateComments() {
 	if (!isTranslateActive()) return;
-	void window.translationManager?.refresh({ reason: 'twikoo-comments' });
+	window.translationManager?.refresh({ reason: 'twikoo-comments' });
 }
 
-// DOM 观察
+// ---- Twikoo ----
 
-let observer = null;
-let translateTimer = null;
-
-function observeTcomment() {
-	if (observer) observer.disconnect();
-	const el = document.getElementById('tcomment');
-	if (!el) return;
-	observer = new MutationObserver(function() {
-		clearTimeout(translateTimer);
-		translateTimer = setTimeout(translateComments, 800);
-	});
-	observer.observe(el, { childList: true, subtree: true });
-}
-
-// Twikoo 初始化 
-
-let lastLang = null;
+var lastLang = null;
 
 function initTwikoo() {
 	if (typeof twikoo === 'undefined') {
 		setTimeout(initTwikoo, 500);
 		return;
 	}
-
-	const el = document.getElementById('tcomment');
+	var el = document.getElementById('tcomment');
 	if (!el) return;
-
 	el.innerHTML = '';
 	lastLang = getLang();
 
-	const cfg = {
-		...config,
+	var cfg = Object.assign({}, config, {
 		lang: lastLang,
 		path: getPath(),
-		el: '#tcomment',
-		onCommentLoaded: function() { setTimeout(translateComments, 500); },
-	};
+		onCommentLoaded: function() {
+			setTimeout(translateComments, 500);
+		},
+	});
 
 	console.log('[Twikoo] init:', cfg);
 	twikoo.init(cfg).then(function() {
@@ -87,11 +65,11 @@ function initTwikoo() {
 	});
 }
 
-// Swup 集成 
+// ---- Swup ----
 
 function onContentReplace() {
 	lastLang = null;
-	setTimeout(function() { initTwikoo(); observeTcomment(); }, 200);
+	setTimeout(initTwikoo, 200);
 }
 
 function setupSwup() {
@@ -106,23 +84,19 @@ function setupSwup() {
 	}
 }
 
-// 事件监听 
+// ---- events ----
 
-document.addEventListener('DOMContentLoaded', function() {
-	initTwikoo();
-	observeTcomment();
-});
+document.addEventListener('DOMContentLoaded', initTwikoo);
 
 document.addEventListener('brightmoon:page:loaded', function() {
 	if (document.getElementById('tcomment')) {
 		lastLang = null;
 		initTwikoo();
-		observeTcomment();
 	}
 });
 
 document.addEventListener('translate:applied', function() {
-	const newLang = getLang();
+	var newLang = getLang();
 	if (newLang !== lastLang && document.getElementById('tcomment')) {
 		lastLang = newLang;
 		initTwikoo();
