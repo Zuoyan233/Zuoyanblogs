@@ -524,6 +524,8 @@ export const en: Translation = {
 	[Key.suggestion]: "You might want to visit",
 	[Key.navBack]: "Go back",
 	[Key.navForward]: "Go forward",
+	[Key.breadcrumbExpand]: "Expand breadcrumb navigation",
+	[Key.breadcrumbCollapse]: "Collapse breadcrumb navigation",
 
 	// Back to Top Button
 	[Key.backToTop]: "Back to Top",

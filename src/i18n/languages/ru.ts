@@ -527,6 +527,8 @@ export const ru: Translation = {
 	[Key.suggestion]: "Возможно, вам стоит посетить",
 	[Key.navBack]: "Вернуться на предыдущую страницу",
 	[Key.navForward]: "Перейти на следующую страницу",
+	[Key.breadcrumbExpand]: "Развернуть навигацию по хлебным крошкам",
+	[Key.breadcrumbCollapse]: "Свернуть навигацию по хлебным крошкам",
 
 	// Кнопка "Наверх"
 	[Key.backToTop]: "Наверх",

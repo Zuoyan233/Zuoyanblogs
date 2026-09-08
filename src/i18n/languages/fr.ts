@@ -545,6 +545,8 @@ export const fr: Translation = {
 	[Key.suggestion]: "Vous aimerez peut-être visiter",
 	[Key.navBack]: "Revenir à la page précédente",
 	[Key.navForward]: "Aller à la page suivante",
+	[Key.breadcrumbExpand]: "Développer la navigation fil d'Ariane",
+	[Key.breadcrumbCollapse]: "Réduire la navigation fil d'Ariane",
 
 	// Bouton "Retour en haut"
 	[Key.backToTop]: "Retour en haut",

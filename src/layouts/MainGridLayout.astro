@@ -9,6 +9,14 @@ import SideBar from "@components/widget/SideBar.astro";
 import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
 import { getSortedPostsList } from "@utils/content-utils";
+import { allTranslations } from "@utils/i18n-dom-updater";
+import { langToLocaleMap, translateToLangMap } from "@utils/language-utils";
+
+const localeToLangMap: Record<string, string> = {};
+for (const [cfgLang, locale] of Object.entries(langToLocaleMap)) {
+	localeToLangMap[locale] = cfgLang;
+}
+
 import type { MarkdownHeading } from "astro";
 import { Icon } from "astro-icon/components";
 import { LinkPreset } from "@/types/config";
@@ -608,20 +616,14 @@ import "../scripts/main-grid.js";
 
             <main id="swup-container" class={`${mainContentClass} transition-main`}>
                 <div id="content-wrapper" class="onload-animation transition-leaving">
+                    <!-- 隐藏的面包屑组件 -->
                     {showBreadcrumb && (
-                        <>
-                            <!-- 主页及分页首页推荐候选项数据（JSON），供客户端随机选取 -->
+                        <div id="breadcrumb-source" class="hidden">
                             {(isHomePage || isPaginatedHome) && (
                                 <script id="homepage-suggestion-data" type="application/json" is:inline set:html={homepageCandidatesJson}></script>
                             )}
                             <Breadcrumb className="" items={resolvedBreadcrumbItems} />
-                            <!-- 主页及分页首页时由客户端随机选取推荐项，避免构建时固化 -->
-                            {(isHomePage || isPaginatedHome) && (
-                                <script>
-                                    (window as any).injectHomepageSuggestion?.();
-                                </script>
-                            )}
-                        </>
+                        </div>
                     )}
                     <slot></slot>
                     <div class="footer col-span-full onload-animation hidden lg:block">
@@ -640,8 +642,8 @@ import "../scripts/main-grid.js";
 </div>
 
 <!-- 响应式 TOC 容器 - 仅保留浮动 TOC（移动端/平板端/桌面端float模式） -->
-<div 
-    id="responsive-toc-container" 
+<div
+    id="responsive-toc-container"
     class:list={[
         "toc-container",
         siteConfig.toc.enable ? "" : "hidden",
@@ -656,9 +658,156 @@ import "../scripts/main-grid.js";
     </div>
 </div>
 
+<!-- 底部面包屑导航条 -->
+<div id="bottom-breadcrumb-bar" class={`bottom-breadcrumb-bar ${transparentClass}`}>
+    <!-- 短条导航条（收起状态）-->
+    <div id="breadcrumb-pill" class="breadcrumb-pill" title={i18n(I18nKey.breadcrumbExpand)}>
+        <div class="breadcrumb-pill-line"></div>
+    </div>
+    <!-- 完整面包屑（展开状态）-->
+    <div id="breadcrumb-full" class="breadcrumb-full">
+        <div class="breadcrumb-full-inner" id="breadcrumb-full-content">
+        </div>
+    </div>
+</div>
+
+<script is:inline define:vars={{ allTranslations, translateToLangMap, localeToLangMap }}>
+    window.__breadcrumb_i18n = allTranslations;
+    window.__breadcrumb_lang_maps = { translateToLangMap, localeToLangMap };
+</script>
+<script src="/src/scripts/bottom-breadcrumb.js"></script>
+
 </Layout>
 
 <style>
+/* 底部导航条容器 - fixed 定位悬浮在视口底部 */
+.bottom-breadcrumb-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    pointer-events: none;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 短条导航条（收起状态） */
+.breadcrumb-pill {
+    pointer-events: auto;
+    cursor: pointer;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 100;
+}
+
+/* 横线 */
+.breadcrumb-pill-line {
+    width: 50px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--primary);
+    opacity: 0.6;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 悬停效果 */
+.breadcrumb-pill:hover .breadcrumb-pill-line {
+    opacity: 1;
+    width: 150px;
+}
+
+/* 完整面包屑（展开状态） */
+.breadcrumb-full {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scale(0.8);
+    transform-origin: bottom center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 1rem;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    width: fit-content;
+    max-width: calc(100vw - 2rem);
+}
+    
+.breadcrumb-full-inner {
+    background: var(--card-bg);
+    border-radius: var(--radius-large);
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* 展开状态 */
+.bottom-breadcrumb-bar.expanded .breadcrumb-pill {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.bottom-breadcrumb-bar.expanded .breadcrumb-full {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* 收起时短条导航条回原位 */
+.bottom-breadcrumb-bar .breadcrumb-pill {
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 展开时短条导航条下移 */
+.bottom-breadcrumb-bar.expanded .breadcrumb-pill {
+    transform: translateY(10px);
+}
+
+/* 全屏壁纸模式下的半透明效果 */
+.wallpaper-transparent .breadcrumb-full-inner,
+body.wallpaper-transparent .breadcrumb-full-inner {
+    background: var(--card-bg-transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* 暗色主题下横线调整 */
+:root.dark .breadcrumb-pill-line {
+}
+
+:root.dark .breadcrumb-pill:hover .breadcrumb-pill-line {
+}
+
+/* 底部面包屑组件样式调整 */
+.bottom-breadcrumb-component {
+    margin-bottom: 0 !important;
+}
+
+.bottom-breadcrumb-component .breadcrumb-container {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+}
+
+/* 桌面端：底部导航条也显示 */
+@media (min-width: 1280px) {
+    .bottom-breadcrumb-bar {
+        display: flex;
+    }
+}
+
 /* 默认隐藏浮动 TOC */
 .toc-float-mode {
     display: none;

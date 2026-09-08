@@ -538,6 +538,8 @@ export const es: Translation = {
 	[Key.suggestion]: "Quizás quieras visitar",
 	[Key.navBack]: "Volver a la página anterior",
 	[Key.navForward]: "Ir a la página siguiente",
+	[Key.breadcrumbExpand]: "Expandir navegación de migas de pan",
+	[Key.breadcrumbCollapse]: "Contraer navegación de migas de pan",
 
 	// Botón "Volver arriba"
 	[Key.backToTop]: "Volver arriba",

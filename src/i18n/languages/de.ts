@@ -536,6 +536,8 @@ export const de: Translation = {
 	[Key.suggestion]: "Vielleicht möchten Sie besuchen",
 	[Key.navBack]: "Zurück zur vorherigen Seite",
 	[Key.navForward]: "Zur nächsten Seite",
+	[Key.breadcrumbExpand]: "Brotkrümennavigation aufklappen",
+	[Key.breadcrumbCollapse]: "Brotkrümennavigation zuklappen",
 
 	// "Nach oben" Button
 	[Key.backToTop]: "Nach oben",

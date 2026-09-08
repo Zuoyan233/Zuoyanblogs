@@ -522,6 +522,8 @@ export const ja: Translation = {
 	[Key.suggestion]: "訪れたいかもしれません",
 	[Key.navBack]: "前のページへ",
 	[Key.navForward]: "次のページへ",
+	[Key.breadcrumbExpand]: "パンくずナビを展開",
+	[Key.breadcrumbCollapse]: "パンくずナビを折りたたむ",
 
 	// トップへ戻るボタン
 	[Key.backToTop]: "トップへ戻る",

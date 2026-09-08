@@ -504,6 +504,8 @@ export const zh_TW: Translation = {
 	[Key.suggestion]: "你可能想訪問",
 	[Key.navBack]: "返回上一頁",
 	[Key.navForward]: "前往下一頁",
+	[Key.breadcrumbExpand]: "展開麵包屑導航",
+	[Key.breadcrumbCollapse]: "收起麵包屑導航",
 
 	// 回到頂部按鈕
 	[Key.backToTop]: "回到頂部",

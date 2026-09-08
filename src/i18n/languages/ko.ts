@@ -519,6 +519,8 @@ export const ko: Translation = {
 	[Key.suggestion]: "방문하고 싶을 수도 있습니다",
 	[Key.navBack]: "이전 페이지로",
 	[Key.navForward]: "다음 페이지로",
+	[Key.breadcrumbExpand]: "이동 경로 탐색 펼치기",
+	[Key.breadcrumbCollapse]: "이동 경로 탐색 접기",
 
 	// 맨 위로 버튼
 	[Key.backToTop]: "맨 위로",

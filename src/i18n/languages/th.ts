@@ -508,6 +508,8 @@ export const th: Translation = {
 	[Key.suggestion]: "คุณอาจต้องการเยี่ยมชม",
 	[Key.navBack]: "กลับไปหน้าก่อนหน้า",
 	[Key.navForward]: "ไปหน้าถัดไป",
+	[Key.breadcrumbExpand]: "ขยายการนำทางเส้นทาง",
+	[Key.breadcrumbCollapse]: "ย่อการนำทางเส้นทาง",
 
 	// ปุ่ม "กลับไปด้านบน"
 	[Key.backToTop]: "กลับไปด้านบน",

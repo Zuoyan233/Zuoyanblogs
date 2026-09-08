@@ -527,6 +527,8 @@ export const vi: Translation = {
 	[Key.suggestion]: "Có thể bạn muốn truy cập",
 	[Key.navBack]: "Quay lại trang trước",
 	[Key.navForward]: "Đến trang tiếp theo",
+	[Key.breadcrumbExpand]: "Mở rộng điều hướng breadcrumb",
+	[Key.breadcrumbCollapse]: "Thu gọn điều hướng breadcrumb",
 
 	// Nút "Về đầu trang"
 	[Key.backToTop]: "Về đầu trang",

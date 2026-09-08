@@ -527,6 +527,8 @@ export const id: Translation = {
 	[Key.suggestion]: "Mungkin Anda ingin mengunjungi",
 	[Key.navBack]: "Kembali ke halaman sebelumnya",
 	[Key.navForward]: "Ke halaman berikutnya",
+	[Key.breadcrumbExpand]: "Perluas navigasi breadcrumb",
+	[Key.breadcrumbCollapse]: "Perkecil navigasi breadcrumb",
 
 	// Tombol "Kembali ke Atas"
 	[Key.backToTop]: "Kembali ke Atas",

@@ -489,6 +489,8 @@ enum I18nKey {
 	suggestion = "suggestion",
 	navBack = "navBack",
 	navForward = "navForward",
+	breadcrumbExpand = "breadcrumbExpand",
+	breadcrumbCollapse = "breadcrumbCollapse",
 
 	// 回到顶部按钮
 	backToTop = "backToTop",

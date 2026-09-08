@@ -517,6 +517,8 @@ export const ar: Translation = {
 	[Key.suggestion]: "قد ترغب في زيارة",
 	[Key.navBack]: "العودة إلى الصفحة السابقة",
 	[Key.navForward]: "الانتقال إلى الصفحة التالية",
+	[Key.breadcrumbExpand]: "توسيع التنقل بالمسار",
+	[Key.breadcrumbCollapse]: "طي التنقل بالمسار",
 
 	// زر "العودة إلى الأعلى"
 	[Key.backToTop]: "العودة إلى الأعلى",
